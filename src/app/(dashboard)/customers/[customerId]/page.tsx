@@ -11,11 +11,13 @@ import { SectionNav } from "@/components/ui/section-nav";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { AddSubscriptionForm } from "@/components/commercial/commercial-forms";
 import { SubscriptionSummary } from "@/components/commercial/subscription-summary";
+import { RenewSubscription } from "@/components/commercial/renew-subscription";
 import { getCustomerDetail } from "@/features/customers/server/queries";
 import { shortId } from "@/features/shared/server/query-helpers";
 import { getMessages } from "@/i18n/messages";
 import { formatDate, formatDateTime, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 import { requireAdminAccess } from "@/server/auth/require-admin-access";
 import { canManageCommercialRecords } from "@/types/rbac";
 
@@ -28,8 +30,9 @@ type Issuance = Detail["issuances"][number];
 type Audit = Detail["audit"][number];
 
 export default async function CustomerDetailPage({ params }: { params: Promise<{ customerId: string }> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const { customerId } = await params;
   const access = await requireAdminAccess();
   const canManage = access.authorized && canManageCommercialRecords(access.context.role);
@@ -42,8 +45,31 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
   if (!data) notFound();
 
   const currentSubscription = data.subscriptions.find((row) => row.status === "active") ?? data.subscriptions[0] ?? null;
-  const currentLicense = data.licenses.find((row) => row.status === "active") ?? data.licenses[0] ?? null;
+  const currentLicense = currentSubscription
+    ? data.licenses.find((row) => row.subscription_id === currentSubscription.id && ["active", "expired"].includes(row.status))
+      ?? data.licenses.find((row) => row.subscription_id === currentSubscription.id)
+      ?? null
+    : null;
   const activeDevices = data.devices.filter((row) => row.status === "active").length;
+  const currentLicenseDevices = currentLicense
+    ? data.devices.filter((row) => row.license_id === currentLicense.id)
+    : [];
+  const currentActiveDevices = currentLicenseDevices.filter((row) => row.status === "active").length;
+  const renewalBaseEligible = Boolean(
+    currentSubscription &&
+    currentLicense &&
+    data.customer.status === "active" &&
+    ["active", "expired"].includes(currentSubscription.status) &&
+    ["active", "expired"].includes(currentLicense.status) &&
+    currentLicense.highest_issued_revision >= 1,
+  );
+  const renewalUnavailableReason = !renewalBaseEligible
+    ? "notEligible" as const
+    : currentActiveDevices === 1
+      ? "none" as const
+      : currentLicenseDevices.length > 0
+        ? "replacement" as const
+        : "noDevice" as const;
   const canProvision = !data.subscriptions.some((row) => ["draft", "active", "suspended"].includes(row.status));
   const empty = (title: string) => <EmptyState title={title} description={messages.noRelatedRecords} />;
 
@@ -119,6 +145,16 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
       <div id="subscription">
         <PageSection title={messages.subscription}>
           {currentSubscription ? <SubscriptionSummary subscription={currentSubscription} locale={locale} referenceNow={data.referenceNow} /> : null}
+          {canManage && currentSubscription && currentLicense ? (
+            <RenewSubscription
+              locale={locale}
+              subscription={currentSubscription}
+              licenseId={currentLicense.id}
+              plans={data.enabledPlans}
+              referenceNow={data.referenceNow}
+              unavailableReason={renewalUnavailableReason}
+            />
+          ) : null}
           {canManage && data.enabledPlans.length > 0 ? (
             <div className="mb-5">
               <AddSubscriptionForm locale={locale} customerId={data.customer.id} plans={data.enabledPlans} canProvision={canProvision} />

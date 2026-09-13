@@ -113,7 +113,7 @@ export async function getCustomerDetail(customerId: string) {
       .limit(20),
     supabase
       .from("plans")
-      .select("id,name,is_lifetime,duration_value,duration_unit")
+      .select("id,name,is_lifetime,duration_value,duration_unit,price,currency")
       .eq("is_enabled", true)
       .order("name", { ascending: true }),
   ]);

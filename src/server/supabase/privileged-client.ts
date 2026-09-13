@@ -1,6 +1,6 @@
 import "server-only";
 import { createClient } from "@supabase/supabase-js";
-import { getRequiredStagingSupabaseUrl } from "@/server/env";
+import { getRequiredSupabaseUrl } from "@/server/env";
 import type { Database } from "@/types/database";
 
 /**
@@ -10,7 +10,7 @@ import type { Database } from "@/types/database";
  * cookie storage is configured, so the secret cannot enter browser state.
  */
 export function getPrivilegedLicensingClient() {
-  const supabaseUrl = getRequiredStagingSupabaseUrl();
+  const supabaseUrl = getRequiredSupabaseUrl();
   const secretKey = process.env.SUPABASE_SECRET_KEY;
 
   if (!secretKey) {

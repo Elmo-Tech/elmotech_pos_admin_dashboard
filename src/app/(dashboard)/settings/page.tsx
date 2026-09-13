@@ -7,7 +7,7 @@ import { getLocale } from "@/server/i18n/get-locale";
 export default async function SettingsPage() {
   const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
 
   return (
     <div className="flex flex-col gap-6">

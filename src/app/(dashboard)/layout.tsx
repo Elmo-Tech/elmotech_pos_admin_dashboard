@@ -11,7 +11,7 @@ import { getMessages } from "@/i18n/messages";
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
   const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const access = await requireAdminAccess();
 
   if (!access.authorized) {

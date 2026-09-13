@@ -10,12 +10,14 @@ import { PAGE_SIZE, parsePage, readParam, shortId } from "@/features/shared/serv
 import { getMessages } from "@/i18n/messages";
 import { formatDate, formatDateTime, localizeTerm } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 type Row = Awaited<ReturnType<typeof getIssuances>>["rows"][number];
 
 export default async function IssuancesPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const reason = readParam(params.reason);
@@ -44,4 +46,3 @@ export default async function IssuancesPage({ searchParams }: { searchParams: Pr
     </div>
   );
 }
-

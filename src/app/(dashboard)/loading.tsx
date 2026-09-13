@@ -1,8 +1,9 @@
 import { getMessages } from "@/i18n/messages";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 export default async function DashboardLoading() {
-  const messages = getMessages(await getLocale());
+  const messages = getMessages(await getLocale(), getServerEnvironment());
   return (
     <div className="flex animate-pulse flex-col gap-8" aria-label={messages.overviewDescription}>
       <div>

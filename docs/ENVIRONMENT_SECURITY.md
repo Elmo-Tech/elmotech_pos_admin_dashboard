@@ -7,14 +7,18 @@ validates it against the project ref in `NEXT_PUBLIC_SUPABASE_URL` and throws on
 unknown or mismatched projects. The shell receives that validated value and
 keeps the environment badge visible.
 
-This implementation batch enables privileged licensing reads for Staging only:
+Privileged licensing reads are enabled for exactly one validated project at a
+time:
 
-- project: `elmotech-pos-licensing-staging`
-- ref: `sweezvyqlmerlcxjkair`
-- URL: `https://sweezvyqlmerlcxjkair.supabase.co`
+| `APP_ENV` | Required `NODE_ENV` | Required project ref |
+|---|---|---|
+| `staging` | development or production | `sweezvyqlmerlcxjkair` |
+| `production` | production | `lhfvlczfqltvwydfaeod` |
 
-`getRequiredStagingSupabaseUrl()` refuses to create the privileged data path for
-any other declared environment or project ref.
+`getRequiredSupabaseUrl()` refuses to create the privileged data path when the
+URL is missing or its project ref does not exactly match `APP_ENV`. Production
+cannot fall back to Staging, Staging cannot fall back to Production, and
+`APP_ENV=production` is rejected unless `NODE_ENV=production`.
 
 ## Local configuration
 
@@ -31,13 +35,18 @@ The publishable key is used by browser and cookie-based Auth clients. The server
 secret has no `NEXT_PUBLIC_` prefix and is read only by
 `src/server/supabase/privileged-client.ts`.
 
+Production deployment configuration uses the same variable names with
+`APP_ENV=production`, the Production URL, and separately managed Production
+publishable/server credentials. Production runs only through `npm run build`
+followed by `npm run start`; local `npm run dev` remains Staging-only.
+
 ## Licensing data boundary
 
 ```text
 Browser session
   -> verified JWT claims on the Next.js server
     -> licensing.admin_users authorization
-      -> server-only privileged Staging client
+      -> server-only privileged client for the validated environment
         -> licensing schema reads
 ```
 

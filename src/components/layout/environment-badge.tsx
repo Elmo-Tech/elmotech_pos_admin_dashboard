@@ -16,7 +16,7 @@ interface EnvironmentBadgeProps {
  */
 export function EnvironmentBadge({ environment, locale = "en" }: EnvironmentBadgeProps) {
   const isProduction = environment === "production";
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
 
   return (
     <span

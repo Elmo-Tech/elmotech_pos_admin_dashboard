@@ -37,13 +37,13 @@ type CountResult = {
 
 function requireCount(result: CountResult): number {
   if (result.error || result.count === null) {
-    throw new Error("A Staging overview count could not be loaded.");
+    throw new Error("An overview count could not be loaded from the configured environment.");
   }
   return result.count;
 }
 
 /**
- * Loads live Staging overview data. Authorization is enforced here as well as
+ * Loads live overview data from the validated environment. Authorization is enforced here as well as
  * in the dashboard layout so this function remains safe if reused elsewhere.
  */
 export const getOverviewData = cache(async function getOverviewData(): Promise<OverviewData> {
@@ -101,7 +101,7 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
   ]);
 
   if (recentCustomersResult.error || requestsResult.error) {
-    throw new Error("Recent Staging activity could not be loaded.");
+    throw new Error("Recent activity could not be loaded from the configured environment.");
   }
 
   const requestRows = requestsResult.data ?? [];

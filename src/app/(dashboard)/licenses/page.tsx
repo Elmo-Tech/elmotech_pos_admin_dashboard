@@ -11,12 +11,14 @@ import { PAGE_SIZE, parsePage, readParam } from "@/features/shared/server/query-
 import { getMessages } from "@/i18n/messages";
 import { formatDate, formatNumber, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 type Row = Awaited<ReturnType<typeof getLicenses>>["rows"][number];
 
 export default async function LicensesPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const search = readParam(params.search);

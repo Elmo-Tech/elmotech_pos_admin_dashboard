@@ -11,12 +11,14 @@ import { PAGE_SIZE, parsePage, readParam, shortId } from "@/features/shared/serv
 import { getMessages } from "@/i18n/messages";
 import { formatDateTime, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 type Row = Awaited<ReturnType<typeof getDevices>>["rows"][number];
 
 export default async function DevicesPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const status = readParam(params.status);
@@ -43,4 +45,3 @@ export default async function DevicesPage({ searchParams }: { searchParams: Prom
     </div>
   );
 }
-

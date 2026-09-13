@@ -1,3 +1,5 @@
+import type { AppEnvironment } from "@/types/environment";
+
 export const SUPPORTED_LOCALES = ["ar", "en"] as const;
 
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
@@ -135,7 +137,7 @@ const en = {
   noRequestsFound: "No activation requests found",
   noRequestsFoundDescription: "No Staging requests match the current queue filter.",
   subscriptionsTitle: "Subscriptions",
-  subscriptionsDescription: "Customer subscription periods and expiry. Renewal will be added in a later workflow.",
+  subscriptionsDescription: "Customer subscription periods, expiry, and simple same-device renewal.",
   subscriptionStatus: "Subscription status",
   all: "All",
   allPlans: "All plans",
@@ -231,7 +233,7 @@ export type MessageKey = keyof typeof en;
 const ar: Record<MessageKey, string> = {
   appName: "إدارة تراخيص Elmo POS",
   staging: "بيئة الاختبار",
-  production: "الإنتاج",
+  production: "بيئة الإنتاج",
   productionWarning: "أنت تعمل الآن على بيانات الإنتاج",
   signedInAdmin: "مسؤول مسجّل الدخول",
   signOut: "تسجيل الخروج",
@@ -358,7 +360,7 @@ const ar: Record<MessageKey, string> = {
   noRequestsFound: "لم يتم العثور على طلبات تفعيل",
   noRequestsFoundDescription: "لا توجد طلبات في بيئة الاختبار تطابق عامل التصفية الحالي.",
   subscriptionsTitle: "الاشتراكات",
-  subscriptionsDescription: "مدد اشتراكات العملاء وتواريخ انتهائها. ستتم إضافة التجديد في مسار عمل لاحق.",
+  subscriptionsDescription: "مدد اشتراكات العملاء وتواريخ انتهائها والتجديد المبسط على الجهاز نفسه.",
   subscriptionStatus: "حالة الاشتراك",
   all: "الكل",
   allPlans: "كل الخطط",
@@ -451,12 +453,29 @@ const ar: Record<MessageKey, string> = {
 
 const dictionaries: Record<Locale, Record<MessageKey, string>> = { ar, en };
 
+const productionDictionaries: Record<Locale, Record<MessageKey, string>> = {
+  en: Object.fromEntries(
+    Object.entries(en).map(([key, value]) => [key, value.replaceAll("Staging", "Production")]),
+  ) as Record<MessageKey, string>,
+  ar: Object.fromEntries(
+    Object.entries(ar).map(([key, value]) => [
+      key,
+      value.replaceAll("بيئة الاختبار", "بيئة الإنتاج"),
+    ]),
+  ) as Record<MessageKey, string>,
+};
+
 export function isLocale(value: unknown): value is Locale {
   return value === "ar" || value === "en";
 }
 
-export function getMessages(locale: Locale): Record<MessageKey, string> {
-  return dictionaries[locale];
+export function getMessages(
+  locale: Locale,
+  environment: AppEnvironment = "staging",
+): Record<MessageKey, string> {
+  return environment === "production"
+    ? productionDictionaries[locale]
+    : dictionaries[locale];
 }
 
 export function directionFor(locale: Locale): "rtl" | "ltr" {

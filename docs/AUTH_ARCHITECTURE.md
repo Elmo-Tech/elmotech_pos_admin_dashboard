@@ -20,7 +20,7 @@ it:
 
 1. verifies identity through `getCurrentUser()`;
 2. extracts the verified `sub` claim;
-3. uses the server-only privileged Staging client;
+3. uses the server-only privileged client for the validated environment;
 4. selects `role,status` from `licensing.admin_users` where `user_id = sub`;
 5. authorizes only an `active` row whose role is `owner`, `admin`, `support`, or
    `viewer`.

@@ -11,12 +11,14 @@ import { getSubscriptions } from "@/features/subscriptions/server/queries";
 import { getMessages } from "@/i18n/messages";
 import { formatDate, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 type Row = Awaited<ReturnType<typeof getSubscriptions>>["rows"][number];
 
 export default async function SubscriptionsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const status = readParam(params.status);

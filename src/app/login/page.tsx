@@ -11,7 +11,7 @@ import { getMessages } from "@/i18n/messages";
 export default async function LoginPage(props: PageProps<"/login">) {
   const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
 
   const searchParams = await props.searchParams;
   const rawNext = searchParams.next;

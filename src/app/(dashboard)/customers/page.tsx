@@ -13,14 +13,16 @@ import { PAGE_SIZE, parsePage, readParam } from "@/features/shared/server/query-
 import { getMessages } from "@/i18n/messages";
 import { formatDate, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 import { requireAdminAccess } from "@/server/auth/require-admin-access";
 import { canManageCommercialRecords } from "@/types/rbac";
 
 type Row = Awaited<ReturnType<typeof getCustomers>>["rows"][number];
 
 export default async function CustomersPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const search = readParam(params.search);

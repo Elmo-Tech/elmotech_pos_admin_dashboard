@@ -10,10 +10,12 @@ import { shortId } from "@/features/shared/server/query-helpers";
 import { getMessages } from "@/i18n/messages";
 import { formatDate, formatDateTime, formatNumber, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 export default async function OverviewPage() {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   let data;
   try {
     data = await getOverviewData();

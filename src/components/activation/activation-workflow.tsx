@@ -5,6 +5,7 @@ import { DetailGrid } from "@/components/ui/detail-grid";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { getMessages, type Locale } from "@/i18n/messages";
 import { localizeTerm, statusTone } from "@/lib/format";
+import type { AppEnvironment } from "@/types/environment";
 
 interface VerifiedContext {
   request: {
@@ -18,8 +19,14 @@ interface VerifiedContext {
   device: { id: string; status: string; activation_type: string; activated_at: string | null } | null;
 }
 
-export function ActivationWorkflow({ locale }: { locale: Locale }) {
-  const messages = getMessages(locale);
+export function ActivationWorkflow({
+  locale,
+  environment,
+}: {
+  locale: Locale;
+  environment: AppEnvironment;
+}) {
+  const messages = getMessages(locale, environment);
   const fileInput = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
   const [context, setContext] = useState<VerifiedContext | null>(null);

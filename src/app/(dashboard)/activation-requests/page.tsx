@@ -14,12 +14,14 @@ import { PAGE_SIZE, parsePage, readParam, shortId } from "@/features/shared/serv
 import { getMessages } from "@/i18n/messages";
 import { formatDateTime, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 
 type Row = Awaited<ReturnType<typeof getActivationRequests>>["rows"][number];
 
 export default async function ActivationRequestsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const status = readParam(params.status);
@@ -27,7 +29,7 @@ export default async function ActivationRequestsPage({ searchParams }: { searchP
   try {
     data = await getActivationRequests({ page, status });
   } catch {
-    return <div className="flex flex-col gap-6"><PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} /><ActivationWorkflow locale={locale} /><ModuleErrorState title={messages.requestsLoadError} locale={locale} /></div>;
+    return <div className="flex flex-col gap-6"><PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} /><ActivationWorkflow locale={locale} environment={environment} /><ModuleErrorState title={messages.requestsLoadError} locale={locale} /></div>;
   }
 
   const columns: DataTableColumn<Row>[] = [
@@ -43,7 +45,7 @@ export default async function ActivationRequestsPage({ searchParams }: { searchP
     <div className="flex flex-col gap-7">
       <PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} />
       <ActivationGuide locale={locale} />
-      <ActivationWorkflow locale={locale} />
+      <ActivationWorkflow locale={locale} environment={environment} />
       <PageSection title={messages.requestQueue}>
         <ListFilterForm action="/activation-requests" locale={locale}>
           <SelectField name="status" label={messages.requestStatus} defaultValue={status} options={[

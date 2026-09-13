@@ -10,6 +10,7 @@ import { PAGE_SIZE, parsePage, readParam, shortId } from "@/features/shared/serv
 import { getMessages, type Locale } from "@/i18n/messages";
 import { formatDateTime, localizeTerm } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 import type { Json } from "@/types/database";
 
 type Row = Awaited<ReturnType<typeof getAuditLogs>>["rows"][number];
@@ -24,8 +25,9 @@ function metadataSummary(metadata: Json, locale: Locale): string {
 }
 
 export default async function AuditLogsPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const params = await searchParams;
   const page = parsePage(params.page);
   const action = readParam(params.action);
@@ -50,4 +52,3 @@ export default async function AuditLogsPage({ searchParams }: { searchParams: Pr
     </div>
   );
 }
-

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { directionFor } from "@/i18n/messages";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
+  // Validate the runtime/environment/project relationship for every route,
+  // including public routes, before any Supabase client can be created.
+  getServerEnvironment();
   const locale = await getLocale();
 
   return (

@@ -14,6 +14,7 @@ import { shortId } from "@/features/shared/server/query-helpers";
 import { getMessages } from "@/i18n/messages";
 import { formatDate, formatDateTime, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
+import { getServerEnvironment } from "@/server/env";
 import { requireAdminAccess } from "@/server/auth/require-admin-access";
 import { canManageCommercialRecords } from "@/types/rbac";
 
@@ -24,8 +25,9 @@ type Issuance = Detail["issuances"][number];
 type Audit = Detail["audit"][number];
 
 export default async function LicenseDetailPage({ params }: { params: Promise<{ licenseId: string }> }) {
+  const environment = getServerEnvironment();
   const locale = await getLocale();
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const { licenseId } = await params;
   const access = await requireAdminAccess();
   const canManage = access.authorized && canManageCommercialRecords(access.context.role);

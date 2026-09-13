@@ -145,6 +145,7 @@ export interface Database {
         license_document_sha256: string;
         license_document: string;
         reason: string;
+        renewal_operation_id: string | null;
         created_by: string | null;
         created_at: string;
       }>;

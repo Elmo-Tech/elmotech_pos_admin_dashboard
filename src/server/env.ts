@@ -29,8 +29,6 @@ const KNOWN_PROJECTS: readonly KnownProject[] = [
   { environment: "production", ref: "lhfvlczfqltvwydfaeod" },
 ];
 
-const STAGING_PROJECT_REF = "sweezvyqlmerlcxjkair";
-
 function extractProjectRef(supabaseUrl: string): string | null {
   const match = /^https:\/\/([a-z0-9]+)\.supabase\.co\/?$/i.exec(supabaseUrl.trim());
   return match ? match[1].toLowerCase() : null;
@@ -97,23 +95,25 @@ export function getServerEnvironment(): AppEnvironment {
 }
 
 /**
- * Returns the validated Staging URL for privileged data access. The
- * privileged client is intentionally Staging-only in this delivery batch,
- * even though the shared shell retains its existing environment model.
+ * Returns the required Supabase URL only after the declared application
+ * environment, Node runtime mode, and exact project ref have been validated.
+ * The privileged client uses this instead of interpreting public config on
+ * its own, keeping one fail-closed environment boundary for both projects.
  */
-export function getRequiredStagingSupabaseUrl(): string {
+export function getRequiredSupabaseUrl(): string {
   const environment = getServerEnvironment();
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  const expectedProject = KNOWN_PROJECTS.find(
+    (project) => project.environment === environment,
+  );
 
-  if (environment !== "staging") {
+  if (
+    !supabaseUrl ||
+    !expectedProject ||
+    extractProjectRef(supabaseUrl) !== expectedProject.ref
+  ) {
     throw new EnvironmentConfigurationError(
-      "Privileged licensing access is enabled for Staging only.",
-    );
-  }
-
-  if (!supabaseUrl || extractProjectRef(supabaseUrl) !== STAGING_PROJECT_REF) {
-    throw new EnvironmentConfigurationError(
-      "A valid Staging NEXT_PUBLIC_SUPABASE_URL is required for privileged licensing access.",
+      `A valid ${environment} NEXT_PUBLIC_SUPABASE_URL is required for privileged licensing access.`,
     );
   }
 

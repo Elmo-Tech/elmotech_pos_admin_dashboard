@@ -54,7 +54,7 @@ src/
                             fail-closed environment/project-ref validation
     supabase/
       server.ts              server Supabase client (cookie-based session)
-      privileged-client.ts   server-only, Staging-only licensing client
+      privileged-client.ts   server-only client for the validated environment
     auth/
       current-user.ts        getCurrentUser() — identity lookup
       require-user.ts        requireUser() — the dashboard's auth gate
@@ -125,7 +125,7 @@ The browser must never receive:
 Only publishable/browser-safe configuration may be prefixed
 `NEXT_PUBLIC_*`. The privileged licensing client in
 `src/server/supabase/privileged-client.ts` reads `SUPABASE_SECRET_KEY` only on
-the server, is stateless, and targets the validated Staging project only. It
+the server, is stateless, and targets only the project validated for `APP_ENV`. It
 must continue to:
 
 - live under `src/server/`, guarded by the `server-only` package
@@ -176,8 +176,10 @@ npx tsc --noEmit
 ```
 
 The app builds and lints without real Supabase credentials. Runtime Auth needs
-the Staging publishable key, and authorized licensing reads additionally need
-the Staging server secret (see `docs/ENVIRONMENT_SECURITY.md`).
+the selected environment's publishable key, and authorized licensing reads
+additionally need that same environment's server secret (see
+`docs/ENVIRONMENT_SECURITY.md`). Production must use `NODE_ENV=production` and
+`APP_ENV=production`, built with `npm run build` and run with `npm run start`.
 
 ## Currently supported licensing capabilities
 
@@ -188,24 +190,29 @@ Reflects what the backend (already live) supports today:
 - Initial (revision-1) License Issuances
 - Audit Logs
 - Offline initial activation
+- `.elmoreq` upload/verification and initial `.elmolic` issuance/download
 - Plan creation/editing, customer creation, and subscription assignment
 - Atomic initial draft-license provisioning with one-time License Code display
 - Safe generation of a new License Code for a strictly unused license
+- Simple same-device subscription renewal with signed revision-2+ `.elmolic`
+  download
 - Arabic/RTL default with English/LTR support
 
 ## Explicitly not supported yet
 
 Do not build UI that implies these exist — they belong to later licensing
-work (LC-8C and beyond):
+work beyond the accepted simple V1 scope:
 
-- Renewal / revision 2+ issuance
 - Device replacement workflow
 - Revocation workflow
+- Suspension workflow
+- Advanced or multi-device renewal workflow
 - Full key rotation workflow
+- Broader LC-10/LC-11 workflow and hardening coverage
 
 ## Current phase
 
-All core modules are connected to live Staging data: Overview,
+All core modules are connected to live data from the validated environment: Overview,
 Customers and Customer 360, Subscriptions, Licenses and License 360, Devices,
 Activation Requests, Issuances, Audit Logs, and Plans. The primary navigation is
 limited to Overview, Customers, Activation Requests, Subscriptions, Plans, and
@@ -222,13 +229,20 @@ strictly unused. This does not implement device replacement.
 
 The initial offline activation workflow is implemented through authorized
 Next.js route handlers. The server validates and forwards the exact `.elmoreq`
-bytes to the Staging `verify-activation-request` function, then invokes
+bytes to the validated environment's `verify-activation-request` function, then invokes
 `issue-initial-license` with the verified request ID and returns the exact
 `.elmolic` response for download. A real Staging onboarding and activation E2E
 passed through Dashboard verification/issuance and successful POS import.
 Viewer accounts cannot run these operations.
 
+Simple same-device subscription renewal is implemented for authorized
+Owner/Admin operators. A real Staging acceptance renewed an existing finite
+subscription to 5 September 2028, downloaded the signed renewal `.elmolic`,
+advanced revision 1 -> 2, imported it into the Staging Windows POS, and verified
+that both licensed state and updated validity persisted after restart.
+
 Production was not migrated or modified for this Dashboard batch, and
-Production Dashboard acceptance has not been performed. Renewal/revision 2+,
-device replacement, revocation operations, full signing-key rotation, and
-admin-user management remain later work.
+Production Dashboard acceptance has not been performed. Device replacement,
+revocation, suspension, advanced/multi-device renewal, full signing-key
+rotation, admin-user management, and broader LC-10/LC-11 work remain deferred;
+they do not block the chosen simple V1 scope.

@@ -20,7 +20,7 @@ export function Header({ environment, userEmail, userRole, locale, onMenuClick }
   const pathname = usePathname();
   const router = useRouter();
   const [switching, setSwitching] = useState(false);
-  const messages = getMessages(locale);
+  const messages = getMessages(locale, environment);
   const activeItem = MAIN_NAV_ITEMS.find(
     (item) => pathname === item.href || pathname.startsWith(`${item.href}/`),
   );

@@ -33,5 +33,5 @@ export function shortId(value: string): string {
 }
 
 export function requireQuery(error: { message: string } | null, label: string): void {
-  if (error) throw new Error(`${label} could not be loaded from Staging.`);
+  if (error) throw new Error(`${label} could not be loaded from the configured environment.`);
 }
