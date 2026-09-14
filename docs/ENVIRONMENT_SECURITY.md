@@ -40,6 +40,13 @@ Production deployment configuration uses the same variable names with
 publishable/server credentials. Production runs only through `npm run build`
 followed by `npm run start`; local `npm run dev` remains Staging-only.
 
+Final Production acceptance used this configuration in a local production-mode
+Next.js process and resolved project ref `lhfvlczfqltvwydfaeod`. The active
+Owner authorization, server-only licensing read path, and authenticated Edge
+Function connectivity passed. This verifies supported Production operation but
+does not claim public/cloud hosting or a deployed Production domain; permanent
+hosting and domain deployment remain a separate operational follow-up.
+
 ## Licensing data boundary
 
 ```text

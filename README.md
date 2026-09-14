@@ -181,13 +181,31 @@ additionally need that same environment's server secret (see
 `docs/ENVIRONMENT_SECURITY.md`). Production must use `NODE_ENV=production` and
 `APP_ENV=production`, built with `npm run build` and run with `npm run start`.
 
+## Production acceptance
+
+Final Production acceptance passed on 14 September 2026 against
+`elmotech-pos-licensing-prod` (`lhfvlczfqltvwydfaeod`). The accepted Dashboard
+was built and started locally as a production-mode Next.js process with
+`NODE_ENV=production` and `APP_ENV=production`; this acceptance does not claim
+public/cloud hosting or a deployed Production domain.
+
+Human browser acceptance passed for the Production warning banner and
+environment badge, the active Owner identity and role, Overview, Customers,
+Activation, Subscriptions, Plans, and Settings. The server-authorized
+Production read path displayed the existing commissioning data correctly, and
+authenticated connectivity to the accepted licensing Edge Functions passed.
+No business mutation or renewal issuance was created during final acceptance.
+Permanent hosting and domain deployment remain a separate operational
+follow-up, not a Licensing V1 blocker.
+
 ## Currently supported licensing capabilities
 
 Reflects what the backend (already live) supports today:
 
 - Customers, Plans, Subscriptions, Licenses
 - Activation Requests, Device Activations
-- Initial (revision-1) License Issuances
+- Initial (revision-1) and simple same-device renewal (revision-2+) License
+  Issuances
 - Audit Logs
 - Offline initial activation
 - `.elmoreq` upload/verification and initial `.elmolic` issuance/download
@@ -219,30 +237,35 @@ limited to Overview, Customers, Activation Requests, Subscriptions, Plans, and
 Settings. Lists use server-side filters and pagination with batched relationship
 lookups.
 
-Commercial onboarding is implemented and accepted on Staging: authorized
-Owner/Admin operators can create/edit plans, create customers, assign a plan,
-and atomically provision the subscription plus initial draft license. The
-plaintext License Code is generated server-side, displayed once through
-transient action state, and copied on demand; only its SHA-256 hash is sent to
-and stored by PostgreSQL. A lost code can be replaced only while the license is
-strictly unused. This does not implement device replacement.
+Commercial onboarding was first accepted on Staging and is now accepted for the
+chosen Production V1 scope. Authorized Owner/Admin operators can create/edit
+plans, create customers, assign a plan, and atomically provision the
+subscription plus initial draft license. The plaintext License Code is
+generated server-side, displayed once through transient action state, and
+copied on demand; only its SHA-256 hash is sent to and stored by PostgreSQL. A
+lost code can be replaced only while the license is strictly unused. This does
+not implement device replacement.
 
 The initial offline activation workflow is implemented through authorized
 Next.js route handlers. The server validates and forwards the exact `.elmoreq`
 bytes to the validated environment's `verify-activation-request` function, then invokes
 `issue-initial-license` with the verified request ID and returns the exact
-`.elmolic` response for download. A real Staging onboarding and activation E2E
-passed through Dashboard verification/issuance and successful POS import.
-Viewer accounts cannot run these operations.
+`.elmolic` response for download. The complete workflow passed a real Staging
+onboarding and activation E2E before Production promotion; the Production
+Dashboard path and authenticated Edge Function connectivity subsequently
+passed final acceptance. Viewer accounts cannot run these operations.
 
 Simple same-device subscription renewal is implemented for authorized
 Owner/Admin operators. A real Staging acceptance renewed an existing finite
 subscription to 5 September 2028, downloaded the signed renewal `.elmolic`,
 advanced revision 1 -> 2, imported it into the Staging Windows POS, and verified
-that both licensed state and updated validity persisted after restart.
+that both licensed state and updated validity persisted after restart. The
+accepted renewal migration and Edge Function are now in Production; the final
+authenticated negative probe passed without creating a renewal issuance.
 
-Production was not migrated or modified for this Dashboard batch, and
-Production Dashboard acceptance has not been performed. Device replacement,
-revocation, suspension, advanced/multi-device renewal, full signing-key
-rotation, admin-user management, and broader LC-10/LC-11 work remain deferred;
-they do not block the chosen simple V1 scope.
+Production environment support, active Owner RBAC, the Dashboard read path, and
+authenticated Edge Function connectivity are accepted for the chosen V1 scope.
+Device replacement, revocation, suspension, advanced/multi-device renewal, the
+full key-rotation operational workflow, admin-user management, the broader
+LC-10 matrix, and consolidated LC-11 hardening remain deferred; they do not
+block the chosen simple V1 scope.
