@@ -70,6 +70,7 @@ const copy = {
     notEligible: "This license has already entered activation and its code can no longer be replaced.",
     customerDialogDescription: "Add the essential customer details now. Subscription and licensing can be configured from the customer profile afterwards.",
     planDialogDescription: "Define a reusable commercial plan without leaving the plans workspace.",
+    subscriptionDialogDescription: "Choose the plan and start date. A first license code will be created and shown once.",
   },
   ar: {
     createPlan: "إنشاء خطة",
@@ -127,6 +128,7 @@ const copy = {
     notEligible: "بدأ استخدام هذا الترخيص للتفعيل، لذلك لا يمكن استبدال الكود.",
     customerDialogDescription: "أضف بيانات العميل الأساسية الآن، ثم أدر الاشتراك والترخيص من ملف العميل بعد الإنشاء.",
     planDialogDescription: "أنشئ خطة تجارية قابلة لإعادة الاستخدام دون مغادرة شاشة الخطط.",
+    subscriptionDialogDescription: "اختر الخطة وتاريخ البداية. سيتم إنشاء كود الترخيص الأول وعرضه مرة واحدة.",
   },
 } as const;
 
@@ -283,11 +285,13 @@ export function AddSubscriptionForm({
   customerId,
   plans,
   canProvision,
+  embedded = false,
 }: {
   locale: Locale;
   customerId: string;
   plans: readonly { id: string; name: string; is_lifetime: boolean; duration_value: number | null; duration_unit: string | null }[];
   canProvision: boolean;
+  embedded?: boolean;
 }) {
   const t = copy[locale];
   const [state, action] = useActionState(provisionSubscriptionAction, INITIAL_COMMERCIAL_ACTION_STATE);
@@ -302,8 +306,8 @@ export function AddSubscriptionForm({
 
   return (
     <div className="flex flex-col gap-4">
-      <h3 className="text-base font-semibold text-[var(--text)]">{t.addSubscription}</h3>
-      <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2">
+      {!embedded ? <h3 className="text-base font-semibold text-[var(--text)]">{t.addSubscription}</h3> : null}
+      <form action={action} className={`${embedded ? "grid" : "surface-card grid p-5"} gap-5 sm:grid-cols-2`}>
         <input type="hidden" name="customerId" value={customerId} />
         <label className={labelClass}>
           {t.choosePlan}
@@ -324,6 +328,31 @@ export function AddSubscriptionForm({
       </form>
 
     </div>
+  );
+}
+
+export function AddSubscriptionDialog({
+  locale,
+  customerId,
+  plans,
+  canProvision,
+}: {
+  locale: Locale;
+  customerId: string;
+  plans: readonly { id: string; name: string; is_lifetime: boolean; duration_value: number | null; duration_unit: string | null }[];
+  canProvision: boolean;
+}) {
+  if (!canProvision) return null;
+  const t = copy[locale];
+  return (
+    <ActionDialog
+      triggerLabel={t.addSubscription}
+      title={t.addSubscription}
+      description={t.subscriptionDialogDescription}
+      size="lg"
+    >
+      <AddSubscriptionForm locale={locale} customerId={customerId} plans={plans} canProvision embedded />
+    </ActionDialog>
   );
 }
 
