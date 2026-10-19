@@ -7,6 +7,7 @@ import { LoginForm } from "@/components/auth/login-form";
 import { AuthNotConfigured } from "@/components/auth/auth-not-configured";
 import { getLocale } from "@/server/i18n/get-locale";
 import { getMessages } from "@/i18n/messages";
+import { BadgeCheck, ShieldCheck } from "lucide-react";
 
 export default async function LoginPage(props: PageProps<"/login">) {
   const environment = getServerEnvironment();
@@ -30,26 +31,39 @@ export default async function LoginPage(props: PageProps<"/login">) {
   }
 
   return (
-    <div className="flex min-h-full flex-1 items-center justify-center px-4 py-16">
-      <div className="w-full max-w-sm">
-        <div className="mb-6 flex flex-col items-center gap-3 text-center">
-          <span className="text-sm font-semibold tracking-tight text-slate-900">
-            {messages.appName}
-          </span>
-          <EnvironmentBadge environment={environment} locale={locale} />
+    <main className="grid min-h-dvh flex-1 lg:grid-cols-[minmax(320px,0.8fr)_1.2fr]">
+      <section className="hidden flex-col justify-between bg-[var(--side-bg)] p-12 text-white lg:flex">
+        <div className="flex items-center gap-3">
+          <span className="flex size-11 items-center justify-center rounded-[10px] bg-[var(--primary)]"><BadgeCheck aria-hidden="true" size={24} /></span>
+          <div><p className="text-lg font-semibold">Elmo POS</p><p className="text-sm text-[var(--side-muted)]">{messages.licenseOperations}</p></div>
         </div>
+        <div className="max-w-md">
+          <ShieldCheck aria-hidden="true" size={40} className="text-orange-300" strokeWidth={1.5} />
+          <h2 className="mt-6 text-3xl font-semibold leading-tight">{messages.appName}</h2>
+          <p className="mt-3 text-sm leading-7 text-slate-400">{messages.loginDescription}</p>
+        </div>
+        <p className="text-xs text-[var(--side-muted)]">Elmotech · Secure licensing operations</p>
+      </section>
 
-        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-          <h1 className="text-lg font-semibold text-slate-900">{messages.adminSignIn}</h1>
-          <p className="mt-1 text-sm text-slate-500">
+      <section className="flex items-center justify-center px-4 py-12 sm:px-8">
+        <div className="w-full max-w-md">
+          <div className="mb-8 flex items-center justify-between lg:hidden">
+            <div className="flex items-center gap-3"><span className="flex size-10 items-center justify-center rounded-[10px] bg-[var(--primary)] text-white"><BadgeCheck aria-hidden="true" size={21} /></span><span className="font-semibold">Elmo POS</span></div>
+            <EnvironmentBadge environment={environment} locale={locale} />
+          </div>
+          <div className="mb-6 hidden justify-end lg:flex"><EnvironmentBadge environment={environment} locale={locale} /></div>
+          <div className="surface-card p-6 sm:p-8">
+          <h1 className="text-2xl font-bold text-[var(--text)]">{messages.adminSignIn}</h1>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
             {messages.loginDescription}
           </p>
 
           <div className="mt-6">
             {authConfigured ? <LoginForm next={next} locale={locale} /> : <AuthNotConfigured locale={locale} />}
           </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/messages";
+import { ChevronDown, Info } from "lucide-react";
 
 const guide = {
   ar: {
@@ -32,31 +33,31 @@ const guide = {
 export function ActivationGuide({ locale }: { locale: Locale }) {
   const content = guide[locale];
   return (
-    <details className="group rounded-xl border border-blue-200 bg-white shadow-sm">
+    <details className="group surface-card">
       <summary className="cursor-pointer list-none px-5 py-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <h2 className="text-lg font-bold text-slate-950">{content.title}</h2>
-            <p className="mt-1 text-sm text-slate-600">{content.summary}</p>
+            <h2 className="text-base font-semibold text-[var(--text)]">{content.title}</h2>
+            <p className="mt-1 text-sm text-[var(--text-muted)]">{content.summary}</p>
           </div>
-          <span aria-hidden="true" className="text-xl font-bold text-blue-700 group-open:rotate-45">+</span>
+          <ChevronDown aria-hidden="true" size={19} className="text-[var(--text-muted)] transition-transform group-open:rotate-180" />
         </div>
       </summary>
-      <div className="border-t border-blue-100 px-5 py-5 sm:px-6">
-        <p className="max-w-4xl rounded-lg bg-blue-50 px-4 py-3 text-sm font-medium leading-6 text-blue-950">{content.intro}</p>
+      <div className="border-t border-[var(--border)] px-5 py-5 sm:px-6">
+        <p className="flex max-w-4xl items-start gap-2 rounded-lg bg-[var(--info-soft)] px-4 py-3 text-sm font-medium leading-6 text-blue-950"><Info aria-hidden="true" size={17} className="mt-1 shrink-0 text-[var(--info)]" />{content.intro}</p>
         <div className="mt-5 grid gap-4 lg:grid-cols-2">
           {content.phases.map((phase) => (
-            <section key={phase.start} className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-              <h3 className="text-sm font-extrabold tracking-wide text-slate-900">{phase.title}</h3>
-              <ol start={phase.start} className="mt-3 list-decimal space-y-2 ps-5 text-sm leading-6 text-slate-700">
+            <section key={phase.start} className="rounded-[10px] border border-[var(--border)] bg-[var(--bg)] p-4">
+              <h3 className="text-sm font-semibold text-[var(--text)]">{phase.title}</h3>
+              <ol start={phase.start} className="mt-3 list-decimal space-y-2 ps-5 text-sm leading-6 text-[var(--text-muted)] marker:font-semibold marker:text-[var(--primary)]">
                 {phase.steps.map((step) => <li key={step}>{step}</li>)}
               </ol>
             </section>
           ))}
         </div>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          <p className="rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-700"><bdi className="font-mono font-bold text-slate-950">.elmoreq</bdi><span className="mx-2">—</span>{content.requestFile.replace(/^\.elmoreq\s*=\s*/, "")}</p>
-          <p className="rounded-lg border border-slate-200 px-4 py-3 text-sm text-slate-700"><bdi className="font-mono font-bold text-slate-950">.elmolic</bdi><span className="mx-2">—</span>{content.licenseFile.replace(/^\.elmolic\s*=\s*/, "")}</p>
+          <p className="rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-muted)]"><bdi className="font-mono font-bold text-[var(--text)]">.elmoreq</bdi><span className="mx-2">—</span>{content.requestFile.replace(/^\.elmoreq\s*=\s*/, "")}</p>
+          <p className="rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-muted)]"><bdi className="font-mono font-bold text-[var(--text)]">.elmolic</bdi><span className="mx-2">—</span>{content.licenseFile.replace(/^\.elmolic\s*=\s*/, "")}</p>
         </div>
       </div>
     </details>

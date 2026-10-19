@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { CheckCircle2, Download, FileUp, ShieldCheck } from "lucide-react";
 import { DetailGrid } from "@/components/ui/detail-grid";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { getMessages, type Locale } from "@/i18n/messages";
@@ -104,17 +105,22 @@ export function ActivationWorkflow({
   }
 
   return (
-    <section className="rounded-xl border border-blue-200 bg-blue-50/40 p-5 shadow-sm sm:p-6">
-      <div className="flex flex-col gap-1">
-        <h2 className="text-lg font-bold text-slate-900">{messages.uploadActivationRequest}</h2>
-        <p className="max-w-3xl text-sm leading-6 text-slate-600">{messages.uploadHelp}</p>
+    <section className="surface-card overflow-hidden">
+      <div className="border-b border-[var(--border)] px-5 py-5 sm:px-6">
+        <div className="flex items-start gap-3">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[var(--primary-soft)] text-[var(--on-primary-soft)]"><ShieldCheck aria-hidden="true" size={20} /></span>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-base font-semibold text-[var(--text)]">{messages.uploadActivationRequest}</h2>
+            <p className="max-w-3xl text-sm leading-6 text-[var(--text-muted)]">{messages.uploadHelp}</p>
+          </div>
+        </div>
       </div>
-
-      <div className="mt-5 rounded-xl border border-slate-200 bg-white p-4">
-        <h3 className="text-sm font-bold text-slate-900">{messages.uploadStep}</h3>
+      <div className="p-5 sm:p-6">
+        <h3 className="text-sm font-semibold text-[var(--text)]">{messages.uploadStep}</h3>
         <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <label className="flex min-w-0 flex-1 cursor-pointer items-center rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-600 hover:border-blue-400 hover:bg-blue-50">
-            <span className="shrink-0 font-semibold">{messages.chooseElmoreq}</span>
+          <label className="flex min-h-14 min-w-0 flex-1 cursor-pointer items-center rounded-[10px] border border-dashed border-slate-300 bg-[var(--bg)] px-4 py-3 text-sm text-[var(--text-muted)] hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]/30">
+            <FileUp aria-hidden="true" size={19} className="me-3 shrink-0 text-[var(--primary)]" />
+            <span className="shrink-0 font-semibold text-[var(--text)]">{messages.chooseElmoreq}</span>
             <input
               ref={fileInput}
               type="file"
@@ -128,25 +134,23 @@ export function ActivationWorkflow({
                 setError(null);
               }}
             />
-            {file ? <bdi className="ms-3 truncate text-xs text-slate-500">{file.name}</bdi> : null}
+            {file ? <bdi className="ms-3 truncate text-xs text-[var(--text-muted)]">{file.name}</bdi> : null}
           </label>
           <button
             type="button"
             onClick={verify}
             disabled={phase === "verifying" || phase === "issuing"}
-            className="rounded-lg bg-slate-900 px-4 py-3 text-sm font-bold text-white hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+            className="primary-button min-h-14 disabled:cursor-not-allowed disabled:opacity-60"
           >
             {phase === "verifying" ? messages.verifying : messages.verifyRequest}
           </button>
         </div>
-      </div>
-
-      {error ? <p role="alert" className="mt-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-700">{error}</p> : null}
+        {error ? <p role="alert" className="mt-4 rounded-lg border border-red-200 bg-[var(--danger-soft)] px-4 py-3 text-sm font-medium text-[var(--danger)]">{error}</p> : null}
 
       {context ? (
-        <div className="mt-5 rounded-xl border border-slate-200 bg-white p-4">
-          <h3 className="text-sm font-bold text-slate-900">{messages.verifiedContext}</h3>
-          <p className="mt-1 text-sm text-slate-500">{messages.verifiedDescription}</p>
+        <div className="mt-5 rounded-[10px] border border-[var(--border)] bg-white p-4">
+          <h3 className="flex items-center gap-2 text-sm font-semibold text-[var(--text)]"><CheckCircle2 aria-hidden="true" size={18} className="text-[var(--success)]" />{messages.verifiedContext}</h3>
+          <p className="mt-1 text-sm text-[var(--text-muted)]">{messages.verifiedDescription}</p>
           <div className="mt-4">
             <DetailGrid items={[
               { label: messages.customer, value: context.customer?.business_name ?? "—" },
@@ -171,7 +175,7 @@ export function ActivationWorkflow({
               type="button"
               onClick={issue}
               disabled={phase === "issuing"}
-              className="mt-4 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+              className="primary-button mt-4 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {phase === "issuing" ? messages.issuing : messages.issueLicenseFile}
             </button>
@@ -180,18 +184,19 @@ export function ActivationWorkflow({
       ) : null}
 
       {phase === "issued" && download ? (
-        <div className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-5">
-          <p className="font-bold text-emerald-800">{messages.issuanceSuccess}</p>
-          <p className="mt-1 text-sm leading-6 text-emerald-700">{messages.externalDeliveryNotice}</p>
+        <div className="mt-5 rounded-[10px] border border-green-200 bg-[var(--success-soft)] p-5">
+          <p className="font-semibold text-[var(--success)]">{messages.issuanceSuccess}</p>
+          <p className="mt-1 text-sm leading-6 text-green-800">{messages.externalDeliveryNotice}</p>
           <button
             type="button"
             onClick={() => triggerDownload(download)}
-            className="mt-4 rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-emerald-800"
+            className="primary-button mt-4"
           >
-            {messages.downloadLicenseFile}
+            <Download aria-hidden="true" size={16} />{messages.downloadLicenseFile}
           </button>
         </div>
       ) : null}
+      </div>
     </section>
   );
 }

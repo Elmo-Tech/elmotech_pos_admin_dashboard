@@ -41,7 +41,7 @@ export default async function PlansPage({ searchParams }: { searchParams: Promis
     { key: "duration", header: messages.duration, render: (row) => row.is_lifetime ? messages.lifetime : <span><bdi>{row.duration_value}</bdi> {localizeTerm(row.duration_unit ?? "", locale)}</span> },
     { key: "price", header: messages.price, render: (row) => formatMoney(row.price, row.currency, locale) },
     { key: "subscriptions", header: messages.subscriptionsCount, render: (row) => formatNumber(row.subscriptionCount, locale) },
-    ...(canManage ? [{ key: "edit", header: messages.action, render: (row: Row) => <details className="min-w-80"><summary className="cursor-pointer font-semibold text-blue-700">{locale === "ar" ? "تعديل الخطة" : "Edit plan"}</summary><div className="mt-3"><PlanForm locale={locale} plan={row} /></div></details> }] : []),
+    ...(canManage ? [{ key: "edit", header: messages.action, render: (row: Row) => <details className="min-w-80"><summary className="cursor-pointer font-semibold text-[var(--primary)]">{locale === "ar" ? "تعديل الخطة" : "Edit plan"}</summary><div className="mt-3"><PlanForm locale={locale} plan={row} /></div></details> }] : []),
   ];
 
   return (

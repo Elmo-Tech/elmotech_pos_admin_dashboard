@@ -70,22 +70,22 @@ export function SubscriptionSummary({ subscription, locale, referenceNow }: { su
     : Math.min(100, Math.max(0, ((now - start) / (expiry - start)) * 100));
 
   return (
-    <article className="mb-5 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-100 p-5">
+    <article className="surface-card mb-5 overflow-hidden">
+      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[var(--border)] p-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{locale === "ar" ? "الخطة الحالية" : "Current plan"}</p>
-          <h3 className="mt-1 text-xl font-bold text-slate-950">{subscription.plan?.name ?? subscription.plan_name_snapshot}</h3>
-          <p className="mt-1 text-sm text-slate-600">{formatMoney(subscription.price_snapshot, subscription.currency_snapshot, locale)}</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)] rtl:tracking-normal">{locale === "ar" ? "الخطة الحالية" : "Current plan"}</p>
+          <h3 className="mt-1 text-xl font-semibold text-[var(--text)]">{subscription.plan?.name ?? subscription.plan_name_snapshot}</h3>
+          <p className="mt-1 text-sm text-[var(--text-muted)]">{formatMoney(subscription.price_snapshot, subscription.currency_snapshot, locale)}</p>
         </div>
         <StatusBadge label={stateLabel} tone={stateTone} />
       </div>
       <div className="grid gap-4 p-5 sm:grid-cols-2 lg:grid-cols-4">
-        <div><p className="text-xs font-semibold text-slate-500">{locale === "ar" ? "المدة" : "Duration"}</p><p className="mt-1 font-semibold text-slate-900">{duration}</p></div>
-        <div><p className="text-xs font-semibold text-slate-500">{locale === "ar" ? "تاريخ البداية" : "Start date"}</p><p className="mt-1 font-semibold text-slate-900">{formatDate(subscription.starts_at, locale)}</p></div>
-        <div><p className="text-xs font-semibold text-slate-500">{locale === "ar" ? "تاريخ الانتهاء" : "Expiry date"}</p><p className="mt-1 font-semibold text-slate-900">{subscription.is_lifetime ? (locale === "ar" ? "لا يوجد تاريخ انتهاء" : "No expiry date") : formatDate(subscription.expires_at, locale)}</p></div>
+        <div><p className="text-xs font-medium text-[var(--text-muted)]">{locale === "ar" ? "المدة" : "Duration"}</p><p className="mt-1 font-semibold text-[var(--text)]">{duration}</p></div>
+        <div><p className="text-xs font-medium text-[var(--text-muted)]">{locale === "ar" ? "تاريخ البداية" : "Start date"}</p><p className="mt-1 font-semibold text-[var(--text)]">{formatDate(subscription.starts_at, locale)}</p></div>
+        <div><p className="text-xs font-medium text-[var(--text-muted)]">{locale === "ar" ? "تاريخ الانتهاء" : "Expiry date"}</p><p className="mt-1 font-semibold text-[var(--text)]">{subscription.is_lifetime ? (locale === "ar" ? "لا يوجد تاريخ انتهاء" : "No expiry date") : formatDate(subscription.expires_at, locale)}</p></div>
         <div><p className="text-xs font-semibold text-slate-500">{locale === "ar" ? "الوقت المتبقي" : "Remaining time"}</p><p className={`mt-1 font-bold ${expired ? "text-red-700" : expiringSoon ? "text-amber-700" : "text-emerald-700"}`}>{subscription.is_lifetime ? (locale === "ar" ? "لا يوجد تاريخ انتهاء" : "No expiry date") : remainingText(daysRemaining ?? 0, locale)}</p></div>
       </div>
-      {progress !== null ? <div className="h-2 bg-slate-100" aria-label={locale === "ar" ? "تقدم مدة الاشتراك" : "Subscription period progress"}><div className={`h-full ${expired ? "bg-red-500" : expiringSoon ? "bg-amber-500" : "bg-emerald-500"}`} style={{ width: `${progress}%` }} /></div> : null}
+      {progress !== null ? <div className="h-1.5 bg-[var(--muted)]" aria-label={locale === "ar" ? "تقدم مدة الاشتراك" : "Subscription period progress"}><div className={`h-full ${expired ? "bg-[var(--danger)]" : expiringSoon ? "bg-[var(--warning)]" : "bg-[var(--success)]"}`} style={{ width: `${progress}%` }} /></div> : null}
     </article>
   );
 }

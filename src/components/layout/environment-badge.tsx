@@ -23,13 +23,13 @@ export function EnvironmentBadge({ environment, locale = "en" }: EnvironmentBadg
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ring-1 ring-inset",
         isProduction
-          ? "bg-red-50 text-red-700 ring-red-600/20"
-          : "bg-amber-50 text-amber-700 ring-amber-600/20",
+          ? "bg-[var(--danger-soft)] text-[var(--danger)] ring-red-700/10"
+          : "bg-[var(--warning-soft)] text-[var(--warning)] ring-amber-700/10",
       )}
       title={isProduction ? messages.production : messages.staging}
     >
       <span
-        className={cn("h-1.5 w-1.5 rounded-full", isProduction ? "bg-red-500" : "bg-amber-500")}
+        className={cn("h-1.5 w-1.5 rounded-full", isProduction ? "bg-[var(--danger)]" : "bg-[var(--warning)]")}
       />
       {isProduction ? messages.production : messages.staging}
     </span>

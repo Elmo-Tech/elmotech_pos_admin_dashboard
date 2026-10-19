@@ -70,7 +70,7 @@ export default async function LicenseDetailPage({ params }: { params: Promise<{ 
   ];
   return (
     <div className="flex flex-col gap-7">
-      <PageHeader title={locale === "ar" ? `ترخيص — ${customerName}` : `License — ${customerName}`} description={messages.licenseDetails} actions={<Link href="/licenses" className="text-sm font-semibold text-blue-700 hover:underline">{messages.backToLicenses}</Link>} />
+      <PageHeader title={locale === "ar" ? `ترخيص — ${customerName}` : `License — ${customerName}`} description={messages.licenseDetails} actions={<Link href="/licenses" className="secondary-button">{messages.backToLicenses}</Link>} />
       <SectionNav ariaLabel={messages.pageSections} items={[
         { href: "#overview", label: messages.overviewTitle },
         { href: "#devices", label: messages.device },
@@ -79,7 +79,7 @@ export default async function LicenseDetailPage({ params }: { params: Promise<{ 
         { href: "#audit", label: messages.auditLogsTitle },
       ]} />
       <div id="overview"><DetailGrid items={[
-        { label: messages.customer, value: data.customer ? <Link href={`/customers/${data.customer.id}`} className="text-blue-700 hover:underline">{data.customer.business_name}</Link> : "—" },
+        { label: messages.customer, value: data.customer ? <Link href={`/customers/${data.customer.id}`} className="font-semibold text-[var(--primary)] hover:underline">{data.customer.business_name}</Link> : "—" },
         { label: messages.plan, value: data.plan?.name ?? data.subscription?.plan_name_snapshot ?? "—" },
         { label: messages.subscription, value: data.subscription ? localizeTerm(data.subscription.status, locale) : "—" },
         { label: messages.licenseStatus, value: <StatusBadge label={localizeTerm(data.license.status, locale)} tone={statusTone(data.license.status)} /> },
@@ -99,7 +99,7 @@ export default async function LicenseDetailPage({ params }: { params: Promise<{ 
       <div id="requests"><PageSection title={messages.activationRequestsTitle}><DataTable columns={requestColumns} rows={data.requests} getRowKey={(row) => row.request_id} emptyState={empty(messages.noActivationRequests)} /></PageSection></div>
       <div id="issuances"><PageSection title={messages.issuancesTitle}><DataTable columns={issuanceColumns} rows={data.issuances} getRowKey={(row) => row.id} emptyState={empty(messages.noIssuances)} /></PageSection></div>
       <div id="audit"><PageSection title={messages.auditLogsTitle}><DataTable columns={auditColumns} rows={data.audit} getRowKey={(row) => row.id} emptyState={empty(messages.noAuditHistory)} /></PageSection></div>
-      <details className="rounded-xl border border-slate-200 bg-white">
+      <details className="surface-card">
         <summary className="cursor-pointer px-5 py-4 text-sm font-semibold">{messages.technicalDetails}</summary>
         <div className="border-t border-slate-200 p-5">
           <DetailGrid items={[

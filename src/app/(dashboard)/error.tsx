@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { getMessages, type Locale } from "@/i18n/messages";
+import { AlertCircle, RotateCcw } from "lucide-react";
 
 interface DashboardErrorProps {
   error: Error & { digest?: string };
@@ -16,14 +17,15 @@ export default function DashboardError({ error, reset }: DashboardErrorProps) {
   }, [error]);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-3 rounded-lg border border-red-200 bg-red-50 px-6 py-16 text-center">
-      <p className="text-sm font-medium text-red-800">{messages.loadError}</p>
+    <div className="surface-card flex flex-col items-center justify-center gap-3 border-red-200 px-6 py-16 text-center">
+      <span className="flex size-11 items-center justify-center rounded-full bg-[var(--danger-soft)] text-[var(--danger)]"><AlertCircle aria-hidden="true" size={21} /></span>
+      <p className="text-base font-semibold text-[var(--text)]">{messages.loadError}</p>
       <button
         type="button"
         onClick={reset}
-        className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-700"
+        className="secondary-button mt-2"
       >
-        {messages.tryAgain}
+        <RotateCcw aria-hidden="true" size={16} />{messages.tryAgain}
       </button>
     </div>
   );

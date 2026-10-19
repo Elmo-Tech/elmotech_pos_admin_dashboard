@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { getMessages, interpolate, type Locale } from "@/i18n/messages";
 import { formatNumber } from "@/lib/format";
 
@@ -25,7 +26,7 @@ export function Pagination({ basePath, page, pageSize, total, query = {}, locale
   };
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
+    <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--text-muted)]">
       <p>
         {total === 0 ? messages.noRecords : interpolate(messages.recordsRange, {
           from: formatNumber((page - 1) * pageSize + 1, locale),
@@ -33,21 +34,21 @@ export function Pagination({ basePath, page, pageSize, total, query = {}, locale
           total: formatNumber(total, locale),
         })}
       </p>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1.5">
         {page > 1 ? (
-          <Link href={makeHref(page - 1)} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-50">
-            {messages.previous}
+          <Link href={makeHref(page - 1)} className="secondary-button h-9 min-h-9 px-3">
+            <ChevronRight aria-hidden="true" size={15} className="ltr:rotate-180" />{messages.previous}
           </Link>
         ) : (
-          <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-300">{messages.previous}</span>
+          <span className="secondary-button h-9 min-h-9 cursor-not-allowed px-3 opacity-45"><ChevronRight aria-hidden="true" size={15} className="ltr:rotate-180" />{messages.previous}</span>
         )}
         <span className="px-1">{messages.page} {formatNumber(Math.min(page, totalPages), locale)} {messages.of} {formatNumber(totalPages, locale)}</span>
         {page < totalPages ? (
-          <Link href={makeHref(page + 1)} className="rounded-md border border-slate-300 bg-white px-3 py-1.5 hover:bg-slate-50">
-            {messages.next}
+          <Link href={makeHref(page + 1)} className="secondary-button h-9 min-h-9 px-3">
+            {messages.next}<ChevronLeft aria-hidden="true" size={15} className="ltr:rotate-180" />
           </Link>
         ) : (
-          <span className="rounded-md border border-slate-200 px-3 py-1.5 text-slate-300">{messages.next}</span>
+          <span className="secondary-button h-9 min-h-9 cursor-not-allowed px-3 opacity-45">{messages.next}<ChevronLeft aria-hidden="true" size={15} className="ltr:rotate-180" /></span>
         )}
       </div>
     </div>

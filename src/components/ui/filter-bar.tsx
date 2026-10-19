@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
  */
 export function FilterBar({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-wrap items-center gap-2 rounded-lg border border-slate-200 bg-white p-3">
+    <div className="surface-card flex flex-wrap items-end gap-3 p-3.5">
       {children}
     </div>
   );

@@ -103,7 +103,7 @@ export function RenewSubscription({
   const projected = plan ? projectRenewal(subscription.expires_at, referenceNow, plan) : null;
 
   if (subscription.is_lifetime) {
-    return <p className="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-sm text-slate-600">{t.lifetime}</p>;
+    return <p className="mt-4 rounded-lg bg-[var(--muted)] px-4 py-3 text-sm text-[var(--text-muted)]">{t.lifetime}</p>;
   }
   if (unavailableReason !== "none") {
     const message = unavailableReason === "replacement"
@@ -157,17 +157,17 @@ export function RenewSubscription({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="mt-4 rounded-lg bg-blue-700 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-blue-800"
+      className="primary-button mt-4"
       >
         {t.action}
       </button>
 
       {open ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 p-4" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && phase !== "pending") setOpen(false); }}>
-          <section role="dialog" aria-modal="true" aria-labelledby="renewal-title" className="w-full max-w-xl rounded-2xl bg-white p-6 shadow-2xl">
+          <section role="dialog" aria-modal="true" aria-labelledby="renewal-title" className="w-full max-w-xl rounded-[14px] border border-[var(--border)] bg-white p-6 shadow-2xl">
             <div className="flex items-start justify-between gap-4">
-              <h2 id="renewal-title" className="text-xl font-bold text-slate-950">{t.title}</h2>
-              <button type="button" disabled={phase === "pending"} onClick={() => setOpen(false)} className="text-sm font-semibold text-slate-500 hover:text-slate-900">{t.close}</button>
+              <h2 id="renewal-title" className="text-xl font-semibold text-[var(--text)]">{t.title}</h2>
+              <button type="button" disabled={phase === "pending"} onClick={() => setOpen(false)} className="ghost-button h-9 min-h-9">{t.close}</button>
             </div>
 
             {phase === "success" && downloadUrl ? (
@@ -175,7 +175,7 @@ export function RenewSubscription({
                 <p className="text-lg font-bold text-emerald-950">{t.success}</p>
                 <p className="mt-1 font-semibold text-emerald-900">{t.issued}</p>
                 <p className="mt-3 text-sm text-emerald-900">{t.newExpiry}: {formatDate(actualExpiry ?? projected.expiresAt, locale)}</p>
-                <a href={downloadUrl} download={filename} className="mt-5 inline-flex rounded-lg bg-emerald-700 px-4 py-2.5 text-sm font-bold text-white hover:bg-emerald-800">{t.download}</a>
+                <a href={downloadUrl} download={filename} className="primary-button mt-5">{t.download}</a>
                 <p className="mt-4 text-sm text-emerald-900">{t.delivery}</p>
               </div>
             ) : (
@@ -187,7 +187,7 @@ export function RenewSubscription({
                     value={planId}
                     disabled={phase === "pending" || phase === "error"}
                     onChange={(event) => setPlanId(event.target.value)}
-                    className="mt-1.5 w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-slate-950"
+                    className="mt-1.5 w-full px-3 py-2.5 text-[var(--text)]"
                   >
                     <option value="" disabled>{t.choosePlan}</option>
                     {finitePlans.map((candidate) => <option key={candidate.id} value={candidate.id}>{candidate.name}</option>)}
@@ -199,7 +199,7 @@ export function RenewSubscription({
                   <Info label={t.price} value={formatMoney(plan.price, plan.currency, locale)} />
                 </div>
                 {phase === "error" ? <p role="alert" className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-800">{t.genericError}</p> : null}
-                <button type="button" disabled={phase === "pending"} onClick={renew} className="rounded-lg bg-blue-700 px-4 py-3 text-sm font-bold text-white hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60">
+                <button type="button" disabled={phase === "pending"} onClick={renew} className="primary-button disabled:cursor-not-allowed disabled:opacity-60">
                   {phase === "pending" ? t.confirming : t.confirm}
                 </button>
               </div>
@@ -212,7 +212,7 @@ export function RenewSubscription({
 }
 
 function Info({ label, value }: { label: string; value: string }) {
-  return <div className="rounded-lg bg-slate-50 px-4 py-3"><p className="text-xs font-semibold text-slate-500">{label}</p><p className="mt-1 font-semibold text-slate-950">{value}</p></div>;
+  return <div className="rounded-lg bg-[var(--muted)] px-4 py-3"><p className="text-xs font-medium text-[var(--text-muted)]">{label}</p><p className="mt-1 font-semibold text-[var(--text)]">{value}</p></div>;
 }
 
 function projectRenewal(oldExpiry: string | null, referenceNow: string, plan: RenewalPlan) {

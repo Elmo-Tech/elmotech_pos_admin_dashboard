@@ -114,7 +114,7 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
       <PageHeader
         title={data.customer.business_name}
         description={messages.customerDetailsDescription}
-        actions={<Link href="/customers" className="text-sm font-semibold text-blue-700 hover:underline">{messages.backToCustomers}</Link>}
+        actions={<Link href="/customers" className="secondary-button">{messages.backToCustomers}</Link>}
       />
       <SectionNav ariaLabel={messages.pageSections} items={[
         { href: "#overview", label: messages.overviewTitle },
@@ -179,7 +179,7 @@ export default async function CustomerDetailPage({ params }: { params: Promise<{
         </PageSection>
       </div>
 
-      <details className="rounded-xl border border-slate-200 bg-white">
+      <details className="surface-card">
         <summary className="cursor-pointer px-5 py-4 text-sm font-semibold text-slate-800">
           {messages.technicalDetails}
         </summary>

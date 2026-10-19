@@ -13,14 +13,14 @@ export default async function SettingsPage() {
     <div className="flex flex-col gap-6">
       <PageHeader title={messages.settingsTitle} description={messages.settingsDescription} />
       <div className="grid gap-5 md:grid-cols-2">
-        <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h2 className="text-base font-bold text-slate-900">{messages.environment}</h2>
-          <p className="mt-1 text-sm text-slate-500">{messages.environmentDescription}</p>
+        <section className="surface-card p-6">
+          <h2 className="text-base font-semibold text-[var(--text)]">{messages.environment}</h2>
+          <p className="mt-1.5 text-sm text-[var(--text-muted)]">{messages.environmentDescription}</p>
           <div className="mt-4"><EnvironmentBadge environment={environment} locale={locale} /></div>
         </section>
-        <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h2 className="text-base font-bold text-slate-900">{messages.accessAndRoles}</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-600">{messages.accessManaged}</p>
+        <section className="surface-card p-6">
+          <h2 className="text-base font-semibold text-[var(--text)]">{messages.accessAndRoles}</h2>
+          <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{messages.accessManaged}</p>
         </section>
       </div>
     </div>

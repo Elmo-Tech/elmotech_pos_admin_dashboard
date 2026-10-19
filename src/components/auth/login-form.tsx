@@ -3,6 +3,7 @@
 import { useActionState } from "react";
 import { signInAction, type SignInState } from "@/server/auth/actions";
 import { getMessages, type Locale } from "@/i18n/messages";
+import { LockKeyhole, LogIn, Mail } from "lucide-react";
 
 const initialState: SignInState = { error: null };
 
@@ -22,36 +23,36 @@ export function LoginForm({ next, locale }: { next: string; locale: Locale }) {
       <input type="hidden" name="next" value={next} />
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="email" className="text-sm font-medium text-slate-700">
+        <label htmlFor="email" className="text-[13px] font-medium text-[var(--text)]">
           {messages.email}
         </label>
-        <input
+        <div className="relative"><Mail aria-hidden="true" size={16} className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" /><input
           id="email"
           name="email"
           type="email"
           required
           autoComplete="username"
           autoFocus
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500"
-        />
+          className="w-full py-2 pe-3 ps-10 text-sm"
+        /></div>
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="password" className="text-sm font-medium text-slate-700">
+        <label htmlFor="password" className="text-[13px] font-medium text-[var(--text)]">
           {messages.password}
         </label>
-        <input
+        <div className="relative"><LockKeyhole aria-hidden="true" size={16} className="pointer-events-none absolute start-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" /><input
           id="password"
           name="password"
           type="password"
           required
           autoComplete="current-password"
-          className="rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500"
-        />
+          className="w-full py-2 pe-3 ps-10 text-sm"
+        /></div>
       </div>
 
       {errorMessage ? (
-        <p role="alert" className="text-sm text-red-600">
+        <p role="alert" className="rounded-lg bg-[var(--danger-soft)] px-3 py-2 text-sm text-[var(--danger)]">
           {errorMessage}
         </p>
       ) : null}
@@ -59,9 +60,9 @@ export function LoginForm({ next, locale }: { next: string; locale: Locale }) {
       <button
         type="submit"
         disabled={pending}
-        className="mt-1 rounded-md bg-slate-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
+        className="primary-button mt-1 w-full disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {pending ? messages.signingIn : messages.signIn}
+        <LogIn aria-hidden="true" size={16} className="rtl:rotate-180" />{pending ? messages.signingIn : messages.signIn}
       </button>
     </form>
   );

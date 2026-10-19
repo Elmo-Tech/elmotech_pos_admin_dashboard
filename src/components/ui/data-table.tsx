@@ -20,16 +20,16 @@ interface DataTableProps<T> {
  */
 export function DataTable<T>({ columns, rows, getRowKey, emptyState }: DataTableProps<T>) {
   return (
-    <div className="overflow-hidden rounded-lg border border-slate-200 bg-white">
+    <div className="surface-card overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-slate-200 text-sm">
-          <thead className="bg-slate-50">
+        <table className="responsive-data-table min-w-full text-sm">
+          <thead className="bg-[var(--muted)]/70">
             <tr>
               {columns.map((column) => (
                 <th
                   key={column.key}
                   scope="col"
-                  className="whitespace-nowrap px-4 py-3 text-start text-xs font-semibold text-slate-500"
+                  className="whitespace-nowrap border-b border-[var(--border)] px-5 py-3.5 text-start text-xs font-semibold text-[var(--text-muted)]"
                 >
                   {column.header}
                 </th>
@@ -37,11 +37,11 @@ export function DataTable<T>({ columns, rows, getRowKey, emptyState }: DataTable
             </tr>
           </thead>
           {rows.length > 0 ? (
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-[var(--border)]">
               {rows.map((row) => (
-                <tr key={getRowKey(row)}>
+                <tr key={getRowKey(row)} className="transition-colors hover:bg-[var(--bg)]">
                   {columns.map((column) => (
-                    <td key={column.key} className="whitespace-nowrap px-4 py-3.5 text-slate-700">
+                    <td key={column.key} data-label={column.header} className="whitespace-nowrap px-5 py-4 text-[var(--text-muted)]">
                       {column.render(row)}
                     </td>
                   ))}

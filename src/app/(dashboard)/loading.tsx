@@ -7,15 +7,15 @@ export default async function DashboardLoading() {
   return (
     <div className="flex animate-pulse flex-col gap-8" aria-label={messages.overviewDescription}>
       <div>
-        <div className="h-6 w-40 rounded bg-slate-200" />
-        <div className="mt-2 h-4 w-80 max-w-full rounded bg-slate-200" />
+        <div className="h-8 w-48 rounded bg-[var(--muted)]" />
+        <div className="mt-3 h-4 w-80 max-w-full rounded bg-[var(--muted)]" />
       </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {Array.from({ length: 4 }, (_, index) => (
-          <div key={index} className="h-28 rounded-lg border border-slate-200 bg-white" />
+          <div key={index} className="surface-card h-32" />
         ))}
       </div>
-      <div className="h-56 rounded-lg border border-slate-200 bg-white" />
+      <div className="surface-card h-64" />
     </div>
   );
 }

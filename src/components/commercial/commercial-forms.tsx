@@ -125,8 +125,8 @@ const copy = {
   },
 } as const;
 
-const inputClass = "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100";
-const labelClass = "text-sm font-medium text-slate-700";
+const inputClass = "mt-1.5 w-full px-3 py-2 text-sm text-[var(--text)]";
+const labelClass = "text-[13px] font-medium text-[var(--text)]";
 const INITIAL_COMMERCIAL_ACTION_STATE: CommercialActionState = { status: "idle" };
 
 function SubmitButton({ idle, pending }: { idle: string; pending: string }) {
@@ -135,7 +135,7 @@ function SubmitButton({ idle, pending }: { idle: string; pending: string }) {
     <button
       type="submit"
       disabled={status.pending}
-      className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+      className="primary-button disabled:cursor-not-allowed disabled:opacity-60"
     >
       {status.pending ? pending : idle}
     </button>
@@ -154,7 +154,7 @@ function Feedback({ locale, status, code }: { locale: Locale; status?: string; c
             : code === "planDisabled" ? t.planDisabled
               : code === "notEligible" ? t.notEligible
               : t.unavailable;
-  return <p role="status" className={`text-sm font-medium ${status === "success" ? "text-emerald-700" : "text-red-700"}`}>{text}</p>;
+  return <p role="status" className={`rounded-lg px-3 py-2 text-sm font-medium ${status === "success" ? "bg-[var(--success-soft)] text-[var(--success)]" : "bg-[var(--danger-soft)] text-[var(--danger)]"}`}>{text}</p>;
 }
 
 export interface PlanFormValue {
@@ -175,7 +175,7 @@ export function PlanForm({ locale, plan }: { locale: Locale; plan?: PlanFormValu
   const [isLifetime, setIsLifetime] = useState(plan?.is_lifetime ?? false);
   const [durationValue, setDurationValue] = useState(plan?.duration_value?.toString() ?? "");
   return (
-    <form action={action} className="grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2 lg:grid-cols-4">
+    <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-4">
       {plan ? <input type="hidden" name="planId" value={plan.id} /> : null}
       <label className={`${labelClass} sm:col-span-2`}>
         {t.planName}
@@ -200,11 +200,11 @@ export function PlanForm({ locale, plan }: { locale: Locale; plan?: PlanFormValu
         {t.currency}
         <input className={`${inputClass} uppercase`} name="currency" defaultValue={plan?.currency ?? "EGP"} minLength={3} maxLength={3} />
       </label>
-      <label className="flex items-center gap-2 self-end pb-2 text-sm font-medium text-slate-700">
+      <label className="flex min-h-10 items-center gap-2 self-end text-sm font-medium text-[var(--text)]">
         <input name="isLifetime" type="checkbox" checked={isLifetime} onChange={(event) => { setIsLifetime(event.target.checked); if (event.target.checked) setDurationValue(""); }} /> {t.lifetime}
       </label>
-      {isLifetime ? <p className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-800 sm:col-span-2 lg:col-span-4">{t.lifetimeExplanation}</p> : null}
-      <label className="flex items-center gap-2 self-end pb-2 text-sm font-medium text-slate-700">
+      {isLifetime ? <p className="rounded-lg bg-[var(--info-soft)] px-3 py-2 text-sm font-medium text-[var(--info)] sm:col-span-2 lg:col-span-4">{t.lifetimeExplanation}</p> : null}
+      <label className="flex min-h-10 items-center gap-2 self-end text-sm font-medium text-[var(--text)]">
         <input name="isEnabled" type="checkbox" defaultChecked={plan?.is_enabled ?? true} /> {t.enabled}
       </label>
       <label className={`${labelClass} sm:col-span-2 lg:col-span-4`}>
@@ -223,7 +223,7 @@ export function CreateCustomerForm({ locale }: { locale: Locale }) {
   const t = copy[locale];
   const [state, action] = useActionState(createCustomerAction, INITIAL_COMMERCIAL_ACTION_STATE);
   return (
-    <form action={action} className="grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2 lg:grid-cols-3">
+    <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-3">
       <label className={labelClass}>{t.businessName}<input className={inputClass} name="businessName" maxLength={160} required /></label>
       <label className={labelClass}>{t.ownerName}<input className={inputClass} name="ownerName" maxLength={160} required /></label>
       <label className={labelClass}>{t.phone}<input className={inputClass} name="phone" maxLength={50} required /></label>
@@ -237,7 +237,7 @@ export function CreateCustomerForm({ locale }: { locale: Locale }) {
       <div className="flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-3">
         <SubmitButton idle={t.createCustomer} pending={t.saving} />
         <Feedback locale={locale} status={state.status} code={state.code} />
-        {state.status === "success" && state.entityId ? <Link href={`/customers/${state.entityId}`} className="text-sm font-semibold text-blue-700 hover:underline">{t.openCustomer}</Link> : null}
+        {state.status === "success" && state.entityId ? <Link href={`/customers/${state.entityId}`} className="text-sm font-semibold text-[var(--primary)] hover:underline">{t.openCustomer}</Link> : null}
       </div>
     </form>
   );
@@ -267,8 +267,8 @@ export function AddSubscriptionForm({
 
   return (
     <div className="flex flex-col gap-4">
-      <h3 className="text-sm font-semibold text-slate-900">{t.addSubscription}</h3>
-      <form action={action} className="grid gap-4 rounded-xl border border-slate-200 bg-white p-5 sm:grid-cols-2">
+      <h3 className="text-base font-semibold text-[var(--text)]">{t.addSubscription}</h3>
+      <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2">
         <input type="hidden" name="customerId" value={customerId} />
         <label className={labelClass}>
           {t.choosePlan}
@@ -295,15 +295,15 @@ export function AddSubscriptionForm({
 function OneTimeLicenseCodePanel({ locale, licenseCode, copied, onCopied, successKind = "replacement" }: { locale: Locale; licenseCode: string; copied: boolean; onCopied: () => void; successKind?: "provisioning" | "replacement" }) {
   const t = copy[locale];
   return (
-    <section className="rounded-xl border-2 border-amber-400 bg-amber-50 p-6 shadow-sm" aria-live="polite">
-      <p className="text-xs font-bold uppercase tracking-wide text-amber-800">{t.oneTimeTitle}</p>
-      <h3 className="mt-1 text-xl font-bold text-amber-950">{successKind === "provisioning" ? t.provisioningGenerated : t.oneTimeGenerated}</h3>
-      <p className="mt-2 max-w-3xl text-sm font-semibold leading-6 text-amber-900">{t.oneTimeWarning}</p>
+    <section className="rounded-[14px] border border-amber-300 border-s-4 border-s-[var(--warning)] bg-[var(--warning-soft)]/50 p-6 shadow-[var(--sh-sm)]" aria-live="polite">
+      <p className="text-xs font-semibold uppercase tracking-wide text-[var(--warning)] rtl:tracking-normal">{t.oneTimeTitle}</p>
+      <h3 className="mt-1 text-xl font-bold text-[var(--text)]">{successKind === "provisioning" ? t.provisioningGenerated : t.oneTimeGenerated}</h3>
+      <p className="mt-2 max-w-3xl text-sm font-medium leading-6 text-amber-900">{t.oneTimeWarning}</p>
       <div className="mt-5">
         <p className="text-sm font-bold text-amber-950">{t.licenseCodeLabel}</p>
         <div className="mt-2 flex flex-wrap items-center gap-3">
-          <code className="technical-value select-all rounded-lg border border-amber-400 bg-white px-4 py-3 font-mono text-base font-bold tracking-wide text-slate-950">{licenseCode}</code>
-          <button type="button" onClick={async () => { await navigator.clipboard.writeText(licenseCode); onCopied(); }} className="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white">
+          <code className="technical-value select-all rounded-lg border border-amber-300 bg-white px-4 py-3 font-mono text-base font-bold tracking-wide text-[var(--text)]">{licenseCode}</code>
+          <button type="button" onClick={async () => { await navigator.clipboard.writeText(licenseCode); onCopied(); }} className="secondary-button">
             {copied ? t.copied : t.copyCode}
           </button>
         </div>
@@ -324,17 +324,17 @@ export function RotateLicenseCodeForm({ locale, licenseId }: { locale: Locale; l
   }
 
   if (!confirming) {
-    return <button type="button" onClick={() => setConfirming(true)} className="rounded-lg bg-amber-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-amber-700">{t.generateNewCode}</button>;
+    return <button type="button" onClick={() => setConfirming(true)} className="primary-button">{t.generateNewCode}</button>;
   }
 
   return (
-    <form action={action} className="rounded-xl border border-amber-300 bg-amber-50 p-5">
+    <form action={action} className="rounded-[14px] border border-amber-300 bg-[var(--warning-soft)]/50 p-5">
       <input type="hidden" name="licenseId" value={licenseId} />
       <h3 className="font-bold text-amber-950">{t.rotationConfirmTitle}</h3>
       <p className="mt-1 text-sm leading-6 text-amber-900">{t.rotationConfirm}</p>
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <SubmitButton idle={t.confirmRotation} pending={t.provisioning} />
-        <button type="button" onClick={() => setConfirming(false)} className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700">{t.cancel}</button>
+        <button type="button" onClick={() => setConfirming(false)} className="secondary-button">{t.cancel}</button>
         <Feedback locale={locale} status={state.status} code={state.code} />
       </div>
     </form>
