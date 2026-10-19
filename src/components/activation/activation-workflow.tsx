@@ -234,19 +234,22 @@ export function ActivationWorkflow({
         </span>
       </div>
 
-      <div className="border-b border-[var(--border)] px-5 py-4 sm:px-7">
-        <ol className="grid grid-cols-3 gap-2" aria-label={locale === "ar" ? "خطوات معالجة طلب التفعيل" : "Activation request steps"}>
+      <div className="border-b border-[var(--border)] px-4 py-4 sm:px-7 sm:py-5">
+        <ol className="grid grid-cols-3" aria-label={locale === "ar" ? "خطوات معالجة طلب التفعيل" : "Activation request steps"}>
           {t.steps.map((step, index) => {
             const stepNumber = index + 1;
             const complete = stepNumber < currentStep;
             const active = stepNumber === currentStep;
             return (
-              <li key={step} className="relative flex min-w-0 items-center gap-2 sm:gap-3">
-                <span className={`relative z-10 flex size-8 shrink-0 items-center justify-center rounded-full border text-xs font-bold ${complete ? "border-[var(--success)] bg-[var(--success)] text-white" : active ? "border-[var(--primary)] bg-[var(--primary)] text-white shadow-[0_0_0_5px_rgb(0_82_255/.10)]" : "border-[var(--border)] bg-white text-[var(--text-muted)]"}`}>
-                  {complete ? <Check aria-hidden="true" size={15} /> : stepNumber}
-                </span>
-                <span className={`truncate text-xs font-bold sm:text-sm ${active || complete ? "text-[var(--text)]" : "text-[var(--text-muted)]"}`}>{step}</span>
-                {index < t.steps.length - 1 ? <span className="absolute start-8 top-4 -z-0 h-px w-[calc(100%-1.5rem)] bg-[var(--border)]" aria-hidden="true" /> : null}
+              <li key={step} className="flex min-w-0 flex-col items-center" aria-current={active ? "step" : undefined}>
+                <div className="flex w-full items-center" aria-hidden="true">
+                  <span className={`h-px flex-1 ${index === 0 ? "bg-transparent" : complete || active ? "bg-[var(--primary)]/35" : "bg-[var(--border)]"}`} />
+                  <span className={`relative z-10 mx-2 flex size-8 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:size-9 ${complete ? "border-[var(--success)] bg-[var(--success)] text-white" : active ? "border-[var(--primary)] bg-[var(--primary)] text-white shadow-[0_0_0_5px_rgb(0_82_255/.10)]" : "border-[var(--border)] bg-white text-[var(--text-muted)]"}`}>
+                    {complete ? <Check aria-hidden="true" size={15} /> : stepNumber}
+                  </span>
+                  <span className={`h-px flex-1 ${index === t.steps.length - 1 ? "bg-transparent" : complete ? "bg-[var(--success)]/35" : "bg-[var(--border)]"}`} />
+                </div>
+                <span className={`mt-2.5 px-1 text-center text-[11px] font-bold leading-5 sm:text-sm ${active || complete ? "text-[var(--text)]" : "text-[var(--text-muted)]"}`}>{step}</span>
               </li>
             );
           })}
