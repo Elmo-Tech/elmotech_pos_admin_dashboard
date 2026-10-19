@@ -325,7 +325,7 @@ html[lang="en"] .display-heading {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 899px) {
   .responsive-data-table,
   .responsive-data-table tbody,
   .responsive-data-table tr,

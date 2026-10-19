@@ -12,6 +12,7 @@ interface ActionDialogProps {
   kind?: "create" | "edit";
   size?: "md" | "lg" | "xl";
   triggerClassName?: string;
+  closeLabel?: string;
 }
 
 export function ActionDialog({
@@ -22,6 +23,7 @@ export function ActionDialog({
   kind = "create",
   size = "lg",
   triggerClassName,
+  closeLabel = "Close",
 }: ActionDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
@@ -80,7 +82,7 @@ export function ActionDialog({
                 <h2 id={titleId} className="text-xl font-bold tracking-[-0.02em] text-[var(--text)] sm:text-2xl">{title}</h2>
                 {description ? <p className="mt-1.5 max-w-2xl text-sm leading-6 text-[var(--text-muted)]">{description}</p> : null}
               </div>
-              <button type="button" onClick={closeDialog} className="ghost-button size-10 shrink-0 px-0" aria-label="Close">
+              <button type="button" onClick={closeDialog} className="ghost-button size-10 shrink-0 px-0" aria-label={closeLabel}>
                 <X aria-hidden="true" size={19} />
               </button>
             </div>

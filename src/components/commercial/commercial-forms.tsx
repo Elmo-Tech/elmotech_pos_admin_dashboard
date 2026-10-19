@@ -218,7 +218,7 @@ export function PlanForm({ locale, plan, embedded = false }: { locale: Locale; p
         {t.notes}
         <textarea className={inputClass} name="notes" defaultValue={plan?.notes ?? ""} maxLength={2000} rows={2} />
       </label>
-      <div className="flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-4">
+      <div className={`${embedded ? "sticky -bottom-6 z-10 -mx-6 -mb-6 border-t border-[var(--border)] bg-white/95 px-6 py-4 shadow-[0_-12px_30px_rgba(15,23,42,0.06)] backdrop-blur sm:-bottom-7 sm:-mx-7 sm:-mb-7 sm:px-7" : ""} flex flex-wrap items-center justify-end gap-3 sm:col-span-2 lg:col-span-4`}>
         <SubmitButton idle={t.save} pending={t.saving} />
         <Feedback locale={locale} status={state.status} code={state.code} />
       </div>
@@ -273,6 +273,7 @@ export function PlanDialog({ locale, plan }: { locale: Locale; plan?: PlanFormVa
       description={t.planDialogDescription}
       kind={plan ? "edit" : "create"}
       size="xl"
+      closeLabel={t.cancel}
       triggerClassName={plan ? "min-h-9 px-3 py-1.5 text-xs" : undefined}
     >
       <PlanForm locale={locale} plan={plan} embedded />

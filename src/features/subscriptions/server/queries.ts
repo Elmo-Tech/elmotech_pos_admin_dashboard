@@ -23,6 +23,32 @@ export async function getSubscriptions(input: {
   const nowDate = new Date();
   const now = nowDate.toISOString();
   const soon = new Date(nowDate.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString();
+
+  const [allCount, activeCount, expiringCount, expiredCount] = await Promise.all([
+    supabase.from("subscriptions").select("id", { count: "exact", head: true }),
+    supabase
+      .from("subscriptions")
+      .select("id", { count: "exact", head: true })
+      .eq("status", "active")
+      .lte("starts_at", now)
+      .or(`is_lifetime.eq.true,expires_at.gt.${now}`),
+    supabase
+      .from("subscriptions")
+      .select("id", { count: "exact", head: true })
+      .eq("status", "active")
+      .eq("is_lifetime", false)
+      .gte("expires_at", now)
+      .lte("expires_at", soon),
+    supabase
+      .from("subscriptions")
+      .select("id", { count: "exact", head: true })
+      .eq("status", "expired"),
+  ]);
+  requireQuery(allCount.error, "Subscription total");
+  requireQuery(activeCount.error, "Active subscription total");
+  requireQuery(expiringCount.error, "Expiring subscription total");
+  requireQuery(expiredCount.error, "Expired subscription total");
+
   if (input.status === "active") {
     query = query.eq("status", "active").lte("starts_at", now).or(`is_lifetime.eq.true,expires_at.gt.${now}`);
   } else if (input.status === "expiring") {
@@ -47,6 +73,13 @@ export async function getSubscriptions(input: {
   const plansById = new Map((plansResult.data ?? []).map((row) => [row.id, row]));
   return {
     total: result.count ?? 0,
+    referenceNow: now,
+    summary: {
+      all: allCount.count ?? 0,
+      active: activeCount.count ?? 0,
+      expiring: expiringCount.count ?? 0,
+      expired: expiredCount.count ?? 0,
+    },
     plans: plansResult.data ?? [],
     rows: rows.map((row) => ({
       ...row,
