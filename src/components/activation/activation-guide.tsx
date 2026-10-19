@@ -1,65 +1,74 @@
 import type { Locale } from "@/i18n/messages";
-import { ChevronDown, Info } from "lucide-react";
+import { ChevronDown, CircleHelp, FileDown, FileUp, KeyRound, MonitorCheck } from "lucide-react";
 
 const guide = {
   ar: {
-    title: "طريقة التفعيل",
-    summary: "دليل التفعيل دون اتصال بالإنترنت",
-    intro: "عملية التفعيل يدوية بين Elmotech والعميل. لا يرسل Elmo POS أي ملف تلقائيًا عبر الإنترنت.",
-    requestFile: ".elmoreq = ملف طلب التفعيل الذي ينشئه جهاز العميل.",
-    licenseFile: ".elmolic = ملف الترخيص الذي تصدره Elmotech.",
+    title: "هل تحتاج مساعدة؟",
+    summary: "افتح الدليل المختصر لدورة التفعيل دون اتصال بالإنترنت",
+    note: "التفعيل تبادل يدوي وآمن بين Elmotech والعميل. Elmo POS لا يرسل أي ملف تلقائيًا عبر الإنترنت.",
     phases: [
-      { title: "ELMOTECH — إعداد الترخيص", start: 1, steps: ["إضافة العميل.", "اختيار الخطة.", "إنشاء الاشتراك.", "إنشاء كود الترخيص.", "إرسال كود الترخيص للعميل يدويًا."] },
-      { title: "CUSTOMER — إنشاء الطلب", start: 6, steps: ["فتح Elmo POS على الجهاز المطلوب تفعيله.", "فتح شاشة طلب التفعيل.", "إدخال كود الترخيص.", "إنشاء ملف طلب التفعيل .elmoreq.", "إرسال ملف .elmoreq إلى Elmotech يدويًا."] },
-      { title: "ELMOTECH — إصدار الترخيص", start: 11, steps: ["رفع .elmoreq من صفحة التفعيل.", "التحقق من الطلب.", "إصدار ملف الترخيص.", "تنزيل ملف .elmolic.", "إرسال .elmolic للعميل يدويًا."] },
-      { title: "CUSTOMER — إكمال التفعيل", start: 16, steps: ["استيراد .elmolic داخل Elmo POS.", "يتم التحقق محليًا والتفعيل."] },
+      { title: "1. سلّم كود الترخيص", description: "أنشئ العميل والاشتراك ثم أرسل كود الترخيص للعميل.", owner: "Elmotech", icon: KeyRound },
+      { title: "2. استلم ملف الطلب", description: "العميل يُدخل الكود ويصدّر ملف .elmoreq من الجهاز المطلوب تفعيله.", owner: "العميل", icon: FileUp },
+      { title: "3. تحقق وأصدر الملف", description: "ارفع .elmoreq هنا، راجع البيانات، ثم نزّل ملف .elmolic.", owner: "Elmotech", icon: FileDown },
+      { title: "4. يكتمل التفعيل", description: "يرفع العميل .elmolic داخل Elmo POS ليتم التحقق والتفعيل محليًا.", owner: "العميل", icon: MonitorCheck },
     ],
+    requestFile: "طلب التفعيل الصادر من جهاز العميل",
+    licenseFile: "ملف الترخيص الذي ترسله للعميل",
   },
   en: {
-    title: "Activation Guide",
-    summary: "Offline activation operating guide",
-    intro: "Activation is a manual exchange between Elmotech and the customer. Elmo POS does not automatically send any file over the internet.",
-    requestFile: ".elmoreq = the Activation Request File created by the customer’s device.",
-    licenseFile: ".elmolic = the License File issued by Elmotech.",
+    title: "Need help?",
+    summary: "Open the short guide for the offline activation cycle",
+    note: "Activation is a secure manual exchange between Elmotech and the customer. Elmo POS never sends files automatically over the internet.",
     phases: [
-      { title: "ELMOTECH — Prepare the license", start: 1, steps: ["Add the customer.", "Choose the plan.", "Create the subscription.", "Generate the License Code.", "Send the License Code to the customer manually."] },
-      { title: "CUSTOMER — Create the request", start: 6, steps: ["Open Elmo POS on the device to activate.", "Open the Activation Request screen.", "Enter the License Code.", "Create the .elmoreq Activation Request File.", "Send the .elmoreq file to Elmotech manually."] },
-      { title: "ELMOTECH — Issue the license", start: 11, steps: ["Upload .elmoreq on the Activation page.", "Verify the request.", "Issue the License File.", "Download the .elmolic file.", "Send .elmolic to the customer manually."] },
-      { title: "CUSTOMER — Complete activation", start: 16, steps: ["Import .elmolic into Elmo POS.", "Elmo POS verifies it locally and activates the device."] },
+      { title: "1. Deliver the license code", description: "Create the customer and subscription, then send the license code to the customer.", owner: "Elmotech", icon: KeyRound },
+      { title: "2. Receive the request file", description: "The customer enters the code and exports .elmoreq from the device to activate.", owner: "Customer", icon: FileUp },
+      { title: "3. Verify and issue", description: "Upload .elmoreq here, review the details, then download .elmolic.", owner: "Elmotech", icon: FileDown },
+      { title: "4. Complete activation", description: "The customer imports .elmolic into Elmo POS for local verification and activation.", owner: "Customer", icon: MonitorCheck },
     ],
+    requestFile: "activation request exported by the customer's device",
+    licenseFile: "license file you deliver to the customer",
   },
 } as const;
 
 export function ActivationGuide({ locale }: { locale: Locale }) {
   const content = guide[locale];
   return (
-    <details className="group surface-card">
+    <details className="group surface-card overflow-hidden border-white/80">
       <summary className="cursor-pointer list-none px-5 py-4 sm:px-6">
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <h2 className="text-base font-semibold text-[var(--text)]">{content.title}</h2>
-            <p className="mt-1 text-sm text-[var(--text-muted)]">{content.summary}</p>
+          <div className="flex items-center gap-3">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[var(--info-soft)] text-[var(--info)]"><CircleHelp aria-hidden="true" size={20} /></span>
+            <div><h2 className="font-bold text-[var(--text)]">{content.title}</h2><p className="mt-0.5 text-sm text-[var(--text-muted)]">{content.summary}</p></div>
           </div>
-          <ChevronDown aria-hidden="true" size={19} className="text-[var(--text-muted)] transition-transform group-open:rotate-180" />
+          <ChevronDown aria-hidden="true" size={19} className="shrink-0 text-[var(--text-muted)] transition-transform group-open:rotate-180" />
         </div>
       </summary>
-      <div className="border-t border-[var(--border)] px-5 py-5 sm:px-6">
-        <p className="flex max-w-4xl items-start gap-2 rounded-lg bg-[var(--info-soft)] px-4 py-3 text-sm font-medium leading-6 text-blue-950"><Info aria-hidden="true" size={17} className="mt-1 shrink-0 text-[var(--info)]" />{content.intro}</p>
-        <div className="mt-5 grid gap-4 lg:grid-cols-2">
-          {content.phases.map((phase) => (
-            <section key={phase.start} className="rounded-[10px] border border-[var(--border)] bg-[var(--bg)] p-4">
-              <h3 className="text-sm font-semibold text-[var(--text)]">{phase.title}</h3>
-              <ol start={phase.start} className="mt-3 list-decimal space-y-2 ps-5 text-sm leading-6 text-[var(--text-muted)] marker:font-semibold marker:text-[var(--primary)]">
-                {phase.steps.map((step) => <li key={step}>{step}</li>)}
-              </ol>
-            </section>
-          ))}
+      <div className="border-t border-[var(--border)] bg-slate-50/55 p-5 sm:p-6">
+        <p className="rounded-xl border border-blue-100 bg-white px-4 py-3 text-sm font-medium leading-6 text-blue-950">{content.note}</p>
+        <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          {content.phases.map((phase) => {
+            const Icon = phase.icon;
+            return (
+              <section key={phase.title} className="rounded-2xl border border-[var(--border)] bg-white p-4 shadow-sm">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--primary-soft)] text-[var(--primary)]"><Icon aria-hidden="true" size={17} /></span>
+                  <span className="rounded-full bg-[var(--muted)] px-2.5 py-1 text-[10px] font-bold text-[var(--text-muted)]">{phase.owner}</span>
+                </div>
+                <h3 className="mt-4 text-sm font-bold text-[var(--text)]">{phase.title}</h3>
+                <p className="mt-1.5 text-xs leading-5 text-[var(--text-muted)]">{phase.description}</p>
+              </section>
+            );
+          })}
         </div>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2">
-          <p className="rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-muted)]"><bdi className="font-mono font-bold text-[var(--text)]">.elmoreq</bdi><span className="mx-2">—</span>{content.requestFile.replace(/^\.elmoreq\s*=\s*/, "")}</p>
-          <p className="rounded-lg border border-[var(--border)] px-4 py-3 text-sm text-[var(--text-muted)]"><bdi className="font-mono font-bold text-[var(--text)]">.elmolic</bdi><span className="mx-2">—</span>{content.licenseFile.replace(/^\.elmolic\s*=\s*/, "")}</p>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <FileDefinition extension=".elmoreq" description={content.requestFile} />
+          <FileDefinition extension=".elmolic" description={content.licenseFile} />
         </div>
       </div>
     </details>
   );
+}
+
+function FileDefinition({ extension, description }: { extension: string; description: string }) {
+  return <p className="rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm text-[var(--text-muted)]"><bdi className="font-mono font-bold text-[var(--text)]">{extension}</bdi><span className="mx-2">—</span>{description}</p>;
 }
