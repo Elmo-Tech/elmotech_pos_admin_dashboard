@@ -30,7 +30,7 @@ export function CustomerGrowthChart({ data, locale }: { data: readonly TrendPoin
 
       <div className="mt-8 flex h-48 items-end gap-2 sm:gap-3" role="img" aria-label={`${copy.title}: ${total}`}>
         {data.map((point, index) => {
-          const height = point.value === 0 ? 8 : Math.max(22, Math.round((point.value / max) * 100));
+          const height = point.value === 0 ? 0 : Math.max(22, Math.round((point.value / max) * 100));
           return (
             <div key={`${point.label}-${index}`} className="group flex h-full min-w-0 flex-1 flex-col justify-end gap-2">
               <div className="relative flex flex-1 items-end justify-center rounded-xl bg-slate-50 px-1">

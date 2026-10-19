@@ -78,7 +78,7 @@ export function Sidebar({ locale, environment, onNavigate }: {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-3 py-5">
+      <div className="sidebar-scroll flex-1 overflow-y-auto px-3 py-5">
         <NavGroup label={messages.businessNavigation} items={workspaceItems} pathname={pathname} messages={messages} onNavigate={onNavigate} />
         <NavGroup label={messages.operationsNavigation} items={operationItems} pathname={pathname} messages={messages} onNavigate={onNavigate} className="mt-7" />
       </div>

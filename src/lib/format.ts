@@ -97,5 +97,9 @@ export function formatMoney(
 }
 
 export function formatNumber(value: number, locale: Locale): string {
-  return new Intl.NumberFormat(locale === "ar" ? "ar-EG" : "en-GB").format(value);
+  return new Intl.NumberFormat(locale === "ar" ? "ar-EG" : "en-GB", {
+    // Latin digits are deliberately used for operational metrics. Arabic zero (٠)
+    // reads like a bullet at dashboard scale and was visually ambiguous in KPI cards.
+    numberingSystem: "latn",
+  }).format(value);
 }
