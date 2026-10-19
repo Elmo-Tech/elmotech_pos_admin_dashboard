@@ -51,7 +51,7 @@ export function Sidebar({ locale, environment, onNavigate }: {
     <aside className="flex h-full w-64 shrink-0 flex-col border-e border-[var(--side-border)] bg-[var(--side-bg)] text-white">
       <div className="flex h-20 shrink-0 items-center justify-between px-5">
         <Link href="/dashboard" onClick={onNavigate} className="group flex min-w-0 items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-[10px] bg-[var(--primary)] text-white shadow-lg shadow-orange-950/20">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[linear-gradient(135deg,var(--primary),var(--primary-secondary))] text-white shadow-[var(--sh-primary)]">
             <BadgeCheck aria-hidden="true" size={22} strokeWidth={1.9} />
           </span>
           <span className="min-w-0">
@@ -68,7 +68,7 @@ export function Sidebar({ locale, environment, onNavigate }: {
 
       <div className="mx-3 rounded-[10px] border border-[var(--side-border)] bg-[var(--side-surface)] p-3.5">
         <div className="flex items-center gap-3">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-white/5 text-orange-300">
+          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-400/10 text-blue-300">
             <ShieldCheck aria-hidden="true" size={18} />
           </span>
           <div className="min-w-0">
@@ -121,8 +121,8 @@ function NavLink({ item, pathname, label, onNavigate }: {
 
   return (
     <Link href={item.href} onClick={onNavigate} aria-current={isActive ? "page" : undefined} className={cn(
-      "flex min-h-10 items-center gap-3 rounded-[10px] px-3 text-sm font-medium transition-colors",
-      isActive ? "bg-[var(--primary)] text-white shadow-sm" : "text-slate-300 hover:bg-[var(--side-surface)] hover:text-white",
+      "relative flex min-h-11 items-center gap-3 overflow-hidden rounded-xl px-3 text-sm font-medium transition-all",
+      isActive ? "bg-[linear-gradient(135deg,var(--primary),var(--primary-secondary))] text-white shadow-[var(--sh-primary)]" : "text-slate-300 hover:translate-x-0.5 hover:bg-[var(--side-surface)] hover:text-white rtl:hover:-translate-x-0.5",
     )}>
       <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
       <span>{label}</span>

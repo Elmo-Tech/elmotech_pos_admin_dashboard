@@ -5,7 +5,7 @@ import { ModuleErrorState } from "@/components/ui/module-error-state";
 import { PageHeader } from "@/components/ui/page-header";
 import { Pagination } from "@/components/ui/pagination";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { PlanForm } from "@/components/commercial/commercial-forms";
+import { PlanDialog } from "@/components/commercial/commercial-forms";
 import { PageSection } from "@/components/ui/page-section";
 import { getPlans } from "@/features/plans/server/queries";
 import { PAGE_SIZE, parsePage, readParam } from "@/features/shared/server/query-helpers";
@@ -41,14 +41,19 @@ export default async function PlansPage({ searchParams }: { searchParams: Promis
     { key: "duration", header: messages.duration, render: (row) => row.is_lifetime ? messages.lifetime : <span><bdi>{row.duration_value}</bdi> {localizeTerm(row.duration_unit ?? "", locale)}</span> },
     { key: "price", header: messages.price, render: (row) => formatMoney(row.price, row.currency, locale) },
     { key: "subscriptions", header: messages.subscriptionsCount, render: (row) => formatNumber(row.subscriptionCount, locale) },
-    ...(canManage ? [{ key: "edit", header: messages.action, render: (row: Row) => <details className="min-w-80"><summary className="cursor-pointer font-semibold text-[var(--primary)]">{locale === "ar" ? "تعديل الخطة" : "Edit plan"}</summary><div className="mt-3"><PlanForm locale={locale} plan={row} /></div></details> }] : []),
+    ...(canManage ? [{ key: "edit", header: messages.action, render: (row: Row) => <PlanDialog locale={locale} plan={row} /> }] : []),
   ];
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.plansTitle} description={messages.plansDescription} />
-      {canManage ? <PageSection title={locale === "ar" ? "إنشاء خطة" : "Create plan"}><PlanForm locale={locale} /></PageSection> : null}
-      <ListFilterForm action="/plans" locale={locale}>
+      <PageHeader
+        eyebrow={locale === "ar" ? "المنتجات التجارية" : "Commercial products"}
+        title={messages.plansTitle}
+        description={messages.plansDescription}
+        actions={canManage ? <PlanDialog locale={locale} /> : null}
+      />
+      <PageSection title={locale === "ar" ? "كتالوج الخطط" : "Plans catalog"} badge={<span className="rounded-full bg-[var(--primary-soft)] px-2.5 py-1 text-xs font-bold text-[var(--primary)]">{formatNumber(data.total, locale)}</span>}>
+        <ListFilterForm action="/plans" locale={locale}>
         <SelectField name="enabled" label={messages.enabledStatus} defaultValue={enabled} options={[
           { value: "", label: messages.anyStatus },
           { value: "true", label: localizeTerm("enabled", locale) },
@@ -59,9 +64,10 @@ export default async function PlansPage({ searchParams }: { searchParams: Promis
           { value: "true", label: messages.lifetime },
           { value: "false", label: messages.timeLimited },
         ]} />
-      </ListFilterForm>
-      <DataTable columns={columns} rows={data.rows} getRowKey={(row) => row.id} emptyState={<EmptyState title={messages.noPlansFound} description={messages.noPlansFoundDescription} />} />
-      <Pagination basePath="/plans" page={page} pageSize={PAGE_SIZE} total={data.total} query={{ enabled, lifetime }} locale={locale} />
+        </ListFilterForm>
+        <DataTable columns={columns} rows={data.rows} getRowKey={(row) => row.id} emptyState={<EmptyState title={messages.noPlansFound} description={messages.noPlansFoundDescription} />} />
+        <Pagination basePath="/plans" page={page} pageSize={PAGE_SIZE} total={data.total} query={{ enabled, lifetime }} locale={locale} />
+      </PageSection>
     </div>
   );
 }

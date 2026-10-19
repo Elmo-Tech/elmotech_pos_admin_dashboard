@@ -36,7 +36,7 @@ export default async function DevicesPage({ searchParams }: { searchParams: Prom
   ];
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.devicesTitle} description={messages.devicesDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "البنية النشطة" : "Active estate"} title={messages.devicesTitle} description={messages.devicesDescription} />
       <ListFilterForm action="/devices" locale={locale}><SelectField name="status" label={messages.deviceState} defaultValue={status} options={[
         { value: "", label: messages.allStatuses }, ...["pending", "active", "replaced", "deactivated", "revoked"].map((value) => ({ value, label: localizeTerm(value, locale) })),
       ]} /></ListFilterForm>

@@ -6,12 +6,12 @@ import { ModuleErrorState } from "@/components/ui/module-error-state";
 import { PageHeader } from "@/components/ui/page-header";
 import { Pagination } from "@/components/ui/pagination";
 import { StatusBadge } from "@/components/ui/status-badge";
-import { CreateCustomerForm } from "@/components/commercial/commercial-forms";
+import { CreateCustomerDialog } from "@/components/commercial/commercial-forms";
 import { PageSection } from "@/components/ui/page-section";
 import { getCustomers } from "@/features/customers/server/queries";
 import { PAGE_SIZE, parsePage, readParam } from "@/features/shared/server/query-helpers";
 import { getMessages } from "@/i18n/messages";
-import { formatDate, localizeTerm, statusTone } from "@/lib/format";
+import { formatDate, formatNumber, localizeTerm, statusTone } from "@/lib/format";
 import { getLocale } from "@/server/i18n/get-locale";
 import { getServerEnvironment } from "@/server/env";
 import { requireAdminAccess } from "@/server/auth/require-admin-access";
@@ -45,20 +45,30 @@ export default async function CustomersPage({ searchParams }: { searchParams: Pr
   ];
 
   return (
-    <div className="flex flex-col gap-6">
-      <PageHeader title={messages.customersTitle} description={messages.customersDescription} />
-      {canManage ? <PageSection title={locale === "ar" ? "إنشاء عميل" : "Create customer"}><CreateCustomerForm locale={locale} /></PageSection> : null}
-      <ListFilterForm action="/customers" locale={locale}>
-        <SearchField defaultValue={search} placeholder={messages.searchCustomers} />
-        <SelectField name="status" label={messages.customerStatus} defaultValue={status} options={[
-          { value: "", label: messages.allStatuses },
-          { value: "active", label: localizeTerm("active", locale) },
-          { value: "suspended", label: localizeTerm("suspended", locale) },
-          { value: "archived", label: localizeTerm("archived", locale) },
-        ]} />
-      </ListFilterForm>
-      <DataTable columns={columns} rows={data.rows} getRowKey={(row) => row.id} emptyState={<EmptyState title={messages.noCustomersFound} description={messages.noCustomersFoundDescription} />} />
-      <Pagination basePath="/customers" page={page} pageSize={PAGE_SIZE} total={data.total} query={{ search, status }} locale={locale} />
+    <div className="flex flex-col gap-7">
+      <PageHeader
+        eyebrow={locale === "ar" ? "إدارة العلاقات" : "Relationship management"}
+        title={messages.customersTitle}
+        description={messages.customersDescription}
+        actions={canManage ? <CreateCustomerDialog locale={locale} /> : null}
+      />
+      <PageSection
+        title={locale === "ar" ? "دليل العملاء" : "Customer directory"}
+        description={locale === "ar" ? "ابحث وراجع حالة كل عميل واشتراكه من مكان واحد." : "Search and review every customer and subscription state in one place."}
+        badge={<span className="rounded-full bg-[var(--primary-soft)] px-2.5 py-1 text-xs font-bold text-[var(--primary)]">{formatNumber(data.total, locale)}</span>}
+      >
+        <ListFilterForm action="/customers" locale={locale}>
+          <SearchField defaultValue={search} placeholder={messages.searchCustomers} />
+          <SelectField name="status" label={messages.customerStatus} defaultValue={status} options={[
+            { value: "", label: messages.allStatuses },
+            { value: "active", label: localizeTerm("active", locale) },
+            { value: "suspended", label: localizeTerm("suspended", locale) },
+            { value: "archived", label: localizeTerm("archived", locale) },
+          ]} />
+        </ListFilterForm>
+        <DataTable columns={columns} rows={data.rows} getRowKey={(row) => row.id} emptyState={<EmptyState title={messages.noCustomersFound} description={messages.noCustomersFoundDescription} />} />
+        <Pagination basePath="/customers" page={page} pageSize={PAGE_SIZE} total={data.total} query={{ search, status }} locale={locale} />
+      </PageSection>
     </div>
   );
 }

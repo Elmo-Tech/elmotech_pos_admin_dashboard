@@ -1,18 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f7f8fa;
+  --bg: #f8fafc;
   --surface: #ffffff;
-  --muted: #eef0f3;
-  --secondary: #f1f2f5;
-  --border: #e2e5ea;
-  --text: #171a1f;
-  --text-muted: #5b6472;
-  --primary: #bf5700;
+  --muted: #f1f5f9;
+  --secondary: #eef2ff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --primary: #0052ff;
+  --primary-secondary: #4d7cff;
   --on-primary: #ffffff;
-  --primary-soft: #ffead2;
-  --on-primary-soft: #9a3e00;
-  --ring: #bf5700;
+  --primary-soft: #eaf0ff;
+  --on-primary-soft: #003dbf;
+  --ring: #0052ff;
   --danger: #dc2626;
   --danger-soft: #fee2e2;
   --success: #15803d;
@@ -23,17 +24,19 @@
   --info-soft: #dbeafe;
   --teal: #0f766e;
   --teal-soft: #ccfbf1;
-  --side-bg: #14171c;
-  --side-surface: #1b1f26;
-  --side-border: #262b33;
+  --side-bg: #0b1224;
+  --side-surface: #131d35;
+  --side-border: #202b43;
   --side-text: #ffffff;
-  --side-muted: #98a2b3;
-  --r-sm: 8px;
-  --r-md: 10px;
-  --r-lg: 14px;
-  --sh-sm: 0 1px 2px 0 rgb(23 26 31 / 0.04);
-  --sh-md: 0 1px 3px 0 rgb(23 26 31 / 0.06), 0 1px 2px -1px rgb(23 26 31 / 0.04);
-  --sh-lg: 0 4px 12px -2px rgb(23 26 31 / 0.09), 0 2px 6px -2px rgb(23 26 31 / 0.05);
+  --side-muted: #93a4bf;
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --sh-sm: 0 1px 3px rgb(15 23 42 / 0.05);
+  --sh-md: 0 8px 24px -14px rgb(15 23 42 / 0.18), 0 2px 8px -4px rgb(15 23 42 / 0.08);
+  --sh-lg: 0 20px 45px -24px rgb(15 23 42 / 0.26), 0 8px 20px -14px rgb(0 82 255 / 0.12);
+  --sh-xl: 0 32px 70px -24px rgb(15 23 42 / 0.35), 0 18px 36px -24px rgb(0 82 255 / 0.22);
+  --sh-primary: 0 10px 26px -10px rgb(0 82 255 / 0.55);
 }
 
 @theme inline {
@@ -57,7 +60,9 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 12% -5%, rgb(0 82 255 / 0.055), transparent 28rem),
+    var(--bg);
   color: var(--text);
   font-family: var(--font-plex-sans), system-ui, sans-serif;
   font-size: 14px;
@@ -76,8 +81,8 @@ input,
 select,
 textarea,
 summary {
-  transition-duration: 160ms;
-  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-duration: 200ms;
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
   transition-timing-function: ease-out;
 }
 
@@ -116,7 +121,7 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: var(--ring);
-  box-shadow: 0 0 0 3px rgb(191 87 0 / 0.14);
+  box-shadow: 0 0 0 4px rgb(0 82 255 / 0.12);
   outline: none;
 }
 
@@ -144,33 +149,39 @@ textarea:disabled {
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   background: var(--surface);
-  box-shadow: var(--sh-sm);
+  box-shadow: var(--sh-md);
 }
 
 .primary-button,
 .secondary-button,
 .ghost-button {
   display: inline-flex;
-  min-height: 40px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: var(--r-sm);
-  padding: 8px 14px;
+  border-radius: 12px;
+  padding: 9px 16px;
   font-size: 14px;
   font-weight: 600;
 }
 
 .primary-button {
-  border: 1px solid var(--primary);
-  background: var(--primary);
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--primary), var(--primary-secondary));
   color: var(--on-primary);
-  box-shadow: var(--sh-sm);
+  box-shadow: var(--sh-primary);
 }
 
 .primary-button:hover {
-  background: #a94800;
-  border-color: #a94800;
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px -10px rgb(0 82 255 / 0.64);
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: scale(0.98);
 }
 
 .secondary-button {
@@ -185,12 +196,112 @@ textarea:disabled {
   background: var(--muted);
 }
 
+.secondary-button:hover {
+  border-color: rgb(0 82 255 / 0.28);
+  box-shadow: var(--sh-md);
+  transform: translateY(-1px);
+}
+
 .ghost-button {
   color: var(--text-muted);
 }
 
 .technical-value {
   font-variant-numeric: tabular-nums;
+}
+
+.display-heading {
+  letter-spacing: -0.025em;
+}
+
+html[lang="en"] .display-heading {
+  font-family: var(--font-display), var(--font-plex-sans), system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  border: 1px solid rgb(0 82 255 / 0.18);
+  border-radius: 999px;
+  background: rgb(0 82 255 / 0.06);
+  padding: 5px 10px;
+  color: var(--primary);
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 4px rgb(0 82 255 / 0.1);
+  content: "";
+}
+
+.premium-panel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 85% 0%, rgb(77 124 255 / 0.28), transparent 28rem),
+    linear-gradient(135deg, #0b1224 0%, #101b34 58%, #12264d 100%);
+  box-shadow: var(--sh-xl);
+  color: white;
+}
+
+.premium-panel::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.13) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.16;
+  content: "";
+  mask-image: linear-gradient(to left, black, transparent 72%);
+}
+
+.action-dialog {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  margin: 0;
+  transform: translate(-50%, -48%) scale(0.98);
+  opacity: 0;
+  transition: opacity 180ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), overlay 180ms allow-discrete, display 180ms allow-discrete;
+}
+
+.action-dialog[open] {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.action-dialog::backdrop {
+  background: rgb(6 13 29 / 0.62);
+  backdrop-filter: blur(6px);
+}
+
+@starting-style {
+  .action-dialog[open] {
+    transform: translate(-50%, -46%) scale(0.97);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .mobile-nav-trigger {

@@ -45,7 +45,7 @@ export default async function AuditLogsPage({ searchParams }: { searchParams: Pr
   ];
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.auditLogsTitle} description={messages.auditLogsDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "الحوكمة والتتبّع" : "Governance & traceability"} title={messages.auditLogsTitle} description={messages.auditLogsDescription} />
       <ListFilterForm action="/audit-logs" locale={locale}><SearchField name="action" defaultValue={action} placeholder={messages.filterAction} /></ListFilterForm>
       <DataTable columns={columns} rows={data.rows} getRowKey={(row) => row.id} emptyState={<EmptyState title={messages.noAuditHistory} description={messages.noRelatedRecords} />} />
       <Pagination basePath="/audit-logs" page={page} pageSize={PAGE_SIZE} total={data.total} query={{ action }} locale={locale} />

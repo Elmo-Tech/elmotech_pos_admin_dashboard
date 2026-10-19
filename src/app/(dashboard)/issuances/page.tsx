@@ -37,7 +37,7 @@ export default async function IssuancesPage({ searchParams }: { searchParams: Pr
   ];
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.issuancesTitle} description={messages.issuancesDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "سجل الإصدارات" : "Issuance ledger"} title={messages.issuancesTitle} description={messages.issuancesDescription} />
       <ListFilterForm action="/issuances" locale={locale}><SelectField name="reason" label={messages.reason} defaultValue={reason} options={[
         { value: "", label: messages.all }, ...["activation", "renewal", "replacement", "administrative"].map((value) => ({ value, label: localizeTerm(value, locale) })),
       ]} /></ListFilterForm>

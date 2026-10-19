@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Calistoga, IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { directionFor } from "@/i18n/messages";
 import { getLocale } from "@/server/i18n/get-locale";
 import { getServerEnvironment } from "@/server/env";
@@ -26,6 +26,13 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const displayFont = Calistoga({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "إدارة تراخيص Elmo POS",
   description: "لوحة إدارة داخلية لعمليات تراخيص Elmo POS.",
@@ -41,7 +48,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={directionFor(locale)}
-      className={`${plexSans.variable} ${plexArabic.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexArabic.variable} ${plexMono.variable} ${displayFont.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

@@ -19,7 +19,11 @@ export interface OverviewData {
     expiringSoonSubscriptions: number;
     activationRequestsRequiringAttention: number;
     expiredSubscriptions: number;
+    totalSubscriptions: number;
+    activeLicenses: number;
+    activeDevices: number;
   };
+  customerGrowth: { month: string; count: number }[];
   recentCustomers: {
     id: string;
     businessName: string;
@@ -56,6 +60,7 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
   const nowDate = new Date();
   const now = nowDate.toISOString();
   const expiringBefore = new Date(nowDate.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString();
+  const growthStart = new Date(Date.UTC(nowDate.getUTCFullYear(), nowDate.getUTCMonth() - 5, 1));
 
   const [
     customersResult,
@@ -63,6 +68,10 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
     expiringSoonResult,
     attentionRequestsResult,
     expiredSubscriptionsResult,
+    totalSubscriptionsResult,
+    activeLicensesResult,
+    activeDevicesResult,
+    customerGrowthResult,
     recentCustomersResult,
     requestsResult,
   ] = await Promise.all([
@@ -88,6 +97,10 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
       .from("subscriptions")
       .select("id", { count: "exact", head: true })
       .eq("status", "expired"),
+    supabase.from("subscriptions").select("id", { count: "exact", head: true }),
+    supabase.from("licenses").select("id", { count: "exact", head: true }).eq("status", "active"),
+    supabase.from("device_activations").select("id", { count: "exact", head: true }).eq("status", "active"),
+    supabase.from("customers").select("created_at").gte("created_at", growthStart.toISOString()),
     supabase
       .from("customers")
       .select("id,business_name,customer_code,status,created_at")
@@ -100,7 +113,7 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
       .limit(8),
   ]);
 
-  if (recentCustomersResult.error || requestsResult.error) {
+  if (recentCustomersResult.error || requestsResult.error || customerGrowthResult.error) {
     throw new Error("Recent activity could not be loaded from the configured environment.");
   }
 
@@ -145,7 +158,11 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
       expiringSoonSubscriptions: requireCount(expiringSoonResult),
       activationRequestsRequiringAttention: requireCount(attentionRequestsResult),
       expiredSubscriptions: requireCount(expiredSubscriptionsResult),
+      totalSubscriptions: requireCount(totalSubscriptionsResult),
+      activeLicenses: requireCount(activeLicensesResult),
+      activeDevices: requireCount(activeDevicesResult),
     },
+    customerGrowth: buildMonthlyGrowth(nowDate, customerGrowthResult.data ?? []),
     recentCustomers: (recentCustomersResult.data ?? []).map((row) => ({
       id: row.id,
       businessName: row.business_name,
@@ -173,3 +190,24 @@ export const getOverviewData = cache(async function getOverviewData(): Promise<O
     }),
   };
 });
+
+function buildMonthlyGrowth(now: Date, rows: readonly { created_at: string }[]) {
+  const months = Array.from({ length: 6 }, (_, index) => {
+    const date = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - (5 - index), 1));
+    return {
+      month: date.toISOString(),
+      key: `${date.getUTCFullYear()}-${date.getUTCMonth()}`,
+      count: 0,
+    };
+  });
+  const byKey = new Map(months.map((month) => [month.key, month]));
+
+  for (const row of rows) {
+    const createdAt = new Date(row.created_at);
+    const key = `${createdAt.getUTCFullYear()}-${createdAt.getUTCMonth()}`;
+    const month = byKey.get(key);
+    if (month) month.count += 1;
+  }
+
+  return months.map(({ month, count }) => ({ month, count }));
+}

@@ -43,7 +43,7 @@ export default async function ActivationRequestsPage({ searchParams }: { searchP
 
   return (
     <div className="flex flex-col gap-7">
-      <PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "دورة التفعيل" : "Activation workflow"} title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} />
       <ActivationGuide locale={locale} />
       <ActivationWorkflow locale={locale} environment={environment} />
       <PageSection title={messages.requestQueue}>

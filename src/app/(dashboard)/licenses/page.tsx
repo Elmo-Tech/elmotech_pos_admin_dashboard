@@ -39,7 +39,7 @@ export default async function LicensesPage({ searchParams }: { searchParams: Pro
   ];
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.licensesTitle} description={messages.licensesDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "مخزون التراخيص" : "License inventory"} title={messages.licensesTitle} description={messages.licensesDescription} />
       <ListFilterForm action="/licenses" locale={locale}>
         <SearchField defaultValue={search} placeholder={messages.searchCustomers} />
         <SelectField name="status" label={messages.licenseStatus} defaultValue={status} options={[

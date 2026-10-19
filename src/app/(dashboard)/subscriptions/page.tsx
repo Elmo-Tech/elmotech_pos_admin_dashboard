@@ -40,7 +40,7 @@ export default async function SubscriptionsPage({ searchParams }: { searchParams
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.subscriptionsTitle} description={messages.subscriptionsDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "الإيراد والاستمرارية" : "Revenue & retention"} title={messages.subscriptionsTitle} description={messages.subscriptionsDescription} />
       <ListFilterForm action="/subscriptions" locale={locale}>
         <SelectField name="status" label={messages.subscriptionStatus} defaultValue={status} options={[
           { value: "", label: messages.all },

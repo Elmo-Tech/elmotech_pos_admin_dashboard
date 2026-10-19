@@ -10,6 +10,7 @@ import {
   savePlanAction,
   type CommercialActionState,
 } from "@/features/commercial/server/actions";
+import { ActionDialog } from "@/components/ui/action-dialog";
 import type { Locale } from "@/i18n/messages";
 
 const copy = {
@@ -67,6 +68,8 @@ const copy = {
     confirmRotation: "Generate and replace code",
     cancel: "Cancel",
     notEligible: "This license has already entered activation and its code can no longer be replaced.",
+    customerDialogDescription: "Add the essential customer details now. Subscription and licensing can be configured from the customer profile afterwards.",
+    planDialogDescription: "Define a reusable commercial plan without leaving the plans workspace.",
   },
   ar: {
     createPlan: "إنشاء خطة",
@@ -122,6 +125,8 @@ const copy = {
     confirmRotation: "إنشاء الكود واستبداله",
     cancel: "إلغاء",
     notEligible: "بدأ استخدام هذا الترخيص للتفعيل، لذلك لا يمكن استبدال الكود.",
+    customerDialogDescription: "أضف بيانات العميل الأساسية الآن، ثم أدر الاشتراك والترخيص من ملف العميل بعد الإنشاء.",
+    planDialogDescription: "أنشئ خطة تجارية قابلة لإعادة الاستخدام دون مغادرة شاشة الخطط.",
   },
 } as const;
 
@@ -169,13 +174,13 @@ export interface PlanFormValue {
   is_enabled: boolean;
 }
 
-export function PlanForm({ locale, plan }: { locale: Locale; plan?: PlanFormValue }) {
+export function PlanForm({ locale, plan, embedded = false }: { locale: Locale; plan?: PlanFormValue; embedded?: boolean }) {
   const t = copy[locale];
   const [state, action] = useActionState(savePlanAction, INITIAL_COMMERCIAL_ACTION_STATE);
   const [isLifetime, setIsLifetime] = useState(plan?.is_lifetime ?? false);
   const [durationValue, setDurationValue] = useState(plan?.duration_value?.toString() ?? "");
   return (
-    <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-4">
+    <form action={action} className={`${embedded ? "grid" : "surface-card grid p-5"} gap-5 sm:grid-cols-2 lg:grid-cols-4`}>
       {plan ? <input type="hidden" name="planId" value={plan.id} /> : null}
       <label className={`${labelClass} sm:col-span-2`}>
         {t.planName}
@@ -219,11 +224,11 @@ export function PlanForm({ locale, plan }: { locale: Locale; plan?: PlanFormValu
   );
 }
 
-export function CreateCustomerForm({ locale }: { locale: Locale }) {
+export function CreateCustomerForm({ locale, embedded = false }: { locale: Locale; embedded?: boolean }) {
   const t = copy[locale];
   const [state, action] = useActionState(createCustomerAction, INITIAL_COMMERCIAL_ACTION_STATE);
   return (
-    <form action={action} className="surface-card grid gap-5 p-5 sm:grid-cols-2 lg:grid-cols-3">
+    <form action={action} className={`${embedded ? "grid" : "surface-card grid p-5"} gap-5 sm:grid-cols-2 lg:grid-cols-3`}>
       <label className={labelClass}>{t.businessName}<input className={inputClass} name="businessName" maxLength={160} required /></label>
       <label className={labelClass}>{t.ownerName}<input className={inputClass} name="ownerName" maxLength={160} required /></label>
       <label className={labelClass}>{t.phone}<input className={inputClass} name="phone" maxLength={50} required /></label>
@@ -240,6 +245,36 @@ export function CreateCustomerForm({ locale }: { locale: Locale }) {
         {state.status === "success" && state.entityId ? <Link href={`/customers/${state.entityId}`} className="text-sm font-semibold text-[var(--primary)] hover:underline">{t.openCustomer}</Link> : null}
       </div>
     </form>
+  );
+}
+
+export function CreateCustomerDialog({ locale }: { locale: Locale }) {
+  const t = copy[locale];
+  return (
+    <ActionDialog
+      triggerLabel={t.createCustomer}
+      title={t.createCustomer}
+      description={t.customerDialogDescription}
+      size="xl"
+    >
+      <CreateCustomerForm locale={locale} embedded />
+    </ActionDialog>
+  );
+}
+
+export function PlanDialog({ locale, plan }: { locale: Locale; plan?: PlanFormValue }) {
+  const t = copy[locale];
+  return (
+    <ActionDialog
+      triggerLabel={plan ? t.editPlan : t.createPlan}
+      title={plan ? t.editPlan : t.createPlan}
+      description={t.planDialogDescription}
+      kind={plan ? "edit" : "create"}
+      size="xl"
+      triggerClassName={plan ? "min-h-9 px-3 py-1.5 text-xs" : undefined}
+    >
+      <PlanForm locale={locale} plan={plan} embedded />
+    </ActionDialog>
   );
 }
 

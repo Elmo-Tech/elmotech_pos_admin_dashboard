@@ -11,7 +11,7 @@ export default async function SettingsPage() {
 
   return (
     <div className="flex flex-col gap-6">
-      <PageHeader title={messages.settingsTitle} description={messages.settingsDescription} />
+      <PageHeader eyebrow={locale === "ar" ? "إعداد مساحة العمل" : "Workspace setup"} title={messages.settingsTitle} description={messages.settingsDescription} />
       <div className="grid gap-5 md:grid-cols-2">
         <section className="surface-card p-6">
           <h2 className="text-base font-semibold text-[var(--text)]">{messages.environment}</h2>
