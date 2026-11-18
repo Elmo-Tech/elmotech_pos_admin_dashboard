@@ -93,11 +93,21 @@ export function RenewSubscription({
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [filename, setFilename] = useState("elmo-license-renewal.elmolic");
   const [actualExpiry, setActualExpiry] = useState<string | null>(null);
+  const dialog = useRef<HTMLDialogElement>(null);
   const operationId = useRef<string | null>(null);
 
   useEffect(() => () => {
     if (downloadUrl) URL.revokeObjectURL(downloadUrl);
   }, [downloadUrl]);
+
+  useEffect(() => {
+    if (!open) return;
+    const node = dialog.current;
+    node?.showModal();
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { node?.close(); document.body.style.overflow = previous; };
+  }, [open]);
 
   const plan = finitePlans.find((candidate) => candidate.id === planId) ?? null;
   const projected = plan ? projectRenewal(subscription.expires_at, referenceNow, plan) : null;
@@ -157,14 +167,15 @@ export function RenewSubscription({
       <button
         type="button"
         onClick={() => setOpen(true)}
-      className="primary-button mt-4"
+        className="primary-button mt-4"
+        aria-haspopup="dialog"
       >
         {t.action}
       </button>
 
       {open ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 p-4" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget && phase !== "pending") setOpen(false); }}>
-          <section role="dialog" aria-modal="true" aria-labelledby="renewal-title" className="w-full max-w-xl rounded-[14px] border border-[var(--border)] bg-white p-6 shadow-2xl">
+        <dialog ref={dialog} className="action-dialog max-w-xl text-start" aria-labelledby="renewal-title" onClose={() => setOpen(false)} onCancel={event => { if (phase === "pending") event.preventDefault(); else setOpen(false); }} onClick={event => { if (event.target === event.currentTarget && phase !== "pending") setOpen(false); }}>
+          <section className="max-h-[calc(100dvh-48px)] overflow-y-auto p-6">
             <div className="flex items-start justify-between gap-4">
               <h2 id="renewal-title" className="text-xl font-semibold text-[var(--text)]">{t.title}</h2>
               <button type="button" disabled={phase === "pending"} onClick={() => setOpen(false)} className="ghost-button h-9 min-h-9">{t.close}</button>
@@ -205,7 +216,7 @@ export function RenewSubscription({
               </div>
             )}
           </section>
-        </div>
+        </dialog>
       ) : null}
     </>
   );

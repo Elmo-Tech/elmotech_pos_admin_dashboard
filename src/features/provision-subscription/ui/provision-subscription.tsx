@@ -1,7 +1,7 @@
 "use client";
 import { useActionState, useState } from "react";
 import { useFormStatus } from "react-dom";
-import { ActionDialog } from "@/shared/ui/action-dialog";
+import { ActionDialog, DialogCloseButton } from "@/shared/ui/action-dialog";
 import { OneTimeLicenseCodePanel } from "@/entities/license";
 import type { Locale } from "@/shared/i18n";
 import { provisionSubscriptionAction } from "../api/actions";
@@ -124,7 +124,8 @@ export function AddSubscriptionForm({
           </select>
         </label>
         <label className={labelClass}>{t.startDate}<input className={inputClass} name="startDate" type="date" defaultValue={today} required /></label>
-        <div className="flex flex-wrap items-center gap-3 sm:col-span-2">
+        <div className="form-footer sm:col-span-2">
+          {embedded ? <DialogCloseButton>{locale === "ar" ? "إلغاء" : "Cancel"}</DialogCloseButton> : null}
           <SubmitButton idle={t.provision} pending={t.provisioning} />
           <Feedback locale={locale} status={state.status} code={state.code} />
         </div>
@@ -153,6 +154,7 @@ export function AddSubscriptionDialog({
       title={t.addSubscription}
       description={t.subscriptionDialogDescription}
       size="lg"
+      closeLabel={locale === "ar" ? "إغلاق" : "Close"}
     >
       <AddSubscriptionForm locale={locale} customerId={customerId} plans={plans} canProvision embedded />
     </ActionDialog>

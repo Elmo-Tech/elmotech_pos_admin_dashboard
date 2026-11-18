@@ -25,19 +25,24 @@ function declarations(folder) {
 }
 const fixture='docs/fsd-migration/declarations-before.json';
 if(process.env.CAPTURE_FSD_DECLARATIONS) fs.writeFileSync(fixture,JSON.stringify(declarations(process.env.CAPTURE_FSD_ROOT || process.cwd()),null,2)+'\n');
-test('existing function bodies and state/constants survive architecture moves',()=>{
+test('non-UI logic survives; intentional UI redesign changes have exact scoped fingerprints',()=>{
   const before=JSON.parse(fs.readFileSync(fixture,'utf8'));
   const after=declarations(process.cwd());
   const providerChanges=JSON.parse(fs.readFileSync('docs/laravel-integration/declaration-changes.json','utf8'));
+  const uiChanges=JSON.parse(fs.readFileSync('docs/uiux-refactor/declaration-changes.json','utf8'));
+  for(const change of uiChanges) assert.ok(change.after ? change.after.file.includes('/ui/') || ['src/app/layout.tsx','src/app/(dashboard)/loading.tsx'].includes(change.after.file) : change.before.name==='displayFont' || (change.before.name==='tones'&&change.before.file.endsWith('/stat-card.tsx')), 'UI change cannot exempt server/business code');
   for(const entry of before) {
+    const ui=uiChanges.find(change=>change.before.file===entry.file&&change.before.name===entry.name&&change.before.hash===entry.hash);
+    if(ui){if(ui.after)assert.ok(after.some(candidate=>candidate.file===ui.after.file&&candidate.name===ui.after.name&&candidate.hash===ui.after.hash));continue;}
     const retired=providerChanges.some(change=>change.retired===true&&change.after===null&&['KNOWN_PROJECTS','extractProjectRef'].includes(change.before.name)&&change.before.hash===entry.hash&&change.before.name===entry.name&&change.before.file===entry.file);
     if(retired) continue;
     assert.ok(after.some(candidate=>candidate.name===entry.name&&candidate.kind===entry.kind&&(candidate.hash===entry.hash || providerChanges.some(change=>change.before.hash===entry.hash&&change.before.name===entry.name&&change.after?.hash===candidate.hash&&change.after.file===candidate.file))),`${entry.file} ${entry.name}: existing logic changed or lost`);
   }
 });
-test('global CSS, font layout and dictionary payload are preserved',()=>{
+test('brand CSS matches reviewed redesign and existing dictionary payload is preserved',()=>{
   const hashes=JSON.parse(fs.readFileSync('docs/fsd-migration/source-before.json','utf8'));
-  assert.equal(hash(fs.readFileSync('src/app/globals.css')),hashes['src/app/globals.css']);
+  assert.equal(hash(fs.readFileSync('src/app/globals.css')),JSON.parse(fs.readFileSync('docs/uiux-refactor/style-contract.json','utf8')).cssSha256);
+  assert.equal(hashes['src/app/globals.css'],JSON.parse(fs.readFileSync('docs/uiux-refactor/source-baseline.json','utf8'))['src/app/globals.css']);
   // Layout imports change; font initialization and all JSX are covered by declaration fingerprints.
   const dictionary=fs.existsSync('src/shared/i18n/messages.ts')?'src/shared/i18n/messages.ts':'src/i18n/messages.ts';
   const strip=source=>source.replace(/^import .*\n/gm,'');

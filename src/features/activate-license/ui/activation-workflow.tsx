@@ -228,7 +228,7 @@ export function ActivationWorkflow({
             <p className="mt-1 max-w-2xl text-sm leading-6 text-[var(--text-muted)]">{t.description}</p>
           </div>
         </div>
-        <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3 py-1.5 text-xs font-bold text-[var(--primary)] shadow-sm">
+        <span className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 text-xs font-bold text-[var(--primary)] shadow-sm">
           {phase === "verifying" || phase === "issuing" ? <LoaderCircle aria-hidden="true" className="animate-spin" size={14} /> : <span className="size-2 rounded-full bg-[var(--primary)]" />}
           {phaseLabel}
         </span>
@@ -244,7 +244,7 @@ export function ActivationWorkflow({
               <li key={step} className="flex min-w-0 flex-col items-center" aria-current={active ? "step" : undefined}>
                 <div className="flex w-full items-center" aria-hidden="true">
                   <span className={`h-px flex-1 ${index === 0 ? "bg-transparent" : complete || active ? "bg-[var(--primary)]/35" : "bg-[var(--border)]"}`} />
-                  <span className={`relative z-10 mx-2 flex size-8 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:size-9 ${complete ? "border-[var(--success)] bg-[var(--success)] text-white" : active ? "border-[var(--primary)] bg-[var(--primary)] text-white shadow-[0_0_0_5px_rgb(0_82_255/.10)]" : "border-[var(--border)] bg-white text-[var(--text-muted)]"}`}>
+                  <span className={`relative z-10 mx-2 flex size-8 shrink-0 items-center justify-center rounded-full border text-xs font-bold sm:size-9 ${complete ? "border-[var(--success)] bg-[var(--success)] text-white" : active ? "border-[var(--primary)] bg-[var(--primary)] text-white shadow-[0_0_0_5px_rgb(16_29_86/.10)]" : "border-[var(--border)] bg-white text-[var(--text-muted)]"}`}>
                     {complete ? <Check aria-hidden="true" size={15} /> : stepNumber}
                   </span>
                   <span className={`h-px flex-1 ${index === t.steps.length - 1 ? "bg-transparent" : complete ? "bg-[var(--success)]/35" : "bg-[var(--border)]"}`} />
@@ -266,7 +266,7 @@ export function ActivationWorkflow({
                   onDragLeave={() => setIsDragging(false)}
                   onDragOver={(event) => event.preventDefault()}
                   onDrop={handleDrop}
-                  className={`group flex min-h-56 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-8 text-center transition-all ${isDragging ? "border-[var(--primary)] bg-[var(--primary-soft)] shadow-[0_0_0_5px_rgb(0_82_255/.08)]" : file ? "border-blue-200 bg-blue-50/45" : "border-slate-300 bg-slate-50/70 hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]/35"}`}
+                  className={`group flex min-h-56 cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-8 text-center transition-all ${isDragging ? "border-[var(--primary)] bg-[var(--primary-soft)] shadow-[0_0_0_5px_rgb(16_29_86/.08)]" : file ? "border-[var(--border)] bg-[var(--secondary)]/60" : "border-slate-300 bg-slate-50/70 hover:border-[var(--primary)] hover:bg-[var(--primary-soft)]/35"}`}
                 >
                   <input
                     ref={fileInput}

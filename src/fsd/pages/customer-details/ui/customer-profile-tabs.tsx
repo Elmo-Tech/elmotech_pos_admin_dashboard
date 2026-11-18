@@ -36,7 +36,7 @@ export function CustomerProfileTabs({
 
   return (
     <div>
-      <div className="sticky top-0 z-20 -mx-1 mb-7 overflow-x-auto bg-[var(--bg)]/92 px-1 py-2 backdrop-blur-xl">
+      <div className="sticky top-[76px] z-20 -mx-1 mb-7 overflow-x-auto bg-[var(--bg)]/92 px-1 py-2 backdrop-blur-xl">
         <div
           className="surface-card mx-auto flex min-w-max gap-1.5 p-1.5 shadow-[var(--sh-sm)] sm:min-w-0"
           role="tablist"
@@ -53,6 +53,12 @@ export function CustomerProfileTabs({
                 role="tab"
                 aria-selected={selected}
                 aria-controls={`customer-panel-${tab}`}
+                tabIndex={selected ? 0 : -1}
+                onKeyDown={event => {
+                  const index = tabs.indexOf(tab);
+                  const next = event.key === "Home" ? 0 : event.key === "End" ? tabs.length - 1 : event.key === "ArrowRight" ? (index + (locale === "ar" ? tabs.length - 1 : 1)) % tabs.length : event.key === "ArrowLeft" ? (index + (locale === "ar" ? 1 : tabs.length - 1)) % tabs.length : null;
+                  if (next !== null) { event.preventDefault(); setActiveTab(tabs[next]); document.getElementById(`customer-tab-${tabs[next]}`)?.focus(); }
+                }}
                 onClick={() => setActiveTab(tab)}
                 className={cn(
                   "flex min-h-11 flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold outline-none transition-all",
@@ -74,6 +80,7 @@ export function CustomerProfileTabs({
           key={tab}
           id={`customer-panel-${tab}`}
           role="tabpanel"
+          tabIndex={0}
           aria-labelledby={`customer-tab-${tab}`}
           className="animate-fade-up"
         >

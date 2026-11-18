@@ -1,5 +1,5 @@
 import "server-only";
-import { BadgeCheck, FileDown, FileUp, ShieldCheck } from "lucide-react";
+import { FileDown, FileUp, ShieldCheck } from "lucide-react";
 import { ActivationWorkflow } from "@/features/activate-license";
 import { ActivationGuide } from "./activation-guide";
 import { DataTable, type DataTableColumn } from "@/shared/ui/data-table";
@@ -77,27 +77,7 @@ export async function ActivationRequestsPage({ searchParams }: { searchParams: P
 
   return (
     <div className="flex flex-col gap-8">
-      <section className="premium-panel p-6 sm:p-8">
-        <div className="grid gap-7 xl:grid-cols-[minmax(0,1.15fr)_minmax(440px,.85fr)] xl:items-end">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-bold text-blue-100"><BadgeCheck aria-hidden="true" size={15} />{t.eyebrow}</span>
-            <h1 className="display-heading mt-5 max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl">{t.title}</h1>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-blue-100/75 sm:text-base">{t.description}</p>
-          </div>
-          <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-3">
-            {t.heroSteps.map((step) => {
-              const Icon = step.icon;
-              return (
-                <div key={step.title} className="bg-[#101b34]/85 p-4">
-                  <Icon aria-hidden="true" className="text-blue-300" size={19} />
-                  <p className="mt-3 text-sm font-bold text-white">{step.title}</p>
-                  <p className="mt-1 text-xs leading-5 text-blue-100/60">{step.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <PageHeader eyebrow={t.eyebrow} title={messages.activationRequestsTitle} description={t.description} />
 
       <ActivationWorkflow locale={locale} environment={environment} />
       <ActivationGuide locale={locale} />

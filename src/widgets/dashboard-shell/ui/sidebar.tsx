@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Activity,
-  BadgeCheck,
+  PanelLeftClose,
+  PanelLeftOpen,
   CalendarClock,
   FileCheck2,
   FileOutput,
@@ -36,10 +38,12 @@ const ICONS: Record<MainNavItem["icon"], LucideIcon> = {
   settings: Settings2,
 };
 
-export function Sidebar({ locale, environment, onNavigate }: {
+export function Sidebar({ locale, environment, onNavigate, compact = false, onToggleCompact }: {
   locale: Locale;
   environment: AppEnvironment;
   onNavigate?: () => void;
+  compact?: boolean;
+  onToggleCompact?: () => void;
 }) {
   const pathname = usePathname();
   const messages = getMessages(locale, environment);
@@ -48,39 +52,21 @@ export function Sidebar({ locale, environment, onNavigate }: {
   const settingsItem = MAIN_NAV_ITEMS.find((item) => item.group === "settings");
 
   return (
-    <aside className="flex h-full w-64 shrink-0 flex-col border-e border-[var(--side-border)] bg-[var(--side-bg)] text-white">
-      <div className="flex h-20 shrink-0 items-center justify-between px-5">
-        <Link href="/dashboard" onClick={onNavigate} className="group flex min-w-0 items-center gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[linear-gradient(135deg,var(--primary),var(--primary-secondary))] text-white shadow-[var(--sh-primary)]">
-            <BadgeCheck aria-hidden="true" size={22} strokeWidth={1.9} />
-          </span>
-          <span className="min-w-0">
-            <span className="block truncate text-[15px] font-semibold leading-tight">Elmo POS</span>
-            <span className="mt-0.5 block truncate text-xs text-[var(--side-muted)]">{messages.licenseOperations}</span>
-          </span>
+    <aside className="workspace-sidebar" data-compact={compact}>
+      <div className="sidebar-brand">
+        <Link href="/dashboard" onClick={onNavigate} aria-label={locale === "ar" ? "المدير — الرئيسية" : "Elmodeer — Overview"}>
+          <Image src="/brand/elmodeer-on-ink.png" width={120} height={49} alt={locale === "ar" ? "المدير" : "Elmodeer"} className="brand-wordmark" priority />
         </Link>
-        {onNavigate ? (
-          <button type="button" onClick={onNavigate} className="mobile-nav-trigger flex size-9 items-center justify-center rounded-lg text-[var(--side-muted)] hover:bg-[var(--side-surface)] hover:text-white" aria-label={messages.closeNavigation}>
-            <X aria-hidden="true" size={19} />
-          </button>
-        ) : null}
+        {onNavigate ? <button type="button" onClick={onNavigate} className="sidebar-icon-button" aria-label={messages.closeNavigation}><X aria-hidden="true" size={20} /></button> : null}
       </div>
-
-      <div className="mx-3 rounded-[10px] border border-[var(--side-border)] bg-[var(--side-surface)] p-3.5">
-        <div className="flex items-center gap-3">
-          <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-400/10 text-blue-300">
-            <ShieldCheck aria-hidden="true" size={18} />
-          </span>
-          <div className="min-w-0">
-            <p className="text-xs font-medium text-[var(--side-muted)]">{messages.environment}</p>
-            <p className="mt-0.5 truncate text-sm font-semibold text-white">{environment === "production" ? messages.production : messages.staging}</p>
-          </div>
-        </div>
+      <div className="sidebar-workspace">
+        <span className="workspace-emblem"><ShieldCheck aria-hidden="true" size={20} /></span>
+        <div className="sidebar-copy"><p>{messages.licenseOperations}</p><span>{environment === "production" ? messages.production : messages.staging}</span></div>
       </div>
 
       <div className="sidebar-scroll flex-1 overflow-y-auto px-3 py-5">
         <NavGroup label={messages.businessNavigation} items={workspaceItems} pathname={pathname} messages={messages} onNavigate={onNavigate} />
-        <NavGroup label={messages.operationsNavigation} items={operationItems} pathname={pathname} messages={messages} onNavigate={onNavigate} className="mt-7" />
+        <NavGroup label={messages.operationsNavigation} items={operationItems} pathname={pathname} messages={messages} onNavigate={onNavigate} className="mt-6" />
       </div>
 
       {settingsItem ? (
@@ -88,6 +74,10 @@ export function Sidebar({ locale, environment, onNavigate }: {
           <NavLink item={settingsItem} pathname={pathname} label={messages[settingsItem.key]} onNavigate={onNavigate} />
         </div>
       ) : null}
+      {onToggleCompact ? <button type="button" onClick={onToggleCompact} className="sidebar-collapse" aria-label={compact ? (locale === "ar" ? "توسيع القائمة" : "Expand navigation") : (locale === "ar" ? "تصغير القائمة" : "Collapse navigation")} aria-expanded={!compact}>
+        {compact ? <PanelLeftOpen size={18} aria-hidden="true" /> : <PanelLeftClose size={18} aria-hidden="true" />}<span>{locale === "ar" ? "تصغير القائمة" : "Collapse sidebar"}</span>
+      </button> : null}
+      <p className="sidebar-credit">ELMODEER <span>OPERATIONS</span></p>
     </aside>
   );
 }
@@ -102,7 +92,7 @@ function NavGroup({ label, items, pathname, messages, onNavigate, className }: {
 }) {
   return (
     <nav className={className} aria-label={label}>
-      <p className="mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--side-muted)] rtl:tracking-normal">{label}</p>
+      <p className="sidebar-group-title">{label}</p>
       <ul className="space-y-1">
         {items.map((item) => <li key={item.href}><NavLink item={item} pathname={pathname} label={messages[item.key]} onNavigate={onNavigate} /></li>)}
       </ul>
@@ -120,9 +110,9 @@ function NavLink({ item, pathname, label, onNavigate }: {
   const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
 
   return (
-    <Link href={item.href} onClick={onNavigate} aria-current={isActive ? "page" : undefined} className={cn(
-      "relative flex min-h-11 items-center gap-3 overflow-hidden rounded-xl px-3 text-sm font-medium transition-all",
-      isActive ? "bg-[linear-gradient(135deg,var(--primary),var(--primary-secondary))] text-white shadow-[var(--sh-primary)]" : "text-slate-300 hover:translate-x-0.5 hover:bg-[var(--side-surface)] hover:text-white rtl:hover:-translate-x-0.5",
+    <Link href={item.href} onClick={onNavigate} title={label} aria-current={isActive ? "page" : undefined} className={cn(
+      "sidebar-nav-link",
+      isActive && "is-active",
     )}>
       <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
       <span>{label}</span>

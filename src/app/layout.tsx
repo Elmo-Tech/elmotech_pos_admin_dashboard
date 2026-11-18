@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Calistoga, IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import { directionFor } from "@/shared/i18n";
 import { getLocale } from "@/shared/i18n/server";
 import { getServerEnvironment } from "@/shared/config/server";
@@ -26,21 +26,13 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const displayFont = Calistoga({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
-  title: "إدارة تراخيص Elmo POS",
+  title: "المدير | عمليات التراخيص",
   description: "لوحة إدارة داخلية لعمليات تراخيص Elmo POS.",
 };
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
-  // Validate the runtime/environment/project relationship for every route,
-  // including public routes, before any Supabase client can be created.
+  // Validate the server-owned environment on public and protected routes.
   getServerEnvironment();
   const locale = await getLocale();
 
@@ -48,7 +40,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={directionFor(locale)}
-      className={`${plexSans.variable} ${plexArabic.variable} ${plexMono.variable} ${displayFont.variable} h-full antialiased`}
+      className={`${plexSans.variable} ${plexArabic.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}</body>
     </html>

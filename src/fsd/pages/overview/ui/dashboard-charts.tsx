@@ -28,15 +28,15 @@ export function CustomerGrowthChart({ data, locale }: { data: readonly TrendPoin
         </div>
       </div>
 
-      <div className="mt-8 flex h-48 items-end gap-2 sm:gap-3" role="img" aria-label={`${copy.title}: ${total}`}>
+      <div className="mt-8 flex h-48 items-end gap-2 sm:gap-3" aria-label={copy.title}>
         {data.map((point, index) => {
           const height = point.value === 0 ? 0 : Math.max(22, Math.round((point.value / max) * 100));
           return (
             <div key={`${point.label}-${index}`} className="group flex h-full min-w-0 flex-1 flex-col justify-end gap-2">
               <div className="relative flex flex-1 items-end justify-center rounded-xl bg-slate-50 px-1">
-                <span className="absolute top-2 rounded-md bg-slate-900 px-2 py-1 text-[10px] font-bold text-white opacity-0 shadow-lg transition group-hover:opacity-100">{formatNumber(point.value, locale)}</span>
+                <span className="absolute top-2 rounded-md px-2 py-1 text-[11px] font-semibold text-[var(--text-muted)]">{formatNumber(point.value, locale)}</span>
                 <div
-                  className="w-full max-w-11 rounded-t-[10px] bg-[linear-gradient(180deg,var(--primary-secondary),var(--primary))] shadow-[0_8px_20px_rgba(0,82,255,0.18)] transition-all duration-500 group-hover:brightness-110"
+                  className="w-full max-w-11 rounded-t-[10px] bg-[var(--navy)] shadow-[0_8px_20px_rgba(16,29,86,0.12)] transition-all duration-500 group-hover:brightness-110"
                   style={{ height: `${height}%` }}
                 />
               </div>
@@ -66,9 +66,9 @@ export function SubscriptionHealth({
   const safeActive = Math.max(active - expiring, 0);
   const other = Math.max(total - active - expired, 0);
   const segments = [
-    { label: locale === "ar" ? "نشطة" : "Healthy", value: safeActive, color: "#0052ff", icon: CheckCircle2 },
+    { label: locale === "ar" ? "نشطة" : "Healthy", value: safeActive, color: "#354da3", icon: CheckCircle2 },
     { label: locale === "ar" ? "تحتاج متابعة" : "Expiring", value: expiring, color: "#f59e0b", icon: Clock3 },
-    { label: locale === "ar" ? "منتهية" : "Expired", value: expired + other, color: "#ef4444", icon: CircleAlert },
+    { label: locale === "ar" ? "منتهية" : "Expired", value: expired + other, color: "#cf342b", icon: CircleAlert },
   ];
   let cursor = 0;
   const stops = segments.map((segment) => {
@@ -80,11 +80,12 @@ export function SubscriptionHealth({
   return (
     <section className="surface-card p-5 sm:p-6">
       <span className="eyebrow">{locale === "ar" ? "صحة الاشتراكات" : "Subscription health"}</span>
+      {total === 0 ? <p className="mt-4 text-xs text-[var(--text-muted)]">{locale === "ar" ? "لا توجد اشتراكات لحساب نسبة النشاط بعد." : "No subscriptions yet. An active share will appear when records exist."}</p> : null}
       <div className="mt-5 grid items-center gap-6 sm:grid-cols-[150px_1fr] xl:grid-cols-1 2xl:grid-cols-[150px_1fr]">
         <div className="relative mx-auto grid size-36 place-items-center rounded-full" style={{ background: total > 0 ? `conic-gradient(${stops.join(",")})` : "var(--muted)" }}>
           <div className="grid size-24 place-items-center rounded-full bg-white text-center shadow-inner">
             <div>
-              <p className="technical-value text-2xl font-bold text-[var(--text)]">{formatNumber(activeShare, locale)}%</p>
+              <p className="technical-value text-2xl font-bold text-[var(--text)]">{total === 0 ? "—" : `${formatNumber(activeShare, locale)}%`}</p>
               <p className="text-[10px] font-semibold text-[var(--text-muted)]">{locale === "ar" ? "نشطة" : "active"}</p>
             </div>
           </div>

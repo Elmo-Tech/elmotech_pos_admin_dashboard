@@ -1,6 +1,6 @@
 import "server-only";
 import Link from "next/link";
-import { ArrowUpRight, BadgeCheck, Boxes, InfinityIcon, Sparkles, UsersRound } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, Boxes, InfinityIcon, UsersRound } from "lucide-react";
 import { PlanDialog } from "@/features/manage-plan";
 import { DataTable, type DataTableColumn } from "@/shared/ui/data-table";
 import { EmptyState } from "@/shared/ui/empty-state";
@@ -84,7 +84,7 @@ export async function PlansPage({ searchParams }: { searchParams: Promise<Record
     { key: "status", header: messages.status, render: (row) => <StatusBadge label={localizeTerm(row.is_enabled ? "enabled" : "disabled", locale)} tone={row.is_enabled ? "success" : "danger"} /> },
     { key: "duration", header: messages.duration, render: (row) => row.is_lifetime ? <span className="font-semibold text-[var(--text)]">{messages.lifetime}</span> : <span><bdi className="font-semibold text-[var(--text)]">{row.duration_value}</bdi> {localizeTerm(row.duration_unit ?? "", locale)}</span> },
     { key: "price", header: messages.price, render: (row) => row.price === null || !row.currency ? <span className="text-xs font-semibold text-slate-500">{t.unpriced}</span> : <span className="font-semibold text-[var(--text)]">{formatMoney(row.price, row.currency, locale)}</span> },
-    { key: "subscriptions", header: messages.subscriptionsCount, render: (row) => <Link href={`/subscriptions?plan=${row.id}`} aria-label={`${t.openSubscriptions}: ${row.name}`} className="group inline-flex items-center gap-2 rounded-lg bg-[var(--primary-soft)] px-2.5 py-1.5 text-xs font-bold text-[var(--primary)] transition hover:bg-blue-100"><span className="technical-value">{formatNumber(row.subscriptionCount, locale)}</span><ArrowUpRight aria-hidden="true" size={13} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-rotate-90" /></Link> },
+    { key: "subscriptions", header: messages.subscriptionsCount, render: (row) => <Link href={`/subscriptions?plan=${row.id}`} aria-label={`${t.openSubscriptions}: ${row.name}`} className="group inline-flex items-center gap-2 rounded-lg bg-[var(--primary-soft)] px-2.5 py-1.5 text-xs font-bold text-[var(--primary)] transition hover:bg-[var(--secondary)]"><span className="technical-value">{formatNumber(row.subscriptionCount, locale)}</span><ArrowUpRight aria-hidden="true" size={13} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 rtl:-rotate-90" /></Link> },
     ...(canManage ? [{ key: "edit", header: messages.action, render: (row: Row) => <PlanDialog locale={locale} plan={row} /> }] : []),
   ];
 
@@ -97,18 +97,9 @@ export async function PlansPage({ searchParams }: { searchParams: Promise<Record
 
   return (
     <div className="flex flex-col gap-8">
-      <section className="premium-panel animate-fade-up p-6 sm:p-8">
-        <div className="flex flex-wrap items-end justify-between gap-7">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-bold text-blue-100"><Sparkles aria-hidden="true" size={14} />{t.eyebrow}</span>
-            <h1 className="display-heading mt-5 max-w-2xl text-3xl font-bold leading-tight text-white sm:text-4xl">{t.title}</h1>
-            <p className="mt-3 max-w-2xl text-sm leading-7 text-blue-100/75 sm:text-base">{t.description}</p>
-          </div>
-          {canManage ? <PlanDialog locale={locale} /> : null}
-        </div>
-      </section>
+      <PageHeader eyebrow={t.eyebrow} title={messages.plansTitle} description={t.description} actions={canManage ? <PlanDialog locale={locale} /> : null} />
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
         {metrics.map((metric) => <StatCard key={metric.label} {...metric} value={formatNumber(metric.value, locale)} />)}
       </div>
 

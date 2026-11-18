@@ -1,10 +1,11 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import { Sidebar } from "./sidebar";
 import { Header } from "./header";
 import type { AppEnvironment } from "@/shared/model/environment";
-import type { Locale } from "@/shared/i18n";
+import { getMessages, type Locale } from "@/shared/i18n";
 
 interface DashboardShellProps {
   environment: AppEnvironment;
@@ -15,36 +16,43 @@ interface DashboardShellProps {
 }
 
 export function DashboardShell({ environment, userEmail, userRole, locale, children }: DashboardShellProps) {
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const mobileNav = useRef<HTMLDialogElement>(null);
+  const pathname = usePathname();
+  const messages = getMessages(locale, environment);
+
+  useEffect(() => {
+    mobileNav.current?.close();
+  }, [pathname]);
+
+  useEffect(() => {
+    const dialog = mobileNav.current;
+    const unlock = () => document.body.style.removeProperty("overflow");
+    dialog?.addEventListener("close", unlock);
+    const media = window.matchMedia("(min-width: 1024px)");
+    const onResize = () => { if (media.matches) dialog?.close(); };
+    media.addEventListener("change", onResize);
+    return () => { dialog?.removeEventListener("close", unlock); media.removeEventListener("change", onResize); unlock(); };
+  }, []);
+
+  function openNavigation() {
+    mobileNav.current?.showModal();
+    document.body.style.overflow = "hidden";
+  }
 
   return (
-    <div className="flex min-h-dvh flex-1 bg-[var(--bg)]">
-      <div className="sticky top-0 hidden h-dvh lg:block">
-        <Sidebar locale={locale} environment={environment} />
+    <div className="dashboard-workspace" data-compact={compact}>
+      <a href="#workspace-content" className="skip-link">{locale === "ar" ? "تخطَّ إلى المحتوى" : "Skip to content"}</a>
+      <div className="desktop-sidebar">
+        <Sidebar locale={locale} environment={environment} compact={compact} onToggleCompact={() => setCompact(!compact)} />
       </div>
-
-      {mobileNavOpen ? (
-        <div className="fixed inset-0 z-50 flex lg:hidden" role="dialog" aria-modal="true">
-          <div
-            className="fixed inset-0 bg-slate-950/55 backdrop-blur-[2px]"
-            onClick={() => setMobileNavOpen(false)}
-            aria-hidden="true"
-          />
-          <div className="relative z-50 h-full shadow-2xl">
-            <Sidebar locale={locale} environment={environment} onNavigate={() => setMobileNavOpen(false)} />
-          </div>
-        </div>
-      ) : null}
-
-      <div className="min-w-0 flex-1">
-        <Header
-          environment={environment}
-          userEmail={userEmail}
-          userRole={userRole}
-          locale={locale}
-          onMenuClick={() => setMobileNavOpen(true)}
-        />
-        <main className="mx-auto w-full max-w-[1500px] px-4 py-6 sm:px-6 lg:px-9 lg:py-9">{children}</main>
+      <dialog ref={mobileNav} className="mobile-navigation" aria-label={messages.businessNavigation} onClick={event => { if (event.target === event.currentTarget) event.currentTarget.close(); }}>
+        <Sidebar locale={locale} environment={environment} onNavigate={() => mobileNav.current?.close()} />
+      </dialog>
+      <div className="workspace-body">
+        <Header environment={environment} userEmail={userEmail} userRole={userRole} locale={locale} onMenuClick={openNavigation} />
+        <main id="workspace-content" tabIndex={-1} className="workspace-content">{children}</main>
+        <footer className="workspace-footer"><span>{locale === "ar" ? "المدير · مساحة عمليات التراخيص" : "Elmodeer · Licensing workspace"}</span><span>Elmo Tech © {new Date().getFullYear()}</span></footer>
       </div>
     </div>
   );

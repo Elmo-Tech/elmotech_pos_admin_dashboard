@@ -1,0 +1,667 @@
+[
+  {
+    "before": {
+      "file": "src/app/(dashboard)/activation-requests/page.tsx",
+      "name": "ActivationRequestsPage",
+      "kind": "function-body",
+      "hash": "961210772dc519dba18407e558dd65614648838f3f6a2bbab4f593be7b424def"
+    },
+    "after": {
+      "file": "src/fsd/pages/activation-requests/ui/activation-requests-page.tsx",
+      "name": "ActivationRequestsPage",
+      "kind": "function-body",
+      "hash": "420268d015c85935d4ed4190c0292d9f91d5c1bac715284e9d6743155b5e4c63"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+      "name": "CurrentLicenseCard",
+      "kind": "function-body",
+      "hash": "483b421f84792cb7c7662c16e883ea4cfda552e031a44bffea4aa5dc0c2a21e3"
+    },
+    "after": {
+      "file": "src/fsd/pages/customer-details/ui/customer-details-page.tsx",
+      "name": "CurrentLicenseCard",
+      "kind": "function-body",
+      "hash": "f86075d5e184167e74e62981c0fa608d4067f3bc633a99413089ae5b0fbe63c6"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/dashboard/page.tsx",
+      "name": "OverviewPage",
+      "kind": "function-body",
+      "hash": "9670cab6d9d7759ec116e594d76f1f92b3294646e52996fb418be15f61e225b6"
+    },
+    "after": {
+      "file": "src/fsd/pages/overview/ui/overview-page.tsx",
+      "name": "OverviewPage",
+      "kind": "function-body",
+      "hash": "f1a2303d65014fddef252f1c7ad7c52fcd7ba619de1b8388231a37c78050df59"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/dashboard/page.tsx",
+      "name": "HeroMetric",
+      "kind": "function-body",
+      "hash": "d138f884649ff37b4b5ff695fe2cd37429de24c1c326a101646e6e38fd3d640f"
+    },
+    "after": {
+      "file": "src/fsd/pages/overview/ui/overview-page.tsx",
+      "name": "HeroMetric",
+      "kind": "function-body",
+      "hash": "b484e4cb324b12b5913995556cb835a119ddc3b6fd7aa6055b1bf90597267234"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/loading.tsx",
+      "name": "DashboardLoading",
+      "kind": "function-body",
+      "hash": "38e8c6b2d420f5d0c979ef6bf35c4bbfb1f7063dfad10845f71963a9195d2515"
+    },
+    "after": {
+      "file": "src/app/(dashboard)/loading.tsx",
+      "name": "DashboardLoading",
+      "kind": "function-body",
+      "hash": "df7d113cd227699544e24933e25294219709c7cf3bc9df9bd30f496d0276577a"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/settings/page.tsx",
+      "name": "SettingsPage",
+      "kind": "function-body",
+      "hash": "26082e9022015878cf34c3a4b0972dcc7ced58241f2800527d9fa4c6614726f7"
+    },
+    "after": {
+      "file": "src/fsd/pages/settings/ui/settings-page.tsx",
+      "name": "SettingsPage",
+      "kind": "function-body",
+      "hash": "8ee36760caa240e183dd76a9ce3da0de27f6c5b8e8f3200df55967fcd904deef"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/subscriptions/page.tsx",
+      "name": "SubscriptionsPage",
+      "kind": "function-body",
+      "hash": "25007cb84f1bc6ee022ba55c107aa0ec1b782eab9d200f6222e65083f7f5ae99"
+    },
+    "after": {
+      "file": "src/fsd/pages/subscriptions/ui/subscriptions-page.tsx",
+      "name": "SubscriptionsPage",
+      "kind": "function-body",
+      "hash": "dd5a88a622e780c64fc8e3252cfcebf9f4fdff341a2277cb165fdae51d46194c"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/layout.tsx",
+      "name": "displayFont",
+      "kind": "initializer",
+      "hash": "dd32d8b6c825f0da3ab3d6ca3f554d64469b904e87e3158e353d902b480d38f1"
+    },
+    "after": null,
+    "reason": "Remove decorative Calistoga; use brand Plex typography"
+  },
+  {
+    "before": {
+      "file": "src/app/layout.tsx",
+      "name": "metadata",
+      "kind": "initializer",
+      "hash": "459f2e957b2e1eb6ea6e680cc455c8eeab1f119da9e7dd51fab760a05aa4565d"
+    },
+    "after": {
+      "file": "src/app/layout.tsx",
+      "name": "metadata",
+      "kind": "initializer",
+      "hash": "6bb25f3753d8a494cc452676d28eb265b8b494d12d3b50ae38264f715250392f"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/layout.tsx",
+      "name": "RootLayout",
+      "kind": "function-body",
+      "hash": "c2221b8245c7ecd6b0a3fffbf85d94b162808f7367d3b8529bb45e51b698fba1"
+    },
+    "after": {
+      "file": "src/app/layout.tsx",
+      "name": "RootLayout",
+      "kind": "function-body",
+      "hash": "1990cbb5474c3e8ec8be8855ffa9ba2197e5e81f3cce51dea8e635611470dac2"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/login/page.tsx",
+      "name": "LoginPage",
+      "kind": "function-body",
+      "hash": "1d5e9eadf8b3a9a4e537efd0873430fa0e7ac41f94838c7b84d36e5c46f87432"
+    },
+    "after": {
+      "file": "src/fsd/pages/login/ui/login-page.tsx",
+      "name": "LoginPage",
+      "kind": "function-body",
+      "hash": "aa295e9a16aecd122dbde14793bf130cb6a0e99877efcaa283726d293a7e5297"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/activation/activation-guide.tsx",
+      "name": "ActivationGuide",
+      "kind": "function-body",
+      "hash": "e4994dce90b89228b170332e53c3f556924ea5fe30f1218c3371a32afc6662fa"
+    },
+    "after": {
+      "file": "src/fsd/pages/activation-requests/ui/activation-guide.tsx",
+      "name": "ActivationGuide",
+      "kind": "function-body",
+      "hash": "8f11f8a4512408553f1a6de29a043fdf4cb413004a16477d7e2c1f7b09f88e2e"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/activation/activation-workflow.tsx",
+      "name": "ActivationWorkflow",
+      "kind": "function-body",
+      "hash": "d5d7c9fe450feeb7ff1c87fa82b30e42f3afd4e755486c1854869f01547e8db1"
+    },
+    "after": {
+      "file": "src/features/activate-license/ui/activation-workflow.tsx",
+      "name": "ActivationWorkflow",
+      "kind": "function-body",
+      "hash": "5b7c7a48dd7b5a05d7bcd2e651ad6f95716b09a7d072fb774feccdd1521d9e3d"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/auth/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "2d36dc95ef5f1ce917b0ceb2317c56baf0d98885cac49d32e56f6c8be8ca3812"
+    },
+    "after": {
+      "file": "src/features/sign-in/ui/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "f15db7d0f91ae90c8998a9e23035bcb9d9b4b759ac617c395f2c1f9b6fdddaee"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/commercial-forms.tsx",
+      "name": "CreateCustomerForm",
+      "kind": "function-body",
+      "hash": "b5c7e911a58c057ab782f6d0fe3b4a09c3ef9adef384c280a958270908cdfe64"
+    },
+    "after": {
+      "file": "src/features/create-customer/ui/create-customer.tsx",
+      "name": "CreateCustomerForm",
+      "kind": "function-body",
+      "hash": "7de12d7d46eaa23cc22e3e7f88169bf2e653d30f2407a769bc26d288ba8760f0"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/commercial-forms.tsx",
+      "name": "CreateCustomerDialog",
+      "kind": "function-body",
+      "hash": "e7f442a3bdfb11a0954de020678fdea84f62a4ca78a8432e36a5ddd7d4978d52"
+    },
+    "after": {
+      "file": "src/features/create-customer/ui/create-customer.tsx",
+      "name": "CreateCustomerDialog",
+      "kind": "function-body",
+      "hash": "80f1252349f64b3d20ec8190ae8428a78184d0bd63c5170117c08cd275d57ffc"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/commercial-forms.tsx",
+      "name": "AddSubscriptionForm",
+      "kind": "function-body",
+      "hash": "59c31a32a54f096a86afc4b0dbbe8e5d9e84eb03d40317b7f02fa2bd7e8966c4"
+    },
+    "after": {
+      "file": "src/features/provision-subscription/ui/provision-subscription.tsx",
+      "name": "AddSubscriptionForm",
+      "kind": "function-body",
+      "hash": "35d3ed4440c21a6757a262610cdc86e523be6a30b4db47e9d020faa133c84409"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/commercial-forms.tsx",
+      "name": "AddSubscriptionDialog",
+      "kind": "function-body",
+      "hash": "7028de87ad1a7ee266522c622105de86b5d84056bf6e6bb8c4db737c4caf7558"
+    },
+    "after": {
+      "file": "src/features/provision-subscription/ui/provision-subscription.tsx",
+      "name": "AddSubscriptionDialog",
+      "kind": "function-body",
+      "hash": "08f0896cc3a075166655c67408d7d479d3cf2eccd62ec547472a77b66184f01a"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/renew-subscription.tsx",
+      "name": "RenewSubscription",
+      "kind": "function-body",
+      "hash": "5eea4ba1169f17c12276d8ec47c03ff31c0eedea276c418115d8235576a9b1ed"
+    },
+    "after": {
+      "file": "src/features/renew-subscription/ui/renew-subscription.tsx",
+      "name": "RenewSubscription",
+      "kind": "function-body",
+      "hash": "c4cc83d72dfee0dfe21f0e9a4861a8b355eea99a1d685eeb2bd96993ba7ae0fb"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/customers/customer-profile-header.tsx",
+      "name": "CustomerProfileHeader",
+      "kind": "function-body",
+      "hash": "e8822f3cf6f004cddcd8809fb63521d10508fcadfc4ee13c05acf6554080f0e3"
+    },
+    "after": {
+      "file": "src/fsd/pages/customer-details/ui/customer-profile-header.tsx",
+      "name": "CustomerProfileHeader",
+      "kind": "function-body",
+      "hash": "a2096dc371cca953b958d3c8406cc7b7cbf37e9bbf645e101da8254758f4532c"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/customers/customer-profile-header.tsx",
+      "name": "HeaderMetric",
+      "kind": "function-body",
+      "hash": "7aba9ceec14e23ebea1bcf6aa64dd04c54a9f7cee2fb0339b559c4be035dffa5"
+    },
+    "after": {
+      "file": "src/fsd/pages/customer-details/ui/customer-profile-header.tsx",
+      "name": "HeaderMetric",
+      "kind": "function-body",
+      "hash": "a75fddff06ad9a7f696a671319e45b0e813e6c2f3c90c88dc4696aae34907aee"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/customers/customer-profile-tabs.tsx",
+      "name": "CustomerProfileTabs",
+      "kind": "function-body",
+      "hash": "8d6176e3fc1e19aca05b5d0e8dc137e1c9feeb30c3f274170de001787fb4b40e"
+    },
+    "after": {
+      "file": "src/fsd/pages/customer-details/ui/customer-profile-tabs.tsx",
+      "name": "CustomerProfileTabs",
+      "kind": "function-body",
+      "hash": "96317117d363e887727c34b9d7fbe41eb0d5b622fa85162dd7f6a86bfeb42211"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/layout/dashboard-shell.tsx",
+      "name": "DashboardShell",
+      "kind": "function-body",
+      "hash": "1a31eca83e3834a39d337da55ff11e41115876322bc3a167cc6e6cdbf67d3a45"
+    },
+    "after": {
+      "file": "src/widgets/dashboard-shell/ui/dashboard-shell.tsx",
+      "name": "DashboardShell",
+      "kind": "function-body",
+      "hash": "d2b75ef85469eb71091eae020b194413a3241c182884ac1c2337b3924caa9717"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/layout/header.tsx",
+      "name": "Header",
+      "kind": "function-body",
+      "hash": "3c80c7b0408827190a21eecad51ec170055208c46d3ab5f6ed47da701a3b2c0e"
+    },
+    "after": {
+      "file": "src/widgets/dashboard-shell/ui/header.tsx",
+      "name": "Header",
+      "kind": "function-body",
+      "hash": "737caa33a9606be7ce755f811ed6eaea47ee16f2e26a6fa20958f09637e60f90"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/layout/sidebar.tsx",
+      "name": "Sidebar",
+      "kind": "function-body",
+      "hash": "be53664dbbb8b3ef385c4e0f6f4599beb0c5f36719a162ef5bbd55ff14be0a3a"
+    },
+    "after": {
+      "file": "src/widgets/dashboard-shell/ui/sidebar.tsx",
+      "name": "Sidebar",
+      "kind": "function-body",
+      "hash": "45152c37b5b0894cbbfcd4f9a84e3438dd5289cf5e56d620b562f7008824f220"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/layout/sidebar.tsx",
+      "name": "NavGroup",
+      "kind": "function-body",
+      "hash": "f04da4b853de47b80d5680dd26079cdf985a343f027f07e2bcd6b03f043b0e12"
+    },
+    "after": {
+      "file": "src/widgets/dashboard-shell/ui/sidebar.tsx",
+      "name": "NavGroup",
+      "kind": "function-body",
+      "hash": "63831ef07c4a987fb2f0ce90500781d8df182d51adb459c6035319b738547ae7"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/layout/sidebar.tsx",
+      "name": "NavLink",
+      "kind": "function-body",
+      "hash": "01e720e1e402712fd1d53d9ce5970edf06e13ef08ac48c61d285680d48e1246d"
+    },
+    "after": {
+      "file": "src/widgets/dashboard-shell/ui/sidebar.tsx",
+      "name": "NavLink",
+      "kind": "function-body",
+      "hash": "266ecb9ea5a978a2cefd9d31d81e654f38d385bf749743e96d257b99b5860f9f"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/overview/dashboard-charts.tsx",
+      "name": "CustomerGrowthChart",
+      "kind": "function-body",
+      "hash": "7528d6ab5e639bcaac756983dd6a79774974d2717c7112c6f8668cc3dfa9ac6f"
+    },
+    "after": {
+      "file": "src/fsd/pages/overview/ui/dashboard-charts.tsx",
+      "name": "CustomerGrowthChart",
+      "kind": "function-body",
+      "hash": "03d7051fe324531db80b66d569ab05522a3594593440d4c84d882d32e491bfc8"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/overview/dashboard-charts.tsx",
+      "name": "SubscriptionHealth",
+      "kind": "function-body",
+      "hash": "e7d2431338d21bd541a1efaa53f64afdc62779c3e063a7af72907954b10800e3"
+    },
+    "after": {
+      "file": "src/fsd/pages/overview/ui/dashboard-charts.tsx",
+      "name": "SubscriptionHealth",
+      "kind": "function-body",
+      "hash": "292abdbefa30bb04913d255a1a437afdee7ff497deef3dd2dbcd9e7039f10fed"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/action-dialog.tsx",
+      "name": "ActionDialog",
+      "kind": "function-body",
+      "hash": "8b7aa0f4d774c0eb264d27effaf3e9a059c2d8d8471da066aa50b566dd57caa6"
+    },
+    "after": {
+      "file": "src/shared/ui/action-dialog.tsx",
+      "name": "ActionDialog",
+      "kind": "function-body",
+      "hash": "076bee30794853899e8a7bbd9ae836b74d5c79ec7ba2aa265a060c3f9e141f73"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/data-table.tsx",
+      "name": "DataTable",
+      "kind": "function-body",
+      "hash": "1a6c4b5dea435facc7ce023024a11c558dce4e808ee9b398c3a0bd288eba1718"
+    },
+    "after": {
+      "file": "src/shared/ui/data-table.tsx",
+      "name": "DataTable",
+      "kind": "function-body",
+      "hash": "40bd9a73edf7d5d7e46ee24c56c77641ddc37560c4a01189eb3995973d836b32"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/detail-grid.tsx",
+      "name": "DetailGrid",
+      "kind": "function-body",
+      "hash": "638f292cde8bf0f3f0a7e9f084b3ad557e29c8e97aafd12c4a770d4d7c5ea4a2"
+    },
+    "after": {
+      "file": "src/shared/ui/detail-grid.tsx",
+      "name": "DetailGrid",
+      "kind": "function-body",
+      "hash": "f523fa0e9a6e5d2a5456ad2541dd6692e81bac659855a0a371f0260b7202450a"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/empty-state.tsx",
+      "name": "EmptyState",
+      "kind": "function-body",
+      "hash": "2eab67d3223d766b761bd9bb3480eaa1e3d81206053fc0ad3a6609f458a534ac"
+    },
+    "after": {
+      "file": "src/shared/ui/empty-state.tsx",
+      "name": "EmptyState",
+      "kind": "function-body",
+      "hash": "483d6da7e183a3bdacbe585fc4d9fc88fb9a1a33f6451aa0a5461853891135a3"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/filter-bar.tsx",
+      "name": "FilterBar",
+      "kind": "function-body",
+      "hash": "75e458d5b05d9eeb9da97a2f4565d0aeb50d4cffe24ce8170f66bbdb8836175d"
+    },
+    "after": {
+      "file": "src/shared/ui/filter-bar.tsx",
+      "name": "FilterBar",
+      "kind": "function-body",
+      "hash": "4e6a0eab05004832a7774bbc6cf23621084ca2377c735927fbf0a443619d4959"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/filter-controls.tsx",
+      "name": "ListFilterForm",
+      "kind": "function-body",
+      "hash": "6ea02dc667131feecfcc53ccd01a5593201b5bdfec67040c39658ebf4daa9057"
+    },
+    "after": {
+      "file": "src/shared/ui/filter-controls.tsx",
+      "name": "ListFilterForm",
+      "kind": "function-body",
+      "hash": "5e78f5461835a2844b7d8f77578f559a54f587a1802b8a7adace4e2441ecc663"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/filter-controls.tsx",
+      "name": "SearchField",
+      "kind": "function-body",
+      "hash": "143e9a59e08ff60a581c4b03b61aece00e3d0231e2f21b06dee585a040934529"
+    },
+    "after": {
+      "file": "src/shared/ui/filter-controls.tsx",
+      "name": "SearchField",
+      "kind": "function-body",
+      "hash": "a91e4a8d923cedc6ad9edab58411babf0835c09598879fbe2048d596c8f2666f"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/filter-controls.tsx",
+      "name": "SelectField",
+      "kind": "function-body",
+      "hash": "252ea38af52c32e7d8fd812d4fed44d207e17e2d53aafa2fdecd7f6ea2ef7069"
+    },
+    "after": {
+      "file": "src/shared/ui/filter-controls.tsx",
+      "name": "SelectField",
+      "kind": "function-body",
+      "hash": "4d274bcb73d9d4d12f72e96e4f4d301876d851200844934d65d8b2e763a34c80"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/module-error-state.tsx",
+      "name": "ModuleErrorState",
+      "kind": "function-body",
+      "hash": "aa5021e4a7a3b87d450329b31cad3eed78c3764bdd4045ce62345a5fd3d81d43"
+    },
+    "after": {
+      "file": "src/shared/ui/module-error-state.tsx",
+      "name": "ModuleErrorState",
+      "kind": "function-body",
+      "hash": "8ba913427c7a7a2c61cd3b363315cb9a02cf9cc069d523858d4daeeb07f26913"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/page-header.tsx",
+      "name": "PageHeader",
+      "kind": "function-body",
+      "hash": "43e9778a0597049f02ffb4bed27c5b4aac718da76e3ee5f8487720002080fee4"
+    },
+    "after": {
+      "file": "src/shared/ui/page-header.tsx",
+      "name": "PageHeader",
+      "kind": "function-body",
+      "hash": "4e7bbb55ea8eb41e439faea41d635135d97ec60a76c26cbcc7e65ea85dc6ab98"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/pagination.tsx",
+      "name": "Pagination",
+      "kind": "function-body",
+      "hash": "c53932e04361b668a357d64d5f169cc48cab4da71524aedb5d477f7c49d9d520"
+    },
+    "after": {
+      "file": "src/shared/ui/pagination.tsx",
+      "name": "Pagination",
+      "kind": "function-body",
+      "hash": "7e3dd4a02ab7600d93e781df7baf51a406b3271b13adf77b2f75008ac1e6270e"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/stat-card.tsx",
+      "name": "tones",
+      "kind": "initializer",
+      "hash": "713a1758901bb1504a33b6f1802e1bb3a90803a03a5271d3e7130da5363d1bef"
+    },
+    "after": null,
+    "reason": "Semantic tone CSS replaces decorative gradients"
+  },
+  {
+    "before": {
+      "file": "src/components/ui/stat-card.tsx",
+      "name": "StatCard",
+      "kind": "function-body",
+      "hash": "6f40a4a12c7f85d6e3d812f6509c1939efb0f99558b8db83c1583b5ce5846494"
+    },
+    "after": {
+      "file": "src/shared/ui/stat-card.tsx",
+      "name": "StatCard",
+      "kind": "function-body",
+      "hash": "8aa42a177398d1bcaee349e275b88c2a67aa220aac003debcf4a59ff244845ee"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/features/manage-plan/ui/plan-form.tsx",
+      "name": "PlanForm",
+      "kind": "function-body",
+      "hash": "553a94d2bb921704dfae54a50175a8ae2c9ad58051fe8b6c9a3325a2a0cb7645"
+    },
+    "after": {
+      "file": "src/features/manage-plan/ui/plan-form.tsx",
+      "name": "PlanForm",
+      "kind": "function-body",
+      "hash": "0104de4b750198133a49d7c781c32ca3b04ef0ef81ac2996411bc487e30a2f05"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/features/manage-plan/ui/plan-form.tsx",
+      "name": "PlanDialog",
+      "kind": "function-body",
+      "hash": "fc643bff3ad8e1f373fc88737786ba88cc80adca3d4326c9f99c85275d4b06af"
+    },
+    "after": {
+      "file": "src/features/manage-plan/ui/plan-form.tsx",
+      "name": "PlanDialog",
+      "kind": "function-body",
+      "hash": "43e4ef85b31d38ae2be511509aa1a5d8b27e7dac8e9f9c2ce13e8801b3823f48"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/fsd/pages/plans/ui/plans-page.tsx",
+      "name": "PlansPage",
+      "kind": "function-body",
+      "hash": "3a8a92f07a5da53fce3cfbf065118568e97c3a8858bc8891c81b94423455e0f8"
+    },
+    "after": {
+      "file": "src/fsd/pages/plans/ui/plans-page.tsx",
+      "name": "PlansPage",
+      "kind": "function-body",
+      "hash": "e4cabd6e57b1e8117f76ee521a6779a51e2886b1cf4d6ee30dd6e60dae33b4c0"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  }
+]

@@ -69,10 +69,12 @@ function harness({ role = 'owner', authorized = true, fail = false, outcome = 'c
         return [hooks[i], value => { hooks[i] = typeof value === 'function' ? value(hooks[i]) : value; }];
       },
       useActionState: () => [actionState, () => {}],
+      useTransition: () => [false, fn=>fn()],
       useRef: () => ({ current: null }), useId: () => 'fixture-dialog', useEffect: () => {},
     },
     'react-dom': { useFormStatus: () => ({ pending }) },
     'next/link': { __esModule: true, default: ({ children, ...props }) => React.createElement('a', props, children) },
+    'next/navigation': { useRouter: () => ({refresh:()=>{}}) },
     'next/cache': { revalidatePath: value => revalidated.push(value) },
     '@/server/data/authorized-licensing-client': {
       getAuthorizedLicensingClient: async () => {
@@ -125,7 +127,7 @@ function harness({ role = 'owner', authorized = true, fail = false, outcome = 'c
 function nodes(tree, predicate) {
   if (!tree || typeof tree !== 'object') return [];
   if (Array.isArray(tree)) return tree.flatMap(child => nodes(child, predicate));
-  return [...(predicate(tree) ? [tree] : []), ...nodes(tree.props?.children, predicate)];
+  return [...(predicate(tree) ? [tree] : []), ...nodes(tree.props?.children, predicate), ...nodes(tree.props?.actions, predicate)];
 }
 function field(tree, name) { return nodes(tree, node => node.props?.name === name)[0]; }
 function input(values = {}) {

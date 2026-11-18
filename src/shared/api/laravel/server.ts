@@ -2,6 +2,7 @@ import "server-only";
 import { cookies } from "next/headers";
 import { cache } from "react";
 import { resolveDataProvider } from "@/shared/config/backend";
+import { BackendSignInError } from "./auth-error";
 
 const TOKEN_COOKIE = "elmotech_backend_session";
 export const usesLaravel = () => resolveDataProvider(process.env.DATA_PROVIDER) === "laravel";
@@ -36,10 +37,28 @@ export const backendIdentity = cache(async (): Promise<BackendIdentity | null> =
 });
 
 export async function backendSignIn(email: string, password: string): Promise<boolean> {
-  const response = await backendRequest("auth/login", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password }) });
-  if (!response.ok) return false;
-  const data = await response.json() as { token: string };
-  if (typeof data.token !== "string" || !data.token) throw new Error("Invalid login response.");
+  if (!process.env.LARAVEL_API_URL) throw new Error("LARAVEL_API_URL is required for Laravel mode.");
+  let response: Response;
+  try {
+    response = await backendRequest("auth/login", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ email, password }) });
+  } catch {
+    throw new BackendSignInError("backend_unavailable");
+  }
+  if (response.status === 422) {
+    const rejected = await response.json().catch(() => null) as { errors?: { email?: unknown; password?: unknown } } | null;
+    const fieldErrors = [rejected?.errors?.email, rejected?.errors?.password];
+    if (fieldErrors.some(value => Array.isArray(value) && value.length > 0 && value.every(item => typeof item === "string"))) return false;
+    throw new BackendSignInError("backend_unavailable", 422);
+  }
+  if (response.status === 429) throw new BackendSignInError("rate_limited", 429);
+  if (!response.ok) throw new BackendSignInError("backend_unavailable", response.status);
+  let data: { token?: unknown };
+  try {
+    data = await response.json();
+  } catch {
+    throw new BackendSignInError("backend_unavailable", response.status);
+  }
+  if (typeof data?.token !== "string" || !data.token) throw new BackendSignInError("backend_unavailable", response.status);
   (await cookies()).set(TOKEN_COOKIE, data.token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/", maxAge: 8 * 60 * 60 });
   return true;
 }

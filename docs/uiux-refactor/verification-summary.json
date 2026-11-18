@@ -1,0 +1,22 @@
+{
+  "lint": "PASS",
+  "typecheck": "PASS",
+  "tests": {
+    "status": "PASS",
+    "count": 79
+  },
+  "fsdBoundaries": "PASS",
+  "webpackBuild": "PASS",
+  "defaultTurbopack": {
+    "status": "BLOCKED",
+    "reason": "Internal subprocess port binding not permitted"
+  },
+  "routesAndProxy": "PASS",
+  "controlledScreenRenders": {
+    "status": "PASS",
+    "count": 48
+  },
+  "fileUploadBrowser": "BLOCKED",
+  "liveSigningAcceptance": "BLOCKED",
+  "deployed": false
+}

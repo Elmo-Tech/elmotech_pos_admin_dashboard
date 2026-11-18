@@ -100,9 +100,9 @@
       "file": "src/features/sign-in/api/actions.ts",
       "name": "signInAction",
       "kind": "function-body",
-      "hash": "519e27624ac2793c667101656a29f2d6aa1508438af2b65f85f1937a45b601f7"
+      "hash": "1c935596c4f81631bcdffa85c0383f5b00ff2e1c7957eeb9b494b08be2c79e3a"
     },
-    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+    "reason": "Login distinguishes Laravel credential rejection from backend/proxy/rate-limit failures without logging credentials; existing default form markup retained."
   },
   {
     "before": {
@@ -245,5 +245,20 @@
       "hash": "123a634e363bda142cc894ca40d0d604589b7f93572a821966631354cf01b2d5"
     },
     "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/components/auth/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "2d36dc95ef5f1ce917b0ceb2317c56baf0d98885cac49d32e56f6c8be8ca3812"
+    },
+    "after": {
+      "file": "src/features/sign-in/ui/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "81393416e383a57a23db1a5ed0026c77553c9f6d8fce8e96a94bf30869b5bea7"
+    },
+    "reason": "Login distinguishes Laravel credential rejection from backend/proxy/rate-limit failures without logging credentials; existing default form markup retained."
   }
 ]

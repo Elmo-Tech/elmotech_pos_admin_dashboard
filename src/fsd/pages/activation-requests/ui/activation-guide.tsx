@@ -44,7 +44,7 @@ export function ActivationGuide({ locale }: { locale: Locale }) {
         </div>
       </summary>
       <div className="border-t border-[var(--border)] bg-slate-50/55 p-5 sm:p-6">
-        <p className="rounded-xl border border-blue-100 bg-white px-4 py-3 text-sm font-medium leading-6 text-blue-950">{content.note}</p>
+        <p className="rounded-xl border border-[var(--border)] bg-white px-4 py-3 text-sm font-medium leading-6 text-blue-950">{content.note}</p>
         <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {content.phases.map((phase) => {
             const Icon = phase.icon;

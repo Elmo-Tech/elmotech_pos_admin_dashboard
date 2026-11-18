@@ -1,5 +1,6 @@
 "use server";
 import { backendSignIn } from "@/shared/api/laravel/server";
+import { BackendSignInError } from "@/shared/api/laravel/auth-error";
 import { redirect } from "next/navigation";
 import { sanitizeRedirectTarget } from "@/shared/lib/redirect-target";
 import type { SignInState } from "../model/types";
@@ -15,7 +16,11 @@ export async function signInAction(_prevState: SignInState, formData: FormData):
 
   try {
     if (!await backendSignIn(email, password)) return { error: "invalid_credentials" };
-  } catch {
+  } catch (error) {
+    if (error instanceof BackendSignInError) {
+      console.error("Laravel authentication failed", { reason: error.reason, status: error.status ?? null });
+      return { error: error.reason };
+    }
     return { error: "not_configured" };
   }
   redirect(next);

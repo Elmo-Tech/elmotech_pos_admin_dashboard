@@ -1,5 +1,6 @@
 import { getMessages, type Locale } from "@/shared/i18n";
 import { getServerEnvironment } from "@/shared/config/server";
+import { RetryButton } from "./retry-button";
 import { AlertCircle } from "lucide-react";
 
 export function ModuleErrorState({ title, locale = "en" }: { title?: string; locale?: Locale }) {
@@ -11,6 +12,7 @@ export function ModuleErrorState({ title, locale = "en" }: { title?: string; loc
       <p className="mx-auto mt-1.5 max-w-lg text-sm leading-6 text-[var(--text-muted)]">
         {messages.dataUnavailableDescription}
       </p>
+      <div className="mt-5"><RetryButton locale={locale} /></div>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import Link from "next/link";
-import { ActionDialog } from "@/shared/ui/action-dialog";
+import { ActionDialog, DialogCloseButton } from "@/shared/ui/action-dialog";
 import type { Locale } from "@/shared/i18n";
 import { createCustomerAction } from "../api/actions";
 import type { CommercialActionState } from "../model/types";
@@ -97,21 +97,25 @@ export function CreateCustomerForm({ locale, embedded = false }: { locale: Local
   const t = copy[locale];
   const [state, action] = useActionState(createCustomerAction, INITIAL_COMMERCIAL_ACTION_STATE);
   return (
-    <form action={action} className={`${embedded ? "grid" : "surface-card grid p-5"} gap-5 sm:grid-cols-2 lg:grid-cols-3`}>
-      <label className={labelClass}>{t.businessName}<input className={inputClass} name="businessName" maxLength={160} required /></label>
-      <label className={labelClass}>{t.ownerName}<input className={inputClass} name="ownerName" maxLength={160} required /></label>
-      <label className={labelClass}>{t.phone}<input className={inputClass} name="phone" maxLength={50} required /></label>
-      <label className={labelClass}>{t.email}<input className={inputClass} name="email" type="email" maxLength={254} /></label>
-      <label className={labelClass}>{t.address}<input className={inputClass} name="address" maxLength={500} /></label>
-      <label className={labelClass}>{t.taxId}<input className={inputClass} name="taxId" maxLength={100} /></label>
-      <label className={labelClass}>{t.status}<select className={inputClass} name="status" defaultValue="active"><option value="active">{t.active}</option><option value="suspended">{t.suspended}</option></select></label>
-      <label className={`${labelClass} sm:col-span-2`}>
-        {t.notes}<textarea className={inputClass} name="notes" maxLength={2000} rows={2} />
-      </label>
-      <div className="flex flex-wrap items-center gap-3 sm:col-span-2 lg:col-span-3">
+    <form action={action} className={embedded ? "customer-form" : "surface-card p-5"}>
+      <div className="form-fields">
+      <fieldset className="form-section"><legend>{locale === "ar" ? "01 / النشاط وبيانات التواصل" : "01 / Business & contact"}</legend>
+        <label className={labelClass}>{t.businessName} *<input className={inputClass} name="businessName" maxLength={160} required /></label>
+        <label className={labelClass}>{t.ownerName} *<input className={inputClass} name="ownerName" autoComplete="name" maxLength={160} required /></label>
+        <label className={labelClass}>{t.phone} *<input className={inputClass} name="phone" type="tel" autoComplete="tel" maxLength={50} required /></label>
+        <label className={labelClass}>{t.email}<input className={inputClass} name="email" type="email" autoComplete="email" maxLength={254} /></label>
+      </fieldset>
+      <fieldset className="form-section border-b-0 pb-0"><legend>{locale === "ar" ? "02 / بيانات إضافية" : "02 / Additional details"}</legend>
+        <label className={labelClass}>{t.address}<input className={inputClass} name="address" maxLength={500} /></label>
+        <label className={labelClass}>{t.taxId}<input className={inputClass} name="taxId" maxLength={100} /></label>
+        <label className={labelClass}>{t.status}<select className={inputClass} name="status" defaultValue="active"><option value="active">{t.active}</option><option value="suspended">{t.suspended}</option></select></label>
+        <label className={`${labelClass} sm:col-span-2`}>{t.notes}<textarea className={inputClass} name="notes" maxLength={2000} rows={2} /></label>
+      </fieldset>
+      </div>
+      <div className="form-footer">
+        <div className="form-feedback"><Feedback locale={locale} status={state.status} code={state.code} />{state.status === "success" && state.entityId ? <Link href={`/customers/${state.entityId}`} className="mt-3 inline-flex text-sm font-semibold text-[var(--primary)] hover:underline">{t.openCustomer}</Link> : null}</div>
+        {embedded ? <DialogCloseButton>{locale === "ar" ? "إلغاء" : "Cancel"}</DialogCloseButton> : null}
         <SubmitButton idle={t.createCustomer} pending={t.saving} />
-        <Feedback locale={locale} status={state.status} code={state.code} />
-        {state.status === "success" && state.entityId ? <Link href={`/customers/${state.entityId}`} className="text-sm font-semibold text-[var(--primary)] hover:underline">{t.openCustomer}</Link> : null}
       </div>
     </form>
   );
@@ -124,7 +128,8 @@ export function CreateCustomerDialog({ locale }: { locale: Locale }) {
       triggerLabel={t.createCustomer}
       title={t.createCustomer}
       description={t.customerDialogDescription}
-      size="xl"
+      size="lg"
+      closeLabel={locale === "ar" ? "إغلاق" : "Close"}
     >
       <CreateCustomerForm locale={locale} embedded />
     </ActionDialog>

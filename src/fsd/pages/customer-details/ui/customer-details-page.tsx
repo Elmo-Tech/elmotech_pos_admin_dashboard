@@ -328,7 +328,7 @@ function HealthRow({ label, value }: { label: string; value: ReactNode }) {
 function CurrentLicenseCard({ license, customerName, locale, emptyLabel }: { license: License | null; customerName: string; locale: Locale; emptyLabel: string }) {
   if (!license) return <EmptyState title={emptyLabel} description={locale === "ar" ? "أنشئ اشتراكًا أولاً لإصدار ترخيص لهذا العميل." : "Create a subscription first to issue a license for this customer."} />;
   return (
-    <div className="surface-card flex flex-wrap items-center justify-between gap-5 border-blue-100 bg-[linear-gradient(135deg,#fff_0%,#f6f9ff_100%)] p-5">
+    <div className="surface-card flex flex-wrap items-center justify-between gap-5 border-[var(--border)] bg-[linear-gradient(135deg,#fff_0%,#f6f9ff_100%)] p-5">
       <div className="flex min-w-0 items-center gap-4">
         <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--primary)] text-white shadow-[var(--sh-primary)]"><KeyRound aria-hidden="true" size={21} /></span>
         <div className="min-w-0"><p className="text-xs font-semibold text-[var(--text-muted)]">{locale === "ar" ? "الترخيص الحالي" : "Current license"}</p><p className="mt-1 truncate font-bold text-[var(--text)]">{locale === "ar" ? `ترخيص — ${customerName}` : `License — ${customerName}`}</p><p className="technical-value mt-1 font-mono text-xs text-[var(--text-muted)]">{shortId(license.id)}</p></div>

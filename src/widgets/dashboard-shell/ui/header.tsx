@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { AlertTriangle, Languages, LogOut, Menu, UserRound } from "lucide-react";
+import { AlertTriangle, ChevronLeft, Languages, LoaderCircle, LogOut, Menu, UserRound } from "lucide-react";
 import { MAIN_NAV_ITEMS } from "../model/navigation";
+import { QuickNavigation } from "./quick-navigation";
 import { signOutAction } from "@/features/sign-out/server";
 import { getMessages, type Locale } from "@/shared/i18n";
 import type { AppEnvironment } from "@/shared/model/environment";
@@ -20,58 +22,49 @@ export function Header({ environment, userEmail, userRole, locale, onMenuClick }
   const pathname = usePathname();
   const router = useRouter();
   const [switching, setSwitching] = useState(false);
+  const [languageError, setLanguageError] = useState(false);
   const messages = getMessages(locale, environment);
-  const activeItem = MAIN_NAV_ITEMS.find((item) => pathname === item.href || pathname.startsWith(`${item.href}/`));
+  const activeItem = MAIN_NAV_ITEMS.find(item => pathname === item.href || pathname.startsWith(`${item.href}/`));
+  const isDetail = activeItem && pathname !== activeItem.href;
 
   async function switchLanguage() {
     setSwitching(true);
+    setLanguageError(false);
     try {
-      const response = await fetch("/api/locale", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ locale: locale === "ar" ? "en" : "ar" }),
-      });
-      if (response.ok) router.refresh();
-    } finally {
-      setSwitching(false);
-    }
+      const response = await fetch("/api/locale", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ locale: locale === "ar" ? "en" : "ar" }) });
+      if (!response.ok) throw new Error("Locale unavailable");
+      router.refresh();
+    } catch { setLanguageError(true); }
+    finally { setSwitching(false); }
   }
 
   return (
-    <header className="sticky top-0 z-30 flex min-h-16 shrink-0 items-center justify-between gap-3 border-b border-[var(--border)] bg-white/95 px-3 py-2 backdrop-blur sm:px-6 lg:px-8">
+    <header className="workspace-header">
       <div className="flex min-w-0 items-center gap-3">
-        <button type="button" onClick={onMenuClick} className="mobile-nav-trigger ghost-button size-10 p-0" aria-label={messages.openNavigation}>
-          <Menu aria-hidden="true" size={20} />
-        </button>
-        <div className="min-w-0">
-          <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
-            <span className="hidden sm:inline">Elmo POS</span><span aria-hidden="true" className="hidden sm:inline">/</span><span className="truncate">{activeItem ? messages[activeItem.key] : messages.appName}</span>
-          </div>
-          {environment === "production" ? (
-            <div className="mt-0.5 flex items-center gap-1.5 text-xs font-semibold text-red-700">
-              <AlertTriangle aria-hidden="true" size={13} /><span>{messages.productionWarning}</span>
-            </div>
-          ) : null}
-        </div>
+        <button type="button" onClick={onMenuClick} className="mobile-nav-trigger icon-button" aria-label={messages.openNavigation} aria-haspopup="dialog"><Menu aria-hidden="true" size={21} /></button>
+        <nav aria-label={locale === "ar" ? "مسار الصفحة" : "Breadcrumb"} className="workspace-breadcrumb">
+          <span className="hidden xl:inline">{locale === "ar" ? "مساحة العمل" : "Workspace"}</span>
+          <ChevronLeft aria-hidden="true" size={14} className="hidden ltr:rotate-180 xl:block" />
+          {isDetail ? <><Link href={activeItem.href}>{messages[activeItem.key]}</Link><ChevronLeft aria-hidden="true" size={14} className="ltr:rotate-180" /><span aria-current="page">{locale === "ar" ? "التفاصيل" : "Details"}</span></> : <span aria-current="page">{activeItem ? messages[activeItem.key] : messages.appName}</span>}
+        </nav>
       </div>
-
-      <div className="flex shrink-0 items-center gap-2">
-        <button type="button" onClick={switchLanguage} disabled={switching} className="secondary-button h-9 min-h-9 px-3" aria-label={messages.language}>
-          <Languages aria-hidden="true" size={16} /><span className="hidden sm:inline">{locale === "ar" ? messages.switchToEnglish : messages.switchToArabic}</span>
+      <div className="header-tools">
+        <QuickNavigation locale={locale} />
+        <span className={`environment-indicator ${environment === "production" ? "is-production" : ""}`} title={environment === "production" ? messages.productionWarning : messages.staging}>
+          <span aria-hidden="true" />{environment === "production" ? messages.production : messages.staging}
+        </span>
+        <button type="button" onClick={switchLanguage} disabled={switching} className="icon-button language-button" aria-label={messages.language} title={locale === "ar" ? messages.switchToEnglish : messages.switchToArabic}>
+          {switching ? <LoaderCircle size={17} className="animate-spin" aria-hidden="true" /> : <Languages size={18} aria-hidden="true" />}<span>{locale === "ar" ? "EN" : "عربي"}</span>
         </button>
-        <div className="hidden items-center gap-2.5 border-s border-[var(--border)] ps-3 md:flex">
-          <span className="flex size-9 items-center justify-center rounded-full bg-[var(--primary-soft)] text-[var(--on-primary-soft)]"><UserRound aria-hidden="true" size={17} /></span>
-          <div className="min-w-0 text-start">
-            <p className="technical-value max-w-40 truncate text-sm font-medium text-[var(--text)]">{userEmail ?? messages.signedInAdmin}</p>
-            <p className="text-xs text-[var(--text-muted)]">{userRole}</p>
-          </div>
-        </div>
-        <form action={signOutAction}>
-          <button type="submit" className="ghost-button size-9 min-h-9 p-0" aria-label={messages.signOut} title={messages.signOut}>
-            <LogOut aria-hidden="true" size={17} className="rtl:rotate-180" />
-          </button>
-        </form>
+        <details className="account-menu">
+          <summary className="account-trigger" aria-label={`${userEmail ?? messages.signedInAdmin} · ${userRole}`}>
+            <span className="account-avatar"><UserRound aria-hidden="true" size={18} /></span>
+            <span className="hidden text-start xl:block"><span className="block text-xs font-bold">{userRole}</span><bdi className="block max-w-36 truncate text-[11px] text-[var(--text-muted)]">{userEmail ?? messages.signedInAdmin}</bdi></span>
+          </summary>
+          <div className="account-popover"><p className="text-sm font-bold">{userRole}</p><bdi className="mt-1 block break-all text-xs text-[var(--text-muted)]">{userEmail ?? messages.signedInAdmin}</bdi><form action={signOutAction} className="mt-4 border-t pt-3"><button type="submit" className="ghost-button w-full justify-start text-[var(--danger)]"><LogOut aria-hidden="true" size={17} className="rtl:rotate-180" />{messages.signOut}</button></form></div>
+        </details>
       </div>
+      {languageError ? <p role="alert" className="header-error"><AlertTriangle size={15} aria-hidden="true" />{locale === "ar" ? "تعذر تغيير اللغة. حاول مرة أخرى." : "Language could not be changed. Please retry."}</p> : null}
     </header>
   );
 }

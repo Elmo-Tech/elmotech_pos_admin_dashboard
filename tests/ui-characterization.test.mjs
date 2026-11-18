@@ -14,7 +14,7 @@ const cases = [
  ['activation','src/components/activation/activation-workflow.tsx','ActivationWorkflow',{environment:'staging'}],
  ['renewal-open','src/components/commercial/renew-subscription.tsx','RenewSubscription',{subscription:{plan_name_snapshot:'Quarterly',expires_at:'2027-01-31T00:00:00Z',is_lifetime:false},licenseId:ids.license,plans:[{id:ids.plan,name:'Quarterly',duration_value:1,duration_unit:'months',price:150,currency:'EGP',is_lifetime:false}],referenceNow:fixedNow,unavailableReason:'none'},null,true],
 ];
-const fixture='docs/fsd-migration/ui-before.json';
+const fixture='docs/uiux-refactor/ui-after.json';
 const hashes={};
 for(const locale of ['ar','en']) for(const [name,file,symbol,props,state,open] of cases) {
  const h=harness({locale});if(state)h.actionState(state);
@@ -22,7 +22,7 @@ for(const locale of ['ar','en']) for(const [name,file,symbol,props,state,open] o
  if(open){const button=nodes(tree,node=>node.type==='button'&&node.props.onClick)[0];button.props.onClick();tree=h.render(component,{...props,locale});}
  hashes[`${name}:${locale}`]=createHash('sha256').update(renderToStaticMarkup(tree)).digest('hex');
 }
-if(process.env.CAPTURE_FSD_UI)fs.writeFileSync(fixture,JSON.stringify(hashes,null,2)+'\n');
-test('Arabic/English shell, forms, one-time code, activation and renewal markup match baseline',()=>{
+if(process.env.CAPTURE_UIUX_UI)fs.writeFileSync(fixture,JSON.stringify(hashes,null,2)+'\n');
+test('Arabic/English shell and workflow markup match intentional UI redesign baseline',()=>{
  assert.deepEqual(hashes,JSON.parse(fs.readFileSync(fixture,'utf8')));
 });

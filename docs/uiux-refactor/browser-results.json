@@ -1,0 +1,535 @@
+{
+  "environment": "Loopback disposable HTTP fixture; not live Laravel acceptance",
+  "screens": [
+    {
+      "route": "dashboard",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "نظرة شاملة. قرارات أوضح."
+    },
+    {
+      "route": "customers",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "العملاء"
+    },
+    {
+      "route": "customers/11111111-1111-4111-8111-000000000001",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "مكتبة النور"
+    },
+    {
+      "route": "plans",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الخطط"
+    },
+    {
+      "flow": "plan modal actions visible",
+      "locale": "ar",
+      "viewport": "desktop",
+      "pass": true,
+      "geometry": {
+        "buttons": [
+          {
+            "bottom": 939.671875,
+            "text": "إلغاء"
+          },
+          {
+            "bottom": 939.671875,
+            "text": "حفظ"
+          }
+        ],
+        "height": 1000
+      }
+    },
+    {
+      "route": "subscriptions",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الاشتراكات"
+    },
+    {
+      "route": "licenses",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "التراخيص"
+    },
+    {
+      "route": "licenses/33333333-3333-4333-8333-000000000001",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "ترخيص — مكتبة النور"
+    },
+    {
+      "route": "devices",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الأجهزة"
+    },
+    {
+      "route": "activation-requests",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "التفعيل"
+    },
+    {
+      "route": "issuances",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "إصدارات ملفات الترخيص"
+    },
+    {
+      "route": "audit-logs",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "سجل التدقيق"
+    },
+    {
+      "route": "settings",
+      "locale": "ar",
+      "viewport": "desktop",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الإعدادات"
+    },
+    {
+      "route": "dashboard",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "نظرة شاملة. قرارات أوضح."
+    },
+    {
+      "route": "customers",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "العملاء"
+    },
+    {
+      "route": "customers/11111111-1111-4111-8111-000000000001",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "مكتبة النور"
+    },
+    {
+      "route": "plans",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الخطط"
+    },
+    {
+      "flow": "plan modal actions visible",
+      "locale": "ar",
+      "viewport": "mobile",
+      "pass": true,
+      "geometry": {
+        "buttons": [
+          {
+            "bottom": 792.671875,
+            "text": "إلغاء"
+          },
+          {
+            "bottom": 792.671875,
+            "text": "حفظ"
+          }
+        ],
+        "height": 844
+      }
+    },
+    {
+      "route": "subscriptions",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الاشتراكات"
+    },
+    {
+      "route": "licenses",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "التراخيص"
+    },
+    {
+      "route": "licenses/33333333-3333-4333-8333-000000000001",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "ترخيص — مكتبة النور"
+    },
+    {
+      "route": "devices",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الأجهزة"
+    },
+    {
+      "route": "activation-requests",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "التفعيل"
+    },
+    {
+      "route": "issuances",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "إصدارات ملفات الترخيص"
+    },
+    {
+      "route": "audit-logs",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "سجل التدقيق"
+    },
+    {
+      "route": "settings",
+      "locale": "ar",
+      "viewport": "mobile",
+      "dir": "rtl",
+      "overflow": false,
+      "title": "الإعدادات"
+    },
+    {
+      "route": "dashboard",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "A clear view. A better day."
+    },
+    {
+      "route": "customers",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Customers"
+    },
+    {
+      "route": "customers/11111111-1111-4111-8111-000000000001",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "مكتبة النور"
+    },
+    {
+      "route": "plans",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Plans"
+    },
+    {
+      "flow": "plan modal actions visible",
+      "locale": "en",
+      "viewport": "desktop",
+      "pass": true,
+      "geometry": {
+        "buttons": [
+          {
+            "bottom": 939.3984375,
+            "text": "Cancel"
+          },
+          {
+            "bottom": 939.3984375,
+            "text": "Save"
+          }
+        ],
+        "height": 1000
+      }
+    },
+    {
+      "route": "subscriptions",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Subscriptions"
+    },
+    {
+      "route": "licenses",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Licenses"
+    },
+    {
+      "route": "licenses/33333333-3333-4333-8333-000000000001",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "License — مكتبة النور"
+    },
+    {
+      "route": "devices",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Devices"
+    },
+    {
+      "route": "activation-requests",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Activation"
+    },
+    {
+      "route": "issuances",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Issuances"
+    },
+    {
+      "route": "audit-logs",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Audit logs"
+    },
+    {
+      "route": "settings",
+      "locale": "en",
+      "viewport": "desktop",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Settings"
+    },
+    {
+      "route": "dashboard",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "A clear view. A better day."
+    },
+    {
+      "route": "customers",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Customers"
+    },
+    {
+      "route": "customers/11111111-1111-4111-8111-000000000001",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "مكتبة النور"
+    },
+    {
+      "route": "plans",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Plans"
+    },
+    {
+      "flow": "plan modal actions visible",
+      "locale": "en",
+      "viewport": "mobile",
+      "pass": true,
+      "geometry": {
+        "buttons": [
+          {
+            "bottom": 792.3984375,
+            "text": "Cancel"
+          },
+          {
+            "bottom": 792.3984375,
+            "text": "Save"
+          }
+        ],
+        "height": 844
+      }
+    },
+    {
+      "route": "subscriptions",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Subscriptions"
+    },
+    {
+      "route": "licenses",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Licenses"
+    },
+    {
+      "route": "licenses/33333333-3333-4333-8333-000000000001",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "License — مكتبة النور"
+    },
+    {
+      "route": "devices",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Devices"
+    },
+    {
+      "route": "activation-requests",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Activation"
+    },
+    {
+      "route": "issuances",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Issuances"
+    },
+    {
+      "route": "audit-logs",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Audit logs"
+    },
+    {
+      "route": "settings",
+      "locale": "en",
+      "viewport": "mobile",
+      "dir": "ltr",
+      "overflow": false,
+      "title": "Settings"
+    }
+  ],
+  "roleControls": [
+    {
+      "role": "admin",
+      "createControls": 1,
+      "editControls": 20
+    },
+    {
+      "role": "support",
+      "createControls": 0,
+      "editControls": 0
+    },
+    {
+      "role": "viewer",
+      "createControls": 0,
+      "editControls": 0
+    }
+  ],
+  "upload": {
+    "status": "BLOCKED",
+    "reason": "Browser upload permission declined; no workaround attempted"
+  },
+  "flows": [
+    {
+      "flow": "Plan create/refresh/edit finite to lifetime/refresh",
+      "status": "PASS",
+      "scope": "Disposable in-memory preview transport",
+      "evidence": "Price 750 and duration 6 persisted after reload; lifetime row after edit and second reload."
+    },
+    {
+      "flow": "Filter apply, clear, page 2",
+      "status": "PASS",
+      "evidence": "enabled=true URL and 20 filtered records; clear then page=2 displayed records 21–26 of 26."
+    },
+    {
+      "flow": "Quick navigation by Arabic search and ArrowDown/Enter",
+      "status": "PASS",
+      "evidence": "Search الأجهزة reduced to /devices and keyboard navigation opened it."
+    },
+    {
+      "flow": "Mobile navigation modal/Escape",
+      "status": "PASS"
+    },
+    {
+      "flow": "Localized login error, retained email, logout/protected redirect",
+      "status": "PASS",
+      "evidence": "Invalid password feedback; controlled email retained; password cleared; logged-out /plans redirected to /login?next=%2Fplans."
+    },
+    {
+      "flow": "Backend read failure and retry recovery",
+      "status": "PASS",
+      "evidence": "Mock plans 503 showed localized error and retry; restored transport recovered table without changing filters."
+    },
+    {
+      "flow": "Renewal error and locked selection",
+      "status": "PASS",
+      "scope": "Controlled rejection; no real renewal/signing",
+      "evidence": "Localized error, plan disabled after failure, explicit retry control remains available. Stable operation ID is covered by Node workflow tests."
+    },
+    {
+      "flow": "File upload browser interaction",
+      "status": "BLOCKED",
+      "evidence": "User declined browser file-upload permission. No alternative upload attempted."
+    },
+    {
+      "flow": "Real Laravel file signing and renewal download",
+      "status": "BLOCKED",
+      "evidence": "Disposable preview intentionally does not implement cryptographic issuance. Existing backend protocol limitation remains."
+    }
+  ],
+  "note": "Screens and dialog geometry refreshed against final production standalone build after contrast refinement."
+}

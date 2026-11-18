@@ -8,7 +8,9 @@ import { LoginForm } from "@/features/sign-in";
 import { AuthNotConfigured } from "./auth-not-configured";
 import { getLocale } from "@/shared/i18n/server";
 import { getMessages } from "@/shared/i18n";
-import { BadgeCheck, ShieldCheck } from "lucide-react";
+import { ShieldCheck, Check } from "lucide-react";
+import Image from "next/image";
+import { LoginLanguage } from "./login-language";
 
 export async function LoginPage(props: PageProps<"/login">) {
   const environment = getServerEnvironment();
@@ -32,28 +34,23 @@ export async function LoginPage(props: PageProps<"/login">) {
   }
 
   return (
-    <main className="grid min-h-dvh flex-1 lg:grid-cols-[minmax(320px,0.8fr)_1.2fr]">
-      <section className="hidden flex-col justify-between bg-[var(--side-bg)] p-12 text-white lg:flex">
-        <div className="flex items-center gap-3">
-          <span className="flex size-11 items-center justify-center rounded-[10px] bg-[var(--primary)]"><BadgeCheck aria-hidden="true" size={24} /></span>
-          <div><p className="text-lg font-semibold">Elmo POS</p><p className="text-sm text-[var(--side-muted)]">{messages.licenseOperations}</p></div>
-        </div>
+    <main className="login-workspace grid min-h-dvh flex-1 lg:grid-cols-[minmax(320px,1fr)_1fr]">
+      <section className="login-story hidden flex-col justify-between gap-12 p-12 text-white lg:flex xl:p-16">
+        <div><Image src="/brand/elmodeer-on-ink.png" width={150} height={61} alt={locale === "ar" ? "المدير" : "Elmodeer"} priority /><p className="mt-4 text-xs text-indigo-200">{messages.licenseOperations}</p></div>
         <div className="max-w-md">
-          <ShieldCheck aria-hidden="true" size={40} className="text-orange-300" strokeWidth={1.5} />
-          <h2 className="mt-6 text-3xl font-semibold leading-tight">{messages.appName}</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-400">{messages.loginDescription}</p>
+          <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-indigo-100"><ShieldCheck size={15} aria-hidden="true" />{locale === "ar" ? "مساحة عمل الفريق" : "YOUR TEAM WORKSPACE"}</span>
+          <h2>{locale === "ar" ? <>كل عملية،<br />تحت سيطرتك.</> : <>Every operation.<br />Under control.</>}</h2>
+          <p className="mt-5 max-w-sm text-sm leading-7 text-indigo-100/75">{locale === "ar" ? "إدارة العملاء والاشتراكات والتراخيص، من أول تفعيل لآخر تجديد." : "Customers, subscriptions, and licenses. From the first activation to the next renewal."}</p>
+          <div className="mt-8 space-y-3">{(locale === "ar" ? ["رؤية واضحة لعملياتك", "صلاحيات تناسب دورك", "كل نشاط موثّق في مكان واحد"] : ["A clear view of operations", "Access tailored to your role", "A traceable activity history"]).map(text => <p key={text} className="flex items-center gap-3 text-xs text-indigo-100"><Check size={15} aria-hidden="true" className="text-[#8bddb1]" />{text}</p>)}</div>
         </div>
         <p className="text-xs text-[var(--side-muted)]">Elmotech · Secure licensing operations</p>
       </section>
 
       <section className="flex items-center justify-center px-4 py-12 sm:px-8">
         <div className="w-full max-w-md">
-          <div className="mb-8 flex items-center justify-between lg:hidden">
-            <div className="flex items-center gap-3"><span className="flex size-10 items-center justify-center rounded-[10px] bg-[var(--primary)] text-white"><BadgeCheck aria-hidden="true" size={21} /></span><span className="font-semibold">Elmo POS</span></div>
-            <EnvironmentBadge environment={environment} locale={locale} />
-          </div>
-          <div className="mb-6 hidden justify-end lg:flex"><EnvironmentBadge environment={environment} locale={locale} /></div>
+          <div className="mb-6 flex items-center justify-between gap-3"><Image src="/brand/elmodeer-color.png" width={100} height={41} alt={locale === "ar" ? "المدير" : "Elmodeer"} className="lg:invisible" /><LoginLanguage locale={locale} /></div>
           <div className="surface-card p-6 sm:p-8">
+          <div className="mb-5"><EnvironmentBadge environment={environment} locale={locale} /></div>
           <h1 className="text-2xl font-bold text-[var(--text)]">{messages.adminSignIn}</h1>
           <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
             {messages.loginDescription}
@@ -63,6 +60,7 @@ export async function LoginPage(props: PageProps<"/login">) {
             {authConfigured ? <LoginForm next={next} locale={locale} /> : <AuthNotConfigured locale={locale} />}
           </div>
           </div>
+          <p className="mt-6 text-center text-[11px] leading-6 text-[var(--text-muted)]">{locale === "ar" ? "دخول آمن للمستخدمين المصرّح لهم فقط." : "Secure access for authorized team members only."}</p>
         </div>
       </section>
     </main>
