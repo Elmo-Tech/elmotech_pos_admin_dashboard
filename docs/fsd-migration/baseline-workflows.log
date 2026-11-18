@@ -1,0 +1,10 @@
+✔ activation UI: preserves selected bytes, verify/issue endpoints, download-again and reset lifecycle (135.064958ms)
+✔ renewal UI: explicit retry retains operation ID and plan payload, locks selection after error, refreshes on success (31.217417ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 370.585292

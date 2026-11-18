@@ -1,0 +1,11 @@
+✔ proxy forwards pathname and refreshed request/response cookies without taking over RBAC (117.825041ms)
+✔ SSR auth client preserves cookie options and tolerates read-only Server Component cookie writes (12.006458ms)
+✔ environment identity still rejects wrong projects and local production mode (35.676292ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 518.963583

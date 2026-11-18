@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { isLocale, LOCALE_COOKIE } from "@/i18n/messages";
+import { isLocale, LOCALE_COOKIE } from "@/shared/i18n";
 
 export async function POST(request: Request): Promise<Response> {
   const origin = request.headers.get("origin");

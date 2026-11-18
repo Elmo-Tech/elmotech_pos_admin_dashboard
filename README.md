@@ -17,73 +17,44 @@ contextually without exposing the database as the product interface.
 
 ## Architecture
 
-Next.js App Router project, TypeScript in strict mode, Tailwind CSS.
+Next.js 16 App Router, strict TypeScript, Tailwind CSS and Feature-Sliced Design.
+Supabase remains the backend for authentication, licensing reads, RPCs and Edge
+Functions. The completed migration and per-batch verification are documented in
+[Frontend FSD migration](docs/FRONTEND_FSD_MIGRATION.md).
 
-```
+```text
 src/
-  app/
-    layout.tsx             root layout (html/body, fonts, global styles)
-    page.tsx                redirects "/" -> "/dashboard"
-    global-error.tsx        catches fail-closed config errors (see below)
-    login/page.tsx           /login — outside the dashboard shell, no sidebar
-    (dashboard)/            route group: everything behind the sidebar shell
-      layout.tsx             enforces identity + database-backed admin RBAC
-                             before rendering the dashboard shell
-      loading.tsx / error.tsx    shared loading & error states for the group
-      dashboard/             Overview
-      customers/, plans/, subscriptions/, licenses/,
-      activation-requests/, devices/, issuances/, audit-logs/,
-      settings/             Administration
-  components/
-    auth/                   LoginForm, AuthNotConfigured
-    layout/                 Sidebar, Header, DashboardShell, EnvironmentBadge
-    ui/                     PageHeader, PageSection, StatusBadge, EmptyState,
-                            StatCard, DataTable, ModulePlaceholder,
-                            TableSkeleton, FilterBar, EntityLink, DetailDrawer
-  features/                 reserved for module-specific components/hooks
-                            once a module moves past its placeholder page
-  lib/                      browser-safe shared code
-    env.ts                  browser-safe Supabase URL/key lookup
-    navigation.ts            six-item operator navigation shared by desktop
-                            and mobile; technical routes stay contextual
-    redirect-target.ts       sanitizeRedirectTarget() — the only place a
-                            post-login redirect target is trusted from
-    supabase/client.ts       browser Supabase client (publishable key only)
-  server/                   server-only code, never bundled for the browser
-    env.ts                  getServerEnvironment() — authoritative,
-                            fail-closed environment/project-ref validation
-    supabase/
-      server.ts              server Supabase client (cookie-based session)
-      privileged-client.ts   server-only client for the validated environment
-    auth/
-      current-user.ts        getCurrentUser() — identity lookup
-      require-user.ts        requireUser() — the dashboard's auth gate
-      require-admin-access.ts  real fail-closed licensing.admin_users RBAC
-      actions.ts              signInAction / signOutAction (Server Actions)
-  types/                    shared TypeScript types
-    environment.ts           AppEnvironment
-    navigation.ts             NavItem, NavSection
-    rbac.ts                   Role, labels, admin context, authorization result
-    database.ts               typed dashboard read surface for licensing
-  proxy.ts                   session-cookie refresh + pathname forwarding
-                             only (Next.js 16 proxy/middleware convention)
-docs/
-  AUTH_ARCHITECTURE.md       identity vs. authorization, login/logout flow,
-                             proxy responsibility, RBAC contract
-  ENVIRONMENT_SECURITY.md    environment fail-closed rules, licensing
-                             data-access boundary
+  app/                    Next layouts, explicit route wrappers, cookie endpoint
+    (dashboard)/          protected route group; all existing URLs retained
+    api/activation/       Node Route Handler wrappers for activation features
+    api/renewal/          Node Route Handler wrapper for renewal feature
+  proxy.ts                session-cookie refresh and pathname forwarding
+  fsd/pages/              server-only screen compositions and page-local reads
+  widgets/dashboard-shell/ shell, header, sidebar and navigation model
+  features/               manage-plan, create-customer, provision-subscription,
+                          rotate-license-code, sign-in, sign-out,
+                          activate-license, renew-subscription
+  entities/session/       verified identity, database RBAC, authorized read gate
+  entities/license/       shared license context, code generation and display
+  shared/
+    ui/                   reusable presentation primitives
+    lib/                  formatting, query/redirect helpers and utilities
+    i18n/                 Arabic/English copy; separate server locale entry
+    config/               separate public and server environment modules
+    api/supabase/         SSR/browser/private clients and database type facade
+    http/                 same-origin request policy
+    model/                environment type
 ```
 
-Arabic is the default locale. The language preference is stored in the
-server-readable `elmo_admin_locale` cookie so the root document renders the
-correct `lang` and `dir` before hydration; English remains available from the
-header without locale-prefixed routes.
+FSD Pages live under `src/fsd/pages`, keeping them outside Next's Pages Router.
+`src/app/**/page.tsx` wrappers preserve route groups, dynamic params and promised
+searchParams. Cross-slice imports use narrow public APIs. Client UI entry points
+are separate from server-only entries and Server Action implementations.
 
-The `lib/` vs `server/` split is deliberate and enforces the security
-boundary below: anything importable from a Client Component lives in
-`lib/`; anything that must never reach the browser lives in `server/` and
-imports the `server-only` package so an accidental client import fails at
-build time.
+Arabic remains the default, with `elmo_admin_locale` resolved on the server to
+render `lang` and `dir` before hydration. English uses the same URLs. Existing
+CSS, fonts, text and interaction bodies were preserved. Auth/session and licensing
+entry points retain their authorization checks; no backend migration is included.
 
 ## Environment model
 
@@ -98,7 +69,7 @@ hardcoded.
 
 - **`APP_ENV`** (server-only, no `NEXT_PUBLIC_` prefix) is the single,
   authoritative source of environment identity, resolved by
-  `src/server/env.ts` and passed down through the server-rendered layout
+  `src/shared/config/server.ts` and passed down through the server-rendered layout
   as a prop — never re-derived in the browser. It defaults to `staging`
   when unset.
 - `getServerEnvironment()` validates `APP_ENV` against the configured
@@ -124,11 +95,11 @@ The browser must never receive:
 
 Only publishable/browser-safe configuration may be prefixed
 `NEXT_PUBLIC_*`. The privileged licensing client in
-`src/server/supabase/privileged-client.ts` reads `SUPABASE_SECRET_KEY` only on
+`src/shared/api/supabase/privileged-client.ts` reads `SUPABASE_SECRET_KEY` only on
 the server, is stateless, and targets only the project validated for `APP_ENV`. It
 must continue to:
 
-- live under `src/server/`, guarded by the `server-only` package
+- live in the server-only `src/shared/api/supabase/` infrastructure, guarded by the `server-only` package
 - never be reachable from a Client Component, a `NEXT_PUBLIC_*` variable,
   or a Server Action that a browser can call without a server-side
   authorization check passing first
@@ -232,9 +203,8 @@ work beyond the accepted simple V1 scope:
 
 All core modules are connected to live data from the validated environment: Overview,
 Customers and Customer 360, Subscriptions, Licenses and License 360, Devices,
-Activation Requests, Issuances, Audit Logs, and Plans. The primary navigation is
-limited to Overview, Customers, Activation Requests, Subscriptions, Plans, and
-Settings. Lists use server-side filters and pagination with batched relationship
+Activation Requests, Issuances, Audit Logs, and Plans. The sidebar retains all workspace, operations and settings links, including
+licenses, devices, issuances and audit logs. Lists use server-side filters and pagination with batched relationship
 lookups.
 
 Commercial onboarding was first accepted on Staging and is now accepted for the

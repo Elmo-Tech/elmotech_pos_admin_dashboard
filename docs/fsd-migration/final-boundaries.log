@@ -1,0 +1,11 @@
+✔ full source respects FSD layer direction, peer isolation and cross-slice public APIs (0.982875ms)
+✔ client entries cannot reach server-only implementations; Server Actions remain explicit boundaries (6.015458ms)
+✔ all page public APIs remain server-only and no legacy source trees remain (0.441583ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 329.529292

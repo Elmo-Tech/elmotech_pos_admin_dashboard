@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Calistoga, IBM_Plex_Mono, IBM_Plex_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
-import { directionFor } from "@/i18n/messages";
-import { getLocale } from "@/server/i18n/get-locale";
-import { getServerEnvironment } from "@/server/env";
+import { directionFor } from "@/shared/i18n";
+import { getLocale } from "@/shared/i18n/server";
+import { getServerEnvironment } from "@/shared/config/server";
 import "./globals.css";
 
 const plexSans = IBM_Plex_Sans({

@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
-import { getPublicEnv } from "@/lib/env";
+import { getPublicEnv } from "@/shared/config/public";
 
 /**
  * Network-boundary plumbing only — refreshes the Supabase session cookie

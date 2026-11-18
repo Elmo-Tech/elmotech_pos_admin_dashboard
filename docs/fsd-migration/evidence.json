@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "kind": "candidate",
+    "commit": "d17674a8e5eccf9a5e9c8731f9284ece34bb2317"
+  },
+  "environment": {
+    "node": "v24.21.0",
+    "platform": "Darwin",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "fsdCli": "2.8.0"
+  },
+  "checks": [
+    {
+      "id": "baseline-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "baseline-lint.log",
+      "assertions": [
+        "Existing working-tree pilot baseline passed"
+      ]
+    },
+    {
+      "id": "baseline-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "baseline-types.log",
+      "assertions": [
+        "Existing working-tree pilot baseline passed"
+      ]
+    },
+    {
+      "id": "baseline-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/plans-pilot.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "baseline-tests.log",
+      "assertions": [
+        "Existing working-tree pilot baseline passed"
+      ]
+    },
+    {
+      "id": "baseline-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/baseline",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "baseline-build-webpack.log",
+      "assertions": [
+        "Credential-free baseline routes captured"
+      ]
+    },
+    {
+      "id": "batch-1-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-1-lint.log",
+      "assertions": [
+        "Recorded batch-1 lint result"
+      ]
+    },
+    {
+      "id": "batch-1-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-1-types.log",
+      "assertions": [
+        "Recorded batch-1 types result"
+      ]
+    },
+    {
+      "id": "batch-1-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-protocol.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-1-tests.log",
+      "assertions": [
+        "Recorded batch-1 tests result"
+      ]
+    },
+    {
+      "id": "batch-1-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-1",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-1-webpack.log",
+      "assertions": [
+        "Recorded batch-1 webpack result"
+      ]
+    },
+    {
+      "id": "batch-1-routes",
+      "command": [
+        "python3",
+        "manifest-comparison"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-1-route-comparison.log",
+      "assertions": [
+        "Recorded batch-1 routes result"
+      ]
+    },
+    {
+      "id": "batch-2-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-2-lint.log",
+      "assertions": [
+        "Recorded batch-2 lint result"
+      ]
+    },
+    {
+      "id": "batch-2-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-2-types.log",
+      "assertions": [
+        "Recorded batch-2 types result"
+      ]
+    },
+    {
+      "id": "batch-2-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-protocol.test.mjs",
+        "tests/source-preservation.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-2-tests.log",
+      "assertions": [
+        "Recorded batch-2 tests result"
+      ]
+    },
+    {
+      "id": "batch-2-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-2-60GvDo",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-2-webpack.log",
+      "assertions": [
+        "Recorded batch-2 webpack result"
+      ]
+    },
+    {
+      "id": "batch-2-routes",
+      "command": [
+        "python3",
+        "manifest-comparison"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-2-route-comparison.log",
+      "assertions": [
+        "Recorded batch-2 routes result"
+      ]
+    },
+    {
+      "id": "batch-3-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-3-lint.log",
+      "assertions": [
+        "Recorded batch-3 lint result"
+      ]
+    },
+    {
+      "id": "batch-3-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-3-types.log",
+      "assertions": [
+        "Recorded batch-3 types result"
+      ]
+    },
+    {
+      "id": "batch-3-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-protocol.test.mjs",
+        "tests/source-preservation.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-3-tests.log",
+      "assertions": [
+        "Recorded batch-3 tests result"
+      ]
+    },
+    {
+      "id": "batch-3-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-3-Vhblw8",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-3-webpack.log",
+      "assertions": [
+        "Recorded batch-3 webpack result"
+      ]
+    },
+    {
+      "id": "batch-3-routes",
+      "command": [
+        "python3",
+        "manifest-comparison"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-3-route-comparison.log",
+      "assertions": [
+        "Recorded batch-3 routes result"
+      ]
+    },
+    {
+      "id": "batch-4-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-4-lint.log",
+      "assertions": [
+        "Recorded batch-4 lint result"
+      ]
+    },
+    {
+      "id": "batch-4-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-4-types.log",
+      "assertions": [
+        "Recorded batch-4 types result"
+      ]
+    },
+    {
+      "id": "batch-4-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/fsd-boundaries.test.mjs",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-protocol.test.mjs",
+        "tests/source-preservation.test.mjs",
+        "tests/ui-characterization.test.mjs",
+        "tests/workflows.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-4-tests.log",
+      "assertions": [
+        "Recorded batch-4 tests result"
+      ]
+    },
+    {
+      "id": "batch-4-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-4-Zt887Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-4-webpack.log",
+      "assertions": [
+        "Recorded batch-4 webpack result"
+      ]
+    },
+    {
+      "id": "batch-4-routes",
+      "command": [
+        "python3",
+        "manifest-comparison"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "batch-4-route-comparison.log",
+      "assertions": [
+        "Recorded batch-4 routes result"
+      ]
+    },
+    {
+      "id": "final-lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-lint.log",
+      "assertions": [
+        "Recorded final lint result"
+      ]
+    },
+    {
+      "id": "final-types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-types.log",
+      "assertions": [
+        "Recorded final types result"
+      ]
+    },
+    {
+      "id": "final-tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/fsd-boundaries.test.mjs",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-plumbing.test.mjs",
+        "tests/session-protocol.test.mjs",
+        "tests/source-preservation.test.mjs",
+        "tests/ui-characterization.test.mjs",
+        "tests/workflows.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-tests.log",
+      "assertions": [
+        "Recorded final tests result"
+      ]
+    },
+    {
+      "id": "final-webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/final-jxCibt",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-webpack.log",
+      "assertions": [
+        "Recorded final webpack result"
+      ]
+    },
+    {
+      "id": "final-routes",
+      "command": [
+        "python3",
+        "manifest-comparison"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-route-comparison.log",
+      "assertions": [
+        "Recorded final routes result"
+      ]
+    },
+    {
+      "id": "batch-4-webpack-first",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-4-ZRWdiq",
+      "exitCode": 1,
+      "expectedExitCode": 0,
+      "outcome": "fail",
+      "log": "batch-4-webpack-first.log",
+      "assertions": [
+        "Initial re-export-only use server module rejected; corrected without changing action implementation or compiler rules"
+      ]
+    },
+    {
+      "id": "cli-architecture-check",
+      "command": [
+        "fsd",
+        "check",
+        "--architecture"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 1,
+      "expectedExitCode": 0,
+      "outcome": "fail",
+      "log": "steiger-check.log",
+      "assertions": [
+        "CLI expects src/pages and stops before architecture analysis; custom boundary checks separately pass"
+      ]
+    },
+    {
+      "id": "final-turbopack",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-4-Zt887Z",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-turbopack.log",
+      "assertions": [
+        "Default Turbopack build passed independently from webpack"
+      ]
+    },
+    {
+      "id": "final-webpack-manifest-comparison",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-webpack-manifest-comparison.log",
+      "assertions": [
+        "Full routes/raw proxy equality or scoped emitted client implementation-marker check"
+      ]
+    },
+    {
+      "id": "final-webpack-client-boundary",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-webpack-client-boundary.log",
+      "assertions": [
+        "Full routes/raw proxy equality or scoped emitted client implementation-marker check"
+      ]
+    },
+    {
+      "id": "final-turbopack-manifest-comparison",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-turbopack-manifest-comparison.log",
+      "assertions": [
+        "Full routes/raw proxy equality or scoped emitted client implementation-marker check"
+      ]
+    },
+    {
+      "id": "final-turbopack-client-boundary",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-turbopack-client-boundary.log",
+      "assertions": [
+        "Full routes/raw proxy equality or scoped emitted client implementation-marker check"
+      ]
+    },
+    {
+      "id": "scope-check",
+      "command": [
+        "python3",
+        "-"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "scope-check.log",
+      "assertions": [
+        "Package, lockfile, configs and historical reports unchanged"
+      ]
+    },
+    {
+      "id": "final-durable-preservation",
+      "command": [
+        "node",
+        "--test",
+        "tests/source-preservation.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "outcome": "pass",
+      "log": "final-durable-preservation.log",
+      "assertions": [
+        "Source/CSS/dictionary fingerprints verify without requiring temporary source snapshots"
+      ]
+    }
+  ],
+  "limitations": [
+    "Source candidate includes pre-existing uncommitted Plans pilot; no commit or deployment created.",
+    "Controlled tests and bilingual markup hashes do not establish authenticated browser, pixel, hydration or Server Action transport acceptance.",
+    "No local authenticated fixture backend or real Supabase/SQL/RLS/Edge/POS acceptance; no production access.",
+    "CLI architecture check expects default Pages root; no Steiger pass claimed.",
+    "Import checker covers literal static TS imports/re-exports and explicit action boundaries, not arbitrary dynamic loading."
+  ]
+}

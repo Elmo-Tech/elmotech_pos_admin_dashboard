@@ -1,0 +1,61 @@
+{
+  "batch": "batch-1",
+  "snapshot": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-1",
+  "checks": [
+    {
+      "id": "lint",
+      "command": [
+        "npm",
+        "run",
+        "lint"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "log": "batch-1-lint.log"
+    },
+    {
+      "id": "types",
+      "command": [
+        "./node_modules/.bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "log": "batch-1-types.log"
+    },
+    {
+      "id": "tests",
+      "command": [
+        "node",
+        "--test",
+        "tests/licensing-handlers.test.mjs",
+        "tests/plans-pilot.test.mjs",
+        "tests/read-models.test.mjs",
+        "tests/session-protocol.test.mjs"
+      ],
+      "cwd": "/Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard",
+      "exitCode": 0,
+      "log": "batch-1-tests.log"
+    },
+    {
+      "id": "webpack",
+      "command": [
+        "npm",
+        "run",
+        "build",
+        "--",
+        "--webpack"
+      ],
+      "cwd": "/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-1",
+      "exitCode": 0,
+      "log": "batch-1-webpack.log"
+    },
+    {
+      "id": "routes",
+      "exitCode": 0,
+      "log": "batch-1-route-comparison.log"
+    }
+  ]
+}

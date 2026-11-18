@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { directionFor, getMessages, type Locale } from "@/i18n/messages";
+import { directionFor, getMessages, type Locale } from "@/shared/i18n";
 
 interface GlobalErrorProps {
   error: Error & { digest?: string };

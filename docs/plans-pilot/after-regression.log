@@ -1,0 +1,22 @@
+✔ read: page 2, exact totals, global summaries and batched subscription counts (49.827166ms)
+✔ read: boolean filters compose; unknown values are ignored; empty/error states (20.483ms)
+✔ page/actions: owner permission contract (130.008416ms)
+✔ page/actions: admin permission contract (49.88675ms)
+✔ page/actions: support permission contract (64.231667ms)
+✔ page/actions: viewer permission contract (70.036625ms)
+✔ write: create/edit RPC payload, actor, normalized fields, revalidation (7.92175ms)
+✔ write: lifetime/null semantics and validation including existing malformed-price behavior (3.655209ms)
+✔ write: denied identity, RPC failure and backend domain outcomes do not revalidate (10.30725ms)
+✔ form: edit defaults, finite/lifetime toggle, fields and pending/feedback (15.449583ms)
+✔ page: filters, pagination query links and Arabic/English source-rendered markup (194.211ms)
+✔ pagination preserves both filters; filter submit/reset starts at first page (19.480792ms)
+✔ form: new finite defaults and lifetime edit defaults are preserved (14.165541ms)
+✔ page: backend failure renders module error and empty filtered page renders empty state (145.744ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1026.166041

@@ -1,0 +1,18 @@
+✔ session: password login preserves validation, cookie-client calls and redirect targets (53.308333ms)
+✔ session: sign-out calls provider before redirect (8.066417ms)
+✔ session: verified subject and active database role remain authoritative and fail closed (51.739125ms)
+✔ commercial: owner create/provision/rotation gates and existing RPCs (14.653541ms)
+✔ commercial: admin create/provision/rotation gates and existing RPCs (8.396292ms)
+✔ commercial: support create/provision/rotation gates and existing RPCs (10.764583ms)
+✔ commercial: viewer create/provision/rotation gates and existing RPCs (7.372458ms)
+✔ commercial: collisions retry three times and invalid inputs do not call RPC (8.211375ms)
+✔ Edge adapters: verification preserves exact bytes and initial issuance preserves binary/document headers (39.8165ms)
+✔ Edge adapters: viewer operations and mismatched renewal actors are rejected before invocation (14.090416ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 432.697333

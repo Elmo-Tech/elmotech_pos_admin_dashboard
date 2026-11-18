@@ -1,0 +1,11 @@
+✔ HTTP activation verification: multipart exact bytes, repeat outcomes and joined context (101.604459ms)
+✔ HTTP entry points: origin, viewer/support role and malformed input gates precede mutations (62.58625ms)
+✔ HTTP issuance and renewal preserve attachment bytes/headers and verified actor, operation ID (13.950416ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 428.209959

@@ -1,0 +1,1 @@
+PASS: no SUPABASE_SECRET_KEY, p_actor_user_id, create_plan or update_plan implementation markers in emitted static JavaScript. This is a scoped boundary check, not a general secret scan.

@@ -1,0 +1,2 @@
+PASS: full app-paths/pages/routes entries and proxy matchers identical to baseline.
+PASS: complete raw proxy manifest also identical.

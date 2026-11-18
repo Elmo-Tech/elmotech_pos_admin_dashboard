@@ -1,0 +1,1310 @@
+[
+  {
+    "file": "src/app/(dashboard)/activation-requests/page.tsx",
+    "name": "PAGE_COPY",
+    "kind": "initializer",
+    "hash": "08eb4593e9d50a3d6bcb09a3753c184ced131918886f43849ad716ddfe085cf5"
+  },
+  {
+    "file": "src/app/(dashboard)/activation-requests/page.tsx",
+    "name": "ActivationRequestsPage",
+    "kind": "function-body",
+    "hash": "961210772dc519dba18407e558dd65614648838f3f6a2bbab4f593be7b424def"
+  },
+  {
+    "file": "src/app/(dashboard)/audit-logs/page.tsx",
+    "name": "metadataSummary",
+    "kind": "function-body",
+    "hash": "deb8a545b024d4402d0da26533efe163cd402a5a6dfa029f779434b1c256c4ae"
+  },
+  {
+    "file": "src/app/(dashboard)/audit-logs/page.tsx",
+    "name": "AuditLogsPage",
+    "kind": "function-body",
+    "hash": "14da8cf06035741e9100cdf4ec9c308ce43c6cfb067a5bbd96ebc71654173e18"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "PROFILE_COPY",
+    "kind": "initializer",
+    "hash": "eafedd52e45297e279b7f9d008c401609223e1322cf85da065ca922859a92208"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "CustomerDetailPage",
+    "kind": "function-body",
+    "hash": "6e172b2c53bf2ed333327f911cc36548ccfb7f99a730856509881e63b45a6c41"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "SectionHeading",
+    "kind": "function-body",
+    "hash": "9d5c3251142e8509430f8abf802fd2d7fb54c67dced87ae5051bcc34e38977b7"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "InfoCell",
+    "kind": "function-body",
+    "hash": "a669b33e510ddda9770fbe7685a7a22af63173b3c97cb25e40ea322d017c5abd"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "HealthRow",
+    "kind": "function-body",
+    "hash": "94644b82937d22511a4b3d632a2e869af85d6de4e1415c8d7bb9334d35dbf6c7"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "CurrentLicenseCard",
+    "kind": "function-body",
+    "hash": "483b421f84792cb7c7662c16e883ea4cfda552e031a44bffea4aa5dc0c2a21e3"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+    "name": "InternalValue",
+    "kind": "function-body",
+    "hash": "128bff5721811ac64c0558fad898705afe06d24785a18b1bb61e1a2cfc640f86"
+  },
+  {
+    "file": "src/app/(dashboard)/customers/page.tsx",
+    "name": "CustomersPage",
+    "kind": "function-body",
+    "hash": "050e0e2f71b6a3a63a1b9341b846123636b91c7e91070e79d9222e8809fa5891"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "name": "OverviewPage",
+    "kind": "function-body",
+    "hash": "9670cab6d9d7759ec116e594d76f1f92b3294646e52996fb418be15f61e225b6"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "name": "HeroMetric",
+    "kind": "function-body",
+    "hash": "d138f884649ff37b4b5ff695fe2cd37429de24c1c326a101646e6e38fd3d640f"
+  },
+  {
+    "file": "src/app/(dashboard)/dashboard/page.tsx",
+    "name": "ActivityCard",
+    "kind": "function-body",
+    "hash": "ca17f266a60dce25738b4f6def7ad9dcd9c7ae12af9dd7f87797321c500da81f"
+  },
+  {
+    "file": "src/app/(dashboard)/devices/page.tsx",
+    "name": "DevicesPage",
+    "kind": "function-body",
+    "hash": "5f784ce06e3f4ebad8172b2a242b123317cc9d6ff1fc4720af054608d610de39"
+  },
+  {
+    "file": "src/app/(dashboard)/error.tsx",
+    "name": "DashboardError",
+    "kind": "function-body",
+    "hash": "296c5cd9bb8d6bbbb38dabebaabdadb8c1c5e6097e5f6d694a09dfbb2809b588"
+  },
+  {
+    "file": "src/app/(dashboard)/issuances/page.tsx",
+    "name": "IssuancesPage",
+    "kind": "function-body",
+    "hash": "50f140ae3b407a6e4207546d58d6f8f30ebf1575e3aa74ac589827475b5a4d0d"
+  },
+  {
+    "file": "src/app/(dashboard)/layout.tsx",
+    "name": "DashboardLayout",
+    "kind": "function-body",
+    "hash": "a440d436a0436205db608baabbfa8adb27f08d62d01e5602b2b3a74567d87c8b"
+  },
+  {
+    "file": "src/app/(dashboard)/licenses/[licenseId]/page.tsx",
+    "name": "LicenseDetailPage",
+    "kind": "function-body",
+    "hash": "5c259dd1253d8222a84836e9e9253ae1031b1fa7d40f19d85b1925dd1faf4c56"
+  },
+  {
+    "file": "src/app/(dashboard)/licenses/page.tsx",
+    "name": "LicensesPage",
+    "kind": "function-body",
+    "hash": "f514503c6a605d1099b7e48824113f0c61a3290e2b6c7c64c76a14c31bab6532"
+  },
+  {
+    "file": "src/app/(dashboard)/loading.tsx",
+    "name": "DashboardLoading",
+    "kind": "function-body",
+    "hash": "38e8c6b2d420f5d0c979ef6bf35c4bbfb1f7063dfad10845f71963a9195d2515"
+  },
+  {
+    "file": "src/app/(dashboard)/plans/page.tsx",
+    "name": "PlansRoute",
+    "kind": "function-body",
+    "hash": "732cec2300989bceb457e383bced73354862599506a715d82ed1530131a52c0d"
+  },
+  {
+    "file": "src/app/(dashboard)/settings/page.tsx",
+    "name": "SettingsPage",
+    "kind": "function-body",
+    "hash": "26082e9022015878cf34c3a4b0972dcc7ced58241f2800527d9fa4c6614726f7"
+  },
+  {
+    "file": "src/app/(dashboard)/subscriptions/page.tsx",
+    "name": "PAGE_COPY",
+    "kind": "initializer",
+    "hash": "7dad6b9fb922875a2fa226d2089dc61cdf14897486475096d62aa50c0f912796"
+  },
+  {
+    "file": "src/app/(dashboard)/subscriptions/page.tsx",
+    "name": "validityHint",
+    "kind": "function-body",
+    "hash": "f760fe7b50563f1555123d4d90e727ebfd012606dd1749308fcf85eacee441c5"
+  },
+  {
+    "file": "src/app/(dashboard)/subscriptions/page.tsx",
+    "name": "SubscriptionsPage",
+    "kind": "function-body",
+    "hash": "25007cb84f1bc6ee022ba55c107aa0ec1b782eab9d200f6222e65083f7f5ae99"
+  },
+  {
+    "file": "src/app/api/activation/issue/route.ts",
+    "name": "runtime",
+    "kind": "initializer",
+    "hash": "6fd2b83e74129e34b38a3ab54d6a7c2606d56ee4e51c774e53be72b5595020e4"
+  },
+  {
+    "file": "src/app/api/activation/issue/route.ts",
+    "name": "POST",
+    "kind": "function-body",
+    "hash": "4852c7313a84c3f531c82d2609b9e0b9133301776317a9b9eb2dfabe8c25efdc"
+  },
+  {
+    "file": "src/app/api/activation/issue/route.ts",
+    "name": "json",
+    "kind": "function-body",
+    "hash": "7a0a37a1208833b539b3f1c67fafa53463e98df64f3461897ae493d8bff5bac4"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "runtime",
+    "kind": "initializer",
+    "hash": "6fd2b83e74129e34b38a3ab54d6a7c2606d56ee4e51c774e53be72b5595020e4"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "ACCEPTED_TYPES",
+    "kind": "initializer",
+    "hash": "a91e55c756f8af9589bcab0404dff7bb5ba35951693ed7cfaafec30f263e16b0"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "SUCCESS_OUTCOMES",
+    "kind": "initializer",
+    "hash": "0560e8705e74c17e2073f0a6c04f168fef5eb2fe9e157e5cf99b9a2ad4442dd7"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "POST",
+    "kind": "function-body",
+    "hash": "60afc28118ed8be5e4bc0f00fbaa84f998e3429eacc6903af0f38a515b706f70"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "looksLikeElmoreq",
+    "kind": "function-body",
+    "hash": "f686727ea71c6fb21ac871f3f1c720a4df75d02c218af6f1f096bbcccd40c409"
+  },
+  {
+    "file": "src/app/api/activation/verify/route.ts",
+    "name": "json",
+    "kind": "function-body",
+    "hash": "7a0a37a1208833b539b3f1c67fafa53463e98df64f3461897ae493d8bff5bac4"
+  },
+  {
+    "file": "src/app/api/locale/route.ts",
+    "name": "POST",
+    "kind": "function-body",
+    "hash": "6782d8fc32be3ae0441828b8f61f94b0b4172d7d3291d9a60d41bd66093e5417"
+  },
+  {
+    "file": "src/app/api/renewal/issue/route.ts",
+    "name": "runtime",
+    "kind": "initializer",
+    "hash": "6fd2b83e74129e34b38a3ab54d6a7c2606d56ee4e51c774e53be72b5595020e4"
+  },
+  {
+    "file": "src/app/api/renewal/issue/route.ts",
+    "name": "POST",
+    "kind": "function-body",
+    "hash": "cc61f3e2dc6e8694fdd34f31250637f6a8a7cb86cfe219485c27108832ebe314"
+  },
+  {
+    "file": "src/app/api/renewal/issue/route.ts",
+    "name": "json",
+    "kind": "function-body",
+    "hash": "7a0a37a1208833b539b3f1c67fafa53463e98df64f3461897ae493d8bff5bac4"
+  },
+  {
+    "file": "src/app/global-error.tsx",
+    "name": "GlobalError",
+    "kind": "function-body",
+    "hash": "4231f05d16fb3a4c6c2f9b750bbb9ebd9b3940a2ed43695609bb613fbb04bdd4"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "plexSans",
+    "kind": "initializer",
+    "hash": "839ec1287a08fb93e762f005d9d0492f1d7daff071e0eea3e5778582044f718d"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "plexArabic",
+    "kind": "initializer",
+    "hash": "054fe74eca76b9c1b34221783b852f2fff10de1f08318f69f51127501342250b"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "plexMono",
+    "kind": "initializer",
+    "hash": "2fd819da1d63d4832fd5da5754693efa54f3f2decb4120aae5650b6442796e98"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "displayFont",
+    "kind": "initializer",
+    "hash": "dd32d8b6c825f0da3ab3d6ca3f554d64469b904e87e3158e353d902b480d38f1"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "metadata",
+    "kind": "initializer",
+    "hash": "459f2e957b2e1eb6ea6e680cc455c8eeab1f119da9e7dd51fab760a05aa4565d"
+  },
+  {
+    "file": "src/app/layout.tsx",
+    "name": "RootLayout",
+    "kind": "function-body",
+    "hash": "c2221b8245c7ecd6b0a3fffbf85d94b162808f7367d3b8529bb45e51b698fba1"
+  },
+  {
+    "file": "src/app/login/page.tsx",
+    "name": "LoginPage",
+    "kind": "function-body",
+    "hash": "1d5e9eadf8b3a9a4e537efd0873430fa0e7ac41f94838c7b84d36e5c46f87432"
+  },
+  {
+    "file": "src/app/page.tsx",
+    "name": "RootPage",
+    "kind": "function-body",
+    "hash": "f2a94bc17f221c42208d4f29b2d5501baed83c10e8b9fb8b52433ae8094c1116"
+  },
+  {
+    "file": "src/components/activation/activation-guide.tsx",
+    "name": "guide",
+    "kind": "initializer",
+    "hash": "9652bf48e8fc03d62642c86d7e75856a2b99287c8fdd64e9b76465da8f8f7751"
+  },
+  {
+    "file": "src/components/activation/activation-guide.tsx",
+    "name": "ActivationGuide",
+    "kind": "function-body",
+    "hash": "e4994dce90b89228b170332e53c3f556924ea5fe30f1218c3371a32afc6662fa"
+  },
+  {
+    "file": "src/components/activation/activation-guide.tsx",
+    "name": "FileDefinition",
+    "kind": "function-body",
+    "hash": "3d5463543af87df857612aaa6a9459cd26187acf70a4ead65f398e0a6b002b2a"
+  },
+  {
+    "file": "src/components/activation/activation-workflow.tsx",
+    "name": "ActivationWorkflow",
+    "kind": "function-body",
+    "hash": "d5d7c9fe450feeb7ff1c87fa82b30e42f3afd4e755486c1854869f01547e8db1"
+  },
+  {
+    "file": "src/components/activation/activation-workflow.tsx",
+    "name": "VerifiedReview",
+    "kind": "function-body",
+    "hash": "8a3818b62efad9f3e05ed333736ec0bd0ce8354b3765fa4e61994fb9033d6834"
+  },
+  {
+    "file": "src/components/activation/activation-workflow.tsx",
+    "name": "ReviewValue",
+    "kind": "function-body",
+    "hash": "d1a8cea7c76c73a975962099f6304e2a79f31942f00be2f088de49ccc3508f0a"
+  },
+  {
+    "file": "src/components/activation/activation-workflow.tsx",
+    "name": "TechnicalValue",
+    "kind": "function-body",
+    "hash": "fd2add0067bbd48dea69ed2229b78b117d198cb34e301c5ddcfa08aef83f81e9"
+  },
+  {
+    "file": "src/components/activation/activation-workflow.tsx",
+    "name": "formatFileSize",
+    "kind": "function-body",
+    "hash": "418ba8279482c98b4e4ddb0b6a30fb1ca732e1c246b49693209de017b6cd168d"
+  },
+  {
+    "file": "src/components/auth/access-denied.tsx",
+    "name": "AccessDenied",
+    "kind": "function-body",
+    "hash": "5a14ff9027d0449deff15f4d926b5fc00059b0325f3f3b7dd02a5f456f7d81c7"
+  },
+  {
+    "file": "src/components/auth/auth-not-configured.tsx",
+    "name": "AuthNotConfigured",
+    "kind": "function-body",
+    "hash": "ebc2b46a60c56dec99ff0f162621cb1a7521d6da7f873c48032d8e3189f791b6"
+  },
+  {
+    "file": "src/components/auth/login-form.tsx",
+    "name": "initialState",
+    "kind": "initializer",
+    "hash": "2bef9d46d981902fb086dec088adce89518356945bb1445923a370d1564197c3"
+  },
+  {
+    "file": "src/components/auth/login-form.tsx",
+    "name": "LoginForm",
+    "kind": "function-body",
+    "hash": "2d36dc95ef5f1ce917b0ceb2317c56baf0d98885cac49d32e56f6c8be8ca3812"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "inputClass",
+    "kind": "initializer",
+    "hash": "30490e8369c40f1e44780959a0e4c70bb4fb8a1bae314269a6525720376556cf"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "labelClass",
+    "kind": "initializer",
+    "hash": "951d88e799668260a2ab7132896bc5c436a939ccf0d17a8c93d7a46833e770bb"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "INITIAL_COMMERCIAL_ACTION_STATE",
+    "kind": "initializer",
+    "hash": "92b85020549bbfceeac61512587b2f62a1195fd1850b7283e7b45469cd3fd603"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "SubmitButton",
+    "kind": "function-body",
+    "hash": "ee4405917cc495b49521c8a4a42281a217f44775a3587d0db6f68149c5829e12"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "Feedback",
+    "kind": "function-body",
+    "hash": "eca30cb55ef9682bcd4b9b4a847581b118f1a81ab429b509bcf4de49717d3690"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "CreateCustomerForm",
+    "kind": "function-body",
+    "hash": "b5c7e911a58c057ab782f6d0fe3b4a09c3ef9adef384c280a958270908cdfe64"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "CreateCustomerDialog",
+    "kind": "function-body",
+    "hash": "e7f442a3bdfb11a0954de020678fdea84f62a4ca78a8432e36a5ddd7d4978d52"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "AddSubscriptionForm",
+    "kind": "function-body",
+    "hash": "59c31a32a54f096a86afc4b0dbbe8e5d9e84eb03d40317b7f02fa2bd7e8966c4"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "AddSubscriptionDialog",
+    "kind": "function-body",
+    "hash": "7028de87ad1a7ee266522c622105de86b5d84056bf6e6bb8c4db737c4caf7558"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "OneTimeLicenseCodePanel",
+    "kind": "function-body",
+    "hash": "60dc80ba47edc52013a733918346fd5c0c962affe38698b5675d691c8579d535"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "RotateLicenseCodeForm",
+    "kind": "function-body",
+    "hash": "2e6ed8e5e9850a76210027bffb0f1465d26e4c57edd04053da19e3d8cbac5a70"
+  },
+  {
+    "file": "src/components/commercial/commercial-forms.tsx",
+    "name": "CommercialSectionTitle",
+    "kind": "function-body",
+    "hash": "0a14ab5c1b78308c02e7eb08c43b1e8d81678244f4b85654087089bae4ec3196"
+  },
+  {
+    "file": "src/components/commercial/renew-subscription.tsx",
+    "name": "RenewSubscription",
+    "kind": "function-body",
+    "hash": "5eea4ba1169f17c12276d8ec47c03ff31c0eedea276c418115d8235576a9b1ed"
+  },
+  {
+    "file": "src/components/commercial/renew-subscription.tsx",
+    "name": "Info",
+    "kind": "function-body",
+    "hash": "6619733956b686a9c82ccf71cf7123d62a0ec4f1bfc43ac18eef73dd76d6316a"
+  },
+  {
+    "file": "src/components/commercial/renew-subscription.tsx",
+    "name": "projectRenewal",
+    "kind": "function-body",
+    "hash": "714e7ef75fbfdeed9a72deb8815b70d274c3c47fa1b72cff0a2ed89db5115293"
+  },
+  {
+    "file": "src/components/commercial/subscription-summary.tsx",
+    "name": "DAY_MS",
+    "kind": "initializer",
+    "hash": "a5b1a2fce83f16df0847e5973c9233ae3ff1019e87bbd0c0a62c91b25bc34018"
+  },
+  {
+    "file": "src/components/commercial/subscription-summary.tsx",
+    "name": "SOON_DAYS",
+    "kind": "initializer",
+    "hash": "624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4"
+  },
+  {
+    "file": "src/components/commercial/subscription-summary.tsx",
+    "name": "remainingText",
+    "kind": "function-body",
+    "hash": "86dfef45ad5b51a297fedc8cbc6185400e73bbdaa329a7cb2445a6434345ce69"
+  },
+  {
+    "file": "src/components/commercial/subscription-summary.tsx",
+    "name": "SubscriptionSummary",
+    "kind": "function-body",
+    "hash": "613e785b768d1ddc51a7a67ecd046dc837e9223a9c222c9fee43782bdf150924"
+  },
+  {
+    "file": "src/components/customers/customer-profile-header.tsx",
+    "name": "CustomerProfileHeader",
+    "kind": "function-body",
+    "hash": "e8822f3cf6f004cddcd8809fb63521d10508fcadfc4ee13c05acf6554080f0e3"
+  },
+  {
+    "file": "src/components/customers/customer-profile-header.tsx",
+    "name": "HeaderMetric",
+    "kind": "function-body",
+    "hash": "7aba9ceec14e23ebea1bcf6aa64dd04c54a9f7cee2fb0339b559c4be035dffa5"
+  },
+  {
+    "file": "src/components/customers/customer-profile-tabs.tsx",
+    "name": "TAB_ICONS",
+    "kind": "initializer",
+    "hash": "803e4d447b14156e0ca294c4f7c3786b739f9d97b5ccab5eab16a96031c5fc01"
+  },
+  {
+    "file": "src/components/customers/customer-profile-tabs.tsx",
+    "name": "CustomerProfileTabs",
+    "kind": "function-body",
+    "hash": "8d6176e3fc1e19aca05b5d0e8dc137e1c9feeb30c3f274170de001787fb4b40e"
+  },
+  {
+    "file": "src/components/layout/dashboard-shell.tsx",
+    "name": "DashboardShell",
+    "kind": "function-body",
+    "hash": "1a31eca83e3834a39d337da55ff11e41115876322bc3a167cc6e6cdbf67d3a45"
+  },
+  {
+    "file": "src/components/layout/environment-badge.tsx",
+    "name": "EnvironmentBadge",
+    "kind": "function-body",
+    "hash": "206c0c9150cfb5777fb0268a6becab31c7b8c85ff3fa766538b28b60a0d68028"
+  },
+  {
+    "file": "src/components/layout/header.tsx",
+    "name": "Header",
+    "kind": "function-body",
+    "hash": "3c80c7b0408827190a21eecad51ec170055208c46d3ab5f6ed47da701a3b2c0e"
+  },
+  {
+    "file": "src/components/layout/sidebar.tsx",
+    "name": "ICONS",
+    "kind": "initializer",
+    "hash": "f1e8160204f0001769ee67b6cc4eddfd244e3b785d0199e97a7f66e5c6063493"
+  },
+  {
+    "file": "src/components/layout/sidebar.tsx",
+    "name": "Sidebar",
+    "kind": "function-body",
+    "hash": "be53664dbbb8b3ef385c4e0f6f4599beb0c5f36719a162ef5bbd55ff14be0a3a"
+  },
+  {
+    "file": "src/components/layout/sidebar.tsx",
+    "name": "NavGroup",
+    "kind": "function-body",
+    "hash": "f04da4b853de47b80d5680dd26079cdf985a343f027f07e2bcd6b03f043b0e12"
+  },
+  {
+    "file": "src/components/layout/sidebar.tsx",
+    "name": "NavLink",
+    "kind": "function-body",
+    "hash": "01e720e1e402712fd1d53d9ce5970edf06e13ef08ac48c61d285680d48e1246d"
+  },
+  {
+    "file": "src/components/overview/dashboard-charts.tsx",
+    "name": "CustomerGrowthChart",
+    "kind": "function-body",
+    "hash": "7528d6ab5e639bcaac756983dd6a79774974d2717c7112c6f8668cc3dfa9ac6f"
+  },
+  {
+    "file": "src/components/overview/dashboard-charts.tsx",
+    "name": "SubscriptionHealth",
+    "kind": "function-body",
+    "hash": "e7d2431338d21bd541a1efaa53f64afdc62779c3e063a7af72907954b10800e3"
+  },
+  {
+    "file": "src/components/ui/action-dialog.tsx",
+    "name": "ActionDialog",
+    "kind": "function-body",
+    "hash": "8b7aa0f4d774c0eb264d27effaf3e9a059c2d8d8471da066aa50b566dd57caa6"
+  },
+  {
+    "file": "src/components/ui/data-table.tsx",
+    "name": "DataTable",
+    "kind": "function-body",
+    "hash": "1a6c4b5dea435facc7ce023024a11c558dce4e808ee9b398c3a0bd288eba1718"
+  },
+  {
+    "file": "src/components/ui/detail-drawer.tsx",
+    "name": "DetailDrawer",
+    "kind": "function-body",
+    "hash": "512b643361fedc9d147d568ecde5b3edb4df8de8824f639faab2a2220ba1e594"
+  },
+  {
+    "file": "src/components/ui/detail-grid.tsx",
+    "name": "DetailGrid",
+    "kind": "function-body",
+    "hash": "638f292cde8bf0f3f0a7e9f084b3ad557e29c8e97aafd12c4a770d4d7c5ea4a2"
+  },
+  {
+    "file": "src/components/ui/empty-state.tsx",
+    "name": "EmptyState",
+    "kind": "function-body",
+    "hash": "2eab67d3223d766b761bd9bb3480eaa1e3d81206053fc0ad3a6609f458a534ac"
+  },
+  {
+    "file": "src/components/ui/entity-link.tsx",
+    "name": "EntityLink",
+    "kind": "function-body",
+    "hash": "5c55ab9c7507b165b9524f269408ed9f4dc8b0019e502391d1c3ed630f0e0004"
+  },
+  {
+    "file": "src/components/ui/filter-bar.tsx",
+    "name": "FilterBar",
+    "kind": "function-body",
+    "hash": "75e458d5b05d9eeb9da97a2f4565d0aeb50d4cffe24ce8170f66bbdb8836175d"
+  },
+  {
+    "file": "src/components/ui/filter-controls.tsx",
+    "name": "ListFilterForm",
+    "kind": "function-body",
+    "hash": "6ea02dc667131feecfcc53ccd01a5593201b5bdfec67040c39658ebf4daa9057"
+  },
+  {
+    "file": "src/components/ui/filter-controls.tsx",
+    "name": "SearchField",
+    "kind": "function-body",
+    "hash": "143e9a59e08ff60a581c4b03b61aece00e3d0231e2f21b06dee585a040934529"
+  },
+  {
+    "file": "src/components/ui/filter-controls.tsx",
+    "name": "SelectField",
+    "kind": "function-body",
+    "hash": "252ea38af52c32e7d8fd812d4fed44d207e17e2d53aafa2fdecd7f6ea2ef7069"
+  },
+  {
+    "file": "src/components/ui/module-error-state.tsx",
+    "name": "ModuleErrorState",
+    "kind": "function-body",
+    "hash": "aa5021e4a7a3b87d450329b31cad3eed78c3764bdd4045ce62345a5fd3d81d43"
+  },
+  {
+    "file": "src/components/ui/module-placeholder.tsx",
+    "name": "ModulePlaceholder",
+    "kind": "function-body",
+    "hash": "92108cb4af753ac455a680b6bf75126a45ddfa5d02be5ed7d4336a1cd6236fca"
+  },
+  {
+    "file": "src/components/ui/page-header.tsx",
+    "name": "PageHeader",
+    "kind": "function-body",
+    "hash": "43e9778a0597049f02ffb4bed27c5b4aac718da76e3ee5f8487720002080fee4"
+  },
+  {
+    "file": "src/components/ui/page-section.tsx",
+    "name": "PageSection",
+    "kind": "function-body",
+    "hash": "184115c7d4942c493e1280f20610ebb5309c7af57ea3cab76e99b15040fc7d7b"
+  },
+  {
+    "file": "src/components/ui/pagination.tsx",
+    "name": "Pagination",
+    "kind": "function-body",
+    "hash": "c53932e04361b668a357d64d5f169cc48cab4da71524aedb5d477f7c49d9d520"
+  },
+  {
+    "file": "src/components/ui/section-nav.tsx",
+    "name": "SectionNav",
+    "kind": "function-body",
+    "hash": "e4e0dfb58281519f55fea83477164e5c81a8f8e3ba4b70120e2efeee2be5c6f7"
+  },
+  {
+    "file": "src/components/ui/stat-card.tsx",
+    "name": "tones",
+    "kind": "initializer",
+    "hash": "713a1758901bb1504a33b6f1802e1bb3a90803a03a5271d3e7130da5363d1bef"
+  },
+  {
+    "file": "src/components/ui/stat-card.tsx",
+    "name": "StatCard",
+    "kind": "function-body",
+    "hash": "6f40a4a12c7f85d6e3d812f6509c1939efb0f99558b8db83c1583b5ce5846494"
+  },
+  {
+    "file": "src/components/ui/status-badge.tsx",
+    "name": "TONE_STYLES",
+    "kind": "initializer",
+    "hash": "7c72d18a665244afe96a654b5d4276e423979708c0b816ac3e30c55ee4e81d98"
+  },
+  {
+    "file": "src/components/ui/status-badge.tsx",
+    "name": "StatusBadge",
+    "kind": "function-body",
+    "hash": "6a7d565e11dff89463a401538db411836fe83f64942f98e4a87ad6cc33a4ca26"
+  },
+  {
+    "file": "src/components/ui/table-skeleton.tsx",
+    "name": "TableSkeleton",
+    "kind": "function-body",
+    "hash": "cc96e4e92bc2e7d5063ad8ea5ac880ab9e307e5a3d60d0de0e45d7c7d18aa91c"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "ELMOREQ_MAX_BYTES",
+    "kind": "initializer",
+    "hash": "2acfd08aa731ac7cb3a84903b096431859617ae369863aeea33912a3220616d4"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "verifyActivationRequest",
+    "kind": "function-body",
+    "hash": "a6bb16de6dd534354c0d1288b79931725f2e0b4d17ff405fe027961d6badcbde"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "issueInitialLicense",
+    "kind": "function-body",
+    "hash": "623d8650dc9db2d19aece4514079fa973d794a737c74f95435a3706e525be10d"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "renewSameDeviceLicense",
+    "kind": "function-body",
+    "hash": "276adc8e37e11875a57323c6edecbaed1ee7ffc87ab57a37a86651f6303a1f72"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "requireLicenseOperator",
+    "kind": "function-body",
+    "hash": "db0c55c3c35d03b567ee31ed4157e919d3d684065eb7977af2828b575f06a0d9"
+  },
+  {
+    "file": "src/features/activation/server/edge-functions.ts",
+    "name": "requireCommercialRenewalManager",
+    "kind": "function-body",
+    "hash": "d9de19388ee72bcb8a2a782b23dd5947f78760fbdc0bcc4b332a5a152a0071c9"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "CROCKFORD_BASE32",
+    "kind": "initializer",
+    "hash": "f4b0876dc4e3a5b240a51bd871852d60b647b290c479e0914ac5ecde5f188478"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "stringValue",
+    "kind": "function-body",
+    "hash": "1e1d3fffd9a8ac55a6b6d8b65775c9533beba9001974154e4e2ad65a5158d04d"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "nullableString",
+    "kind": "function-body",
+    "hash": "f2b08320b0c1b8b5de76d4d6c6e0623e93c685194b7eccef75de3e05409fc072"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "rpcRecord",
+    "kind": "function-body",
+    "hash": "c1dc6af1b3f5b382dc182eb03189a3db842d1942831c472c43a01f4867fa3455"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "requireCommercialManager",
+    "kind": "function-body",
+    "hash": "f1d89414a102760b517fe6bed9a0c2fd42788335899aba1be75628c9523136c8"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "encodeCrockford",
+    "kind": "function-body",
+    "hash": "1e4a031eb5c5c1a7b9a30b013eabf8d7a192038d32b2daffdd40bc00b8a55194"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "generateLicenseCode",
+    "kind": "function-body",
+    "hash": "f4c2c6ff7a1dcd0d29d8e18458bed110819bb17a5c97418768370c3bae3d9a89"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "sha256",
+    "kind": "function-body",
+    "hash": "3d07c11552e948ca5bfdecb6cd27639dbeacfbd72d6da7fd445a48435e9c8522"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "createCustomerAction",
+    "kind": "function-body",
+    "hash": "0c155b8b5ba50e1486c4fb3287f6a3849247f4111d725bbd3ab2302c183fac56"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "provisionSubscriptionAction",
+    "kind": "function-body",
+    "hash": "3f0d18a4ea283426a7290e81a8faf0b2827c7529821feb83a6a6260bec3409ff"
+  },
+  {
+    "file": "src/features/commercial/server/actions.ts",
+    "name": "rotateLicenseCodeAction",
+    "kind": "function-body",
+    "hash": "4e73f3382972026f7fa5ebe700f61014c5caaa33297a54c24457c07d41823720"
+  },
+  {
+    "file": "src/features/customers/server/queries.ts",
+    "name": "getCustomers",
+    "kind": "function-body",
+    "hash": "490cc549fec0d6e20330e054cb00aef19ce27033ac265fc0110d1125ea0fad77"
+  },
+  {
+    "file": "src/features/customers/server/queries.ts",
+    "name": "getCustomerDetail",
+    "kind": "function-body",
+    "hash": "4b8d01fb2d1f928ebfd9c787dec0424945eece9afaa4e7718372e19a0445acbe"
+  },
+  {
+    "file": "src/features/history/server/queries.ts",
+    "name": "getIssuances",
+    "kind": "function-body",
+    "hash": "c53b6e73d2a64aaf35a5d64b87381f16c6a4062bc99d14ad4fb732aab61097b2"
+  },
+  {
+    "file": "src/features/history/server/queries.ts",
+    "name": "getAuditLogs",
+    "kind": "function-body",
+    "hash": "54e26249871f54b976e5674df1dc850c0f109f3f194e1e6f0d8ab2c15d9bd920"
+  },
+  {
+    "file": "src/features/licenses/server/queries.ts",
+    "name": "getLicenses",
+    "kind": "function-body",
+    "hash": "731225258d50366a3be37a94e6ffe40fa7ea8b50661288c49d27f4918b9d641e"
+  },
+  {
+    "file": "src/features/licenses/server/queries.ts",
+    "name": "getLicenseDetail",
+    "kind": "function-body",
+    "hash": "2f6426448d0c4f293a2b210c3c946a585b70b43dc1c1585ec98bcb3abdbc5cce"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "stringValue",
+    "kind": "function-body",
+    "hash": "1e1d3fffd9a8ac55a6b6d8b65775c9533beba9001974154e4e2ad65a5158d04d"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "nullableString",
+    "kind": "function-body",
+    "hash": "f2b08320b0c1b8b5de76d4d6c6e0623e93c685194b7eccef75de3e05409fc072"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "numberValue",
+    "kind": "function-body",
+    "hash": "64ae7da9d9f3b50f4eacfd4895dc7a99ad1858dae7dd41d561d7cde9e8b1d075"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "rpcRecord",
+    "kind": "function-body",
+    "hash": "c1dc6af1b3f5b382dc182eb03189a3db842d1942831c472c43a01f4867fa3455"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "requireCommercialManager",
+    "kind": "function-body",
+    "hash": "f1d89414a102760b517fe6bed9a0c2fd42788335899aba1be75628c9523136c8"
+  },
+  {
+    "file": "src/features/manage-plan/api/save-plan.ts",
+    "name": "savePlanAction",
+    "kind": "function-body",
+    "hash": "33bcc0e95f524a9ca31b84777582bf352e84eef2fc9e737a9f46d2d2be927717"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "inputClass",
+    "kind": "initializer",
+    "hash": "30490e8369c40f1e44780959a0e4c70bb4fb8a1bae314269a6525720376556cf"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "labelClass",
+    "kind": "initializer",
+    "hash": "951d88e799668260a2ab7132896bc5c436a939ccf0d17a8c93d7a46833e770bb"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "INITIAL_PLAN_ACTION_STATE",
+    "kind": "initializer",
+    "hash": "92b85020549bbfceeac61512587b2f62a1195fd1850b7283e7b45469cd3fd603"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "SubmitButton",
+    "kind": "function-body",
+    "hash": "ee4405917cc495b49521c8a4a42281a217f44775a3587d0db6f68149c5829e12"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "Feedback",
+    "kind": "function-body",
+    "hash": "eca30cb55ef9682bcd4b9b4a847581b118f1a81ab429b509bcf4de49717d3690"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "PlanForm",
+    "kind": "function-body",
+    "hash": "553a94d2bb921704dfae54a50175a8ae2c9ad58051fe8b6c9a3325a2a0cb7645"
+  },
+  {
+    "file": "src/features/manage-plan/ui/plan-form.tsx",
+    "name": "PlanDialog",
+    "kind": "function-body",
+    "hash": "fc643bff3ad8e1f373fc88737786ba88cc80adca3d4326c9f99c85275d4b06af"
+  },
+  {
+    "file": "src/features/operations/server/queries.ts",
+    "name": "loadLicenseCustomerMaps",
+    "kind": "function-body",
+    "hash": "a5d99f01396c48482ca9b479cc92094d506f6d95968325c1843e33fd59ddedba"
+  },
+  {
+    "file": "src/features/operations/server/queries.ts",
+    "name": "getDevices",
+    "kind": "function-body",
+    "hash": "0af7ba66f1aa3296ae2749372f4355e89189829a45dc33042ca51862925de1e4"
+  },
+  {
+    "file": "src/features/operations/server/queries.ts",
+    "name": "getActivationRequests",
+    "kind": "function-body",
+    "hash": "7d92b987894e1d1e36302cb21188cdcdc2ac91305b3f8b8ec03eabe1209a8f7f"
+  },
+  {
+    "file": "src/features/operations/server/queries.ts",
+    "name": "getActivationRequestContext",
+    "kind": "function-body",
+    "hash": "50d3b34ba6983207feac3fdf4d4ab3fc9581508f550c6e81e0006c3c02db2a3e"
+  },
+  {
+    "file": "src/features/overview/server/get-overview-data.ts",
+    "name": "requireCount",
+    "kind": "function-body",
+    "hash": "e32f610cf094da3e658415863380320e2a44ce5090bcc588a1324cd77139cddd"
+  },
+  {
+    "file": "src/features/overview/server/get-overview-data.ts",
+    "name": "getOverviewData",
+    "kind": "initializer",
+    "hash": "d12f97743611dae9f306939de513101b6ce7b27ab07638f88a59e845c5b1cc9c"
+  },
+  {
+    "file": "src/features/overview/server/get-overview-data.ts",
+    "name": "buildMonthlyGrowth",
+    "kind": "function-body",
+    "hash": "8d2b69b37cf91757d3f26fb34423d6e27ef80ba64583d4047dbdb3c3dc136afd"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "PAGE_SIZE",
+    "kind": "initializer",
+    "hash": "f5ca38f748a1d6eaf726b8a42fb575c3c71f1864a8143301782de13da2d9202b"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "parsePage",
+    "kind": "function-body",
+    "hash": "78a5e64f5f1effddcf6ff356a5a28761b8bfd239ea8ae7fb426ecbc6e68bbd27"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "readParam",
+    "kind": "function-body",
+    "hash": "13614d6675e3749d2b9bbb38c403539d552602961b3406c10a423f829eb8604a"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "safeSearch",
+    "kind": "function-body",
+    "hash": "485bbb71e746d3df0cf1f84a3b808a13a6cf092f34da20c076486f900544c75f"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "pageRange",
+    "kind": "function-body",
+    "hash": "1b397da8ef9be97790e729c3f81182cd18c985c168720236d3d03705433f26c2"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "isUuid",
+    "kind": "function-body",
+    "hash": "f0981aada537a89acea6e9c6e3c823af104a473158d09f5600d3c920c8590c0b"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "shortId",
+    "kind": "function-body",
+    "hash": "795a81dde114d831013862abb9f13db43bae5364ba8829c8bdddd2fdbdbc1b8a"
+  },
+  {
+    "file": "src/features/shared/server/query-helpers.ts",
+    "name": "requireQuery",
+    "kind": "function-body",
+    "hash": "452624d1628dbad35482c1ba5a40e15c44369126a4f120c1f958824acb26e5f5"
+  },
+  {
+    "file": "src/features/subscriptions/server/queries.ts",
+    "name": "getSubscriptions",
+    "kind": "function-body",
+    "hash": "a8022f2973f0c84166278c23ab7edd9da8a9b6f9d6e97de99529ca6cfd8982a9"
+  },
+  {
+    "file": "src/fsd/pages/plans/api/get-plans.ts",
+    "name": "getPlans",
+    "kind": "function-body",
+    "hash": "0fa9d421c61e55f8075c037940410775ac3f5b5b71ed1c3f65f3902d8b2ba4d7"
+  },
+  {
+    "file": "src/fsd/pages/plans/ui/plans-page.tsx",
+    "name": "PAGE_COPY",
+    "kind": "initializer",
+    "hash": "cec659fe906b8831eead581ad72538e929603ee4927186d4ec0f09f5084a654d"
+  },
+  {
+    "file": "src/fsd/pages/plans/ui/plans-page.tsx",
+    "name": "PlansPage",
+    "kind": "function-body",
+    "hash": "3a8a92f07a5da53fce3cfbf065118568e97c3a8858bc8891c81b94423455e0f8"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "SUPPORTED_LOCALES",
+    "kind": "initializer",
+    "hash": "a170062549000b4cad67dd1dd60a117e22b91eb3e7ed0d8285bab34dac7b1ae9"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "DEFAULT_LOCALE",
+    "kind": "initializer",
+    "hash": "8208994143fbc4fbdeab96c0ed932f9df3846568df6187e6833fb647366b1935"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "LOCALE_COOKIE",
+    "kind": "initializer",
+    "hash": "2b35ea81073106a572702b9e71f5257ba656511747aa59b7d8b16c9f78d96c04"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "en",
+    "kind": "initializer",
+    "hash": "3783cf67554cfe606cd758550c27bd97f61a613f804129de2e8d1f3c1eeba82a"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "ar",
+    "kind": "initializer",
+    "hash": "54f140f41fdacd03328ba36199b35a4c21014e4f9b172db5f18f87b0fa5c0e51"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "dictionaries",
+    "kind": "initializer",
+    "hash": "b72023592cbf65d455094845a798f04cffbdc98d1fb5bb1658883fbe74e9e236"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "productionDictionaries",
+    "kind": "initializer",
+    "hash": "490a135014c211f4c69478b1ae11831b16eb68d094a5282943cbe756c4f142d3"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "isLocale",
+    "kind": "function-body",
+    "hash": "42dcc506dac97a5a256df0260e532943d91870f8e19673e9035d276856ff5c89"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "getMessages",
+    "kind": "function-body",
+    "hash": "983a3921a3dedff6b5262b81d861597a4669920be7af68c11ca6aa7dbebf767b"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "directionFor",
+    "kind": "function-body",
+    "hash": "13a01ad4dca2e43067f894d038435aab555c26efde88ae7d362e0b500d4f9826"
+  },
+  {
+    "file": "src/i18n/messages.ts",
+    "name": "interpolate",
+    "kind": "function-body",
+    "hash": "04402c347bbbb98c499d533ebeba562f4d25379062f1a9ad1aec16d178fd17f7"
+  },
+  {
+    "file": "src/lib/env.ts",
+    "name": "getPublicEnv",
+    "kind": "function-body",
+    "hash": "80aa44caf2e176c0ff9d9b48a5d82b6f612192b6dbf6f46e0a4150052cce3958"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "formatDate",
+    "kind": "function-body",
+    "hash": "4e97585fba7851721c9c063ad7d7566fd4721220a1beb39f62ad30d5db3e7057"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "formatDateTime",
+    "kind": "function-body",
+    "hash": "bea45077d91c4d10814389d19e3572690a70590655e1acde2ce622c2777a13a7"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "humanize",
+    "kind": "function-body",
+    "hash": "c651122764fc291c6b30a88c53c850b37ec33a5c5e2e593e0a5683901f95ab02"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "ARABIC_TERMS",
+    "kind": "initializer",
+    "hash": "759f7082bb2310cfa251cca491f4c246c6cd429e5cad8f1eaaffc2d317855a40"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "localizeTerm",
+    "kind": "function-body",
+    "hash": "2c2411f4557de9db5ac5b4f1144b2cf73f64e61a2ca9c05565305607b2f0125a"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "statusTone",
+    "kind": "function-body",
+    "hash": "7e91b86b8b81ad1f26ec3b83762d463fe22dafa5b74388dbda2f378836c779cc"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "formatMoney",
+    "kind": "function-body",
+    "hash": "eb3c4b049d82bfd86a43f3825861142bfb2e102eb303e34fbb765fae1c5e7a0e"
+  },
+  {
+    "file": "src/lib/format.ts",
+    "name": "formatNumber",
+    "kind": "function-body",
+    "hash": "ad63bfa085cb48f7bc9cf7cc8eb1a78924b26799586d897082277e82625e64ba"
+  },
+  {
+    "file": "src/lib/navigation.ts",
+    "name": "MAIN_NAV_ITEMS",
+    "kind": "initializer",
+    "hash": "9c48f777ba894204563098d1ead6504f9ec7a8b57351cd9f5779abf998157ced"
+  },
+  {
+    "file": "src/lib/redirect-target.ts",
+    "name": "DEFAULT_REDIRECT_TARGET",
+    "kind": "initializer",
+    "hash": "af91d1d9a8e61422e97723bd4983fa5787a5ea9a9a47d1db69b724e46f256dd9"
+  },
+  {
+    "file": "src/lib/redirect-target.ts",
+    "name": "sanitizeRedirectTarget",
+    "kind": "function-body",
+    "hash": "2afda30fc16bb181b5950944e91fee4245aeec6212c34a3536aa322634b763c2"
+  },
+  {
+    "file": "src/lib/supabase/client.ts",
+    "name": "getSupabaseBrowserClient",
+    "kind": "function-body",
+    "hash": "ead9a856908258780bcf3a7579083946d4a38ce399ab9dbc5f888eb7c100860a"
+  },
+  {
+    "file": "src/lib/utils.ts",
+    "name": "cn",
+    "kind": "function-body",
+    "hash": "e141d1430253c156d18d0eff6c76bf4a5f9c02b9323658eb5a5b7053cf44ded2"
+  },
+  {
+    "file": "src/proxy.ts",
+    "name": "proxy",
+    "kind": "function-body",
+    "hash": "672cdb3dc3ef86343b9a19970297bd428b5d0171865ec33502437616bfbc7cac"
+  },
+  {
+    "file": "src/proxy.ts",
+    "name": "config",
+    "kind": "initializer",
+    "hash": "f436992719748b60a8d3388efdcc52e1e26b6891add6a74cb7ab090f8634c9a9"
+  },
+  {
+    "file": "src/server/auth/actions.ts",
+    "name": "signInAction",
+    "kind": "function-body",
+    "hash": "1f1edf31f51022edc3139070dcb837b4c65fd52257f95084106a74e4cfca3602"
+  },
+  {
+    "file": "src/server/auth/actions.ts",
+    "name": "signOutAction",
+    "kind": "function-body",
+    "hash": "c68a7c0abd0999395b21bcf6e3e9815f74b43d847641c14740a3f77527968e1e"
+  },
+  {
+    "file": "src/server/auth/current-user.ts",
+    "name": "getCurrentUser",
+    "kind": "initializer",
+    "hash": "c36cda6db47a4877fcfe2e814029e2edfaf078af8d2880e9a0cd61dd9205ad2e"
+  },
+  {
+    "file": "src/server/auth/require-admin-access.ts",
+    "name": "requireAdminAccess",
+    "kind": "initializer",
+    "hash": "b24779535f0afe32d5ea6b9865ae4fdee958823d573b998832d9ed3fdff3c608"
+  },
+  {
+    "file": "src/server/auth/require-user.ts",
+    "name": "requireUser",
+    "kind": "function-body",
+    "hash": "dc31ccb64061fb143050574317fa452df82d804b00bc6c1e845e4db879bedfb2"
+  },
+  {
+    "file": "src/server/data/authorized-licensing-client.ts",
+    "name": "getAuthorizedLicensingClient",
+    "kind": "function-body",
+    "hash": "99c638b83f9d38836e9ebf77ce1e509c8a97b84abf435f8ca3a903cf856c4f85"
+  },
+  {
+    "file": "src/server/env.ts",
+    "name": "KNOWN_PROJECTS",
+    "kind": "initializer",
+    "hash": "e96982d75ffa4b4a40266af61efeee0ef2cba308d16a08097912b45518d996f9"
+  },
+  {
+    "file": "src/server/env.ts",
+    "name": "extractProjectRef",
+    "kind": "function-body",
+    "hash": "1c7a3da835d53dc8a5683b8e26f0ce74d1998dff51de75e9bc8fbafb3beca5e3"
+  },
+  {
+    "file": "src/server/env.ts",
+    "name": "readDeclaredEnvironment",
+    "kind": "function-body",
+    "hash": "11439f82b231592c7bfe2d9379d42d2ab7bc6dde7b5b65936743d60ce633d2cb"
+  },
+  {
+    "file": "src/server/env.ts",
+    "name": "getServerEnvironment",
+    "kind": "function-body",
+    "hash": "a62ec0ecf687cbb56201c1f8a9bbb0649a4124f34b227802cba8169b26d2fb10"
+  },
+  {
+    "file": "src/server/env.ts",
+    "name": "getRequiredSupabaseUrl",
+    "kind": "function-body",
+    "hash": "a4c4ca3732da34872beb8378027779a60df38b5d6872dfce17a25645735f6861"
+  },
+  {
+    "file": "src/server/http/same-origin.ts",
+    "name": "hasValidSameOrigin",
+    "kind": "function-body",
+    "hash": "ad80ff3fc51628a73d833b8f085da926642289db08d8f1f8b52a584586401097"
+  },
+  {
+    "file": "src/server/http/same-origin.ts",
+    "name": "firstHeaderValue",
+    "kind": "function-body",
+    "hash": "966713a6c2042da833db519e2046a6e55e495926d192de9b7e377d4a91489c28"
+  },
+  {
+    "file": "src/server/http/same-origin.ts",
+    "name": "parseHttpOrigin",
+    "kind": "function-body",
+    "hash": "9f8720bfbe5524c954adaee580172780e481228dcf236c87da5cac5bb34ab1e0"
+  },
+  {
+    "file": "src/server/i18n/get-locale.ts",
+    "name": "getLocale",
+    "kind": "function-body",
+    "hash": "33744853978385f8b22bdf61a7a98c3e2950cee94431f0e0fb1c18554a88e68b"
+  },
+  {
+    "file": "src/server/supabase/privileged-client.ts",
+    "name": "getPrivilegedLicensingClient",
+    "kind": "function-body",
+    "hash": "abd0246952e41617142dbb24fc011c6346da10a0c91fe515442be67d3467b550"
+  },
+  {
+    "file": "src/server/supabase/server.ts",
+    "name": "getSupabaseServerClient",
+    "kind": "function-body",
+    "hash": "fe28bb8c8ae2277e2ed46251206262f6947ee03545d40df3e8388323fb00b8d1"
+  },
+  {
+    "file": "src/types/rbac.ts",
+    "name": "ADMIN_ROLES",
+    "kind": "initializer",
+    "hash": "294c559309ef0b1de9fd0797b8dcc963659d7bfc30be6979eff7c3a07b23f300"
+  },
+  {
+    "file": "src/types/rbac.ts",
+    "name": "ROLE_LABELS",
+    "kind": "initializer",
+    "hash": "a455fc0de6870012f9fdaf0a7959873d08e3a76b2ee10331de0f2edefcdb56c3"
+  },
+  {
+    "file": "src/types/rbac.ts",
+    "name": "isAdminRole",
+    "kind": "function-body",
+    "hash": "a23a62302d0af7bbd5ef299de78719254b97abedeff4979bfa250692c79184ea"
+  },
+  {
+    "file": "src/types/rbac.ts",
+    "name": "canOperateLicenses",
+    "kind": "function-body",
+    "hash": "6505f16b260d6e918d2fda316c0249894b961bac60381299f7f4ca883c40d156"
+  },
+  {
+    "file": "src/types/rbac.ts",
+    "name": "canManageCommercialRecords",
+    "kind": "function-body",
+    "hash": "a4f398e619788c4ad8a7c2f5d66c7f762f560ba7616578d666d893a0dd8ca269"
+  }
+]

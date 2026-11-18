@@ -1,0 +1,62 @@
+✔ HTTP activation verification: multipart exact bytes, repeat outcomes and joined context (1525.036791ms)
+✔ HTTP entry points: origin, viewer/support role and malformed input gates precede mutations (972.269625ms)
+✔ HTTP issuance and renewal preserve attachment bytes/headers and verified actor, operation ID (70.895875ms)
+✔ read: page 2, exact totals, global summaries and batched subscription counts (1101.598292ms)
+✔ read: boolean filters compose; unknown values are ignored; empty/error states (449.88625ms)
+✔ page/actions: owner permission contract (1167.276958ms)
+✔ page/actions: admin permission contract (282.345542ms)
+✔ page/actions: support permission contract (149.949792ms)
+✔ page/actions: viewer permission contract (86.371917ms)
+✔ write: create/edit RPC payload, actor, normalized fields, revalidation (19.018833ms)
+✔ write: lifetime/null semantics and validation including existing malformed-price behavior (11.97625ms)
+✔ write: denied identity, RPC failure and backend domain outcomes do not revalidate (31.081667ms)
+✔ form: edit defaults, finite/lifetime toggle, fields and pending/feedback (36.649458ms)
+✔ page: filters, pagination query links and Arabic/English source-rendered markup (537.458042ms)
+✔ pagination preserves both filters; filter submit/reset starts at first page (22.747291ms)
+✔ form: new finite defaults and lifetime edit defaults are preserved (22.495416ms)
+✔ page: backend failure renders module error and empty filtered page renders empty state (167.073625ms)
+✔ read model: getOverviewData joins, scope, filters and failure contract (1041.133834ms)
+✔ read model: getSubscriptions joins, scope, filters and failure contract (626.939042ms)
+✖ read model: getDevices joins, scope, filters and failure contract (191.43175ms)
+✔ read model: getActivationRequests joins, scope, filters and failure contract (332.954875ms)
+✔ read model: getIssuances joins, scope, filters and failure contract (142.442667ms)
+✔ read model: getAuditLogs joins, scope, filters and failure contract (258.405291ms)
+✔ read model: getCustomers joins, scope, filters and failure contract (165.106833ms)
+✔ read model: getCustomerDetail joins, scope, filters and failure contract (51.623583ms)
+✔ read model: getLicenses joins, scope, filters and failure contract (64.481875ms)
+✔ read model: getLicenseDetail joins, scope, filters and failure contract (86.868292ms)
+✔ read model: getActivationRequestContext joins, scope, filters and failure contract (154.366709ms)
+✔ detail loaders retain invalid UUID/missing-record null behavior (39.482084ms)
+✔ session: password login preserves validation, cookie-client calls and redirect targets (864.902959ms)
+✔ session: sign-out calls provider before redirect (336.125291ms)
+✔ session: verified subject and active database role remain authoritative and fail closed (959.143ms)
+✔ commercial: owner create/provision/rotation gates and existing RPCs (227.353792ms)
+✔ commercial: admin create/provision/rotation gates and existing RPCs (200.282333ms)
+✔ commercial: support create/provision/rotation gates and existing RPCs (35.953542ms)
+✔ commercial: viewer create/provision/rotation gates and existing RPCs (48.082709ms)
+✔ commercial: collisions retry three times and invalid inputs do not call RPC (48.327375ms)
+✔ Edge adapters: verification preserves exact bytes and initial issuance preserves binary/document headers (196.252708ms)
+✔ Edge adapters: viewer operations and mismatched renewal actors are rejected before invocation (102.261333ms)
+✔ existing function bodies and state/constants survive architecture moves (1269.764584ms)
+✔ global CSS, font layout and dictionary payload are preserved (51.77675ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 40
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5361.885292
+
+✖ failing tests:
+
+test at tests/read-models.test.mjs:47:46
+✖ read model: getDevices joins, scope, filters and failure contract (191.43175ms)
+  TypeError: h.exported(...) is not a function
+      at TestContext.<anonymous> (file:///Users/ashraf/elmo_tech/elmotech_pos_admin_dashboard/tests/read-models.test.mjs:49:50)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

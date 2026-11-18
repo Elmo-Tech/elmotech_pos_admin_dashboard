@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { getMessages, type Locale } from "@/i18n/messages";
+import { getMessages, type Locale } from "@/shared/i18n";
 import { AlertCircle, RotateCcw } from "lucide-react";
 
 interface DashboardErrorProps {

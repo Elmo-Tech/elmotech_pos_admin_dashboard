@@ -1,0 +1,14 @@
+{
+  "equal": true,
+  "scope": "Controlled server-rendered component markup, mocked hooks/auth/Supabase; not browser or RSC transport acceptance",
+  "locales": {
+    "ar": {
+      "beforeSha256": "db49504daf683e7fb51dfdd983c412f9729237d2637216252451318a02b0f570",
+      "afterSha256": "db49504daf683e7fb51dfdd983c412f9729237d2637216252451318a02b0f570"
+    },
+    "en": {
+      "beforeSha256": "a9743c27bc55d5b928b1f3bb9f62dd16780a25b36225d7df8040d96ec148013f",
+      "afterSha256": "a9743c27bc55d5b928b1f3bb9f62dd16780a25b36225d7df8040d96ec148013f"
+    }
+  }
+}

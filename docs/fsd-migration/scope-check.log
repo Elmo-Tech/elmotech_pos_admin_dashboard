@@ -1,0 +1,1 @@
+PASS: package.json, package-lock.json, next.config.ts, tsconfig.json, eslint.config.mjs, postcss.config.mjs, AGENTS.md and historical audit/Plans reports have unchanged hashes.

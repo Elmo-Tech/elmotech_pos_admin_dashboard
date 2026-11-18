@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 1,
+  "framework": "nextjs",
+  "sourceRoot": "src",
+  "pageRoot": "src/fsd/pages",
+  "baseline": "current working tree after Plans pilot",
+  "routes": [
+    {
+      "url": "/",
+      "owner": "app redirect",
+      "wrapper": "src/app/page.tsx",
+      "method": "GET"
+    },
+    {
+      "url": "/dashboard",
+      "owner": "src/fsd/pages/overview",
+      "wrapper": "src/app/(dashboard)/dashboard/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/subscriptions",
+      "owner": "src/fsd/pages/subscriptions",
+      "wrapper": "src/app/(dashboard)/subscriptions/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/devices",
+      "owner": "src/fsd/pages/devices",
+      "wrapper": "src/app/(dashboard)/devices/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/issuances",
+      "owner": "src/fsd/pages/issuances",
+      "wrapper": "src/app/(dashboard)/issuances/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/audit-logs",
+      "owner": "src/fsd/pages/audit-logs",
+      "wrapper": "src/app/(dashboard)/audit-logs/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/settings",
+      "owner": "src/fsd/pages/settings",
+      "wrapper": "src/app/(dashboard)/settings/page.tsx",
+      "batch": 2,
+      "method": "GET"
+    },
+    {
+      "url": "/customers",
+      "owner": "src/fsd/pages/customers",
+      "wrapper": "src/app/(dashboard)/customers/page.tsx",
+      "batch": 3,
+      "method": "GET"
+    },
+    {
+      "url": "/customers/[customerId]",
+      "owner": "src/fsd/pages/customer-details",
+      "wrapper": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+      "batch": 3,
+      "method": "GET"
+    },
+    {
+      "url": "/licenses",
+      "owner": "src/fsd/pages/licenses",
+      "wrapper": "src/app/(dashboard)/licenses/page.tsx",
+      "batch": 3,
+      "method": "GET"
+    },
+    {
+      "url": "/licenses/[licenseId]",
+      "owner": "src/fsd/pages/license-details",
+      "wrapper": "src/app/(dashboard)/licenses/[licenseId]/page.tsx",
+      "batch": 3,
+      "method": "GET"
+    },
+    {
+      "url": "/activation-requests",
+      "owner": "src/fsd/pages/activation-requests",
+      "wrapper": "src/app/(dashboard)/activation-requests/page.tsx",
+      "batch": 4,
+      "method": "GET"
+    },
+    {
+      "url": "/plans",
+      "owner": "src/fsd/pages/plans",
+      "wrapper": "src/app/(dashboard)/plans/page.tsx",
+      "batch": 0,
+      "method": "GET"
+    },
+    {
+      "url": "/login",
+      "owner": "src/fsd/pages/login",
+      "wrapper": "src/app/login/page.tsx",
+      "batch": 4,
+      "method": "GET"
+    },
+    {
+      "url": "/api/activation/verify",
+      "owner": "src/features/activate-license",
+      "wrapper": "src/app/api/activation/verify/route.ts",
+      "batch": 4,
+      "method": "POST"
+    },
+    {
+      "url": "/api/activation/issue",
+      "owner": "src/features/activate-license",
+      "wrapper": "src/app/api/activation/issue/route.ts",
+      "batch": 4,
+      "method": "POST"
+    },
+    {
+      "url": "/api/renewal/issue",
+      "owner": "src/features/renew-subscription",
+      "wrapper": "src/app/api/renewal/issue/route.ts",
+      "batch": 4,
+      "method": "POST"
+    },
+    {
+      "url": "/api/locale",
+      "owner": "app cookie Route Handler + shared/i18n",
+      "wrapper": "src/app/api/locale/route.ts",
+      "method": "POST"
+    }
+  ],
+  "entries": [
+    {
+      "currentPath": "src/lib/utils.ts",
+      "targetPath": "src/shared/lib/utils.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/lib/format.ts",
+      "targetPath": "src/shared/lib/format.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/lib/redirect-target.ts",
+      "targetPath": "src/shared/lib/redirect-target.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/lib/env.ts",
+      "targetPath": "src/shared/config/public.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/env.ts",
+      "targetPath": "src/shared/config/server.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/i18n/messages.ts",
+      "targetPath": "src/shared/i18n/messages.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/i18n/get-locale.ts",
+      "targetPath": "src/shared/i18n/get-locale.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/features/shared/server/query-helpers.ts",
+      "targetPath": "src/shared/lib/query-helpers.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/types/database.ts",
+      "targetPath": "src/shared/api/supabase/schema.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/types/environment.ts",
+      "targetPath": "src/shared/model/environment.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/http/same-origin.ts",
+      "targetPath": "src/shared/http/same-origin.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/supabase/server.ts",
+      "targetPath": "src/shared/api/supabase/server.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/supabase/privileged-client.ts",
+      "targetPath": "src/shared/api/supabase/privileged-client.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/lib/supabase/client.ts",
+      "targetPath": "src/shared/api/supabase/client.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/auth/current-user.ts",
+      "targetPath": "src/entities/session/api/current-user.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/auth/require-user.ts",
+      "targetPath": "src/entities/session/api/require-user.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/auth/require-admin-access.ts",
+      "targetPath": "src/entities/session/api/require-admin-access.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/server/data/authorized-licensing-client.ts",
+      "targetPath": "src/entities/session/api/authorized-licensing-client.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/types/rbac.ts",
+      "targetPath": "src/entities/session/model/rbac.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/layout/dashboard-shell.tsx",
+      "targetPath": "src/widgets/dashboard-shell/ui/dashboard-shell.tsx",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/layout/header.tsx",
+      "targetPath": "src/widgets/dashboard-shell/ui/header.tsx",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/layout/sidebar.tsx",
+      "targetPath": "src/widgets/dashboard-shell/ui/sidebar.tsx",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/layout/environment-badge.tsx",
+      "targetPath": "src/shared/ui/environment-badge.tsx",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/lib/navigation.ts",
+      "targetPath": "src/widgets/dashboard-shell/model/navigation.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/types/navigation.ts",
+      "targetPath": "src/widgets/dashboard-shell/model/types.ts",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/auth/access-denied.tsx",
+      "targetPath": "src/app/_ui/access-denied.tsx",
+      "batch": 1,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/dashboard/page.tsx",
+      "targetPath": "src/fsd/pages/overview/ui/overview-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/subscriptions/page.tsx",
+      "targetPath": "src/fsd/pages/subscriptions/ui/subscriptions-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/devices/page.tsx",
+      "targetPath": "src/fsd/pages/devices/ui/devices-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/issuances/page.tsx",
+      "targetPath": "src/fsd/pages/issuances/ui/issuances-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/audit-logs/page.tsx",
+      "targetPath": "src/fsd/pages/audit-logs/ui/audit-logs-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/settings/page.tsx",
+      "targetPath": "src/fsd/pages/settings/ui/settings-page.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/customers/page.tsx",
+      "targetPath": "src/fsd/pages/customers/ui/customers-page.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/customers/[customerId]/page.tsx",
+      "targetPath": "src/fsd/pages/customer-details/ui/customer-details-page.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/licenses/page.tsx",
+      "targetPath": "src/fsd/pages/licenses/ui/licenses-page.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/licenses/[licenseId]/page.tsx",
+      "targetPath": "src/fsd/pages/license-details/ui/license-details-page.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/(dashboard)/activation-requests/page.tsx",
+      "targetPath": "src/fsd/pages/activation-requests/ui/activation-requests-page.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/app/login/page.tsx",
+      "targetPath": "src/fsd/pages/login/ui/login-page.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/features/overview/server/get-overview-data.ts",
+      "targetPath": "src/fsd/pages/overview/api/get-overview-data.ts",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/features/subscriptions/server/queries.ts",
+      "targetPath": "src/fsd/pages/subscriptions/api/get-subscriptions.ts",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/overview/dashboard-charts.tsx",
+      "targetPath": "src/fsd/pages/overview/ui/dashboard-charts.tsx",
+      "batch": 2,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/customers/customer-profile-header.tsx",
+      "targetPath": "src/fsd/pages/customer-details/ui/customer-profile-header.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/customers/customer-profile-tabs.tsx",
+      "targetPath": "src/fsd/pages/customer-details/ui/customer-profile-tabs.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/commercial/subscription-summary.tsx",
+      "targetPath": "src/fsd/pages/customer-details/ui/subscription-summary.tsx",
+      "batch": 3,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/activation/activation-guide.tsx",
+      "targetPath": "src/fsd/pages/activation-requests/ui/activation-guide.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/activation/activation-workflow.tsx",
+      "targetPath": "src/features/activate-license/ui/activation-workflow.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/commercial/renew-subscription.tsx",
+      "targetPath": "src/features/renew-subscription/ui/renew-subscription.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/auth/login-form.tsx",
+      "targetPath": "src/features/sign-in/ui/login-form.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/components/auth/auth-not-configured.tsx",
+      "targetPath": "src/fsd/pages/login/ui/auth-not-configured.tsx",
+      "batch": 4,
+      "reason": "Preserve implementation in its FSD responsibility owner",
+      "risk": "Import resolution, SSR/client and behavior preservation",
+      "routeImpact": "URLs and wrapper conventions unchanged"
+    },
+    {
+      "currentPath": "src/features/operations/server/queries.ts#getDevices",
+      "targetPath": "src/fsd/pages/devices/api/get-devices.ts",
+      "batch": 2,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/operations/server/queries.ts#getActivationRequests",
+      "targetPath": "src/fsd/pages/activation-requests/api/get-activation-requests.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/operations/server/queries.ts#getActivationRequestContext",
+      "targetPath": "src/features/activate-license/api/get-request-context.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/history/server/queries.ts#getIssuances",
+      "targetPath": "src/fsd/pages/issuances/api/get-issuances.ts",
+      "batch": 2,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/history/server/queries.ts#getAuditLogs",
+      "targetPath": "src/fsd/pages/audit-logs/api/get-audit-logs.ts",
+      "batch": 2,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/customers/server/queries.ts#getCustomers",
+      "targetPath": "src/fsd/pages/customers/api/queries.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/customers/server/queries.ts#getCustomerDetail",
+      "targetPath": "src/fsd/pages/customer-details/api/queries.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/licenses/server/queries.ts#getLicenses",
+      "targetPath": "src/fsd/pages/licenses/api/queries.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/licenses/server/queries.ts#getLicenseDetail",
+      "targetPath": "src/fsd/pages/license-details/api/queries.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/components/commercial/commercial-forms.tsx#CreateCustomerForm",
+      "targetPath": "src/features/create-customer/ui/create-customer.tsx",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/components/commercial/commercial-forms.tsx#CreateCustomerDialog",
+      "targetPath": "src/features/create-customer/ui/create-customer.tsx",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/components/commercial/commercial-forms.tsx#AddSubscriptionForm",
+      "targetPath": "src/features/provision-subscription/ui/provision-subscription.tsx",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/components/commercial/commercial-forms.tsx#AddSubscriptionDialog",
+      "targetPath": "src/features/provision-subscription/ui/provision-subscription.tsx",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/components/commercial/commercial-forms.tsx#RotateLicenseCodeForm",
+      "targetPath": "src/features/rotate-license-code/ui/rotate-license-code.tsx",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/commercial/server/actions.ts#createCustomerAction",
+      "targetPath": "src/features/create-customer/api/actions.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/commercial/server/actions.ts#provisionSubscriptionAction",
+      "targetPath": "src/features/provision-subscription/api/actions.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/commercial/server/actions.ts#rotateLicenseCodeAction",
+      "targetPath": "src/features/rotate-license-code/api/actions.ts",
+      "batch": 3,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/server/auth/actions.ts#SignInState",
+      "targetPath": "src/features/sign-in/model/types.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/server/auth/actions.ts#signInAction",
+      "targetPath": "src/features/sign-in/api/actions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/server/auth/actions.ts#signOutAction",
+      "targetPath": "src/features/sign-out/api/actions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/activation/server/edge-functions.ts#verifyActivationRequest",
+      "targetPath": "src/features/activate-license/api/edge-functions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/activation/server/edge-functions.ts#issueInitialLicense",
+      "targetPath": "src/features/activate-license/api/edge-functions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/activation/server/edge-functions.ts#ELMOREQ_MAX_BYTES",
+      "targetPath": "src/features/activate-license/api/edge-functions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/features/activation/server/edge-functions.ts#renewSameDeviceLicense",
+      "targetPath": "src/features/renew-subscription/api/edge-functions.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/app/api/activation/verify/route.ts#POST",
+      "targetPath": "src/features/activate-license/api/verify-route.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/app/api/activation/issue/route.ts#POST",
+      "targetPath": "src/features/activate-license/api/issue-route.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    },
+    {
+      "currentPath": "src/app/api/renewal/issue/route.ts#POST",
+      "targetPath": "src/features/renew-subscription/api/issue-route.ts",
+      "batch": 4,
+      "reason": "Split page-local read model or independent interaction",
+      "risk": "Preserve full declaration and entry-point guards",
+      "routeImpact": "No URL changes"
+    }
+  ],
+  "remainingLegacyDependencies": [
+    {
+      "path": "src/shared/api/supabase",
+      "reason": "Existing live backend constructors and handwritten licensing type facade; backend migration deferred."
+    },
+    {
+      "path": "src/app and src/proxy.ts",
+      "reason": "Intentional Next framework composition, route wrappers, cookie endpoint and request/session integration."
+    },
+    {
+      "path": "src/shared/ui/detail-drawer.tsx, module-placeholder.tsx, table-skeleton.tsx, commercial-section-title.tsx",
+      "reason": "Previously unused primitives retained and relocated; dead-code deletion is outside behavior-preserving migration."
+    },
+    {
+      "path": "src/shared/api/supabase/client.ts and src/widgets/dashboard-shell/model/types.ts",
+      "reason": "Previously unused browser constructor/navigation types retained; no old-path shims or application callers added."
+    }
+  ]
+}

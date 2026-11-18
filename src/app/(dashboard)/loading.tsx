@@ -1,6 +1,6 @@
-import { getMessages } from "@/i18n/messages";
-import { getLocale } from "@/server/i18n/get-locale";
-import { getServerEnvironment } from "@/server/env";
+import { getMessages } from "@/shared/i18n";
+import { getLocale } from "@/shared/i18n/server";
+import { getServerEnvironment } from "@/shared/config/server";
 
 export default async function DashboardLoading() {
   const messages = getMessages(await getLocale(), getServerEnvironment());
