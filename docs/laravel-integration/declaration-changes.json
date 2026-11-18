@@ -1,0 +1,107 @@
+[
+  {
+    "before": {
+      "file": "src/proxy.ts",
+      "name": "proxy",
+      "kind": "function-body",
+      "hash": "672cdb3dc3ef86343b9a19970297bd428b5d0171865ec33502437616bfbc7cac"
+    },
+    "after": {
+      "file": "src/proxy.ts",
+      "name": "proxy",
+      "kind": "function-body",
+      "hash": "1e2af1d5dbc6cdd509d980d55a15f48b0dba9c0d853e31b276b44effac4580ac"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/actions.ts",
+      "name": "signInAction",
+      "kind": "function-body",
+      "hash": "1f1edf31f51022edc3139070dcb837b4c65fd52257f95084106a74e4cfca3602"
+    },
+    "after": {
+      "file": "src/features/sign-in/api/actions.ts",
+      "name": "signInAction",
+      "kind": "function-body",
+      "hash": "5d223d5c72e4d5392f3a9dc5bcdb567ae5b642ce45cc47b85a91e610959beea0"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/actions.ts",
+      "name": "signOutAction",
+      "kind": "function-body",
+      "hash": "c68a7c0abd0999395b21bcf6e3e9815f74b43d847641c14740a3f77527968e1e"
+    },
+    "after": {
+      "file": "src/features/sign-out/api/actions.ts",
+      "name": "signOutAction",
+      "kind": "function-body",
+      "hash": "68200392ade1243bcfd60765ee76b9e6924c2f640994c7bcf3ddcfa29ed3d660"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/current-user.ts",
+      "name": "getCurrentUser",
+      "kind": "initializer",
+      "hash": "c36cda6db47a4877fcfe2e814029e2edfaf078af8d2880e9a0cd61dd9205ad2e"
+    },
+    "after": {
+      "file": "src/entities/session/api/current-user.ts",
+      "name": "getCurrentUser",
+      "kind": "initializer",
+      "hash": "9e039eaf60fcc60a6ddf557e39783e6a4c962cb877a1a60ddfc777199a9f09ed"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/require-admin-access.ts",
+      "name": "requireAdminAccess",
+      "kind": "initializer",
+      "hash": "b24779535f0afe32d5ea6b9865ae4fdee958823d573b998832d9ed3fdff3c608"
+    },
+    "after": {
+      "file": "src/entities/session/api/require-admin-access.ts",
+      "name": "requireAdminAccess",
+      "kind": "initializer",
+      "hash": "30ce209caa612917025370afe930088d101ee8a0d961a633104713a8708de754"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "getServerEnvironment",
+      "kind": "function-body",
+      "hash": "a62ec0ecf687cbb56201c1f8a9bbb0649a4124f34b227802cba8169b26d2fb10"
+    },
+    "after": {
+      "file": "src/shared/config/server.ts",
+      "name": "getServerEnvironment",
+      "kind": "function-body",
+      "hash": "3880cf5ad453120ad6c41a3e35ca5384caf9ce2ed0a262c174ae335f17854ce7"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  },
+  {
+    "before": {
+      "file": "src/server/supabase/privileged-client.ts",
+      "name": "getPrivilegedLicensingClient",
+      "kind": "function-body",
+      "hash": "abd0246952e41617142dbb24fc011c6346da10a0c91fe515442be67d3467b550"
+    },
+    "after": {
+      "file": "src/shared/api/supabase/privileged-client.ts",
+      "name": "getPrivilegedLicensingClient",
+      "kind": "function-body",
+      "hash": "4cc25d43872cfefb0afc5629064c97a0f88e66941ef325a82fa08c4ccef35ad0"
+    },
+    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+  }
+]

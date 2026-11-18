@@ -1,4 +1,5 @@
 import "server-only";
+import { usesLaravel, backendIdentity } from "@/shared/api/laravel/server";
 import { cache } from "react";
 import { getSupabaseServerClient } from "@/shared/api/supabase/server";
 
@@ -26,6 +27,10 @@ import { getSupabaseServerClient } from "@/shared/api/supabase/server";
  * this function does not paper over the distinction.
  */
 export const getCurrentUser = cache(async function getCurrentUser() {
+  if (usesLaravel()) {
+    const user = await backendIdentity();
+    return user ? { sub: user.id, email: user.email } : null;
+  }
   const supabase = await getSupabaseServerClient();
   const { data, error } = await supabase.auth.getClaims();
 

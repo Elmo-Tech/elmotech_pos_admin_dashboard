@@ -1,4 +1,5 @@
 "use server";
+import { usesLaravel, backendSignIn } from "@/shared/api/laravel/server";
 import { redirect } from "next/navigation";
 import { getSupabaseServerClient } from "@/shared/api/supabase/server";
 import { sanitizeRedirectTarget } from "@/shared/lib/redirect-target";
@@ -13,6 +14,11 @@ export async function signInAction(_prevState: SignInState, formData: FormData):
     return { error: "missing_credentials" };
   }
 
+  if (usesLaravel()) {
+    try { if (!await backendSignIn(email, password)) return { error: "invalid_credentials" }; }
+    catch { return { error: "not_configured" }; }
+    redirect(next);
+  }
   let supabase;
   try {
     supabase = await getSupabaseServerClient();

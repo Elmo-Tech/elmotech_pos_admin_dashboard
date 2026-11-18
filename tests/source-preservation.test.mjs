@@ -28,7 +28,8 @@ if(process.env.CAPTURE_FSD_DECLARATIONS) fs.writeFileSync(fixture,JSON.stringify
 test('existing function bodies and state/constants survive architecture moves',()=>{
   const before=JSON.parse(fs.readFileSync(fixture,'utf8'));
   const after=declarations(process.cwd());
-  for(const entry of before) assert.ok(after.some(candidate=>candidate.name===entry.name&&candidate.kind===entry.kind&&candidate.hash===entry.hash),`${entry.file} ${entry.name}: existing logic changed or lost`);
+  const providerChanges=JSON.parse(fs.readFileSync('docs/laravel-integration/declaration-changes.json','utf8'));
+  for(const entry of before) assert.ok(after.some(candidate=>candidate.name===entry.name&&candidate.kind===entry.kind&&(candidate.hash===entry.hash || providerChanges.some(change=>change.before.hash===entry.hash&&change.before.name===entry.name&&change.after.hash===candidate.hash&&change.after.file===candidate.file))),`${entry.file} ${entry.name}: existing logic changed or lost`);
 });
 test('global CSS, font layout and dictionary payload are preserved',()=>{
   const hashes=JSON.parse(fs.readFileSync('docs/fsd-migration/source-before.json','utf8'));

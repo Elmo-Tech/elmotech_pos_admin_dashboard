@@ -70,6 +70,8 @@ export function getServerEnvironment(): AppEnvironment {
     );
   }
 
+  if (process.env.DATA_PROVIDER === "laravel") return environment;
+
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (supabaseUrl) {
     const ref = extractProjectRef(supabaseUrl);

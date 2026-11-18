@@ -27,6 +27,8 @@ export async function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", request.nextUrl.pathname);
 
+  if (process.env.DATA_PROVIDER === "laravel") return NextResponse.next({ request: { headers: requestHeaders } });
+
   let env;
   try {
     env = getPublicEnv();

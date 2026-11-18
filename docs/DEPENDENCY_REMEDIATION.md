@@ -45,3 +45,7 @@ Next is used for both production serving and builds. Sharp is the framework's op
 Checks used a clean temporary checkout with the exact patched manifest/lockfile and no `.env` files. The verified lockfile is also installed in the working checkout. Existing staged content was untouched. Security verification uses official version ranges, the refreshed dependency graph and application regression/build controls. Live exploit reproduction, Supabase mutation acceptance and deployment verification were not performed.
 
 Frontend acceptance remains open because the residual advisory decisions and authenticated staging fixtures are outstanding. Laravel and MySQL work is deferred.
+
+## Deployment classification correction
+
+A subsequent review ran both full and omit-dev audits. Remaining copies belong to the lockfile devDependency graph, but their actual deployment exposure is unverified. Checked-in CI installs the full graph. Deployment pruning, artifact contents and hosting settings could not be verified. Prior development/build scope descriptions describe dependency placement and must not be read as confirmed build-only deployment isolation. See [the deployment exposure report](audit-deployment-review/REPORT.md).

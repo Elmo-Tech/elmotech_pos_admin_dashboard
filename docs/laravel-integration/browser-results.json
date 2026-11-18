@@ -1,0 +1,114 @@
+[
+  {
+    "flow": "plan create/edit/refresh finite to lifetime",
+    "status": "PASS",
+    "fixture": "A QA Browser 1795006282208"
+  },
+  {
+    "flow": "login/errors/plans/filter/page2/dialog",
+    "locale": "en",
+    "device": "desktop",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "flow": "screen dashboard",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen customers",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen licenses",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen subscriptions",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen devices",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen activation-requests",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen issuances",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen audit-logs",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen settings",
+    "status": "PASS"
+  },
+  {
+    "flow": "screen customers/[fixture]",
+    "status": "PASS"
+  },
+  {
+    "flow": "logout/protected redirect",
+    "locale": "en",
+    "device": "desktop",
+    "status": "PASS"
+  },
+  {
+    "flow": "login/errors/plans/filter/page2/dialog",
+    "locale": "en",
+    "device": "mobile",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "flow": "logout/protected redirect",
+    "locale": "en",
+    "device": "mobile",
+    "status": "PASS"
+  },
+  {
+    "flow": "login/errors/plans/filter/page2/dialog",
+    "locale": "ar",
+    "device": "desktop",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "flow": "logout/protected redirect",
+    "locale": "ar",
+    "device": "desktop",
+    "status": "PASS"
+  },
+  {
+    "flow": "login/errors/plans/filter/page2/dialog",
+    "locale": "ar",
+    "device": "mobile",
+    "status": "PASS",
+    "errors": []
+  },
+  {
+    "flow": "logout/protected redirect",
+    "locale": "ar",
+    "device": "mobile",
+    "status": "PASS"
+  },
+  {
+    "flow": "role controls",
+    "role": "admin",
+    "status": "PASS"
+  },
+  {
+    "flow": "role controls",
+    "role": "support",
+    "status": "PASS"
+  },
+  {
+    "flow": "role controls",
+    "role": "viewer",
+    "status": "PASS"
+  }
+]

@@ -1,4 +1,6 @@
 import "server-only";
+import { usesLaravel } from "@/shared/api/laravel/server";
+import { getLaravelLicensingClient } from "@/shared/api/laravel/licensing-client";
 import { createClient } from "@supabase/supabase-js";
 import { getRequiredSupabaseUrl } from "@/shared/config/server";
 import type { Database } from "@/shared/api/supabase/schema";
@@ -10,6 +12,7 @@ import type { Database } from "@/shared/api/supabase/schema";
  * cookie storage is configured, so the secret cannot enter browser state.
  */
 export function getPrivilegedLicensingClient() {
+  if (usesLaravel()) return getLaravelLicensingClient();
   const supabaseUrl = getRequiredSupabaseUrl();
   const secretKey = process.env.SUPABASE_SECRET_KEY;
 
