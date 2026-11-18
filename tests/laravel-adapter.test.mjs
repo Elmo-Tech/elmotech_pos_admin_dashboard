@@ -5,6 +5,7 @@ import { harness, form } from './helpers/source.mjs';
 function adapter(respond = async () => Response.json({ data: [], count: 0 })) {
   const calls = [];
   const h = harness({ mocks: { '@/shared/api/laravel/server': {
+    usesLaravel: () => true,
     backendRequest: async (path, options) => { calls.push({ path, options, body: typeof options.body === 'string' ? JSON.parse(options.body) : options.body }); return respond(path, options); },
   } } });
   return { client: h.load('src/shared/api/laravel/licensing-client.ts').getLaravelLicensingClient(), calls };

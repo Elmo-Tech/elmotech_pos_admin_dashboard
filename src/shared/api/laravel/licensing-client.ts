@@ -1,7 +1,7 @@
 import "server-only";
 import { FunctionsHttpError, type SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/shared/api/supabase/schema";
-import { backendRequest } from "./server";
+import { backendRequest, usesLaravel } from "./server";
 
 type QueryResult = { data: unknown; count: number | null; error: { message: string } | null };
 type Filter = { column: string; operator: string; value: unknown };
@@ -38,6 +38,7 @@ class ReadQuery implements PromiseLike<QueryResult> {
 }
 
 export function getLaravelLicensingClient(): SupabaseClient<Database, "licensing"> {
+  usesLaravel();
   const client = {
     from(resource: string) { return new ReadQuery(resource); },
     async rpc(name: string, args: Record<string, unknown>) {

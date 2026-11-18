@@ -7,21 +7,26 @@ const TOKEN_COOKIE = "elmotech_backend_session";
 export const usesLaravel = () => resolveDataProvider(process.env.DATA_PROVIDER) === "laravel";
 
 export async function backendRequest(path: string, init: RequestInit = {}) {
+  usesLaravel();
   const configured = process.env.LARAVEL_API_URL;
   if (!configured) throw new Error("LARAVEL_API_URL is required for Laravel mode.");
   const url = new URL(configured);
   if (url.protocol !== "https:" && !(url.protocol === "http:" && ["127.0.0.1", "localhost"].includes(url.hostname))) {
     throw new Error("Laravel API requires HTTPS outside localhost.");
   }
+  if (["supabase.co", "supabase.com", "supabase.in"].some(domain => url.hostname === domain || url.hostname.endsWith(`.${domain}`))) {
+    throw new Error("Supabase connections are disabled. LARAVEL_API_URL must point to Laravel.");
+  }
   const token = (await cookies()).get(TOKEN_COOKIE)?.value;
   const headers = new Headers(init.headers);
   headers.set("accept", "application/json");
   if (token) headers.set("authorization", `Bearer ${token}`);
-  return fetch(`${configured.replace(/\/$/, "")}/${path}`, { ...init, headers, cache: "no-store", signal: AbortSignal.timeout(15000) });
+  return fetch(`${configured.replace(/\/$/, "")}/${path}`, { ...init, headers, cache: "no-store", redirect: "error", signal: AbortSignal.timeout(15000) });
 }
 
 export interface BackendIdentity { id: string; email: string; role: string; is_active: boolean }
 export const backendIdentity = cache(async (): Promise<BackendIdentity | null> => {
+  usesLaravel();
   if (!(await cookies()).has(TOKEN_COOKIE)) return null;
   const response = await backendRequest("auth/me");
   if (response.status === 401 || response.status === 403) return null;

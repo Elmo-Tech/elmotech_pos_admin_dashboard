@@ -43,6 +43,12 @@ export function harness(options = {}) {
     'next/link': { __esModule: true, default: ({ children, ...props }) => React.createElement('a', props, children) },
     'next/navigation': { redirect: url => { throw new Error(`REDIRECT:${url}`); }, notFound: () => { throw new Error('NOT_FOUND'); }, usePathname: () => '/plans', useRouter: () => ({ refresh: () => calls.push(['refresh']) }) },
     'next/cache': { revalidatePath: path => revalidated.push(path) },
+    '@/shared/api/laravel/server': {
+      usesLaravel: () => true,
+      backendIdentity: async () => access.authorized ? { id: access.context.userId, email: access.context.email, role: access.context.role, is_active: true } : null,
+      backendSignIn: async (email, password) => { const result = await auth.signInWithPassword({ email, password }); return !result.error; },
+      backendSignOut: async () => auth.signOut(),
+    },
     '@/server/auth/require-admin-access': identity,
     '@/server/auth/current-user': identity,
     '@/server/data/authorized-licensing-client': identity,
@@ -75,8 +81,8 @@ export function harness(options = {}) {
       }
       return dependencies(spec);
     };
-    // Legacy characterization fixtures select Supabase explicitly; new default behavior has separate tests.
-    const bindings = { Date: FixedDate, process: { ...process, env: { ...process.env, DATA_PROVIDER: "supabase" } }, ...(options.globals || {}) };
+    // All application fixtures use Laravel; transport contracts are mocked at the HTTP boundary.
+    const bindings = { Date: FixedDate, process: { ...process, env: { ...process.env, DATA_PROVIDER: "laravel" } }, ...(options.globals || {}) };
     vm.runInThisContext(`(function(require,module,exports,${Object.keys(bindings).join(',')}){${source}\n})`, { filename })(resolve, evaluated, evaluated.exports, ...Object.values(bindings));
     return evaluated.exports;
   }

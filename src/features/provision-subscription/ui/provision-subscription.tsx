@@ -145,11 +145,11 @@ export function AddSubscriptionDialog({
   plans: readonly { id: string; name: string; is_lifetime: boolean; duration_value: number | null; duration_unit: string | null }[];
   canProvision: boolean;
 }) {
-  if (!canProvision) return null;
   const t = copy[locale];
   return (
     <ActionDialog
       triggerLabel={t.addSubscription}
+      hideTrigger={!canProvision}
       title={t.addSubscription}
       description={t.subscriptionDialogDescription}
       size="lg"

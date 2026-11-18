@@ -1,3 +1,5 @@
+> Historical Supabase design. The current runtime is Laravel-only; Supabase connections are disabled. See [current verification](LARAVEL_CONNECTION_VERIFICATION.md).
+
 # Authentication & Authorization Architecture
 
 The dashboard separates identity from authorization and enforces both on the

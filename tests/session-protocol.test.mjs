@@ -7,7 +7,7 @@ const commercial = 'src/features/commercial/server/actions.ts';
 const authActions = 'src/server/auth/actions.ts';
 const edge = 'src/features/activation/server/edge-functions.ts';
 
-test('session: password login preserves validation, cookie-client calls and redirect targets', async () => {
+test('session: password login preserves validation, Laravel calls and redirect targets', async () => {
   const credentials = [];
   const h = harness({ auth: { signInWithPassword: async value => { credentials.push(value); return { error: null }; } } });
   const signIn = h.exported(authActions, 'signInAction');
@@ -24,25 +24,23 @@ test('session: sign-out calls provider before redirect', async () => {
   await assert.rejects(h.exported(authActions, 'signOutAction')(), /REDIRECT:\/login/);
   assert.equal(signedOut, true);
 });
-test('session: verified subject and active database role remain authoritative and fail closed', async () => {
-  for (const [record, error, expected] of [
-    [{ role: 'owner', status: 'active' }, null, true], [{ role: 'viewer', status: 'active' }, null, true],
-    [{ role: 'admin', status: 'disabled' }, null, false], [{ role: 'unknown', status: 'active' }, null, false],
-    [null, null, false], [null, { message: 'offline' }, false],
+test('session: Laravel verified identity and active role remain authoritative and fail closed', async () => {
+  for (const [user, expected] of [
+    [{ id: 'verified-actor', email: 'fixture@example.invalid', role: 'owner', is_active: true }, true],
+    [{ id: 'verified-actor', email: 'fixture@example.invalid', role: 'viewer', is_active: true }, true],
+    [{ id: 'verified-actor', email: 'fixture@example.invalid', role: 'admin', is_active: false }, false],
+    [{ id: 'verified-actor', email: 'fixture@example.invalid', role: 'unknown', is_active: true }, false],
+    [null, false],
   ]) {
-    const subjects = [];
-    const h = harness({ client: { from: table => {
-      assert.equal(table, 'admin_users');
-      return { select: () => ({ eq: (column, value) => { subjects.push([column, value]); return { maybeSingle: async () => ({ data: record, error }) }; } }) };
-    } } });
-    delete h.mocks['@/server/auth/current-user'];
-    const access = await h.exported('src/server/auth/require-admin-access.ts', 'requireAdminAccess')();
+    let checks = 0;
+    const h = harness({ mocks: { '@/shared/api/laravel/server': { backendIdentity: async () => { checks++; return user; } } } });
+    const access = await h.load('src/entities/session/api/require-admin-access.ts').requireAdminAccess();
     assert.equal(access.authorized, expected);
-    assert.deepEqual(subjects, [['user_id', 'verified-actor']]);
+    assert.equal(checks, 1);
+    if (expected) assert.equal(access.context.userId, user.id);
   }
-  const anonymous = harness({ auth: { getClaims: async () => ({ data: null, error: {} }) } });
-  delete anonymous.mocks['@/server/auth/current-user'];
-  assert.deepEqual(await anonymous.exported('src/server/auth/require-admin-access.ts', 'requireAdminAccess')(), { authorized: false, reason: 'unauthenticated' });
+  const offline = harness({ mocks: { '@/shared/api/laravel/server': { backendIdentity: async () => { throw Error('offline'); } } } });
+  assert.deepEqual(await offline.load('src/entities/session/api/require-admin-access.ts').requireAdminAccess(), { authorized: false, reason: 'authorization_unavailable' });
 });
 for (const role of ['owner','admin','support','viewer']) {
   test(`commercial: ${role} create/provision/rotation gates and existing RPCs`, async () => {

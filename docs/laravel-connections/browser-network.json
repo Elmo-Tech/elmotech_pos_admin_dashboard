@@ -1,0 +1,3047 @@
+[
+  {
+    "hostname": "127.0.0.1",
+    "path": "/login",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/login/page-754afcc85e5a58a2.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/login",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/363-b46ff73668663dfd.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/dashboard/page-587925e4a609cbf0.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/363-b46ff73668663dfd.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/customers/page-c2c46f86ddf51831.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/b162ca26-eace-4e80-bb92-2ac42abbbda1",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/e2bdfef4-02df-48a6-b111-e23b49eda27b",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/fde8419d-ecba-4af7-b94b-888b56776642",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0e47da7e-6a06-48f8-86ff-8e2a3683393d",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/42f85265-8e83-41cc-a262-af0ef068b5d0",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/50fced45-90dc-45af-8241-c668b2e4528e",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/3bfb9cc0-3d93-4779-8ef5-467973536252",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/898a6ad4-cc51-4576-a828-4350f7bdb550",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/55b6d74e-266a-493f-b769-8299cabb56c6",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/b799e7cc-1e8a-4716-be5a-129abe5053c6",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/customers/%5BcustomerId%5D/page-d5f3d8d3b3740501.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/ecfa21fc-fe49-4511-93d6-d045640a1b82",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/licenses/%5BlicenseId%5D/page-0fee0bf1e29bfc2b.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/ecfa21fc-fe49-4511-93d6-d045640a1b82",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/363-b46ff73668663dfd.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/customers/page-c2c46f86ddf51831.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/b162ca26-eace-4e80-bb92-2ac42abbbda1",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/e2bdfef4-02df-48a6-b111-e23b49eda27b",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/fde8419d-ecba-4af7-b94b-888b56776642",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0e47da7e-6a06-48f8-86ff-8e2a3683393d",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/42f85265-8e83-41cc-a262-af0ef068b5d0",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/licenses/page-7181b208ccc23ff6.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/ecfa21fc-fe49-4511-93d6-d045640a1b82",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/1b1b3875-c13d-4d11-b5f2-eed75f696054",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/b162ca26-eace-4e80-bb92-2ac42abbbda1",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/918ec673-5068-44cb-94b1-c849e3e5949b",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/e2bdfef4-02df-48a6-b111-e23b49eda27b",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses/b5c8bedc-7674-4fbc-8e35-9ee394402377",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/fde8419d-ecba-4af7-b94b-888b56776642",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/subscriptions/page-7181b208ccc23ff6.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/0c9f1810-266f-4c6a-977f-8532d0a84949",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/b162ca26-eace-4e80-bb92-2ac42abbbda1",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/e2bdfef4-02df-48a6-b111-e23b49eda27b",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers/fde8419d-ecba-4af7-b94b-888b56776642",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/422-2613e3c73db5a3ff.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/521-bc510beb22b552d7.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/layout-abb2629dbdedcb30.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/error-f37ee1bfb9902092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/(dashboard)/plans/page-74fdf4cb10b3b194.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/dashboard",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/customers",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/activation-requests",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/licenses",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/devices",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/issuances",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/audit-logs",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/settings",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/subscriptions",
+    "method": "POST"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/login/page-754afcc85e5a58a2.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/plans",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/097a874ebc292602-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/17efc7caebbb6a73-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/26d4368bf94c0ec4-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/79d9077e4fd7eddc-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/99dc19e540dbb87b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/9da48a48bf6500f8-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/af5dd2b5d3f396f3-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/b729ad8c86c7d641-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/cdec7fa3927eb560-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/d9a2293b6b8212a5-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/e4efb0298547fad0-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/f022b1629605b85c-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/media/fb66eb17bf011c3b-s.p.woff2",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/22096920ccd3d01f.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/css/95f6053654f820b6.css",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/webpack-ce15c5a1ee20afbf.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/4bd1b696-c7408084347438ae.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/794-ceeb732a1a81bc27.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/main-app-5f8ac1ccb7ed703e.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/383-742311f171788092.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/global-error-7defe0c299068edc.js",
+    "method": "GET"
+  },
+  {
+    "hostname": "127.0.0.1",
+    "path": "/_next/static/chunks/app/login/page-754afcc85e5a58a2.js",
+    "method": "GET"
+  }
+]

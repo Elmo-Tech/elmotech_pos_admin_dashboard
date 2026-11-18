@@ -10,7 +10,7 @@ import { sanitizeRedirectTarget } from "@/shared/lib/redirect-target";
  * redirect for this, and never treat a cookie's mere presence as proof of
  * identity (see `getCurrentUser()`).
  *
- * If Supabase itself isn't configured, that's treated the same as "not
+ * If Laravel identity validation is unavailable, that's treated the same as "not
  * signed in": redirected to /login, which explains the configuration gap
  * rather than the dashboard crashing.
  *

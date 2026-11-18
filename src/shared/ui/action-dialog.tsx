@@ -6,6 +6,7 @@ import { cn } from "@/shared/lib/utils";
 
 interface ActionDialogProps {
   triggerLabel: string;
+  hideTrigger?: boolean;
   title: string;
   description?: string;
   children: ReactNode;
@@ -17,6 +18,7 @@ interface ActionDialogProps {
 
 export function ActionDialog({
   triggerLabel,
+  hideTrigger = false,
   title,
   description,
   children,
@@ -50,14 +52,14 @@ export function ActionDialog({
 
   return (
     <>
-      <button
+      {hideTrigger ? null : <button
         type="button"
         onClick={openDialog}
         className={cn(kind === "edit" ? "secondary-button" : "primary-button", triggerClassName)}
       >
         <TriggerIcon aria-hidden="true" size={17} />
         {triggerLabel}
-      </button>
+      </button>}
       <dialog
         ref={dialogRef}
         onClose={() => document.body.style.removeProperty("overflow")}

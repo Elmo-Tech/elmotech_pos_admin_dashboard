@@ -1,3 +1,5 @@
+> Historical integration acceptance record. Supabase is now disabled rather than available by legacy opt-in. See [current connection verification](../LARAVEL_CONNECTION_VERIFICATION.md).
+
 # Laravel/MySQL integration verification — 18 November 2026
 
 The new backend lives in `../backend elmoetch pos_admin_dashboard`. Laravel 13.43.0, Sanctum 4.5.0, PHP 8.5.4 and an isolated MySQL 8.4.11 instance were used. This is a local implementation and acceptance run. It does **not** establish production readiness or complete POS cryptographic migration.

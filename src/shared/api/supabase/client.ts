@@ -1,17 +1,4 @@
-import { createBrowserClient } from "@supabase/ssr";
-import { getPublicEnv } from "@/shared/config/public";
-
-/**
- * Browser Supabase client. Scope: Supabase Auth operations from Client
- * Components (sign-in/out, session listeners) and other browser-safe
- * calls only. Holds the publishable (anon) key, which is safe to ship to
- * the browser — but `anon` has no access to the licensing schema at all
- * (RLS + FORCE RLS, no permissive policies), so this client is not a
- * licensing data path and must never become one. It must never be given
- * a secret/service-role key.
- */
-/** @deprecated Supabase is legacy-only. Use the Laravel server transport for new work. */
-export function getSupabaseBrowserClient() {
-  const env = getPublicEnv();
-  return createBrowserClient(env.supabaseUrl, env.supabasePublishableKey);
+/** @deprecated Disabled. Browser requests must use the Next.js Laravel-backed entry points. */
+export function getSupabaseBrowserClient(): never {
+  throw new Error("Supabase connections are disabled. Use the Laravel-backed dashboard API.");
 }

@@ -9,9 +9,8 @@ licensing migrations, database tests, and Edge Functions live in the POS repo.
 
 ## Backend status
 
-**Laravel is the default backend. Supabase is deprecated** and retained only
-through explicit `DATA_PROVIDER=supabase` legacy configuration. New work uses
-Laravel. See [Supabase deprecation](docs/SUPABASE_DEPRECATION.md) and the
+**Laravel is the only runtime backend. Supabase connections are disabled**,
+including explicit `DATA_PROVIDER=supabase`. New work uses Laravel. See [Supabase deprecation](docs/SUPABASE_DEPRECATION.md) and the
 [Laravel integration report](docs/laravel-integration/REPORT.md). New POS
 activation/signing and renewal still require the original protocol implementation.
 
@@ -27,7 +26,8 @@ contextually without exposing the database as the product interface.
 
 Next.js 16 App Router, strict TypeScript, Tailwind CSS and Feature-Sliced Design.
 Laravel provides authentication, licensing reads and commercial actions. The
-Supabase implementation is deprecated and available only by explicit legacy opt-in. The completed migration and per-batch verification are documented in
+Supabase network implementation is disabled; only compatibility types and
+fail-closed legacy entry points remain. The completed migration and per-batch verification are documented in
 [Frontend FSD migration](docs/FRONTEND_FSD_MIGRATION.md).
 
 ```text
@@ -66,12 +66,11 @@ CSS, fonts, text and interaction bodies were preserved. Auth/session and licensi
 entry points retain their authorization checks; local Laravel integration is
 documented separately from the historical FSD migration.
 
-## Deprecated Supabase environment (legacy opt-in only)
+## Historical Supabase environments (runtime disabled)
 
-The following applies only to explicit `DATA_PROVIDER=supabase`. Laravel uses
-`LARAVEL_API_URL` instead. There are **two separate Supabase projects**. This dashboard connects to
-exactly one at a time, chosen by environment configuration — never
-hardcoded.
+The following project references document the previous backend. They cannot be
+selected by this application. Laravel uses server-side `LARAVEL_API_URL` instead.
+There were **two separate Supabase projects**:
 
 | Environment | Project | Ref |
 |---|---|---|
@@ -83,12 +82,9 @@ hardcoded.
   `src/shared/config/server.ts` and passed down through the server-rendered layout
   as a prop — never re-derived in the browser. It defaults to `staging`
   when unset.
-- `getServerEnvironment()` validates `APP_ENV` against the configured
-  `NEXT_PUBLIC_SUPABASE_URL`'s project ref and **fails closed** (throws)
-  on any mismatch, and also fails closed if `APP_ENV=production` is set
-  while `NODE_ENV` is not `production` (blocking `next dev` from ever
-  targeting Production). Full rules and examples:
-  [`docs/ENVIRONMENT_SECURITY.md`](docs/ENVIRONMENT_SECURITY.md).
+- `getServerEnvironment()` validates APP_ENV and rejects any provider other than
+  Laravel. APP_ENV=production is rejected outside NODE_ENV=production.
+- Old Supabase URL/key variables are not read by the runtime.
 - The header renders a persistent Staging/Production badge
   (`EnvironmentBadge`), fed exclusively by that server-validated value.
 - **Local development must use Staging.** Production cannot be targeted
@@ -104,47 +100,27 @@ The browser must never receive:
 - The Production or Staging license signing private keys
   (`ELMO_LICENSE_SIGNING_PRIVATE_KEY_PKCS8_B64URL`)
 
-Only publishable/browser-safe configuration may be prefixed
-`NEXT_PUBLIC_*`. The privileged licensing client in
-`src/shared/api/supabase/privileged-client.ts` reads `SUPABASE_SECRET_KEY` only on
-the server, is stateless, and targets only the project validated for `APP_ENV`. It
-must continue to:
-
-- live in the server-only `src/shared/api/supabase/` infrastructure, guarded by the `server-only` package
-- never be reachable from a Client Component, a `NEXT_PUBLIC_*` variable,
-  or a Server Action that a browser can call without a server-side
-  authorization check passing first
-
-No signing private key has been requested, retrieved, or inspected as part
-of this or the prior task.
-
-### Licensing data-access boundary
-
-`anon` and `authenticated` Supabase roles have **no access** to the
-licensing tables (`customers`, `plans`, `subscriptions`, `licenses`,
-`activation_requests`, `device_activations`, `license_issuances`,
-`audit_logs`) — RLS and FORCE RLS are enabled with no permissive
-browser-facing policies, and nothing in this repository adds, loosens, or
-works around that. The implemented Overview data path is:
-
-```
-Browser -> authenticated session -> Next.js server -> server-side
-authorization -> server-only privileged data access -> licensing schema
-```
-
-not a direct authenticated-client query against those tables. Details:
-[`docs/ENVIRONMENT_SECURITY.md`](docs/ENVIRONMENT_SECURITY.md).
+Only browser-safe values may be prefixed NEXT_PUBLIC_*. Laravel requests run
+server-side with a verified HttpOnly session token. Database credentials stay in
+Laravel. Every protected backend HTTP endpoint verifies identity and role again.
+The compatibility entry in `src/shared/api/supabase/privileged-client.ts` returns
+only the Laravel transport; retired Supabase auth clients throw without creating
+connections. See [connection verification](docs/LARAVEL_CONNECTION_VERIFICATION.md).
 
 ## Authentication & authorization
 
 Laravel authentication validates active staff through the API and stores its
 token in a server-managed HttpOnly cookie. See the integration report.
 
-In explicitly selected deprecated Supabase mode, Supabase
-Auth verifies identity with `getClaims()`, then `requireAdminAccess()` reads the
-matching `licensing.admin_users` row through the privileged server client. Only
-active `owner`, `admin`, `support`, and `viewer` rows are admitted. Full design:
-[`docs/AUTH_ARCHITECTURE.md`](docs/AUTH_ARCHITECTURE.md).
+The former Supabase auth design is retained only as historical documentation in
+`docs/AUTH_ARCHITECTURE.md`; it is not an enabled runtime path.
+
+## Coolify VPS deployment
+
+Use the repository-root `docker-compose.yaml` and `Dockerfile`. The Laravel
+repository has a separate Compose stack with persistent MySQL. Follow
+[Coolify deployment](docs/COOLIFY_DEPLOYMENT.md) for both resources, environment
+variables, initial migrations and account provisioning.
 
 ## Local development
 
@@ -161,9 +137,7 @@ npx tsc --noEmit
 ```
 
 The app builds and lints without Supabase credentials. Runtime authentication
-and reads use the configured Laravel API. Only explicit deprecated Supabase
-mode needs the selected project's publishable key and server secret (see
-`docs/ENVIRONMENT_SECURITY.md`). Production must use `NODE_ENV=production` and
+and reads use the configured Laravel API. Supabase credentials are neither required nor read by the application. Production must use `NODE_ENV=production` and
 `APP_ENV=production`, built with `npm run build` and run with `npm run start`.
 
 ## Historical Supabase production acceptance

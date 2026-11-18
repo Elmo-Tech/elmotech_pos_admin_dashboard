@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "baseline": "docs/laravel-integration/routes-after.json",
+  "fullManifestsUnchanged": true
+}

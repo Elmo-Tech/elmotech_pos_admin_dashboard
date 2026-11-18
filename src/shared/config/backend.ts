@@ -1,6 +1,5 @@
-/** Laravel is the default. Supabase is a deprecated, explicit legacy opt-in. */
-export function resolveDataProvider(value: string | undefined): "laravel" | "supabase" {
+/** Laravel is the only supported runtime backend. Supabase cannot be enabled. */
+export function resolveDataProvider(value: string | undefined): "laravel" {
   if (value === undefined || value === "" || value === "laravel") return "laravel";
-  if (value === "supabase") return "supabase";
-  throw new Error(`Invalid DATA_PROVIDER "${value}". Expected "laravel" or deprecated "supabase".`);
+  throw new Error(`Invalid DATA_PROVIDER "${value}". Only Laravel is supported; Supabase connections are disabled.`);
 }

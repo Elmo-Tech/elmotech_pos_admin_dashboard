@@ -1,0 +1,19 @@
+{
+  "validator": "Ajv8 / JSON Schema2020-12",
+  "schemaSource": "https://raw.githubusercontent.com/compose-spec/compose-spec/main/schema/compose-spec.json",
+  "projects": [
+    {
+      "project": "frontend",
+      "schema": "PASS",
+      "publishedHostPorts": 0
+    },
+    {
+      "project": "backend",
+      "schema": "PASS",
+      "publishedHostPorts": 0
+    }
+  ],
+  "mysqlIsolation": "PASS",
+  "persistentVolumes": "PASS",
+  "dockerComposeCli": "BLOCKED: Docker unavailable"
+}

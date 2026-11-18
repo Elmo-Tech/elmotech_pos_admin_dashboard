@@ -1,0 +1,32 @@
+# Coolify Git resource: assign an HTTPS domain to dashboard, container port 3000.
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    init: true
+    environment:
+      NODE_ENV: production
+      APP_ENV: production
+      DATA_PROVIDER: laravel
+      LARAVEL_API_URL: ${LARAVEL_API_URL:?Set the HTTPS Laravel API URL ending in /api/v1}
+      HOSTNAME: 0.0.0.0
+      PORT: "3000"
+      NEXT_TELEMETRY_DISABLED: "1"
+    expose:
+      - "3000"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "require('node:http').get('http://127.0.0.1:3000/login', r => { r.resume(); process.exit(r.statusCode === 200 ? 0 : 1); }).on('error', () => process.exit(1))"
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL

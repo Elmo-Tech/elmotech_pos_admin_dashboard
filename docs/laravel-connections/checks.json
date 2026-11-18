@@ -1,0 +1,28 @@
+{
+  "connectionAudit": "PASS",
+  "flowChecks": 40,
+  "authenticatedPageRenders": 26,
+  "frontendTests": {
+    "result": "PASS",
+    "count": 67
+  },
+  "backendMySqlTests": {
+    "result": "PASS",
+    "tests": 12,
+    "assertions": 91,
+    "command": "DB_CONNECTION=mysql DB_DATABASE=dashboard_test php artisan test --compact"
+  },
+  "webpackBuild": "PASS",
+  "routeAndBundleChecks": {
+    "routeManifests": "unchanged",
+    "browserBundleSupabaseUrlsOrClientFactories": 0,
+    "frontendLockfileChanged": false
+  },
+  "newPosSigningAndRenewal": "BLOCKED: original verified protocol/signing implementation unavailable",
+  "servicesStopped": {
+    "frontendOpen": false,
+    "laravelOpen": false
+  },
+  "lint": "PASS",
+  "typecheck": "PASS"
+}

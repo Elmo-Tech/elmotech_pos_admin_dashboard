@@ -1,0 +1,2761 @@
+[
+  {
+    "flow": "Laravel login through the Next.js Server Action",
+    "status": "PASS",
+    "authenticated": true,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/login",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "/api/locale",
+    "locale": "en",
+    "status": "PASS",
+    "owner": "Next.js HttpOnly locale cookie; intentionally no database call"
+  },
+  {
+    "flow": "page / en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /dashboard en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /plans en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /customers en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /customers/[customerId] en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /licenses en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /licenses/[licenseId] en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /subscriptions en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /devices en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /activation-requests en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /issuances en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /audit-logs en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /settings en",
+    "status": "PASS",
+    "locale": "en",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "/api/locale",
+    "locale": "ar",
+    "status": "PASS",
+    "owner": "Next.js HttpOnly locale cookie; intentionally no database call"
+  },
+  {
+    "flow": "page / ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /dashboard ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /plans ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /customers ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /customers/[customerId] ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /licenses ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /licenses/[licenseId] ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /subscriptions ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /devices ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /activation-requests ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /issuances ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /audit-logs ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "page /settings ar",
+    "status": "PASS",
+    "locale": "ar",
+    "httpStatus": 200,
+    "verification": "authenticated SSR HTTP render with traced Laravel requests",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Plan create/edit Server Actions persist in MySQL",
+    "status": "PASS",
+    "mysqlPersisted": true,
+    "price": "19.75",
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/plans",
+        "status": 201
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/plans/6bb80d3e-952e-451b-9635-ebb656a74311",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Customer creation Server Action persists in MySQL",
+    "status": "PASS",
+    "mysqlPersisted": true,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/customers",
+        "status": 201
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Subscription provisioning and commercial code rotation use Laravel/MySQL",
+    "status": "PASS",
+    "mysqlPersisted": true,
+    "commercialHashChanged": true,
+    "plaintextCodeLogged": false,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/subscriptions/provision",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/licenses/ecfa21fc-fe49-4511-93d6-d045640a1b82/rotate-code",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/activation_requests/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/license_issuances/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/audit_logs/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "List filters and pagination use Laravel queries",
+    "status": "PASS",
+    "filteredPages": 4,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/licenses/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/device_activations/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/customers/query",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Existing .elmolic bytes travel through Next → Laravel → MySQL",
+    "status": "PASS",
+    "httpStatus": 200,
+    "documentHashMatchesMySQL": true,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/activation/issue",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Activation verification reaches Laravel and reports the protocol blocker",
+    "status": "PASS",
+    "functionality": "BLOCKED: missing POS verification implementation",
+    "nextStatus": 422,
+    "laravelStatus": 503,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/activation/verify",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "flow": "Renewal and same-operation retry reach Laravel without Supabase fallback",
+    "status": "PASS",
+    "functionality": "BLOCKED: missing POS signing/renewal implementation",
+    "attempts": 2,
+    "sameOperationId": true,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/renewal/issue",
+        "status": 503
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/renewal/issue",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "flow": "Role admin identity and API permission gates",
+    "status": "PASS",
+    "role": "admin",
+    "issuanceStatus": 200,
+    "renewalStatus": 422,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/activation/issue",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/renewal/issue",
+        "status": 503
+      }
+    ]
+  },
+  {
+    "flow": "Role support identity and API permission gates",
+    "status": "PASS",
+    "role": "support",
+    "issuanceStatus": 200,
+    "renewalStatus": 403,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/activation/issue",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Role viewer identity and API permission gates",
+    "status": "PASS",
+    "role": "viewer",
+    "issuanceStatus": 403,
+    "renewalStatus": 403,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/plans/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/data/subscriptions/query",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      },
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/me",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "flow": "Logout revokes Laravel session and protected pages redirect to login",
+    "status": "PASS",
+    "protectedRedirect": true,
+    "backendRequests": [
+      {
+        "transport": "fetch",
+        "hostname": "127.0.0.1",
+        "port": "8000",
+        "path": "/api/v1/auth/logout",
+        "status": 204
+      }
+    ]
+  }
+]

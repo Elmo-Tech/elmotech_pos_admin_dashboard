@@ -1,3 +1,5 @@
+> Historical Supabase design. The current runtime is Laravel-only; Supabase connections are disabled. See [current verification](LARAVEL_CONNECTION_VERIFICATION.md).
+
 # Environment & Data-Access Security
 
 ## Environment identity
