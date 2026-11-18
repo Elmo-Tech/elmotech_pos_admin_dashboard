@@ -1,0 +1,874 @@
+[
+  {
+    "package": "@next/eslint-plugin-next",
+    "lockPath": "node_modules/@next/eslint-plugin-next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> @next/eslint-plugin-next",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "@typescript-eslint/eslint-plugin",
+    "lockPath": "node_modules/@typescript-eslint/eslint-plugin",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "@typescript-eslint/eslint-plugin",
+    "lockPath": "node_modules/@typescript-eslint/eslint-plugin",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "@typescript-eslint/parser",
+    "lockPath": "node_modules/@typescript-eslint/parser",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/parser",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "@typescript-eslint/parser",
+    "lockPath": "node_modules/@typescript-eslint/parser",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/parser",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "@typescript-eslint/type-utils",
+    "lockPath": "node_modules/@typescript-eslint/type-utils",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin -> @typescript-eslint/type-utils",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "@typescript-eslint/type-utils",
+    "lockPath": "node_modules/@typescript-eslint/type-utils",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin -> @typescript-eslint/type-utils",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "@typescript-eslint/typescript-estree",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "@typescript-eslint/typescript-estree",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "@typescript-eslint/utils",
+    "lockPath": "node_modules/@typescript-eslint/utils",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/utils",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "@typescript-eslint/utils",
+    "lockPath": "node_modules/@typescript-eslint/utils",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/utils",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-q2hr-2g5m-vwhr",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.21",
+    "patchedVersions": [
+      "5.0.12",
+      "3.0.9",
+      "2.1.7",
+      "1.1.21"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-q2hr-2g5m-vwhr",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.12",
+    "patchedVersions": [
+      "5.0.12",
+      "3.0.9",
+      "2.1.7",
+      "1.1.21"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-qhr7-859c-m2p7",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.20",
+    "patchedVersions": [
+      "5.0.11",
+      "3.0.8",
+      "2.1.6",
+      "1.1.20"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-qhr7-859c-m2p7",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.11",
+    "patchedVersions": [
+      "5.0.11",
+      "3.0.8",
+      "2.1.6",
+      "1.1.20"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-6j4f-fj2g-mc7p",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.19",
+    "patchedVersions": [
+      "5.0.10",
+      "3.0.7",
+      "2.1.5",
+      "1.1.19"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion",
+    "installed": "5.0.9",
+    "after": "5.0.13",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-6j4f-fj2g-mc7p",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.10",
+    "patchedVersions": [
+      "5.0.10",
+      "3.0.7",
+      "2.1.5",
+      "1.1.19"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-q2hr-2g5m-vwhr",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.21",
+    "patchedVersions": [
+      "5.0.12",
+      "3.0.9",
+      "2.1.7",
+      "1.1.21"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-q2hr-2g5m-vwhr",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.12",
+    "patchedVersions": [
+      "5.0.12",
+      "3.0.9",
+      "2.1.7",
+      "1.1.21"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-qhr7-859c-m2p7",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.20",
+    "patchedVersions": [
+      "5.0.11",
+      "3.0.8",
+      "2.1.6",
+      "1.1.20"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-qhr7-859c-m2p7",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.11",
+    "patchedVersions": [
+      "5.0.11",
+      "3.0.8",
+      "2.1.6",
+      "1.1.20"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-qhr7-859c-m2p7"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-6j4f-fj2g-mc7p",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": "<1.1.19",
+    "patchedVersions": [
+      "5.0.10",
+      "3.0.7",
+      "2.1.5",
+      "1.1.19"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+  },
+  {
+    "package": "brace-expansion",
+    "lockPath": "node_modules/brace-expansion",
+    "installed": "1.1.18",
+    "after": "1.1.22",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint -> minimatch -> brace-expansion",
+    "advisoryId": "GHSA-6j4f-fj2g-mc7p",
+    "vulnerableComponent": "brace-expansion",
+    "affectedRange": ">=4.0.0 <5.0.10",
+    "patchedVersions": [
+      "5.0.10",
+      "3.0.7",
+      "2.1.5",
+      "1.1.19"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p"
+  },
+  {
+    "package": "eslint-config-next",
+    "lockPath": "node_modules/eslint-config-next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "eslint-import-resolver-typescript",
+    "lockPath": "node_modules/eslint-import-resolver-typescript",
+    "installed": "3.10.1",
+    "after": "3.10.1",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> eslint-import-resolver-typescript",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "fast-glob",
+    "lockPath": "node_modules/fast-glob",
+    "installed": "3.3.1",
+    "after": "3.3.1",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "fdir",
+    "lockPath": "node_modules/tinyglobby/node_modules/fdir",
+    "installed": "6.5.0",
+    "after": "6.5.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby -> fdir",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "lint-staged",
+    "lockPath": "node_modules/lint-staged",
+    "installed": "17.6.1",
+    "after": "17.6.1",
+    "scope": "development/build",
+    "dependencyPath": "root -> lint-staged",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "micromatch",
+    "lockPath": "node_modules/micromatch",
+    "installed": "4.0.8",
+    "after": "4.0.8",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob -> micromatch",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "minimatch",
+    "lockPath": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+    "installed": "10.2.6",
+    "after": "10.2.6",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-vcvr-r3jv-pc5j",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.2.0 <16.3.6",
+    "patchedVersions": [
+      "16.3.6"
+    ],
+    "severity": "critical",
+    "source": "https://github.com/advisories/GHSA-vcvr-r3jv-pc5j"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-3w37-wq28-93x7",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.3.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-3w37-wq28-93x7"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-4jqv-mc3x-m676",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <16.3.8",
+    "patchedVersions": [
+      "15.5.27",
+      "16.3.8"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-4jqv-mc3x-m676"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-39w2-rjm5-chcv",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8"
+    ],
+    "severity": "low",
+    "source": "https://github.com/advisories/GHSA-39w2-rjm5-chcv"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-f87g-xv8r-7p7x",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-f87g-xv8r-7p7x"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-mcj8-r9mp-w47p",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8",
+      "15.5.27"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-mcj8-r9mp-w47p"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-cjq9-62q9-8jv4",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-cjq9-62q9-8jv4"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-2464-fhr4-w9xw",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <=16.4.0",
+    "patchedVersions": [
+      "15.5.28",
+      "16.4.1"
+    ],
+    "severity": "critical",
+    "source": "https://github.com/advisories/GHSA-2464-fhr4-w9xw"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-p3m5-59mp-jv5r",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <=16.4.0",
+    "patchedVersions": [
+      "15.5.28",
+      "16.4.1"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-p3m5-59mp-jv5r"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-h694-7cp9-m8p3",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.3.0 <16.3.8",
+    "patchedVersions": [
+      "16.3.8"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-h694-7cp9-m8p3"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-673q-mjm6-r5xr",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.0.0 <=16.4.0",
+    "patchedVersions": [
+      "16.4.1"
+    ],
+    "severity": "critical",
+    "source": "https://github.com/advisories/GHSA-673q-mjm6-r5xr"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-mfr8-8qww-v76h",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.3.0 <=16.4.4",
+    "patchedVersions": [
+      "16.4.5"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-mfr8-8qww-v76h"
+  },
+  {
+    "package": "next",
+    "lockPath": "node_modules/next",
+    "installed": "16.3.4",
+    "after": "16.4.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next",
+    "advisoryId": "GHSA-vc7v-qv4w-wrv8",
+    "vulnerableComponent": "next",
+    "affectedRange": ">=16.2.0 <=16.4.4",
+    "patchedVersions": [
+      "16.4.5"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-vc7v-qv4w-wrv8"
+  },
+  {
+    "package": "picomatch",
+    "lockPath": "node_modules/lint-staged/node_modules/picomatch",
+    "installed": "4.0.7",
+    "after": "4.0.7",
+    "scope": "development/build",
+    "dependencyPath": "root -> lint-staged -> picomatch",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "picomatch",
+    "lockPath": "node_modules/picomatch",
+    "installed": "2.3.2",
+    "after": "2.3.2",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob -> micromatch -> picomatch",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "picomatch",
+    "lockPath": "node_modules/tinyglobby/node_modules/picomatch",
+    "installed": "4.0.7",
+    "after": "4.0.7",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby -> picomatch",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "sharp",
+    "lockPath": "node_modules/sharp",
+    "installed": "0.35.4",
+    "after": "0.35.5",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next -> sharp",
+    "advisoryId": "GHSA-wq5f-xc86-pv6w",
+    "vulnerableComponent": "sharp",
+    "affectedRange": "<0.35.5",
+    "patchedVersions": [
+      "0.35.5"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-wq5f-xc86-pv6w"
+  },
+  {
+    "package": "source-map-js",
+    "lockPath": "node_modules/source-map-js",
+    "installed": "1.2.1",
+    "after": "1.2.2",
+    "scope": "runtime/build (Next dependency)",
+    "dependencyPath": "root -> next -> postcss -> source-map-js",
+    "advisoryId": "GHSA-68fv-2mgg-jv7q",
+    "vulnerableComponent": "source-map-js",
+    "affectedRange": ">=1.0.0 <1.2.2",
+    "patchedVersions": [
+      "1.2.2"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q"
+  },
+  {
+    "package": "tinyglobby",
+    "lockPath": "node_modules/tinyglobby",
+    "installed": "0.2.17",
+    "after": "0.2.17",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "typescript-eslint",
+    "lockPath": "node_modules/typescript-eslint",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint",
+    "advisoryId": "GHSA-g3hv-75wg-m249",
+    "vulnerableComponent": "minimatch",
+    "affectedRange": ">=7.0.0 <11.0.1",
+    "patchedVersions": [
+      "11.0.1"
+    ],
+    "severity": "moderate",
+    "source": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+  },
+  {
+    "package": "typescript-eslint",
+    "lockPath": "node_modules/typescript-eslint",
+    "installed": "8.70.0",
+    "after": "8.70.0",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> typescript-eslint",
+    "advisoryId": "GHSA-fc5q-39xc-vjpf",
+    "vulnerableComponent": "picomatch",
+    "affectedRange": "<=4.0.7",
+    "patchedVersions": [
+      null
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-fc5q-39xc-vjpf"
+  },
+  {
+    "package": "zod",
+    "lockPath": "node_modules/zod",
+    "installed": "4.5.4",
+    "after": "4.6.7",
+    "scope": "development/build",
+    "dependencyPath": "root -> eslint-config-next -> eslint-plugin-react-hooks -> zod",
+    "advisoryId": "GHSA-mrhx-c7xc-m3w5",
+    "vulnerableComponent": "zod",
+    "affectedRange": "<4.6.6",
+    "patchedVersions": [
+      "4.6.6"
+    ],
+    "severity": "high",
+    "source": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5"
+  }
+]

@@ -1,0 +1,62 @@
+
+> elmotech_pos_admin_dashboard@0.1.0 test
+> node --test tests/*.test.mjs
+
+✔ full source respects FSD layer direction, peer isolation and cross-slice public APIs (3.106584ms)
+✔ client entries cannot reach server-only implementations; Server Actions remain explicit boundaries (12.096ms)
+✔ all page public APIs remain server-only and no legacy source trees remain (0.677375ms)
+✔ HTTP activation verification: multipart exact bytes, repeat outcomes and joined context (355.779833ms)
+✔ HTTP entry points: origin, viewer/support role and malformed input gates precede mutations (210.741209ms)
+✔ HTTP issuance and renewal preserve attachment bytes/headers and verified actor, operation ID (152.4145ms)
+✔ read: page 2, exact totals, global summaries and batched subscription counts (178.629417ms)
+✔ read: boolean filters compose; unknown values are ignored; empty/error states (63.46825ms)
+✔ page/actions: owner permission contract (449.932792ms)
+✔ page/actions: admin permission contract (138.219333ms)
+✔ page/actions: support permission contract (62.948958ms)
+✔ page/actions: viewer permission contract (57.39575ms)
+✔ write: create/edit RPC payload, actor, normalized fields, revalidation (10.006917ms)
+✔ write: lifetime/null semantics and validation including existing malformed-price behavior (4.821ms)
+✔ write: denied identity, RPC failure and backend domain outcomes do not revalidate (16.558167ms)
+✔ form: edit defaults, finite/lifetime toggle, fields and pending/feedback (17.037917ms)
+✔ page: filters, pagination query links and Arabic/English source-rendered markup (186.456ms)
+✔ pagination preserves both filters; filter submit/reset starts at first page (12.359542ms)
+✔ form: new finite defaults and lifetime edit defaults are preserved (11.974459ms)
+✔ page: backend failure renders module error and empty filtered page renders empty state (85.083041ms)
+✔ read model: getOverviewData joins, scope, filters and failure contract (279.347125ms)
+✔ read model: getSubscriptions joins, scope, filters and failure contract (60.995042ms)
+✔ read model: getDevices joins, scope, filters and failure contract (113.498583ms)
+✔ read model: getActivationRequests joins, scope, filters and failure contract (126.585125ms)
+✔ read model: getIssuances joins, scope, filters and failure contract (69.460333ms)
+✔ read model: getAuditLogs joins, scope, filters and failure contract (18.882083ms)
+✔ read model: getCustomers joins, scope, filters and failure contract (32.331375ms)
+✔ read model: getCustomerDetail joins, scope, filters and failure contract (65.51625ms)
+✔ read model: getLicenses joins, scope, filters and failure contract (20.994458ms)
+✔ read model: getLicenseDetail joins, scope, filters and failure contract (32.868083ms)
+✔ read model: getActivationRequestContext joins, scope, filters and failure contract (11.08275ms)
+✔ detail loaders retain invalid UUID/missing-record null behavior (18.078709ms)
+✔ proxy forwards pathname and refreshed request/response cookies without taking over RBAC (183.1085ms)
+✔ SSR auth client preserves cookie options and tolerates read-only Server Component cookie writes (45.109417ms)
+✔ environment identity still rejects wrong projects and local production mode (68.528792ms)
+✔ session: password login preserves validation, cookie-client calls and redirect targets (101.552ms)
+✔ session: sign-out calls provider before redirect (52.739542ms)
+✔ session: verified subject and active database role remain authoritative and fail closed (172.384333ms)
+✔ commercial: owner create/provision/rotation gates and existing RPCs (77.388625ms)
+✔ commercial: admin create/provision/rotation gates and existing RPCs (115.820875ms)
+✔ commercial: support create/provision/rotation gates and existing RPCs (59.006291ms)
+✔ commercial: viewer create/provision/rotation gates and existing RPCs (81.149041ms)
+✔ commercial: collisions retry three times and invalid inputs do not call RPC (18.163042ms)
+✔ Edge adapters: verification preserves exact bytes and initial issuance preserves binary/document headers (55.088209ms)
+✔ Edge adapters: viewer operations and mismatched renewal actors are rejected before invocation (13.39575ms)
+✔ existing function bodies and state/constants survive architecture moves (224.995875ms)
+✔ global CSS, font layout and dictionary payload are preserved (1.41425ms)
+✔ Arabic/English shell, forms, one-time code, activation and renewal markup match baseline (1.863459ms)
+✔ activation UI: preserves selected bytes, verify/issue endpoints, download-again and reset lifecycle (171.624167ms)
+✔ renewal UI: explicit retry retains operation ID and plan payload, locks selection after error, refreshes on success (36.527541ms)
+ℹ tests 50
+ℹ suites 0
+ℹ pass 50
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1915.348583

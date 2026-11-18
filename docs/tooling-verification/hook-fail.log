@@ -1,0 +1,22 @@
+⚠ Skipping backup because there’s no initial commit yet. This might result in data loss.
+
+⋯ Preparing lint-staged…
+✔ Done preparing lint-staged!
+⋯ Running tasks for staged files…
+    *.{js,jsx,mjs,cjs,ts,tsx,mts,cts} — 1 file
+      ⋯ eslint
+
+✖ eslint
+
+✖ Failed to run tasks for staged files!
+⋯ Staging changes from tasks…
+✔ Done staging changes from tasks!
+
+✖ eslint:
+
+/private/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-tooling-uuemdnfm/staged fixture.ts
+  1:7   warning  'broken' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  1:15  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+
+✖ 2 problems (1 error, 1 warning)
+husky - pre-commit script failed (code 1)

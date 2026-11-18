@@ -1,0 +1,52 @@
+name: Dependency checks
+
+on:
+  pull_request:
+    paths:
+      - package.json
+      - package-lock.json
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: Dependency security check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check Dependency Review availability
+        id: review
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          status=$(curl --silent --show-error --output "$RUNNER_TEMP/dependency-review.json" --write-out '%{http_code}' \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header 'Accept: application/vnd.github+json' \
+            "$GITHUB_API_URL/repos/$REPOSITORY/dependency-graph/compare/$BASE...$HEAD")
+          case "$status" in
+            200) echo 'available=true' >> "$GITHUB_OUTPUT" ;;
+            403|404)
+              echo 'available=false' >> "$GITHUB_OUTPUT"
+              echo '::notice::Dependency Review unavailable for this token/repository; running npm audit.'
+              ;;
+            *) echo "::error::Dependency Review availability request failed with HTTP $status"; exit 1 ;;
+          esac
+      - name: Review dependency changes
+        if: steps.review.outputs.available == 'true'
+        uses: actions/dependency-review-action@v4
+        with:
+          fail-on-severity: high
+      - name: Audit installed dependency graph
+        if: steps.review.outputs.available != 'true'
+        run: npm audit --audit-level=high
