@@ -1,7 +1,7 @@
 import "server-only";
-import { FileDown, FileUp, ShieldCheck } from "lucide-react";
 import { ActivationWorkflow } from "@/features/activate-license";
 import { ActivationGuide } from "./activation-guide";
+import { ActionDialog } from "@/shared/ui/action-dialog";
 import { DataTable, type DataTableColumn } from "@/shared/ui/data-table";
 import { EmptyState } from "@/shared/ui/empty-state";
 import { EntityLink } from "@/shared/ui/entity-link";
@@ -23,13 +23,10 @@ type Row = Awaited<ReturnType<typeof getActivationRequests>>["rows"][number];
 const PAGE_COPY = {
   ar: {
     eyebrow: "مركز معالجة التفعيل",
+    newRequest: "طلب تفعيل جديد",
+    close: "إغلاق",
     title: "فعّل جهاز العميل بثلاث خطوات واضحة.",
     description: "ارفع ملف الطلب، راجع بيانات العميل والجهاز، ثم أصدر ملف الترخيص الجاهز للتسليم — من مكان واحد.",
-    heroSteps: [
-      { title: "ارفع ملف الطلب", description: "ملف .elmoreq الأصلي من جهاز العميل", icon: FileUp },
-      { title: "راجع البيانات", description: "تأكد من العميل والترخيص والجهاز", icon: ShieldCheck },
-      { title: "نزّل ملف الترخيص", description: "أرسل ملف .elmolic الناتج للعميل", icon: FileDown },
-    ],
     queueTitle: "سجل طلبات التفعيل",
     queueDescription: "تابع الطلبات السابقة وحالتها والجهاز المرتبط بكل طلب.",
     requests: "طلب",
@@ -37,13 +34,10 @@ const PAGE_COPY = {
   },
   en: {
     eyebrow: "Activation processing center",
+    newRequest: "New activation request",
+    close: "Close",
     title: "Activate a customer device in three clear steps.",
     description: "Upload the request, review the customer and device context, then issue a license file ready to deliver — all in one place.",
-    heroSteps: [
-      { title: "Upload .elmoreq", description: "The original file from the customer device", icon: FileUp },
-      { title: "Review details", description: "Confirm the customer, license, and device", icon: ShieldCheck },
-      { title: "Download .elmolic", description: "Deliver the issued file to the customer", icon: FileDown },
-    ],
     queueTitle: "Activation request history",
     queueDescription: "Track previous requests, their status, and the device linked to each request.",
     requests: "requests",
@@ -59,11 +53,19 @@ export async function ActivationRequestsPage({ searchParams }: { searchParams: P
   const params = await searchParams;
   const page = parsePage(params.page);
   const status = readParam(params.status);
+  const activationAction = (
+    <ActionDialog triggerLabel={t.newRequest} title={t.newRequest} description={t.description} closeLabel={t.close} size="xl">
+      <div className="flex flex-col gap-5">
+        <ActivationWorkflow locale={locale} environment={environment} embedded />
+        <ActivationGuide locale={locale} />
+      </div>
+    </ActionDialog>
+  );
   let data;
   try {
     data = await getActivationRequests({ page, status });
   } catch {
-    return <div className="flex flex-col gap-6"><PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} /><ActivationWorkflow locale={locale} environment={environment} /><ModuleErrorState title={messages.requestsLoadError} locale={locale} /></div>;
+    return <div className="flex flex-col gap-6"><PageHeader title={messages.activationRequestsTitle} description={messages.activationRequestsDescription} actions={activationAction} /><ModuleErrorState title={messages.requestsLoadError} locale={locale} /></div>;
   }
 
   const columns: DataTableColumn<Row>[] = [
@@ -77,10 +79,7 @@ export async function ActivationRequestsPage({ searchParams }: { searchParams: P
 
   return (
     <div className="flex flex-col gap-8">
-      <PageHeader eyebrow={t.eyebrow} title={messages.activationRequestsTitle} description={t.description} />
-
-      <ActivationWorkflow locale={locale} environment={environment} />
-      <ActivationGuide locale={locale} />
+      <PageHeader eyebrow={t.eyebrow} title={messages.activationRequestsTitle} description={t.queueDescription} actions={activationAction} />
 
       <PageSection
         title={t.queueTitle}

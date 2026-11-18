@@ -109,24 +109,30 @@ export function PlanForm({ locale, plan, embedded = false }: { locale: Locale; p
       {plan ? <input type="hidden" name="planId" value={plan.id} /> : null}
       <div className="form-fields">
       <fieldset className="form-section">
-        <legend>{locale === "ar" ? "01 / بيانات الخطة" : "01 / Plan details"}</legend>
+        <legend>{locale === "ar" ? "بيانات الخطة" : "Plan details"}</legend>
+        <div className="form-section-fields">
         <label className={`${labelClass} sm:col-span-2`}>{t.planName} <span aria-hidden="true" className="text-[var(--primary)]">*</span><input className={inputClass} name="name" defaultValue={plan?.name} maxLength={120} required /></label>
         <label className={labelClass}>{t.price}<input className={inputClass} name="price" type="number" min="0" step="0.01" defaultValue={plan?.price ?? ""} /></label>
         <label className={labelClass}>{t.currency}<input className={`${inputClass} uppercase`} name="currency" defaultValue={plan?.currency ?? "EGP"} minLength={3} maxLength={3} /></label>
+        </div>
       </fieldset>
       <fieldset className="form-section">
-        <legend>{locale === "ar" ? "02 / مدة الصلاحية" : "02 / Validity"}</legend>
+        <legend>{locale === "ar" ? "مدة الصلاحية" : "Validity"}</legend>
+        <div className="form-section-fields">
         <label className="choice-card sm:col-span-2"><input name="isLifetime" type="checkbox" checked={isLifetime} onChange={event => { setIsLifetime(event.target.checked); if (event.target.checked) setDurationValue(""); }} /><span><span className="block font-semibold">{t.lifetime}</span><span className="mt-1 block text-xs text-[var(--text-muted)]">{locale === "ar" ? "فعّلها لخطة لا ترتبط بتاريخ انتهاء." : "Enable for a plan with no expiration date."}</span></span></label>
         <div className={`contents ${isLifetime ? "[&>label]:opacity-50" : ""}`}>
           <label className={labelClass}>{t.durationValue} <span aria-hidden="true" className="text-[var(--primary)]">*</span><input className={inputClass} name="durationValue" type="number" min="1" step="1" value={durationValue} onChange={event => setDurationValue(event.target.value)} disabled={isLifetime} required={!isLifetime} /></label>
           <label className={labelClass}>{t.durationUnit}<select className={inputClass} name="durationUnit" defaultValue={plan?.duration_unit ?? "months"} disabled={isLifetime} required={!isLifetime}><option value="days">{t.days}</option><option value="months">{t.months}</option></select></label>
         </div>
         {isLifetime ? <p role="status" className="rounded-lg bg-[var(--info-soft)] px-3 py-2 text-xs text-[var(--info)] sm:col-span-2">{t.lifetimeExplanation}</p> : null}
+        </div>
       </fieldset>
       <fieldset className="form-section border-b-0 pb-0">
-        <legend>{locale === "ar" ? "03 / الإتاحة والملاحظات" : "03 / Availability & notes"}</legend>
+        <legend>{locale === "ar" ? "الإتاحة والملاحظات" : "Availability & notes"}</legend>
+        <div className="form-section-fields">
         <label className="choice-card sm:col-span-2"><input name="isEnabled" type="checkbox" defaultChecked={plan?.is_enabled ?? true} /><span>{t.enabled}</span></label>
         <label className={`${labelClass} sm:col-span-2`}>{t.notes}<textarea className={inputClass} name="notes" defaultValue={plan?.notes ?? ""} maxLength={2000} rows={2} /></label>
+        </div>
       </fieldset>
       </div>
       <div className="form-footer">

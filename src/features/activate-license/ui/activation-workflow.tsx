@@ -111,9 +111,11 @@ const COPY = {
 export function ActivationWorkflow({
   locale,
   environment,
+  embedded = false,
 }: {
   locale: Locale;
   environment: AppEnvironment;
+  embedded?: boolean;
 }) {
   const messages = getMessages(locale, environment);
   const t = COPY[locale];
@@ -219,8 +221,8 @@ export function ActivationWorkflow({
   const phaseLabel = phase === "verifying" ? t.verifying : phase === "verified" || phase === "issuing" ? t.verified : phase === "issued" ? t.issued : t.ready;
 
   return (
-    <section className="surface-card overflow-hidden border-white/80 shadow-[var(--sh-lg)]">
-      <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[var(--border)] bg-[linear-gradient(135deg,#fff_0%,#f4f7ff_100%)] px-5 py-5 sm:px-7 sm:py-6">
+    <section className={embedded ? "min-w-0" : "surface-card overflow-hidden border-white/80 shadow-[var(--sh-lg)]"}>
+      {!embedded ? <div className="flex flex-wrap items-start justify-between gap-4 border-b border-[var(--border)] bg-[linear-gradient(135deg,#fff_0%,#f4f7ff_100%)] px-5 py-5 sm:px-7 sm:py-6">
         <div className="flex items-start gap-3.5">
           <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--primary)] text-white shadow-[var(--sh-primary)]"><ShieldCheck aria-hidden="true" size={21} /></span>
           <div>
@@ -232,7 +234,10 @@ export function ActivationWorkflow({
           {phase === "verifying" || phase === "issuing" ? <LoaderCircle aria-hidden="true" className="animate-spin" size={14} /> : <span className="size-2 rounded-full bg-[var(--primary)]" />}
           {phaseLabel}
         </span>
-      </div>
+      </div> : <p role="status" className="mb-4 flex items-center gap-2 text-xs font-semibold text-[var(--text-muted)]">
+        {phase === "verifying" || phase === "issuing" ? <LoaderCircle aria-hidden="true" className="animate-spin" size={14} /> : null}
+        {phaseLabel}
+      </p>}
 
       <div className="border-b border-[var(--border)] px-4 py-4 sm:px-7 sm:py-5">
         <ol className="grid grid-cols-3" aria-label={locale === "ar" ? "خطوات معالجة طلب التفعيل" : "Activation request steps"}>

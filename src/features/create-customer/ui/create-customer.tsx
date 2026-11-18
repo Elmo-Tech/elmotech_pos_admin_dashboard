@@ -99,17 +99,21 @@ export function CreateCustomerForm({ locale, embedded = false }: { locale: Local
   return (
     <form action={action} className={embedded ? "customer-form" : "surface-card p-5"}>
       <div className="form-fields">
-      <fieldset className="form-section"><legend>{locale === "ar" ? "01 / النشاط وبيانات التواصل" : "01 / Business & contact"}</legend>
+      <fieldset className="form-section"><legend>{locale === "ar" ? "النشاط وبيانات التواصل" : "Business & contact"}</legend>
+        <div className="form-section-fields">
         <label className={labelClass}>{t.businessName} *<input className={inputClass} name="businessName" maxLength={160} required /></label>
         <label className={labelClass}>{t.ownerName} *<input className={inputClass} name="ownerName" autoComplete="name" maxLength={160} required /></label>
         <label className={labelClass}>{t.phone} *<input className={inputClass} name="phone" type="tel" autoComplete="tel" maxLength={50} required /></label>
         <label className={labelClass}>{t.email}<input className={inputClass} name="email" type="email" autoComplete="email" maxLength={254} /></label>
+        </div>
       </fieldset>
-      <fieldset className="form-section border-b-0 pb-0"><legend>{locale === "ar" ? "02 / بيانات إضافية" : "02 / Additional details"}</legend>
+      <fieldset className="form-section border-b-0 pb-0"><legend>{locale === "ar" ? "بيانات إضافية" : "Additional details"}</legend>
+        <div className="form-section-fields">
         <label className={labelClass}>{t.address}<input className={inputClass} name="address" maxLength={500} /></label>
         <label className={labelClass}>{t.taxId}<input className={inputClass} name="taxId" maxLength={100} /></label>
         <label className={labelClass}>{t.status}<select className={inputClass} name="status" defaultValue="active"><option value="active">{t.active}</option><option value="suspended">{t.suspended}</option></select></label>
         <label className={`${labelClass} sm:col-span-2`}>{t.notes}<textarea className={inputClass} name="notes" maxLength={2000} rows={2} /></label>
+        </div>
       </fieldset>
       </div>
       <div className="form-footer">

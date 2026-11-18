@@ -2,6 +2,21 @@
   {
     "before": {
       "file": "src/app/(dashboard)/activation-requests/page.tsx",
+      "name": "PAGE_COPY",
+      "kind": "initializer",
+      "hash": "08eb4593e9d50a3d6bcb09a3753c184ced131918886f43849ad716ddfe085cf5"
+    },
+    "after": {
+      "file": "src/fsd/pages/activation-requests/ui/activation-requests-page.tsx",
+      "name": "PAGE_COPY",
+      "kind": "initializer",
+      "hash": "4c38109a4841bd46599e4cc0559c7396f31fd672064f254844394ae6903c4b90"
+    },
+    "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
+  },
+  {
+    "before": {
+      "file": "src/app/(dashboard)/activation-requests/page.tsx",
       "name": "ActivationRequestsPage",
       "kind": "function-body",
       "hash": "961210772dc519dba18407e558dd65614648838f3f6a2bbab4f593be7b424def"
@@ -10,7 +25,7 @@
       "file": "src/fsd/pages/activation-requests/ui/activation-requests-page.tsx",
       "name": "ActivationRequestsPage",
       "kind": "function-body",
-      "hash": "420268d015c85935d4ed4190c0292d9f91d5c1bac715284e9d6743155b5e4c63"
+      "hash": "b24911031864e27f7c36c30e6785ce9bf8387561612605f5bd34874949779f76"
     },
     "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
   },
@@ -185,7 +200,7 @@
       "file": "src/features/activate-license/ui/activation-workflow.tsx",
       "name": "ActivationWorkflow",
       "kind": "function-body",
-      "hash": "5b7c7a48dd7b5a05d7bcd2e651ad6f95716b09a7d072fb774feccdd1521d9e3d"
+      "hash": "9b59bd33f71e36c241eacbabbd95802956f7b8573372a089f06b5d8abf19c5a7"
     },
     "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
   },
@@ -215,7 +230,7 @@
       "file": "src/features/create-customer/ui/create-customer.tsx",
       "name": "CreateCustomerForm",
       "kind": "function-body",
-      "hash": "7de12d7d46eaa23cc22e3e7f88169bf2e653d30f2407a769bc26d288ba8760f0"
+      "hash": "d98db096a6c7b4fbc124339c09a527c32df75fd60307221cb877c8e7a235bd5e"
     },
     "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
   },
@@ -630,7 +645,7 @@
       "file": "src/features/manage-plan/ui/plan-form.tsx",
       "name": "PlanForm",
       "kind": "function-body",
-      "hash": "0104de4b750198133a49d7c781c32ca3b04ef0ef81ac2996411bc487e30a2f05"
+      "hash": "91ee4aac19c94180492455ffcd74e573e2e8aa3d42330b6188d67c4bb5fa67c6"
     },
     "reason": "User-authorized comprehensive UI/UX redesign; behavior characterized separately"
   },
