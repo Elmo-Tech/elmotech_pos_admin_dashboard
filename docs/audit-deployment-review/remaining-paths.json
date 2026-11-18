@@ -1,0 +1,224 @@
+[
+  {
+    "package": "@next/eslint-plugin-next",
+    "version": "16.4.5",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> @next/eslint-plugin-next",
+    "lockNode": "node_modules/@next/eslint-plugin-next",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "@typescript-eslint/eslint-plugin",
+    "version": "8.70.0",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin",
+    "lockNode": "node_modules/@typescript-eslint/eslint-plugin",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "@typescript-eslint/parser",
+    "version": "8.70.0",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/parser",
+    "lockNode": "node_modules/@typescript-eslint/parser",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "@typescript-eslint/type-utils",
+    "version": "8.70.0",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/eslint-plugin -> @typescript-eslint/type-utils",
+    "lockNode": "node_modules/@typescript-eslint/type-utils",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "@typescript-eslint/typescript-estree",
+    "version": "8.70.0",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree",
+    "lockNode": "node_modules/@typescript-eslint/typescript-estree",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "@typescript-eslint/utils",
+    "version": "8.70.0",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/utils",
+    "lockNode": "node_modules/@typescript-eslint/utils",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "eslint-config-next",
+    "version": "16.4.5",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next",
+    "lockNode": "node_modules/eslint-config-next",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "eslint-import-resolver-typescript",
+    "version": "3.10.1",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> eslint-import-resolver-typescript",
+    "lockNode": "node_modules/eslint-import-resolver-typescript",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "fast-glob",
+    "version": "3.3.1",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob",
+    "lockNode": "node_modules/fast-glob",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "fdir",
+    "version": "6.5.0",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby -> fdir",
+    "lockNode": "node_modules/tinyglobby/node_modules/fdir",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "lint-staged",
+    "version": "17.6.1",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> lint-staged",
+    "lockNode": "node_modules/lint-staged",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "micromatch",
+    "version": "4.0.8",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob -> micromatch",
+    "lockNode": "node_modules/micromatch",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "minimatch",
+    "version": "10.2.6",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint -> @typescript-eslint/typescript-estree -> minimatch",
+    "lockNode": "node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "picomatch",
+    "version": "4.0.7",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> lint-staged -> picomatch",
+    "lockNode": "node_modules/lint-staged/node_modules/picomatch",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "picomatch",
+    "version": "2.3.2",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> @next/eslint-plugin-next -> fast-glob -> micromatch -> picomatch",
+    "lockNode": "node_modules/picomatch",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "picomatch",
+    "version": "4.0.7",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby -> picomatch",
+    "lockNode": "node_modules/tinyglobby/node_modules/picomatch",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "tinyglobby",
+    "version": "0.2.17",
+    "severity": "high",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf"
+    ],
+    "path": "root -> eslint-config-next -> eslint-import-resolver-typescript -> tinyglobby",
+    "lockNode": "node_modules/tinyglobby",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  },
+  {
+    "package": "typescript-eslint",
+    "version": "8.70.0",
+    "severity": "moderate",
+    "advisories": [
+      "GHSA-fc5q-39xc-vjpf",
+      "GHSA-g3hv-75wg-m249"
+    ],
+    "path": "root -> eslint-config-next -> typescript-eslint",
+    "lockNode": "node_modules/typescript-eslint",
+    "devDependencyGraph": true,
+    "deploymentExposure": "unverified"
+  }
+]

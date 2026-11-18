@@ -1,8 +1,10 @@
+> Historical Supabase design. The current runtime is Laravel-only; Supabase connections are disabled. See [current verification](LARAVEL_CONNECTION_VERIFICATION.md).
+
 # Environment & Data-Access Security
 
 ## Environment identity
 
-`APP_ENV` is the server-owned environment identity. `src/server/env.ts`
+`APP_ENV` is the server-owned environment identity. `src/shared/config/server.ts`
 validates it against the project ref in `NEXT_PUBLIC_SUPABASE_URL` and throws on
 unknown or mismatched projects. The shell receives that validated value and
 keeps the environment badge visible.
@@ -33,7 +35,7 @@ SUPABASE_SECRET_KEY=<staging-server-secret-key>
 
 The publishable key is used by browser and cookie-based Auth clients. The server
 secret has no `NEXT_PUBLIC_` prefix and is read only by
-`src/server/supabase/privileged-client.ts`.
+`src/shared/api/supabase/privileged-client.ts`.
 
 Production deployment configuration uses the same variable names with
 `APP_ENV=production`, the Production URL, and separately managed Production

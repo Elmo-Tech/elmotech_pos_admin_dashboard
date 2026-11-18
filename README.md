@@ -7,89 +7,70 @@ This is a separate repository/application from the Flutter POS app
 (`elmotech_pos`). Dashboard UI and server code live here; backend-owned
 licensing migrations, database tests, and Edge Functions live in the POS repo.
 
+## Backend status
+
+**Laravel is the only runtime backend. Supabase connections are disabled**,
+including explicit `DATA_PROVIDER=supabase`. New work uses Laravel. See [Supabase deprecation](docs/SUPABASE_DEPRECATION.md) and the
+[Laravel integration report](docs/laravel-integration/REPORT.md). New POS
+activation/signing and renewal still require the original protocol implementation.
+
 ## Purpose
 
-The licensing backend (Supabase) is already live — initial Production
-activation is operational. This dashboard is the internal tool for staff to
+The existing production licensing backend uses Supabase. The local dashboard
+now defaults to Laravel; no production cutover is implied. Staff use it to
 manage customers, plans, subscriptions, and the offline activation workflow,
 while keeping technical license, device, issuance, and audit records available
 contextually without exposing the database as the product interface.
 
 ## Architecture
 
-Next.js App Router project, TypeScript in strict mode, Tailwind CSS.
+Next.js 16 App Router, strict TypeScript, Tailwind CSS and Feature-Sliced Design.
+Laravel provides authentication, licensing reads and commercial actions. The
+Supabase network implementation is disabled; only compatibility types and
+fail-closed legacy entry points remain. The completed migration and per-batch verification are documented in
+[Frontend FSD migration](docs/FRONTEND_FSD_MIGRATION.md).
 
-```
+```text
 src/
-  app/
-    layout.tsx             root layout (html/body, fonts, global styles)
-    page.tsx                redirects "/" -> "/dashboard"
-    global-error.tsx        catches fail-closed config errors (see below)
-    login/page.tsx           /login — outside the dashboard shell, no sidebar
-    (dashboard)/            route group: everything behind the sidebar shell
-      layout.tsx             enforces identity + database-backed admin RBAC
-                             before rendering the dashboard shell
-      loading.tsx / error.tsx    shared loading & error states for the group
-      dashboard/             Overview
-      customers/, plans/, subscriptions/, licenses/,
-      activation-requests/, devices/, issuances/, audit-logs/,
-      settings/             Administration
-  components/
-    auth/                   LoginForm, AuthNotConfigured
-    layout/                 Sidebar, Header, DashboardShell, EnvironmentBadge
-    ui/                     PageHeader, PageSection, StatusBadge, EmptyState,
-                            StatCard, DataTable, ModulePlaceholder,
-                            TableSkeleton, FilterBar, EntityLink, DetailDrawer
-  features/                 reserved for module-specific components/hooks
-                            once a module moves past its placeholder page
-  lib/                      browser-safe shared code
-    env.ts                  browser-safe Supabase URL/key lookup
-    navigation.ts            six-item operator navigation shared by desktop
-                            and mobile; technical routes stay contextual
-    redirect-target.ts       sanitizeRedirectTarget() — the only place a
-                            post-login redirect target is trusted from
-    supabase/client.ts       browser Supabase client (publishable key only)
-  server/                   server-only code, never bundled for the browser
-    env.ts                  getServerEnvironment() — authoritative,
-                            fail-closed environment/project-ref validation
-    supabase/
-      server.ts              server Supabase client (cookie-based session)
-      privileged-client.ts   server-only client for the validated environment
-    auth/
-      current-user.ts        getCurrentUser() — identity lookup
-      require-user.ts        requireUser() — the dashboard's auth gate
-      require-admin-access.ts  real fail-closed licensing.admin_users RBAC
-      actions.ts              signInAction / signOutAction (Server Actions)
-  types/                    shared TypeScript types
-    environment.ts           AppEnvironment
-    navigation.ts             NavItem, NavSection
-    rbac.ts                   Role, labels, admin context, authorization result
-    database.ts               typed dashboard read surface for licensing
-  proxy.ts                   session-cookie refresh + pathname forwarding
-                             only (Next.js 16 proxy/middleware convention)
-docs/
-  AUTH_ARCHITECTURE.md       identity vs. authorization, login/logout flow,
-                             proxy responsibility, RBAC contract
-  ENVIRONMENT_SECURITY.md    environment fail-closed rules, licensing
-                             data-access boundary
+  app/                    Next layouts, explicit route wrappers, cookie endpoint
+    (dashboard)/          protected route group; all existing URLs retained
+    api/activation/       Node Route Handler wrappers for activation features
+    api/renewal/          Node Route Handler wrapper for renewal feature
+  proxy.ts                session-cookie refresh and pathname forwarding
+  fsd/pages/              server-only screen compositions and page-local reads
+  widgets/dashboard-shell/ shell, header, sidebar and navigation model
+  features/               manage-plan, create-customer, provision-subscription,
+                          rotate-license-code, sign-in, sign-out,
+                          activate-license, renew-subscription
+  entities/session/       verified identity, database RBAC, authorized read gate
+  entities/license/       shared license context, code generation and display
+  shared/
+    ui/                   reusable presentation primitives
+    lib/                  formatting, query/redirect helpers and utilities
+    i18n/                 Arabic/English copy; separate server locale entry
+    config/               separate public and server environment modules
+    api/laravel/          default server-only authentication and API transport
+    api/supabase/         deprecated clients and retained compatibility types
+    http/                 same-origin request policy
+    model/                environment type
 ```
 
-Arabic is the default locale. The language preference is stored in the
-server-readable `elmo_admin_locale` cookie so the root document renders the
-correct `lang` and `dir` before hydration; English remains available from the
-header without locale-prefixed routes.
+FSD Pages live under `src/fsd/pages`, keeping them outside Next's Pages Router.
+`src/app/**/page.tsx` wrappers preserve route groups, dynamic params and promised
+searchParams. Cross-slice imports use narrow public APIs. Client UI entry points
+are separate from server-only entries and Server Action implementations.
 
-The `lib/` vs `server/` split is deliberate and enforces the security
-boundary below: anything importable from a Client Component lives in
-`lib/`; anything that must never reach the browser lives in `server/` and
-imports the `server-only` package so an accidental client import fails at
-build time.
+Arabic remains the default, with `elmo_admin_locale` resolved on the server to
+render `lang` and `dir` before hydration. English uses the same URLs. Existing
+CSS, fonts, text and interaction bodies were preserved. Auth/session and licensing
+entry points retain their authorization checks; local Laravel integration is
+documented separately from the historical FSD migration.
 
-## Environment model
+## Historical Supabase environments (runtime disabled)
 
-There are **two separate Supabase projects**. This dashboard connects to
-exactly one at a time, chosen by environment configuration — never
-hardcoded.
+The following project references document the previous backend. They cannot be
+selected by this application. Laravel uses server-side `LARAVEL_API_URL` instead.
+There were **two separate Supabase projects**:
 
 | Environment | Project | Ref |
 |---|---|---|
@@ -98,15 +79,12 @@ hardcoded.
 
 - **`APP_ENV`** (server-only, no `NEXT_PUBLIC_` prefix) is the single,
   authoritative source of environment identity, resolved by
-  `src/server/env.ts` and passed down through the server-rendered layout
+  `src/shared/config/server.ts` and passed down through the server-rendered layout
   as a prop — never re-derived in the browser. It defaults to `staging`
   when unset.
-- `getServerEnvironment()` validates `APP_ENV` against the configured
-  `NEXT_PUBLIC_SUPABASE_URL`'s project ref and **fails closed** (throws)
-  on any mismatch, and also fails closed if `APP_ENV=production` is set
-  while `NODE_ENV` is not `production` (blocking `next dev` from ever
-  targeting Production). Full rules and examples:
-  [`docs/ENVIRONMENT_SECURITY.md`](docs/ENVIRONMENT_SECURITY.md).
+- `getServerEnvironment()` validates APP_ENV and rejects any provider other than
+  Laravel. APP_ENV=production is rejected outside NODE_ENV=production.
+- Old Supabase URL/key variables are not read by the runtime.
 - The header renders a persistent Staging/Production badge
   (`EnvironmentBadge`), fed exclusively by that server-validated value.
 - **Local development must use Staging.** Production cannot be targeted
@@ -122,50 +100,33 @@ The browser must never receive:
 - The Production or Staging license signing private keys
   (`ELMO_LICENSE_SIGNING_PRIVATE_KEY_PKCS8_B64URL`)
 
-Only publishable/browser-safe configuration may be prefixed
-`NEXT_PUBLIC_*`. The privileged licensing client in
-`src/server/supabase/privileged-client.ts` reads `SUPABASE_SECRET_KEY` only on
-the server, is stateless, and targets only the project validated for `APP_ENV`. It
-must continue to:
-
-- live under `src/server/`, guarded by the `server-only` package
-- never be reachable from a Client Component, a `NEXT_PUBLIC_*` variable,
-  or a Server Action that a browser can call without a server-side
-  authorization check passing first
-
-No signing private key has been requested, retrieved, or inspected as part
-of this or the prior task.
-
-### Licensing data-access boundary
-
-`anon` and `authenticated` Supabase roles have **no access** to the
-licensing tables (`customers`, `plans`, `subscriptions`, `licenses`,
-`activation_requests`, `device_activations`, `license_issuances`,
-`audit_logs`) — RLS and FORCE RLS are enabled with no permissive
-browser-facing policies, and nothing in this repository adds, loosens, or
-works around that. The implemented Overview data path is:
-
-```
-Browser -> authenticated session -> Next.js server -> server-side
-authorization -> server-only privileged data access -> licensing schema
-```
-
-not a direct authenticated-client query against those tables. Details:
-[`docs/ENVIRONMENT_SECURITY.md`](docs/ENVIRONMENT_SECURITY.md).
+Only browser-safe values may be prefixed NEXT_PUBLIC_*. Laravel requests run
+server-side with a verified HttpOnly session token. Database credentials stay in
+Laravel. Every protected backend HTTP endpoint verifies identity and role again.
+The compatibility entry in `src/shared/api/supabase/privileged-client.ts` returns
+only the Laravel transport; retired Supabase auth clients throw without creating
+connections. See [connection verification](docs/LARAVEL_CONNECTION_VERIFICATION.md).
 
 ## Authentication & authorization
 
-Authentication and database-backed authorization are implemented. Supabase
-Auth verifies identity with `getClaims()`, then `requireAdminAccess()` reads the
-matching `licensing.admin_users` row through the privileged server client. Only
-active `owner`, `admin`, `support`, and `viewer` rows are admitted. Full design:
-[`docs/AUTH_ARCHITECTURE.md`](docs/AUTH_ARCHITECTURE.md).
+Laravel authentication validates active staff through the API and stores its
+token in a server-managed HttpOnly cookie. See the integration report.
+
+The former Supabase auth design is retained only as historical documentation in
+`docs/AUTH_ARCHITECTURE.md`; it is not an enabled runtime path.
+
+## Coolify VPS deployment
+
+Use the repository-root `docker-compose.yaml` and `Dockerfile`. The Laravel
+repository has a separate Compose stack with persistent MySQL. Follow
+[Coolify deployment](docs/COOLIFY_DEPLOYMENT.md) for both resources, environment
+variables, initial migrations and account provisioning.
 
 ## Local development
 
 ```bash
 npm install
-cp .env.example .env.local   # fill in both Staging key placeholders locally
+cp .env.example .env.local   # configure the Laravel API URL; start Laravel separately
 npm run dev
 ```
 
@@ -175,13 +136,11 @@ npm run build
 npx tsc --noEmit
 ```
 
-The app builds and lints without real Supabase credentials. Runtime Auth needs
-the selected environment's publishable key, and authorized licensing reads
-additionally need that same environment's server secret (see
-`docs/ENVIRONMENT_SECURITY.md`). Production must use `NODE_ENV=production` and
+The app builds and lints without Supabase credentials. Runtime authentication
+and reads use the configured Laravel API. Supabase credentials are neither required nor read by the application. Production must use `NODE_ENV=production` and
 `APP_ENV=production`, built with `npm run build` and run with `npm run start`.
 
-## Production acceptance
+## Historical Supabase production acceptance
 
 Final Production acceptance passed on 14 September 2026 against
 `elmotech-pos-licensing-prod` (`lhfvlczfqltvwydfaeod`). The accepted Dashboard
@@ -232,9 +191,8 @@ work beyond the accepted simple V1 scope:
 
 All core modules are connected to live data from the validated environment: Overview,
 Customers and Customer 360, Subscriptions, Licenses and License 360, Devices,
-Activation Requests, Issuances, Audit Logs, and Plans. The primary navigation is
-limited to Overview, Customers, Activation Requests, Subscriptions, Plans, and
-Settings. Lists use server-side filters and pagination with batched relationship
+Activation Requests, Issuances, Audit Logs, and Plans. The sidebar retains all workspace, operations and settings links, including
+licenses, devices, issuances and audit logs. Lists use server-side filters and pagination with batched relationship
 lookups.
 
 Commercial onboarding was first accepted on Staging and is now accepted for the

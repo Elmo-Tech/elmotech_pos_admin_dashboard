@@ -1,0 +1,2 @@
+PASS: complete app-paths, pages and routes manifests are identical before/after; proxy matchers also identical.
+PASS: /(dashboard)/plans/page retained; no new FSD implementation routes.

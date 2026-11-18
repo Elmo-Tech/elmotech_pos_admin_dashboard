@@ -1,0 +1,9 @@
+{
+  "shellSyntax": "PASS",
+  "missingKeyRejected": "PASS",
+  "invalidKeyRejected": "PASS",
+  "validKeyExecutesCommand": "PASS",
+  "configCacheFailureStopsStartup": "PASS",
+  "automaticMigrations": false,
+  "method": "isolated shell harness; actual PHP key validation, stubbed Artisan caching; no database touched"
+}

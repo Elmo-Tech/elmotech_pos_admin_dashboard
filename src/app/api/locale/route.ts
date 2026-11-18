@@ -1,9 +1,10 @@
 import { cookies } from "next/headers";
-import { isLocale, LOCALE_COOKIE } from "@/i18n/messages";
+import { hasValidSameOrigin } from "@/shared/http/same-origin";
+import { isLocale, LOCALE_COOKIE } from "@/shared/i18n";
 
 export async function POST(request: Request): Promise<Response> {
   const origin = request.headers.get("origin");
-  if (origin && origin !== new URL(request.url).origin) {
+  if (origin && !hasValidSameOrigin(request)) {
     return Response.json({ error: "invalid_origin" }, { status: 403 });
   }
 

@@ -1,0 +1,11 @@
+src/fsd
+src/fsd/pages
+src/fsd/pages/plans
+src/fsd/pages/plans/ui
+src/fsd/pages/plans/api
+src/fsd/pages/plans/index.ts
+src/features/manage-plan
+src/features/manage-plan/ui
+src/features/manage-plan/api
+src/features/manage-plan/model
+src/features/manage-plan/index.ts

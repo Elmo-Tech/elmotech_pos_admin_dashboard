@@ -1,0 +1,13 @@
+⚠ Skipping backup because there’s no initial commit yet. This might result in data loss.
+
+⋯ Preparing lint-staged…
+✔ Done preparing lint-staged!
+⋯ Running tasks for staged files…
+    *.{js,jsx,mjs,cjs,ts,tsx,mts,cts} — 1 file
+      ⋯ eslint
+
+✔ eslint
+
+✔ Done running tasks for staged files!
+⋯ Staging changes from tasks…
+✔ Done staging changes from tasks!

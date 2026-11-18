@@ -1,0 +1,11 @@
+{
+  "src/app/(dashboard)/plans/page.tsx": "09c2391167f96f2d2c535556f79f833e7a736004abf459816b74399bd98b7b61",
+  "src/features/plans/server/queries.ts": "411b9806eb9c0d6ddce2c23cdb878c14bddf1bcfbc57bf573d9a1f2263645c48",
+  "src/features/commercial/server/actions.ts": "dc5730cada803d38f5ea9d3e28d53a68add6f909da4509bc931a60e72fee59a6",
+  "src/components/commercial/commercial-forms.tsx": "d6a150ebdb03868373017bc7340ceecf5c8b76c0b11a850d220604e97bc671e5",
+  "package.json": "14587bc4b41e103392971ff0710a428de14740fd10e41098bb941e0269fb792f",
+  "package-lock.json": "3b1288396be91b6db61a63a3f8c91e2d9702223c1b9840646e1cf383662928f6",
+  "next.config.ts": "614bce25b089c3f19b1e17a6346c74b858034040154c6621e7d35303004767cc",
+  "tsconfig.json": "5c51df4c59f4510d8c7dadf07a5c32132228826a3b331da5e286207b4df7ef9c",
+  "docs/DASHBOARD_ARCHITECTURE_AUDIT.md": "28048d16b02157c9cdcbd47347bb3e30659305209dfa7c3389e9f1e03d921d95"
+}

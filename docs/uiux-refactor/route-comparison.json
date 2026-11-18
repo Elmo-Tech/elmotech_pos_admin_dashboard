@@ -1,0 +1,17 @@
+[
+  {
+    "manifest": "routes-manifest.json",
+    "status": "PASS",
+    "comparison": "Full JSON deep comparison"
+  },
+  {
+    "manifest": "server/app-paths-manifest.json",
+    "status": "PASS",
+    "comparison": "Full JSON deep comparison"
+  },
+  {
+    "manifest": "server/middleware-manifest.json",
+    "status": "PASS",
+    "comparison": "Full route/function inventory and all proxy matcher definitions; generated bundle filenames excluded"
+  }
+]

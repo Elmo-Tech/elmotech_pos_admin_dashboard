@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "framework": "nextjs",
+  "sourceRoot": "src",
+  "baseline": {
+    "commit": "d17674a8e5eccf9a5e9c8731f9284ece34bb2317",
+    "existingChanges": [
+      "docs/DASHBOARD_ARCHITECTURE_AUDIT.md"
+    ]
+  },
+  "batches": [
+    {
+      "id": "plans-only",
+      "entries": [
+        {
+          "currentPath": "src/app/(dashboard)/plans/page.tsx",
+          "targetPath": "src/fsd/pages/plans/ui/plans-page.tsx",
+          "layer": "pages",
+          "slice": "plans",
+          "reason": "Page composition; retain App Router wrapper",
+          "risk": "Preserve source behavior and server/client boundaries",
+          "consumers": [
+            "src/app/(dashboard)/plans/page.tsx"
+          ],
+          "routeImpact": "No URL or route-discovery change",
+          "verification": [
+            "node --test tests/plans-pilot.test.mjs",
+            "npm run lint",
+            "tsc --noEmit --incremental false",
+            "npm run build -- --webpack",
+            "compare full route manifests"
+          ]
+        },
+        {
+          "currentPath": "src/features/plans/server/queries.ts",
+          "targetPath": "src/fsd/pages/plans/api/get-plans.ts",
+          "layer": "pages",
+          "slice": "plans",
+          "reason": "Single-caller page-local read model",
+          "risk": "Preserve source behavior and server/client boundaries",
+          "consumers": [
+            "src/fsd/pages/plans/ui/plans-page.tsx"
+          ],
+          "routeImpact": "No URL or route-discovery change",
+          "verification": [
+            "node --test tests/plans-pilot.test.mjs",
+            "npm run lint",
+            "tsc --noEmit --incremental false",
+            "npm run build -- --webpack",
+            "compare full route manifests"
+          ]
+        },
+        {
+          "currentPath": "src/components/commercial/commercial-forms.tsx#PlanForm,PlanDialog",
+          "targetPath": "src/features/manage-plan/ui/plan-form.tsx",
+          "layer": "features",
+          "slice": "manage-plan",
+          "reason": "Plan interaction only; other forms remain",
+          "risk": "Preserve source behavior and server/client boundaries",
+          "consumers": [
+            "src/fsd/pages/plans/ui/plans-page.tsx"
+          ],
+          "routeImpact": "No URL or route-discovery change",
+          "verification": [
+            "node --test tests/plans-pilot.test.mjs",
+            "npm run lint",
+            "tsc --noEmit --incremental false",
+            "npm run build -- --webpack",
+            "compare full route manifests"
+          ]
+        },
+        {
+          "currentPath": "src/features/commercial/server/actions.ts#savePlanAction",
+          "targetPath": "src/features/manage-plan/api/save-plan.ts",
+          "layer": "features",
+          "slice": "manage-plan",
+          "reason": "Plan-only server command; preserve Supabase/RBAC",
+          "risk": "Preserve source behavior and server/client boundaries",
+          "consumers": [
+            "src/features/manage-plan/ui/plan-form.tsx"
+          ],
+          "routeImpact": "No URL or route-discovery change",
+          "verification": [
+            "node --test tests/plans-pilot.test.mjs",
+            "npm run lint",
+            "tsc --noEmit --incremental false",
+            "npm run build -- --webpack",
+            "compare full route manifests"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+
+  Slice generated successfully!
+
+  Created files:
+    - src/pages/plans/ui/plans-page.tsx
+    - src/pages/plans/index.ts
+    - src/app/plans/page.route.tsx
+

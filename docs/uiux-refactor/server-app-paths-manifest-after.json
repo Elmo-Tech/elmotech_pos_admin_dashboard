@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/api/locale/route": "app/api/locale/route.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/activation/verify/route": "app/api/activation/verify/route.js",
+  "/api/activation/issue/route": "app/api/activation/issue/route.js",
+  "/api/renewal/issue/route": "app/api/renewal/issue/route.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/(dashboard)/activation-requests/page": "app/(dashboard)/activation-requests/page.js",
+  "/(dashboard)/audit-logs/page": "app/(dashboard)/audit-logs/page.js",
+  "/(dashboard)/customers/[customerId]/page": "app/(dashboard)/customers/[customerId]/page.js",
+  "/(dashboard)/customers/page": "app/(dashboard)/customers/page.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/(dashboard)/devices/page": "app/(dashboard)/devices/page.js",
+  "/(dashboard)/issuances/page": "app/(dashboard)/issuances/page.js",
+  "/(dashboard)/licenses/[licenseId]/page": "app/(dashboard)/licenses/[licenseId]/page.js",
+  "/(dashboard)/licenses/page": "app/(dashboard)/licenses/page.js",
+  "/(dashboard)/plans/page": "app/(dashboard)/plans/page.js",
+  "/(dashboard)/settings/page": "app/(dashboard)/settings/page.js",
+  "/(dashboard)/subscriptions/page": "app/(dashboard)/subscriptions/page.js"
+}

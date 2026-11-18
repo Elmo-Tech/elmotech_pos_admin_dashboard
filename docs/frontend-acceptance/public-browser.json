@@ -1,0 +1,82 @@
+[
+  {
+    "name": "before",
+    "locale": "ar",
+    "device": "desktop",
+    "url": "http://127.0.0.1:4317/login",
+    "lang": "ar",
+    "dir": "rtl",
+    "text": "Elmo POS\n\nعمليات التراخيص\n\nإدارة تراخيص Elmo POS\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nElmotech · Secure licensing operations\n\nبيئة الاختبار\nتسجيل دخول المسؤول\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nلم يتم إعداد المصادقة\n\nيجب على المسؤول إكمال إعداد بيئة الخادم قبل إتاحة تسجيل الدخول.",
+    "errors": []
+  },
+  {
+    "name": "after",
+    "locale": "ar",
+    "device": "desktop",
+    "url": "http://127.0.0.1:4318/login",
+    "lang": "ar",
+    "dir": "rtl",
+    "text": "Elmo POS\n\nعمليات التراخيص\n\nإدارة تراخيص Elmo POS\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nElmotech · Secure licensing operations\n\nبيئة الاختبار\nتسجيل دخول المسؤول\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nلم يتم إعداد المصادقة\n\nيجب على المسؤول إكمال إعداد بيئة الخادم قبل إتاحة تسجيل الدخول.",
+    "errors": []
+  },
+  {
+    "name": "before",
+    "locale": "ar",
+    "device": "mobile",
+    "url": "http://127.0.0.1:4317/login",
+    "lang": "ar",
+    "dir": "rtl",
+    "text": "Elmo POS\nبيئة الاختبار\nتسجيل دخول المسؤول\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nلم يتم إعداد المصادقة\n\nيجب على المسؤول إكمال إعداد بيئة الخادم قبل إتاحة تسجيل الدخول.",
+    "errors": []
+  },
+  {
+    "name": "after",
+    "locale": "ar",
+    "device": "mobile",
+    "url": "http://127.0.0.1:4318/login",
+    "lang": "ar",
+    "dir": "rtl",
+    "text": "Elmo POS\nبيئة الاختبار\nتسجيل دخول المسؤول\n\nللاستخدام الداخلي فقط. تواصل مع المسؤول إذا كنت تحتاج إلى حساب.\n\nلم يتم إعداد المصادقة\n\nيجب على المسؤول إكمال إعداد بيئة الخادم قبل إتاحة تسجيل الدخول.",
+    "errors": []
+  },
+  {
+    "name": "before",
+    "locale": "en",
+    "device": "desktop",
+    "url": "http://127.0.0.1:4317/login",
+    "lang": "en",
+    "dir": "ltr",
+    "text": "Elmo POS\n\nLicense operations\n\nElmo POS Licensing\n\nInternal access only. Contact an administrator if you need an account.\n\nElmotech · Secure licensing operations\n\nStaging\nAdmin sign in\n\nInternal access only. Contact an administrator if you need an account.\n\nAuthentication is not configured\n\nThe administrator must complete the server environment configuration before sign-in is available.",
+    "errors": []
+  },
+  {
+    "name": "after",
+    "locale": "en",
+    "device": "desktop",
+    "url": "http://127.0.0.1:4318/login",
+    "lang": "en",
+    "dir": "ltr",
+    "text": "Elmo POS\n\nLicense operations\n\nElmo POS Licensing\n\nInternal access only. Contact an administrator if you need an account.\n\nElmotech · Secure licensing operations\n\nStaging\nAdmin sign in\n\nInternal access only. Contact an administrator if you need an account.\n\nAuthentication is not configured\n\nThe administrator must complete the server environment configuration before sign-in is available.",
+    "errors": []
+  },
+  {
+    "name": "before",
+    "locale": "en",
+    "device": "mobile",
+    "url": "http://127.0.0.1:4317/login",
+    "lang": "en",
+    "dir": "ltr",
+    "text": "Elmo POS\nStaging\nAdmin sign in\n\nInternal access only. Contact an administrator if you need an account.\n\nAuthentication is not configured\n\nThe administrator must complete the server environment configuration before sign-in is available.",
+    "errors": []
+  },
+  {
+    "name": "after",
+    "locale": "en",
+    "device": "mobile",
+    "url": "http://127.0.0.1:4318/login",
+    "lang": "en",
+    "dir": "ltr",
+    "text": "Elmo POS\nStaging\nAdmin sign in\n\nInternal access only. Contact an administrator if you need an account.\n\nAuthentication is not configured\n\nThe administrator must complete the server environment configuration before sign-in is available.",
+    "errors": []
+  }
+]

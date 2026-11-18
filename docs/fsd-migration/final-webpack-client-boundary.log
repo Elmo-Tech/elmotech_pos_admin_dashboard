@@ -1,0 +1,1 @@
+PASS: 42 emitted static JS files contain none of the scoped privileged implementation markers. No secret values were inspected.

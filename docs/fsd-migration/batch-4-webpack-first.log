@@ -1,0 +1,41 @@
+
+> elmotech_pos_admin_dashboard@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.4 (webpack)
+✓ Running next.config.ts took 1487ms
+
+  Creating an optimized production build ...
+Failed to compile.
+
+./src/features/sign-out/server.ts
+Error:   x Only async functions are allowed to be exported in a "use server" file.
+
+   ,-[/private/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-4-ZRWdiq/src/features/sign-out/server.ts:2:1]
+ 1 | "use server";
+ 2 | export { signOutAction } from "./api/actions";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   `----
+
+Import trace for requested module:
+./src/features/sign-out/server.ts
+./src/widgets/dashboard-shell/ui/header.tsx
+./src/widgets/dashboard-shell/ui/dashboard-shell.tsx
+./src/widgets/dashboard-shell/index.ts
+
+./src/features/sign-out/server.ts
+Error:   x Only async functions are allowed to be exported in a "use server" file.
+
+   ,-[/private/var/folders/yr/k35qy9b93hv45grp2h7nj31h0000gn/T/dashboard-fsd-ghxffwdj/batch-4-ZRWdiq/src/features/sign-out/server.ts:2:1]
+ 1 | "use server";
+ 2 | export { signOutAction } from "./api/actions";
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   `----
+
+Import trace for requested module:
+./src/features/sign-out/server.ts
+./src/app/_ui/access-denied.tsx
+./src/app/(dashboard)/layout.tsx
+
+
+> Build failed because of webpack errors

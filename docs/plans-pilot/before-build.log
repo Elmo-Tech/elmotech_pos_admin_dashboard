@@ -1,0 +1,57 @@
+
+> elmotech_pos_admin_dashboard@0.1.0 build
+> next build
+
+▲ Next.js 16.3.4 (Turbopack)
+✓ Running next.config.ts took 1499ms
+
+  Creating an optimized production build ...
+Turbopack build encountered 4 warnings:
+[next]/internal/font/google/calistoga_e641bf82.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=Calistoga:wght@400&display=swap
+
+
+[next]/internal/font/google/ibm_plex_mono_93a398a6.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap
+
+
+[next]/internal/font/google/ibm_plex_sans_adb7dc0a.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap
+
+
+[next]/internal/font/google/ibm_plex_sans_arabic_d291f3aa.module.css
+Warning: Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 4 errors:
+[next]/internal/font/google/calistoga_e641bf82.module.css
+Error: next/font: error:
+Failed to fetch Calistoga from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+[next]/internal/font/google/ibm_plex_mono_93a398a6.module.css
+Error: next/font: error:
+Failed to fetch IBM Plex Mono from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+[next]/internal/font/google/ibm_plex_sans_adb7dc0a.module.css
+Error: next/font: error:
+Failed to fetch IBM Plex Sans from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+[next]/internal/font/google/ibm_plex_sans_arabic_d291f3aa.module.css
+Error: next/font: error:
+Failed to fetch IBM Plex Sans Arabic from Google Fonts.
+If you are offline or behind a proxy, self-host the font with next/font/local, or set HTTP_PROXY/HTTPS_PROXY so Next.js can reach fonts.googleapis.com.
+
+
+    at ignore-listed frames

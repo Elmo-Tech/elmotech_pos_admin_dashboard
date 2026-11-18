@@ -1,0 +1,7 @@
+npm warn deprecated eslint@9.39.5: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+
+> elmotech_pos_admin_dashboard@0.1.0 prepare
+> node .husky/install.mjs
+
+
+added 379 packages in 7s

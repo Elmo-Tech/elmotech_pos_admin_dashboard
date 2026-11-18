@@ -1,0 +1,42 @@
+[
+  {
+    "flow": "historical license detail with device/request/issuance joins",
+    "role": "owner",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical customer detail with commercial joins",
+    "role": "owner",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical license detail with device/request/issuance joins",
+    "role": "admin",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical customer detail with commercial joins",
+    "role": "admin",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical license detail with device/request/issuance joins",
+    "role": "support",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical customer detail with commercial joins",
+    "role": "support",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical license detail with device/request/issuance joins",
+    "role": "viewer",
+    "status": "PASS"
+  },
+  {
+    "flow": "historical customer detail with commercial joins",
+    "role": "viewer",
+    "status": "PASS"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "login": "PASS",
+  "staticCss": "PASS",
+  "staticFont": "PASS",
+  "proxyProtectedRedirect": "PASS",
+  "envFilesCopied": false,
+  "dockerRuntimeTested": false
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "serverRequests": 348,
+  "domainRequests": 346,
+  "browserRequests": 609,
+  "observedBrowserContexts": [
+    "owner",
+    "admin",
+    "support",
+    "viewer"
+  ],
+  "supabaseServerAttempts": 0,
+  "supabaseBrowserAttempts": 0,
+  "domainDestinations": [
+    "127.0.0.1:8000"
+  ],
+  "mysql": {
+    "database": "dashboard",
+    "version": "8.4.11",
+    "persistenceChecked": true
+  },
+  "pageErrors": []
+}

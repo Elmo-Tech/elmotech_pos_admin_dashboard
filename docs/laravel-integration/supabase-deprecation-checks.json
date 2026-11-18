@@ -1,0 +1,13 @@
+{
+  "lint": "PASS",
+  "typecheck": "PASS",
+  "tests": {
+    "status": "PASS",
+    "count": 61
+  },
+  "webpackBuild": "PASS",
+  "routeManifests": "unchanged",
+  "supabaseDefault": false,
+  "legacyOptIn": "DATA_PROVIDER=supabase",
+  "serversRestarted": false
+}

@@ -1,0 +1,20 @@
+✔ read model: getOverviewData joins, scope, filters and failure contract (145.985625ms)
+✔ read model: getSubscriptions joins, scope, filters and failure contract (29.158375ms)
+✔ read model: getDevices joins, scope, filters and failure contract (43.615666ms)
+✔ read model: getActivationRequests joins, scope, filters and failure contract (41.760541ms)
+✔ read model: getIssuances joins, scope, filters and failure contract (30.014458ms)
+✔ read model: getAuditLogs joins, scope, filters and failure contract (37.266833ms)
+✔ read model: getCustomers joins, scope, filters and failure contract (34.685875ms)
+✔ read model: getCustomerDetail joins, scope, filters and failure contract (27.037375ms)
+✔ read model: getLicenses joins, scope, filters and failure contract (28.170625ms)
+✔ read model: getLicenseDetail joins, scope, filters and failure contract (50.213208ms)
+✔ read model: getActivationRequestContext joins, scope, filters and failure contract (23.507125ms)
+✔ detail loaders retain invalid UUID/missing-record null behavior (26.770667ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1484.85425

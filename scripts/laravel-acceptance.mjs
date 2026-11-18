@@ -1,0 +1,39 @@
+import {spawn} from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {fileURLToPath} from 'node:url';
+const {chromium} = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const backend=process.env.LARAVEL_BACKEND_DIR || path.resolve(root, '../backend elmoetch pos_admin_dashboard');
+const out=path.join(root,'docs/laravel-integration');const results=[];
+const credentials=role=>{const s=fs.readFileSync(path.join(backend,'.runtime',role==='owner'?'local-account.txt':`${role}-account.txt`),'utf8');return{email:/Email: (.+)/.exec(s)[1],password:/Password: (.+)/.exec(s)[1]}};
+async function api(token,p,body,method='POST'){const r=await fetch('http://127.0.0.1:8000/api/v1/'+p,{method,headers:{accept:'application/json','content-type':'application/json',...(token?{authorization:'Bearer '+token}:{})},...(body?{body:JSON.stringify(body)}:{})});return{status:r.status,data:await r.json().catch(()=>null)}}
+(async()=>{let browser;const log=fs.openSync('/private/tmp/dashboard-laravel-runtime.log','w');const server=spawn(process.execPath,[path.join(root,'node_modules/next/dist/bin/next'),'start','--hostname','127.0.0.1','--port','4320'],{cwd:root,stdio:['ignore',log,log]});
+try{
+const auth=await api(null,'auth/login',credentials('owner'));assert.equal(auth.status,200);const token=auth.data.token;
+const stamp=Date.now(),name=`A QA Browser ${stamp}`;
+for(let i=0;i<21;i++){const r=await api(token,'plans',{name:`QA ${stamp} ${String(i).padStart(2,'0')}`,is_lifetime:i%2===0,duration_value:i%2===0?null:30,duration_unit:i%2===0?null:'days',price:25,currency:'EGP',is_enabled:true});assert.equal(r.status,201)}
+const customer=await api(token,'customers',{business_name:`QA disposable ${stamp}`,owner_name:'Local acceptance',phone:'01000000000',status:'active'});assert.equal(customer.status,201);
+for(let n=0;n<45;n++){try{const r=await fetch('http://127.0.0.1:4320/login');if(r.ok)break}catch{}await new Promise(r=>setTimeout(r,500))}
+browser=await chromium.launch({headless:true,...(process.env.PLAYWRIGHT_EXECUTABLE_PATH ? { executablePath:process.env.PLAYWRIGHT_EXECUTABLE_PATH } : {})});
+for(const locale of ['en','ar'])for(const [device,width,height]of [['desktop',1440,1000],['mobile',390,844]]){
+ const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});await context.addCookies([{name:'elmo_admin_locale',value:locale,url:'http://127.0.0.1:4320'}]);const page=await context.newPage();const cred=credentials(locale==='en'&&device==='desktop'?'owner':`owner-${locale}-${device}`);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:4320/login?next=/plans');await page.screenshot({path:path.join(out,`login-${locale}-${device}.png`),fullPage:true});
+ await page.locator('[name=email]').fill(cred.email);await page.locator('[name=password]').fill('incorrect-password');await page.locator('button[type=submit]').click();await page.getByText(locale==='ar'?'البريد الإلكتروني أو كلمة المرور غير صحيحة.':'Invalid email or password.',{exact:true}).waitFor();assert.ok(page.url().includes('/login'));await page.screenshot({path:path.join(out,`login-error-${locale}-${device}.png`),fullPage:true});
+ await page.locator('[name=email]').fill(cred.email);await page.locator('[name=password]').fill(cred.password);await Promise.all([page.waitForURL(u=>u.pathname==='/plans'),page.locator('button[type=submit]').click()]);
+ await page.locator('table:visible').waitFor({timeout:10000}).catch(async e=>{await page.screenshot({path:out+'/debug.png',fullPage:true});console.error((await page.locator('body').innerText()).slice(-2200));throw e});assert.equal(await page.locator('html').getAttribute('dir'),locale==='ar'?'rtl':'ltr');await page.screenshot({path:path.join(out,`plans-${locale}-${device}.png`),fullPage:true});
+ await page.getByRole('button',{name:locale==='ar'?'إنشاء خطة':'Create plan',exact:true}).click();await page.locator('dialog[open]').waitFor();await page.screenshot({path:path.join(out,`plan-dialog-${locale}-${device}.png`),fullPage:true});
+ if(locale==='en'&&device==='desktop'){
+  const d=page.locator('dialog[open]');await d.locator('[name=name]').fill(name);await d.locator('[name=durationValue]').fill('6');await d.locator('[name=price]').fill('123');await d.getByRole('button',{name:'Save',exact:true}).click();await d.getByRole('status').filter({hasText:'Created successfully.'}).waitFor();await d.getByRole('button',{name:'Cancel',exact:true}).click();
+  await page.reload();const row=page.locator('tr:visible').filter({hasText:name});await row.waitFor();await row.getByRole('button',{name:'Edit plan',exact:true}).click();const edit=page.locator('dialog[open]');assert.equal(await edit.locator('[name=price]').inputValue(),'123');await edit.locator('[name=price]').fill('177');await edit.locator('[name=isLifetime]').check();await edit.getByRole('button',{name:'Save',exact:true}).click();await edit.getByRole('status').filter({hasText:'Updated successfully.'}).waitFor();await edit.getByRole('button',{name:'Cancel',exact:true}).click();await page.reload();await row.getByRole('button',{name:'Edit plan',exact:true}).click();const again=page.locator('dialog[open]');assert.equal(await again.locator('[name=price]').inputValue(),'177');assert.equal(await again.locator('[name=isLifetime]').isChecked(),true);await again.getByRole('button',{name:'Cancel',exact:true}).click();results.push({flow:'plan create/edit/refresh finite to lifetime',status:'PASS',fixture:name});
+ }else await page.keyboard.press('Escape');
+ await page.goto('http://127.0.0.1:4320/plans?enabled=true&page=2');await page.locator('table:visible').waitFor();assert.ok((await page.locator('tbody:visible tr:visible').count())>0);
+ assert.deepEqual(errors,[]);results.push({flow:'login/errors/plans/filter/page2/dialog',locale,device,status:'PASS',errors});
+ if(locale==='en'&&device==='desktop'){
+  for(const route of ['dashboard','customers','licenses','subscriptions','devices','activation-requests','issuances','audit-logs','settings',`customers/${customer.data.customerId}`]){const response=await page.goto('http://127.0.0.1:4320/'+route);assert.equal(response.status(),200);assert.equal((await page.locator('body').innerText()).includes('Staging data is unavailable'),false,route);results.push({flow:'screen '+route.replace(customer.data.customerId,'[fixture]'),status:'PASS'})}
+ }
+ await page.getByRole('button',{name:locale==='ar'?'تسجيل الخروج':'Sign out',exact:true}).click();await page.waitForURL('**/login');await page.goto('http://127.0.0.1:4320/plans');await page.waitForURL('**/login?next=**');results.push({flow:'logout/protected redirect',locale,device,status:'PASS'});await context.close();
+}
+for(const role of ['admin','support','viewer']){const context=await browser.newContext();await context.addCookies([{name:'elmo_admin_locale',value:'en',url:'http://127.0.0.1:4320'}]);const p=await context.newPage();await p.goto('http://127.0.0.1:4320/login?next=/plans');const c=credentials(role);await p.locator('[name=email]').fill(c.email);await p.locator('[name=password]').fill(c.password);await Promise.all([p.waitForURL(u=>u.pathname==='/plans'),p.locator('button[type=submit]').click()]);await p.locator('table:visible').waitFor();assert.equal(await p.getByRole('button',{name:'Create plan',exact:true}).count(),role==='admin'?1:0);results.push({flow:'role controls',role,status:'PASS'});await context.close()}
+}catch(e){results.push({flow:'acceptance execution',status:'FAIL',error:e.stack});throw e}finally{fs.writeFileSync(path.join(out,'browser-results.json'),JSON.stringify(results,null,2)+'\n');if(browser)await browser.close();server.kill();fs.closeSync(log)}})().catch(e=>{console.error(e.message);process.exitCode=1});

@@ -1,0 +1,264 @@
+[
+  {
+    "before": {
+      "file": "src/app/api/locale/route.ts",
+      "name": "POST",
+      "kind": "function-body",
+      "hash": "6782d8fc32be3ae0441828b8f61f94b0b4172d7d3291d9a60d41bd66093e5417"
+    },
+    "after": {
+      "file": "src/app/api/locale/route.ts",
+      "name": "POST",
+      "kind": "function-body",
+      "hash": "7e6d452906efb4d62f7900f601ca80d4390ab5476ee80c6dd959dd6715c95aae"
+    },
+    "reason": "Locale API now uses the existing same-origin helper to recognize the public Host behind Next.js internal localhost routing; request validation and cookie behavior retained."
+  },
+  {
+    "before": {
+      "file": "src/components/commercial/commercial-forms.tsx",
+      "name": "AddSubscriptionDialog",
+      "kind": "function-body",
+      "hash": "7028de87ad1a7ee266522c622105de86b5d84056bf6e6bb8c4db737c4caf7558"
+    },
+    "after": {
+      "file": "src/features/provision-subscription/ui/provision-subscription.tsx",
+      "name": "AddSubscriptionDialog",
+      "kind": "function-body",
+      "hash": "caef2daa8d667616e769e0e28221bce122066be202f549b64a2ac8c9683a83b7"
+    },
+    "reason": "Keep the provisioning dialog and one-time commercial code mounted across server revalidation; hide only the now-ineligible trigger. Regression and actual MySQL-backed browser coverage added."
+  },
+  {
+    "before": {
+      "file": "src/components/ui/action-dialog.tsx",
+      "name": "ActionDialog",
+      "kind": "function-body",
+      "hash": "8b7aa0f4d774c0eb264d27effaf3e9a059c2d8d8471da066aa50b566dd57caa6"
+    },
+    "after": {
+      "file": "src/shared/ui/action-dialog.tsx",
+      "name": "ActionDialog",
+      "kind": "function-body",
+      "hash": "cb2db7c8d25eec0e94c4ba33368fbac1640e0079dcfc02891faa204b11cfe592"
+    },
+    "reason": "Keep the provisioning dialog and one-time commercial code mounted across server revalidation; hide only the now-ineligible trigger. Regression and actual MySQL-backed browser coverage added."
+  },
+  {
+    "before": {
+      "file": "src/lib/env.ts",
+      "name": "getPublicEnv",
+      "kind": "function-body",
+      "hash": "80aa44caf2e176c0ff9d9b48a5d82b6f612192b6dbf6f46e0a4150052cce3958"
+    },
+    "after": {
+      "file": "src/shared/config/public.ts",
+      "name": "getPublicEnv",
+      "kind": "function-body",
+      "hash": "261377434b7a587e7a8847554e92cd286d6307322448312f8ebdac5b70e095f0"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/lib/supabase/client.ts",
+      "name": "getSupabaseBrowserClient",
+      "kind": "function-body",
+      "hash": "ead9a856908258780bcf3a7579083946d4a38ce399ab9dbc5f888eb7c100860a"
+    },
+    "after": {
+      "file": "src/shared/api/supabase/client.ts",
+      "name": "getSupabaseBrowserClient",
+      "kind": "function-body",
+      "hash": "555c698f09245dd257da596b1f1c2541faf863d130b2b0bb670178fbcf6a6510"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/proxy.ts",
+      "name": "proxy",
+      "kind": "function-body",
+      "hash": "672cdb3dc3ef86343b9a19970297bd428b5d0171865ec33502437616bfbc7cac"
+    },
+    "after": {
+      "file": "src/proxy.ts",
+      "name": "proxy",
+      "kind": "function-body",
+      "hash": "23b7ca2bea99e2be4bcf08c75d809616e647eecaa9cb43d4b62d256035ae035e"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/actions.ts",
+      "name": "signInAction",
+      "kind": "function-body",
+      "hash": "1f1edf31f51022edc3139070dcb837b4c65fd52257f95084106a74e4cfca3602"
+    },
+    "after": {
+      "file": "src/features/sign-in/api/actions.ts",
+      "name": "signInAction",
+      "kind": "function-body",
+      "hash": "1c935596c4f81631bcdffa85c0383f5b00ff2e1c7957eeb9b494b08be2c79e3a"
+    },
+    "reason": "Login distinguishes Laravel credential rejection from backend/proxy/rate-limit failures without logging credentials; existing default form markup retained."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/actions.ts",
+      "name": "signOutAction",
+      "kind": "function-body",
+      "hash": "c68a7c0abd0999395b21bcf6e3e9815f74b43d847641c14740a3f77527968e1e"
+    },
+    "after": {
+      "file": "src/features/sign-out/api/actions.ts",
+      "name": "signOutAction",
+      "kind": "function-body",
+      "hash": "ec2fdd4cb22ac3876cab8615bb5f5451f2d8ff3351cbdc5a8bf9e8ebbb897d42"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/current-user.ts",
+      "name": "getCurrentUser",
+      "kind": "initializer",
+      "hash": "c36cda6db47a4877fcfe2e814029e2edfaf078af8d2880e9a0cd61dd9205ad2e"
+    },
+    "after": {
+      "file": "src/entities/session/api/current-user.ts",
+      "name": "getCurrentUser",
+      "kind": "initializer",
+      "hash": "a65a55cf2b73c0730ce47a79e24095b5ab68a031684769df66f35c934498e623"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/auth/require-admin-access.ts",
+      "name": "requireAdminAccess",
+      "kind": "initializer",
+      "hash": "b24779535f0afe32d5ea6b9865ae4fdee958823d573b998832d9ed3fdff3c608"
+    },
+    "after": {
+      "file": "src/entities/session/api/require-admin-access.ts",
+      "name": "requireAdminAccess",
+      "kind": "initializer",
+      "hash": "808666260bfb28eb4d26cd1ea07ba439ae03346c3fb0ff4fe6f3f852d377cf63"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "KNOWN_PROJECTS",
+      "kind": "initializer",
+      "hash": "e96982d75ffa4b4a40266af61efeee0ef2cba308d16a08097912b45518d996f9"
+    },
+    "after": null,
+    "retired": true,
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "extractProjectRef",
+      "kind": "function-body",
+      "hash": "1c7a3da835d53dc8a5683b8e26f0ce74d1998dff51de75e9bc8fbafb3beca5e3"
+    },
+    "after": null,
+    "retired": true,
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "readDeclaredEnvironment",
+      "kind": "function-body",
+      "hash": "11439f82b231592c7bfe2d9379d42d2ab7bc6dde7b5b65936743d60ce633d2cb"
+    },
+    "after": {
+      "file": "src/shared/config/server.ts",
+      "name": "readDeclaredEnvironment",
+      "kind": "function-body",
+      "hash": "c3002999acf709f67c16b31c14e9ae26c3302dc2b999e09ce9b91c7dbf56e541"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "getServerEnvironment",
+      "kind": "function-body",
+      "hash": "a62ec0ecf687cbb56201c1f8a9bbb0649a4124f34b227802cba8169b26d2fb10"
+    },
+    "after": {
+      "file": "src/shared/config/server.ts",
+      "name": "getServerEnvironment",
+      "kind": "function-body",
+      "hash": "10ed77798c5c55d8a878689ca0db0060a54b637ddce8c6164db87fc6257b7a33"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/env.ts",
+      "name": "getRequiredSupabaseUrl",
+      "kind": "function-body",
+      "hash": "a4c4ca3732da34872beb8378027779a60df38b5d6872dfce17a25645735f6861"
+    },
+    "after": {
+      "file": "src/shared/config/server.ts",
+      "name": "getRequiredSupabaseUrl",
+      "kind": "function-body",
+      "hash": "8c772643277ba86192198380da0a42a6c38b457c440a139b6656aa7b891e170e"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/supabase/privileged-client.ts",
+      "name": "getPrivilegedLicensingClient",
+      "kind": "function-body",
+      "hash": "abd0246952e41617142dbb24fc011c6346da10a0c91fe515442be67d3467b550"
+    },
+    "after": {
+      "file": "src/shared/api/supabase/privileged-client.ts",
+      "name": "getPrivilegedLicensingClient",
+      "kind": "function-body",
+      "hash": "0b34a9eca04a98a1a86bf4daeddf0e4ca0a9158e1eb4036672084c46cf5e8957"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/server/supabase/server.ts",
+      "name": "getSupabaseServerClient",
+      "kind": "function-body",
+      "hash": "fe28bb8c8ae2277e2ed46251206262f6947ee03545d40df3e8388323fb00b8d1"
+    },
+    "after": {
+      "file": "src/shared/api/supabase/server.ts",
+      "name": "getSupabaseServerClient",
+      "kind": "function-body",
+      "hash": "123a634e363bda142cc894ca40d0d604589b7f93572a821966631354cf01b2d5"
+    },
+    "reason": "Laravel-only runtime: Supabase connection/authentication implementation disabled; preserved behavior covered by Laravel tests."
+  },
+  {
+    "before": {
+      "file": "src/components/auth/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "2d36dc95ef5f1ce917b0ceb2317c56baf0d98885cac49d32e56f6c8be8ca3812"
+    },
+    "after": {
+      "file": "src/features/sign-in/ui/login-form.tsx",
+      "name": "LoginForm",
+      "kind": "function-body",
+      "hash": "81393416e383a57a23db1a5ed0026c77553c9f6d8fce8e96a94bf30869b5bea7"
+    },
+    "reason": "Login distinguishes Laravel credential rejection from backend/proxy/rate-limit failures without logging credentials; existing default form markup retained."
+  }
+]
