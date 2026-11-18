@@ -6,6 +6,7 @@ import { getRequiredSupabaseUrl } from "@/shared/config/server";
 import type { Database } from "@/shared/api/supabase/schema";
 
 /**
+ * Compatibility facade: Laravel is the default; the Supabase branch is deprecated.
  * Creates a stateless, server-only client scoped to the private licensing
  * schema. Callers must establish verified identity and admin authorization
  * before using it for any domain-data query. No session is persisted and no

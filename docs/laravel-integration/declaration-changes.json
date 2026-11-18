@@ -10,9 +10,9 @@
       "file": "src/proxy.ts",
       "name": "proxy",
       "kind": "function-body",
-      "hash": "1e2af1d5dbc6cdd509d980d55a15f48b0dba9c0d853e31b276b44effac4580ac"
+      "hash": "aca2a1025962faae57b04255499f18bf4015aa64f7cbbfb7529d177932244ac9"
     },
-    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+    "reason": "Laravel defaults after Supabase deprecation; explicit legacy mode retains existing guards and regression coverage."
   },
   {
     "before": {
@@ -85,9 +85,9 @@
       "file": "src/shared/config/server.ts",
       "name": "getServerEnvironment",
       "kind": "function-body",
-      "hash": "3880cf5ad453120ad6c41a3e35ca5384caf9ce2ed0a262c174ae335f17854ce7"
+      "hash": "0e2f2c70a3c9e285e9ec39813dd722f8012db5f0b823f1571dd66000fa0ffcf7"
     },
-    "reason": "Explicit Laravel provider branch; existing Supabase mode retained and covered by session tests."
+    "reason": "Laravel defaults after Supabase deprecation; explicit legacy mode retains existing guards and regression coverage."
   },
   {
     "before": {

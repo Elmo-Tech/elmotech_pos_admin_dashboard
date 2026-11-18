@@ -10,6 +10,7 @@ import { getPublicEnv } from "@/shared/config/public";
  * licensing data path and must never become one. It must never be given
  * a secret/service-role key.
  */
+/** @deprecated Supabase is legacy-only. Use the Laravel server transport for new work. */
 export function getSupabaseBrowserClient() {
   const env = getPublicEnv();
   return createBrowserClient(env.supabaseUrl, env.supabasePublishableKey);

@@ -1,3 +1,4 @@
+import { resolveDataProvider } from "@/shared/config/backend";
 import "server-only";
 import type { AppEnvironment } from "@/shared/model/environment";
 
@@ -70,7 +71,7 @@ export function getServerEnvironment(): AppEnvironment {
     );
   }
 
-  if (process.env.DATA_PROVIDER === "laravel") return environment;
+  if (resolveDataProvider(process.env.DATA_PROVIDER) === "laravel") return environment;
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   if (supabaseUrl) {
@@ -102,6 +103,7 @@ export function getServerEnvironment(): AppEnvironment {
  * The privileged client uses this instead of interpreting public config on
  * its own, keeping one fail-closed environment boundary for both projects.
  */
+/** @deprecated Only for explicitly selected legacy Supabase mode. */
 export function getRequiredSupabaseUrl(): string {
   const environment = getServerEnvironment();
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();

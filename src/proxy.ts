@@ -1,3 +1,4 @@
+import { resolveDataProvider } from "@/shared/config/backend";
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { getPublicEnv } from "@/shared/config/public";
@@ -27,7 +28,7 @@ export async function proxy(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-pathname", request.nextUrl.pathname);
 
-  if (process.env.DATA_PROVIDER === "laravel") return NextResponse.next({ request: { headers: requestHeaders } });
+  if (resolveDataProvider(process.env.DATA_PROVIDER) === "laravel") return NextResponse.next({ request: { headers: requestHeaders } });
 
   let env;
   try {

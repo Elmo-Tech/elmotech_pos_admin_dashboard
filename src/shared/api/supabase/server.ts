@@ -13,6 +13,7 @@ import { getPublicEnv } from "@/shared/config/public";
  * privileged licensing client. The `server-only` import above
  * enforces that this file can never be imported from a Client Component.
  */
+/** @deprecated Supabase is legacy-only. Use the Laravel server transport for new work. */
 export async function getSupabaseServerClient() {
   const cookieStore = await cookies();
   const env = getPublicEnv();

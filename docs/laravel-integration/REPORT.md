@@ -8,7 +8,7 @@ The new backend lives in `../backend elmoetch pos_admin_dashboard`. Laravel 13.4
 - Plans, customers, subscription provisioning, draft commercial-code rotation, domain list/detail reads and audit records are connected to the existing FSD UI. Transactions bind commercial writes and audit records; plaintext commercial codes are never stored.
 - New Laravel staff credentials are generated locally. Supabase passwords were not present in the export and have not been migrated. Historical admin rows grant no Laravel access.
 - The supplied CSV was previewed and imported into the new local database: 32 rows across nine tables, retaining UUIDs and all three signed document strings. No live Supabase mutation was performed.
-- Explicit `DATA_PROVIDER=laravel` selects the server-only Laravel transport. Existing Supabase mode remains the default and is covered by the original session tests. `.env.local` selects Laravel on this machine. The frontend npm lockfile and dependency audit threshold were preserved.
+- Explicit `DATA_PROVIDER=laravel` selects the server-only Laravel transport. Supabase was initially the default in this acceptance run; it has since been deprecated. Laravel is now the default and Supabase requires explicit legacy opt-in; see ../SUPABASE_DEPRECATION.md. The original session tests cover the legacy path. `.env.local` selects Laravel on this machine. The frontend npm lockfile and dependency audit threshold were preserved.
 
 ## Results
 

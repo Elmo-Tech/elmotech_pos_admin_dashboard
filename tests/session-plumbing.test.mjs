@@ -34,7 +34,7 @@ test('SSR auth client preserves cookie options and tolerates read-only Server Co
 test('environment identity still rejects wrong projects and local production mode',()=>{
  for(const env of [
   {APP_ENV:'production',NODE_ENV:'development'},
-  {APP_ENV:'staging',NEXT_PUBLIC_SUPABASE_URL:'https://unknown-project.supabase.co'},
+  {DATA_PROVIDER:'supabase',APP_ENV:'staging',NEXT_PUBLIC_SUPABASE_URL:'https://unknown-project.supabase.co'},
   {APP_ENV:'invalid'},
  ]){
   const h=harness({globals:{process:{env}}});

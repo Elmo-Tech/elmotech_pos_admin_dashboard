@@ -1,9 +1,10 @@
 import "server-only";
 import { cookies } from "next/headers";
 import { cache } from "react";
+import { resolveDataProvider } from "@/shared/config/backend";
 
 const TOKEN_COOKIE = "elmotech_backend_session";
-export const usesLaravel = () => process.env.DATA_PROVIDER === "laravel";
+export const usesLaravel = () => resolveDataProvider(process.env.DATA_PROVIDER) === "laravel";
 
 export async function backendRequest(path: string, init: RequestInit = {}) {
   const configured = process.env.LARAVEL_API_URL;

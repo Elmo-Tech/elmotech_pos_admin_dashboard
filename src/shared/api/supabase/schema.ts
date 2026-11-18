@@ -1,3 +1,4 @@
+/** Legacy Supabase contract types retained by the Laravel compatibility adapter. See docs/SUPABASE_DEPRECATION.md. */
 export type Json =
   | string
   | number

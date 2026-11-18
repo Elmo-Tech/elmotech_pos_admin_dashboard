@@ -75,7 +75,8 @@ export function harness(options = {}) {
       }
       return dependencies(spec);
     };
-    const bindings = { Date: FixedDate, ...(options.globals || {}) };
+    // Legacy characterization fixtures select Supabase explicitly; new default behavior has separate tests.
+    const bindings = { Date: FixedDate, process: { ...process, env: { ...process.env, DATA_PROVIDER: "supabase" } }, ...(options.globals || {}) };
     vm.runInThisContext(`(function(require,module,exports,${Object.keys(bindings).join(',')}){${source}\n})`, { filename })(resolve, evaluated, evaluated.exports, ...Object.values(bindings));
     return evaluated.exports;
   }

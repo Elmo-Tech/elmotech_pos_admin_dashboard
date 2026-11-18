@@ -7,10 +7,18 @@ This is a separate repository/application from the Flutter POS app
 (`elmotech_pos`). Dashboard UI and server code live here; backend-owned
 licensing migrations, database tests, and Edge Functions live in the POS repo.
 
+## Backend status
+
+**Laravel is the default backend. Supabase is deprecated** and retained only
+through explicit `DATA_PROVIDER=supabase` legacy configuration. New work uses
+Laravel. See [Supabase deprecation](docs/SUPABASE_DEPRECATION.md) and the
+[Laravel integration report](docs/laravel-integration/REPORT.md). New POS
+activation/signing and renewal still require the original protocol implementation.
+
 ## Purpose
 
-The licensing backend (Supabase) is already live — initial Production
-activation is operational. This dashboard is the internal tool for staff to
+The existing production licensing backend uses Supabase. The local dashboard
+now defaults to Laravel; no production cutover is implied. Staff use it to
 manage customers, plans, subscriptions, and the offline activation workflow,
 while keeping technical license, device, issuance, and audit records available
 contextually without exposing the database as the product interface.
@@ -18,8 +26,8 @@ contextually without exposing the database as the product interface.
 ## Architecture
 
 Next.js 16 App Router, strict TypeScript, Tailwind CSS and Feature-Sliced Design.
-Supabase remains the backend for authentication, licensing reads, RPCs and Edge
-Functions. The completed migration and per-batch verification are documented in
+Laravel provides authentication, licensing reads and commercial actions. The
+Supabase implementation is deprecated and available only by explicit legacy opt-in. The completed migration and per-batch verification are documented in
 [Frontend FSD migration](docs/FRONTEND_FSD_MIGRATION.md).
 
 ```text
@@ -41,7 +49,8 @@ src/
     lib/                  formatting, query/redirect helpers and utilities
     i18n/                 Arabic/English copy; separate server locale entry
     config/               separate public and server environment modules
-    api/supabase/         SSR/browser/private clients and database type facade
+    api/laravel/          default server-only authentication and API transport
+    api/supabase/         deprecated clients and retained compatibility types
     http/                 same-origin request policy
     model/                environment type
 ```
@@ -54,11 +63,13 @@ are separate from server-only entries and Server Action implementations.
 Arabic remains the default, with `elmo_admin_locale` resolved on the server to
 render `lang` and `dir` before hydration. English uses the same URLs. Existing
 CSS, fonts, text and interaction bodies were preserved. Auth/session and licensing
-entry points retain their authorization checks; no backend migration is included.
+entry points retain their authorization checks; local Laravel integration is
+documented separately from the historical FSD migration.
 
-## Environment model
+## Deprecated Supabase environment (legacy opt-in only)
 
-There are **two separate Supabase projects**. This dashboard connects to
+The following applies only to explicit `DATA_PROVIDER=supabase`. Laravel uses
+`LARAVEL_API_URL` instead. There are **two separate Supabase projects**. This dashboard connects to
 exactly one at a time, chosen by environment configuration — never
 hardcoded.
 
@@ -126,7 +137,10 @@ not a direct authenticated-client query against those tables. Details:
 
 ## Authentication & authorization
 
-Authentication and database-backed authorization are implemented. Supabase
+Laravel authentication validates active staff through the API and stores its
+token in a server-managed HttpOnly cookie. See the integration report.
+
+In explicitly selected deprecated Supabase mode, Supabase
 Auth verifies identity with `getClaims()`, then `requireAdminAccess()` reads the
 matching `licensing.admin_users` row through the privileged server client. Only
 active `owner`, `admin`, `support`, and `viewer` rows are admitted. Full design:
@@ -136,7 +150,7 @@ active `owner`, `admin`, `support`, and `viewer` rows are admitted. Full design:
 
 ```bash
 npm install
-cp .env.example .env.local   # fill in both Staging key placeholders locally
+cp .env.example .env.local   # configure the Laravel API URL; start Laravel separately
 npm run dev
 ```
 
@@ -146,13 +160,13 @@ npm run build
 npx tsc --noEmit
 ```
 
-The app builds and lints without real Supabase credentials. Runtime Auth needs
-the selected environment's publishable key, and authorized licensing reads
-additionally need that same environment's server secret (see
+The app builds and lints without Supabase credentials. Runtime authentication
+and reads use the configured Laravel API. Only explicit deprecated Supabase
+mode needs the selected project's publishable key and server secret (see
 `docs/ENVIRONMENT_SECURITY.md`). Production must use `NODE_ENV=production` and
 `APP_ENV=production`, built with `npm run build` and run with `npm run start`.
 
-## Production acceptance
+## Historical Supabase production acceptance
 
 Final Production acceptance passed on 14 September 2026 against
 `elmotech-pos-licensing-prod` (`lhfvlczfqltvwydfaeod`). The accepted Dashboard
